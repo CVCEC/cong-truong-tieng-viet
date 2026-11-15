@@ -30,7 +30,7 @@ Cập nhật lần cuối: 14-11-2026
   - Hiện tại trang gửi email bằng mẫu tiếng Việt có sẵn (`auth.languageCode = "vi"`). Lời ký cuối thư là "Đội ngũ Trường Tiếng Việt Của Em".
   - Người gửi tạm thời là `noreply@truong-tieng-viet-cvcec.firebaseapp.com`.
   - **Việc cần làm:** khoảng một tuần sau, thử lại ở Authentication → Templates. Đặt tên người gửi là "Trường Tiếng Việt Của Em" và tiêu đề song ngữ cho email xác nhận và email đặt lại mật khẩu. Nội dung thư xác nhận do Firebase khoá, không sửa được.
-- **Firestore → Rules**: bản mới (bản 2: tài khoản, hồ sơ học viên, tiến độ học, bảng xếp hạng) lưu ở [`docs/firestore.rules`](firestore.rules). **Chờ xuất bản** (15-11-2026). Đã chạy thử 15 tình huống trên trình giả lập: xem [`docs/thu-rules/`](thu-rules/).
+- **Firestore → Rules**: bản mới (bản 2: tài khoản, hồ sơ học viên, tiến độ học, bảng xếp hạng) lưu ở [`docs/firestore.rules`](firestore.rules). **Đã xuất bản** (15-11-2026). Đã chạy thử 15 tình huống trên trình giả lập: xem [`docs/thu-rules/`](thu-rules/).
 - Bản 1 (xuất bản 14-11-2026) dưới đây được thay bằng bản 2:
   - Mặc định chặn tất cả.
   - `users/{uid}`: chỉ chính chủ đọc và ghi. Hồ sơ chỉ có 3 trường `hoTen`, `email`, `ngayTao`. `email` phải trùng email đăng nhập; `ngayTao` do máy chủ ghi. Về sau người dùng chỉ được sửa `hoTen`.
