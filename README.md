@@ -4,6 +4,7 @@ Cổng chính https://vietclass.cvcec.org (GitHub Pages). Nội quy chung: xem `
 
 - `index.html`: màn chào (trang chủ) và chế độ đang học (khung iframe cho 7 góc học, địa chỉ `#id`, ví dụ `#khobau`).
 - `giao-vien/index.html`: trang Đội ngũ giáo viên (https://vietclass.cvcec.org/giao-vien/). Danh sách thầy cô nằm trong `giao-vien/teachers.json` (trường tiếng Việt và tiếng Anh); thêm thầy cô mới chỉ cần thêm một mục và đặt ảnh chân dung (tỉ lệ 4:5) vào `assets/giao-vien/`.
+- `thu-dang-nhap/index.html`: trang thử đăng nhập Firebase (https://vietclass.cvcec.org/thu-dang-nhap/), không có trên menu, `noindex`. Cấu hình dùng chung ở `js/firebase-cvcec.js`; ghi chép dự án Firebase ở `docs/firebase-cvcec.md`.
 - Bộ mẫu chung nạp từ `https://mau.cvcec.org/v1/` (màu, phông, logo, ảnh Trâu Con của các góc học, danh sách `TTV_DANH_SACH`).
 - `assets/`: ảnh chuyển từ trang cũ `truongtiengvietcuaem.cvcec.org` (tên miền sắp ngừng dùng), tải ngày 15-11-2026.
 
