@@ -379,6 +379,58 @@
     });
   }
 
+  /* ---------- Chạm chắc chắn trên iPad / điện thoại ----------
+     Một số iPad (Safari) không phát sự kiện bấm sau khi chạm vào link lớn.
+     Chạm gọn (không trượt, dưới 0,6 giây) vào link mở cùng tab thì tự mở link. */
+  function khoiChamChac() {
+    var dau = null;
+    document.addEventListener("touchstart", function (e) {
+      if (e.touches.length !== 1) { dau = null; return; }
+      var t = e.touches[0];
+      dau = { x: t.clientX, y: t.clientY, luc: Date.now() };
+    }, { passive: true, capture: true });
+    document.addEventListener("touchmove", function (e) {
+      if (!dau || !e.touches.length) return;
+      var t = e.touches[0];
+      if (Math.abs(t.clientX - dau.x) > 10 || Math.abs(t.clientY - dau.y) > 10) dau = null;
+    }, { passive: true, capture: true });
+    document.addEventListener("touchend", function (e) {
+      var d = dau; dau = null;
+      if (!d || Date.now() - d.luc > 600) return;
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+      var href = a.getAttribute("href") || "";
+      if (/^(mailto:|tel:|javascript:)/i.test(href)) return;
+      e.preventDefault();   // không chờ sự kiện bấm của trình duyệt
+      a.click();            // gọi bấm ngay: chạy các xử lý của trang rồi mở link
+    }, { passive: false, capture: true });
+  }
+
+  /* ---------- Chế độ kiểm tra (?kiem-tra=1): ghi lại chạm, bấm và lỗi ---------- */
+  function khoiKiemTra() {
+    if (!/[?&]kiem-tra=1/.test(location.search)) return;
+    var bang = tao("pre");
+    bang.style.cssText = "position:fixed;left:8px;right:8px;bottom:8px;max-height:40vh;overflow:auto;z-index:99999;margin:0;padding:8px;background:rgba(255,255,255,.95);color:#003060;border:2px solid #003060;border-radius:12px;font:12px/1.4 monospace;white-space:pre-wrap;pointer-events:none";
+    document.body.appendChild(bang);
+    function ghi(chu) { bang.textContent = (new Date().toTimeString().slice(0, 8)) + " " + chu + "\n" + bang.textContent.slice(0, 4000); }
+    function ta(el) {
+      if (!el || !el.tagName) return String(el);
+      var a = el.closest && el.closest("a");
+      return el.tagName.toLowerCase() + (el.className && typeof el.className === "string" ? "." + el.className.split(" ")[0] : "") + (a ? " → a[" + a.getAttribute("href") + "]" : "");
+    }
+    ghi("UA: " + navigator.userAgent);
+    ghi("Màn: " + innerWidth + "×" + innerHeight + ", cảm ứng: " + ("ontouchstart" in window) + ", hover: " + matchMedia("(hover: hover)").matches);
+    ["touchstart", "touchend", "pointerdown", "pointerup", "click"].forEach(function (ten) {
+      document.addEventListener(ten, function (e) {
+        var p = e.changedTouches ? e.changedTouches[0] : e;
+        var o = (p && p.clientX != null) ? document.elementFromPoint(p.clientX, p.clientY) : null;
+        ghi(ten + ": " + ta(e.target) + (o && o !== e.target ? " | ở điểm chạm: " + ta(o) : "") + (e.defaultPrevented ? " (đã chặn)" : ""));
+      }, { capture: true, passive: true });
+    });
+    window.addEventListener("error", function (e) { ghi("LỖI: " + e.message + " @" + (e.filename || "").split("/").pop() + ":" + e.lineno); });
+    window.addEventListener("pagehide", function () { ghi("rời trang"); });
+  }
+
   /* ---------- Khởi động ---------- */
   function khoiDong() {
     if (window.CONG_CHU) them(window.CONG_CHU); // chữ riêng của trang, khai báo trước khi nạp tệp này
@@ -393,6 +445,8 @@
     hienMucDangMo();
     khoiTruot();
     khoiSaoChep();
+    khoiChamChac();
+    khoiKiemTra();
 
     document.addEventListener("ttv-ngon-ngu", function (e) {
       var ma = e && e.detail && e.detail.ngonNgu;
