@@ -31,7 +31,7 @@
       navChao: "Điều hướng chính", ngonNgu: "Ngôn ngữ", veCong: "Về trang chủ Trường Tiếng Việt Của Em",
       chanCau: "Nền tảng học tiếng Việt dành cho trẻ em Việt Nam ở trong và ngoài nước.",
       chanDong: "Một chương trình của Canada Vietnam Cultural & Educational Council (CVCEC)",
-      chanHocTap: "Học tập", chanTrang: "Cổng trường",
+      chanHocTap: "Học tập", chanTrang: "Cổng trường", chanDieuKhoan: "Điều khoản sử dụng", chanBaoMat: "Chính sách bảo mật",
       chanUyBan: "Ủy ban Nhà nước về người Việt Nam ở nước ngoài – Bộ Ngoại giao",
       truoc: "Trước", sau: "Sau", denTrang: "Đến trang ",
       saoChep: "Sao chép", daChep: "Đã sao chép: ", khongChep: "Không sao chép được, các bạn chép tay giúp nhé.",
@@ -44,7 +44,7 @@
       navChao: "Main navigation", ngonNgu: "Language", veCong: "Back to the Trường Tiếng Việt Của Em home page",
       chanCau: "A Vietnamese learning platform for Vietnamese children in Vietnam and around the world.",
       chanDong: "A program of the Canada Vietnam Cultural & Educational Council (CVCEC)",
-      chanHocTap: "Learning", chanTrang: "School portal",
+      chanHocTap: "Learning", chanTrang: "School portal", chanDieuKhoan: "Terms of use", chanBaoMat: "Privacy policy",
       chanUyBan: "State Committee for Overseas Vietnamese Affairs – Ministry of Foreign Affairs",
       truoc: "Previous", sau: "Next", denTrang: "Go to page ",
       saoChep: "Copy", daChep: "Copied: ", khongChep: "Couldn't copy. Please copy it by hand.",
@@ -110,6 +110,10 @@
       li.appendChild(a); ul.appendChild(li);
     });
     nav.appendChild(ul);
+    // Chỗ cho nút Đăng nhập / tài khoản (do /js/tai-khoan.js dựng)
+    var tk = tao("div", "cong-tk");
+    tk.setAttribute("data-cong-tk", "");
+    nav.appendChild(tk);
     var nhom = tao("div", "ttv-thanh-ngon-ngu");
     nhom.setAttribute("role", "group");
     nhom.setAttribute("data-nhan", "ngonNgu");
@@ -187,7 +191,7 @@
     cot2.setAttribute("aria-labelledby", "chan-trang");
     var h2 = tao("h2"); h2.id = "chan-trang"; h2.setAttribute("data-chu", "chanTrang"); cot2.appendChild(h2);
     var ul2 = tao("ul");
-    TRANG.forEach(function (t) {
+    TRANG.concat([{ href: "/dieu-khoan/", chu: "chanDieuKhoan" }, { href: "/bao-mat/", chu: "chanBaoMat" }]).forEach(function (t) {
       var li = tao("li"), a = tao("a");
       a.href = t.href; a.setAttribute("data-chu", t.chu);
       li.appendChild(a); ul2.appendChild(li);

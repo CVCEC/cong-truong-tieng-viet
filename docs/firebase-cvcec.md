@@ -17,7 +17,7 @@ Cập nhật lần cuối: 14-11-2026
 | Ứng dụng web | "Cong chinh vietclass", App ID `1:1059005743126:web:f7883d1783b19cccb37537`. Không dùng Firebase Hosting; trang chạy trên GitHub Pages |
 | Cơ sở dữ liệu | Cloud Firestore, Standard edition, `(default)` |
 | Vùng máy chủ | **northamerica-northeast2 (Toronto)**. Không đổi được. |
-| Firebase JS SDK | 12.19.0 (modular, tải từ gstatic). Đổi phiên bản ở `js/firebase-cvcec.js` và trong `thu-dang-nhap/index.html` |
+| Firebase JS SDK | 12.19.0 (modular, tải từ gstatic). Đổi phiên bản ở `js/firebase-cvcec.js`, `js/tai-khoan.js`, `dang-nhap/index.html` và `ho-so/index.html` |
 
 ## Những gì đã bật
 
@@ -30,7 +30,7 @@ Cập nhật lần cuối: 14-11-2026
   - Hiện tại trang gửi email bằng mẫu tiếng Việt có sẵn (`auth.languageCode = "vi"`). Lời ký cuối thư là "Đội ngũ Trường Tiếng Việt Của Em".
   - Người gửi tạm thời là `noreply@truong-tieng-viet-cvcec.firebaseapp.com`.
   - **Việc cần làm:** khoảng một tuần sau, thử lại ở Authentication → Templates. Đặt tên người gửi là "Trường Tiếng Việt Của Em" và tiêu đề song ngữ cho email xác nhận và email đặt lại mật khẩu. Nội dung thư xác nhận do Firebase khoá, không sửa được.
-- **Firestore → Rules**: bản mới (bản 2: tài khoản, hồ sơ học viên, tiến độ học, bảng xếp hạng) lưu ở [`docs/firestore.rules`](firestore.rules). **Đã xuất bản** (15-11-2026). Đã chạy thử 15 tình huống trên trình giả lập: xem [`docs/thu-rules/`](thu-rules/).
+- **Firestore → Rules**: bản mới (bản 2: tài khoản, hồ sơ học viên, tiến độ học, bảng xếp hạng) lưu ở [`docs/firestore.rules`](firestore.rules). **Đã xuất bản** (15-11-2026). Đã chạy thử 15 tình huống trên trình giả lập (xem [`docs/thu-rules/`](thu-rules/)) và 14 tình huống trên dự án thật bằng một tài khoản thử tạm thời, đã xoá sạch sau khi thử.
 - Bản 1 (xuất bản 14-11-2026) dưới đây được thay bằng bản 2:
   - Mặc định chặn tất cả.
   - `users/{uid}`: chỉ chính chủ đọc và ghi. Hồ sơ chỉ có 3 trường `hoTen`, `email`, `ngayTao`. `email` phải trùng email đăng nhập; `ngayTao` do máy chủ ghi. Về sau người dùng chỉ được sửa `hoTen`.
@@ -50,7 +50,7 @@ Xem và sửa ở **Project settings → Users and permissions**.
 
 ## Thêm quản trị viên (admins/{uid})
 
-1. Đăng nhập một lần ở https://vietclass.cvcec.org/thu-dang-nhap/.
+1. Đăng nhập một lần ở https://vietclass.cvcec.org/dang-nhap/.
 2. Trong console, mở **Authentication → Users**, chép cột **User UID** của tài khoản đó.
 3. Mở **Firestore Database → Data → Start collection**. Đặt Collection ID là `admins`, Document ID là UID vừa chép. Thêm trường `ten` (string), ví dụ "Phan Thị Quỳnh Trang", rồi bấm **Save**.
 
@@ -65,5 +65,6 @@ Gói Spark có hạn mức miễn phí mỗi ngày. Khi vượt hạn mức, d�
 ## Trang trong kho này
 
 - `js/firebase-cvcec.js`: cấu hình Firebase dùng chung cho cổng (app, auth, db).
-- `thu-dang-nhap/index.html`: trang thử đăng nhập. Không có trên menu và có `noindex`.
+- `dang-nhap/index.html`, `ho-so/index.html`: đăng nhập, đăng ký, hồ sơ (có `noindex`). `thu-dang-nhap/` chỉ còn chuyển hướng sang `dang-nhap/`.
+- `js/tai-khoan.js`: thư viện tài khoản dùng chung cho mọi trang của cổng.
 - `docs/firestore.rules`: bản sao Security Rules đang xuất bản. Sửa rules thì sửa trong console, thử bằng Rules Playground, xuất bản, rồi chép lại vào tệp này.

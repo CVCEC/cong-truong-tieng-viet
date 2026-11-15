@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Đăng nhập · Trường Tiếng Việt Của Em</title>
+<meta name="description" content="Đăng nhập hoặc đăng ký Trường Tiếng Việt Của Em.">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
+<link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
+<link rel="stylesheet" href="/chung/cong.css?v=6">
+<script>window.CONG_CHU = {
+ "vi": {
+  "tieuDe": "Đăng nhập",
+  "phuDe": "Vào Làng học tập Trâu Con",
+  "tabVao": "Đăng nhập",
+  "tabKy": "Đăng ký",
+  "nhanTab": "Chọn đăng nhập hoặc đăng ký",
+  "nutGoogle": "Tiếp tục với Google",
+  "hoac": "hoặc dùng email",
+  "email": "Email",
+  "matKhau": "Mật khẩu",
+  "goiYMatKhau": "Ít nhất 6 ký tự.",
+  "nutVao": "Đăng nhập",
+  "nutKy": "Tạo tài khoản",
+  "quenMatKhau": "Quên mật khẩu?",
+  "hoiTuoi": "Bạn bao nhiêu tuổi?",
+  "tuoiDuoi13": "Dưới 13 tuổi",
+  "tuoi13": "13–17 tuổi",
+  "tuoi18": "18 tuổi trở lên",
+  "trauDuoi13": "Chào bạn nhỏ! Các bạn dưới 13 tuổi nhờ bố mẹ hoặc người giám hộ đăng ký giúp nhé. Bố mẹ dùng email của bố mẹ để tạo tài khoản, rồi tạo hồ sơ học cho bạn.",
+  "trauChao": "Chào bạn! Mình là Trâu Con. Mỗi email có một tài khoản và một hồ sơ học viên.",
+  "tkTieuDe": "Thông tin tài khoản",
+  "tkMoTa": "Đây là thông tin của người giữ tài khoản (người đăng ký).",
+  "hoTen": "Họ và tên",
+  "nuoc": "Nước đang sinh sống",
+  "vaiTro": "Bạn là",
+  "nhomTuoiTk": "Nhóm tuổi của bạn (người đăng ký)",
+  "dongYDieuKhoan": "Tôi đã đọc và đồng ý với <a href=\"/dieu-khoan/\">Điều khoản sử dụng</a>.",
+  "dongYBaoMat": "Tôi đã đọc và đồng ý với <a href=\"/bao-mat/\">Chính sách bảo mật</a>.",
+  "canDongY": "Bạn cần đồng ý cả Điều khoản sử dụng và Chính sách bảo mật.",
+  "dieuKhoanMoi": "Điều khoản hoặc Chính sách bảo mật vừa được cập nhật. Bạn đọc và đồng ý lại giúp mình nhé.",
+  "luuTiep": "Lưu và tiếp tục",
+  "hsTieuDe": "Hồ sơ học viên",
+  "hsMoTa": "Hồ sơ của người sẽ học trên nền tảng. Mỗi tài khoản có một hồ sơ.",
+  "tenGoi": "Tên gọi",
+  "tenGoiGoiY": "Chỉ chủ tài khoản và CVCEC thấy tên này.",
+  "bietDanh": "Biệt danh",
+  "bietDanhGoiY": "Tối đa 20 ký tự. Không ghi email, số điện thoại hay tên thật đầy đủ. Biệt danh hiện trên bảng xếp hạng nếu bạn cho phép.",
+  "conVat": "Chọn con vật đại diện",
+  "nhomTuoi": "Nhóm tuổi của người học",
+  "doiTuong": "Người học là",
+  "nuocHoc": "Nước tham dự",
+  "dongYGiamHo": "Tôi là cha/mẹ hoặc người giám hộ và đồng ý cho con tôi sử dụng nền tảng.",
+  "canGiamHo": "Hồ sơ dưới 13 tuổi cần cha/mẹ hoặc người giám hộ đồng ý.",
+  "chiNguoiLon": "Hồ sơ dưới 13 tuổi chỉ được tạo bởi tài khoản của người từ 18 tuổi trở lên.",
+  "choXepHang": "Cho phép hiện biệt danh trên bảng xếp hạng.",
+  "choXepHangGoiY": "Bảng xếp hạng chỉ hiện biệt danh, con vật, cờ nước, số bài và số sao. Bạn tắt được bất cứ lúc nào trong trang Hồ sơ.",
+  "taoHoSo": "Tạo hồ sơ",
+  "bdTrong": "Bạn đặt biệt danh nhé.",
+  "bdDai": "Biệt danh tối đa 20 ký tự.",
+  "bdEmail": "Biệt danh không được chứa email hay đường link.",
+  "bdSo": "Biệt danh không được chứa số điện thoại.",
+  "bdTho": "Biệt danh có từ chưa phù hợp. Bạn chọn biệt danh khác nhé.",
+  "canDien": "Bạn điền đủ các ô có dấu * nhé.",
+  "xongTieuDe": "Xong rồi!",
+  "xongTrau": "Chào {ten}! Hồ sơ đã sẵn sàng. Mình cùng vào học nhé!",
+  "vaoHoc": "Vào học",
+  "xemHoSo": "Xem hồ sơ",
+  "dangXuat": "Đăng xuất",
+  "chuaXacNhan": "Email {email} chưa xác nhận. Bạn mở hộp thư (xem cả mục Thư rác) và bấm vào liên kết nhé.",
+  "guiLai": "Gửi lại email xác nhận",
+  "tinGuiLai": "Đã gửi lại email xác nhận tới {email}.",
+  "tinQuen": "Nếu {email} có tài khoản, bạn sẽ nhận được email đặt lại mật khẩu trong vài phút (xem cả mục Thư rác).",
+  "tinCanEmail": "Bạn nhập email trước rồi bấm \"Quên mật khẩu?\" nhé.",
+  "dangXuLy": "Đang xử lý…",
+  "dangTai": "Đang tải…",
+  "batBuoc": "bắt buộc",
+  "loi": {
+   "auth/invalid-email": "Email chưa đúng dạng. Bạn kiểm tra lại nhé.",
+   "auth/missing-email": "Bạn nhập email nhé.",
+   "auth/missing-password": "Bạn nhập mật khẩu nhé.",
+   "auth/invalid-credential": "Email hoặc mật khẩu chưa đúng.",
+   "auth/wrong-password": "Email hoặc mật khẩu chưa đúng.",
+   "auth/user-not-found": "Email hoặc mật khẩu chưa đúng.",
+   "auth/email-already-in-use": "Email này đã có tài khoản. Bạn chọn \"Đăng nhập\" nhé.",
+   "auth/weak-password": "Mật khẩu cần ít nhất 6 ký tự.",
+   "auth/password-does-not-meet-requirements": "Mật khẩu chưa đủ mạnh. Bạn thử mật khẩu dài hơn nhé.",
+   "auth/too-many-requests": "Thử quá nhiều lần. Bạn chờ một lúc rồi thử lại nhé.",
+   "auth/network-request-failed": "Mạng đang chập chờn. Bạn kiểm tra kết nối rồi thử lại nhé.",
+   "auth/popup-closed-by-user": "Cửa sổ đăng nhập Google đã đóng trước khi xong.",
+   "auth/cancelled-popup-request": "Cửa sổ đăng nhập Google đã đóng trước khi xong.",
+   "auth/popup-blocked": "Trình duyệt đã chặn cửa sổ đăng nhập Google. Bạn cho phép cửa sổ bật lên rồi thử lại nhé.",
+   "auth/account-exists-with-different-credential": "Email này đã đăng ký theo cách khác. Bạn thử cách đăng nhập còn lại nhé.",
+   "auth/user-disabled": "Tài khoản này đang bị khoá. Liên hệ contact@cvcec.org nhé.",
+   "permission-denied": "Hệ thống chưa cho phép lưu (quy tắc bảo mật). Bạn kiểm tra lại các ô rồi thử lại nhé.",
+   "macDinh": "Có lỗi xảy ra ({ma}). Bạn thử lại nhé."
+  }
+ },
+ "en": {
+  "tieuDe": "Sign in",
+  "phuDe": "Enter Trâu Con's Learning Village",
+  "tabVao": "Sign in",
+  "tabKy": "Sign up",
+  "nhanTab": "Choose sign in or sign up",
+  "nutGoogle": "Continue with Google",
+  "hoac": "or use email",
+  "email": "Email",
+  "matKhau": "Password",
+  "goiYMatKhau": "At least 6 characters.",
+  "nutVao": "Sign in",
+  "nutKy": "Create account",
+  "quenMatKhau": "Forgot password?",
+  "hoiTuoi": "How old are you?",
+  "tuoiDuoi13": "Under 13",
+  "tuoi13": "13–17",
+  "tuoi18": "18 or older",
+  "trauDuoi13": "Hello, young friend! If you are under 13, please ask a parent or guardian to sign up for you. They use their own email to create the account, then create a learner profile for you.",
+  "trauChao": "Hello! I'm Trâu Con. Each email has one account and one learner profile.",
+  "tkTieuDe": "Account details",
+  "tkMoTa": "These are the details of the account holder (the person signing up).",
+  "hoTen": "Full name",
+  "nuoc": "Country of residence",
+  "vaiTro": "You are a",
+  "nhomTuoiTk": "Your age group (account holder)",
+  "dongYDieuKhoan": "I have read and agree to the <a href=\"/dieu-khoan/\">Terms of use</a>.",
+  "dongYBaoMat": "I have read and agree to the <a href=\"/bao-mat/\">Privacy policy</a>.",
+  "canDongY": "You need to agree to both the Terms of use and the Privacy policy.",
+  "dieuKhoanMoi": "The Terms of use or Privacy policy have been updated. Please read and agree again.",
+  "luuTiep": "Save and continue",
+  "hsTieuDe": "Learner profile",
+  "hsMoTa": "The profile of the person who will learn on the platform. Each account has one profile.",
+  "tenGoi": "Name",
+  "tenGoiGoiY": "Only the account holder and CVCEC can see this name.",
+  "bietDanh": "Nickname",
+  "bietDanhGoiY": "Up to 20 characters. No email, phone number or full real name. The nickname appears on the leaderboard only if you allow it.",
+  "conVat": "Choose an animal",
+  "nhomTuoi": "Learner's age group",
+  "doiTuong": "The learner is",
+  "nuocHoc": "Country taking part from",
+  "dongYGiamHo": "I am the parent or guardian and I agree to let my child use the platform.",
+  "canGiamHo": "A profile under 13 needs a parent or guardian's consent.",
+  "chiNguoiLon": "A profile under 13 can only be created by an account holder aged 18 or older.",
+  "choXepHang": "Allow my nickname to appear on the leaderboard.",
+  "choXepHangGoiY": "The leaderboard shows only the nickname, animal, country flag, number of lessons and stars. You can turn it off any time on the Profile page.",
+  "taoHoSo": "Create profile",
+  "bdTrong": "Please choose a nickname.",
+  "bdDai": "The nickname can have up to 20 characters.",
+  "bdEmail": "The nickname cannot contain an email or a link.",
+  "bdSo": "The nickname cannot contain a phone number.",
+  "bdTho": "The nickname has an unsuitable word. Please choose another one.",
+  "canDien": "Please fill in all fields marked *.",
+  "xongTieuDe": "All set!",
+  "xongTrau": "Hello, {ten}! Your profile is ready. Let's start learning!",
+  "vaoHoc": "Start learning",
+  "xemHoSo": "View profile",
+  "dangXuat": "Sign out",
+  "chuaXacNhan": "The email {email} is not verified yet. Please open your inbox (check Spam too) and click the link.",
+  "guiLai": "Resend verification email",
+  "tinGuiLai": "Verification email sent again to {email}.",
+  "tinQuen": "If {email} has an account, a password reset email will arrive in a few minutes (check Spam too).",
+  "tinCanEmail": "Please type your email first, then tap \"Forgot password?\".",
+  "dangXuLy": "Working…",
+  "dangTai": "Loading…",
+  "batBuoc": "required",
+  "loi": {
+   "auth/invalid-email": "This email address is not valid.",
+   "auth/missing-email": "Please type your email.",
+   "auth/missing-password": "Please type your password.",
+   "auth/invalid-credential": "The email or password is incorrect.",
+   "auth/wrong-password": "The email or password is incorrect.",
+   "auth/user-not-found": "The email or password is incorrect.",
+   "auth/email-already-in-use": "This email already has an account. Please choose \"Sign in\".",
+   "auth/weak-password": "The password needs at least 6 characters.",
+   "auth/password-does-not-meet-requirements": "The password is not strong enough. Please try a longer one.",
+   "auth/too-many-requests": "Too many attempts. Please wait a moment and try again.",
+   "auth/network-request-failed": "The network connection is unstable. Please check it and try again.",
+   "auth/popup-closed-by-user": "The Google sign-in window was closed before finishing.",
+   "auth/cancelled-popup-request": "The Google sign-in window was closed before finishing.",
+   "auth/popup-blocked": "The browser blocked the Google sign-in window. Please allow pop-ups and try again.",
+   "auth/account-exists-with-different-credential": "This email was registered another way. Please try the other sign-in option.",
+   "auth/user-disabled": "This account is disabled. Please contact contact@cvcec.org.",
+   "permission-denied": "The system did not allow saving (security rules). Please check the fields and try again.",
+   "macDinh": "Something went wrong ({ma}). Please try again."
+  }
+ }
+};</script>
+<script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="/chung/canh.js?v=6" defer></script>
+<script src="/chung/cong.js?v=6" defer></script>
+<script type="module" src="/js/tai-khoan.js?v=6"></script>
+<style>
+  .dn-tab { display: flex; gap: 8px; margin: 0 0 18px; }
+  .dn-tab button { flex: 1; }
+  .dn-tab button[aria-selected="true"] { background: var(--ttv-chu); color: #FFFFFF; border-color: var(--ttv-chu); }
+  .dn-rong { width: 100%; }
+  .dn-hoac { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--ttv-chu-phu); font-weight: 700; }
+  .dn-hoac::before, .dn-hoac::after { content: ""; flex: 1; height: 2px; background: var(--ttv-vien); }
+</style>
+</head>
+<body class="cong" data-ttv-khong-thanh data-trang="dang-nhap" data-tieu-de="tieuDe">
+  <header class="cong-dau" data-cong-dau></header>
+  <main>
+    <section class="trang-dau co-canh" data-canh="lang-que" aria-labelledby="tieu-de-trang">
+      <div class="cong-ruot">
+        <h1 id="tieu-de-trang" data-chu="tieuDe">Đăng nhập</h1>
+        <p class="trang-phu-de" data-chu="phuDe">Vào Làng học tập Trâu Con</p>
+      </div>
+    </section>
+    <section class="cong-phan trang-than" aria-labelledby="tieu-de-trang">
+      <div class="cong-ruot">
+        <p class="bm-tin" id="tin" role="status" aria-live="polite" hidden></p>
+
+        <!-- Đang tải -->
+        <div class="bm-the" id="khung-tai"><p data-chu="dangTai">Đang tải…</p></div>
+
+        <!-- 1. Chưa đăng nhập -->
+        <div class="bm-the" id="khung-vao" hidden>
+          <div class="bm-trau"><img src="/assets/trau/wave.png" width="297" height="342" alt=""><p data-chu="trauChao">Chào bạn! Mình là Trâu Con.</p></div>
+          <div class="dn-tab bm-chon" role="tablist" data-nhan="nhanTab">
+            <button type="button" role="tab" id="tab-vao" aria-selected="true" class="ttv-nut-phu" data-chu="tabVao">Đăng nhập</button>
+            <button type="button" role="tab" id="tab-ky" aria-selected="false" class="ttv-nut-phu" data-chu="tabKy">Đăng ký</button>
+          </div>
+          <fieldset class="bm-o" id="o-tuoi-ky" hidden>
+            <legend data-chu="hoiTuoi">Bạn bao nhiêu tuổi?</legend>
+            <div class="bm-chon">
+              <label><input type="radio" name="tuoiKy" value="duoi-13"><span data-chu="tuoiDuoi13">Dưới 13 tuổi</span></label>
+              <label><input type="radio" name="tuoiKy" value="13-17"><span data-chu="tuoi13">13–17 tuổi</span></label>
+              <label><input type="radio" name="tuoiKy" value="18+"><span data-chu="tuoi18">18 tuổi trở lên</span></label>
+            </div>
+          </fieldset>
+          <div class="bm-trau" id="chan-duoi-13" hidden><img src="/assets/trau/thinking.png" width="333" height="340" alt=""><p data-chu="trauDuoi13"></p></div>
+          <div id="cach-vao">
+            <button type="button" class="ttv-nut-phu dn-rong" id="nut-google"><svg viewBox="0 0 48 48" aria-hidden="true" width="22" height="22"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg><span data-chu="nutGoogle">Tiếp tục với Google</span></button>
+            <p class="dn-hoac" data-chu="hoac">hoặc dùng email</p>
+            <form id="form-email" novalidate>
+              <div class="bm-o"><label for="email" data-chu="email">Email</label><input type="email" id="email" autocomplete="email" required></div>
+              <div class="bm-o"><label for="mat-khau" data-chu="matKhau">Mật khẩu</label><input type="password" id="mat-khau" autocomplete="current-password" minlength="6" required><p class="bm-goi-y" id="goi-y-mk" data-chu="goiYMatKhau" hidden>Ít nhất 6 ký tự.</p></div>
+              <div class="bm-nut-nhom">
+                <button type="submit" class="ttv-nut" id="nut-email" data-chu="nutVao">Đăng nhập</button>
+                <button type="button" class="ttv-nut-phu" id="nut-quen" data-chu="quenMatKhau">Quên mật khẩu?</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- 2. Thông tin tài khoản và đồng ý điều khoản -->
+        <form class="bm-the" id="khung-tk" novalidate hidden>
+          <h2 data-chu="tkTieuDe">Thông tin tài khoản</h2>
+          <p data-chu="tkMoTa"></p>
+          <p class="bm-tin thuong" id="tin-dk-moi" data-chu="dieuKhoanMoi" hidden></p>
+          <div class="bm-o"><label for="ho-ten"><span data-chu="hoTen">Họ và tên</span> *</label><input type="text" id="ho-ten" maxlength="100" autocomplete="name" required></div>
+          <div class="bm-o"><label for="nuoc"><span data-chu="nuoc">Nước đang sinh sống</span> *</label><select id="nuoc" required></select></div>
+          <fieldset class="bm-o"><legend><span data-chu="vaiTro">Bạn là</span> *</legend><div class="bm-chon" id="chon-vai-tro"></div></fieldset>
+          <fieldset class="bm-o"><legend><span data-chu="nhomTuoiTk">Nhóm tuổi của bạn</span> *</legend>
+            <div class="bm-chon">
+              <label><input type="radio" name="nhomTuoiTk" value="duoi-13"><span data-chu="tuoiDuoi13">Dưới 13 tuổi</span></label>
+              <label><input type="radio" name="nhomTuoiTk" value="13-17"><span data-chu="tuoi13">13–17 tuổi</span></label>
+              <label><input type="radio" name="nhomTuoiTk" value="18+"><span data-chu="tuoi18">18 tuổi trở lên</span></label>
+            </div>
+          </fieldset>
+          <div class="bm-trau" id="tk-duoi-13" hidden><img src="/assets/trau/thinking.png" width="333" height="340" alt=""><p data-chu="trauDuoi13"></p></div>
+          <label class="bm-dong-y"><input type="checkbox" id="dy-dieu-khoan" required><span data-chu-html="dongYDieuKhoan"></span></label>
+          <label class="bm-dong-y"><input type="checkbox" id="dy-bao-mat" required><span data-chu-html="dongYBaoMat"></span></label>
+          <div class="bm-nut-nhom"><button type="submit" class="ttv-nut" id="nut-luu-tk" data-chu="luuTiep">Lưu và tiếp tục</button></div>
+        </form>
+
+        <!-- 3. Hồ sơ học viên -->
+        <form class="bm-the" id="khung-hs" novalidate hidden>
+          <h2 data-chu="hsTieuDe">Hồ sơ học viên</h2>
+          <p data-chu="hsMoTa"></p>
+          <div class="bm-o"><label for="ten-goi"><span data-chu="tenGoi">Tên gọi</span> *</label><input type="text" id="ten-goi" maxlength="40" required><p class="bm-goi-y" data-chu="tenGoiGoiY"></p></div>
+          <div class="bm-o"><label for="biet-danh"><span data-chu="bietDanh">Biệt danh</span> *</label><input type="text" id="biet-danh" maxlength="20" required aria-describedby="loi-bd goi-y-bd"><p class="bm-loi-o" id="loi-bd" hidden></p><p class="bm-goi-y" id="goi-y-bd" data-chu="bietDanhGoiY"></p></div>
+          <fieldset class="bm-o"><legend><span data-chu="conVat">Chọn con vật đại diện</span> *</legend><div class="bm-chon bm-con-vat" id="chon-con-vat"></div></fieldset>
+          <fieldset class="bm-o"><legend><span data-chu="nhomTuoi">Nhóm tuổi của người học</span> *</legend><div class="bm-chon" id="chon-nhom-tuoi"></div><p class="bm-loi-o" id="loi-nguoi-lon" data-chu="chiNguoiLon" hidden></p></fieldset>
+          <fieldset class="bm-o"><legend><span data-chu="doiTuong">Người học là</span> *</legend><div class="bm-chon" id="chon-doi-tuong"></div></fieldset>
+          <div class="bm-o"><label for="nuoc-hs"><span data-chu="nuocHoc">Nước tham dự</span> *</label><select id="nuoc-hs" required></select></div>
+          <label class="bm-dong-y" id="o-giam-ho" hidden><input type="checkbox" id="dy-giam-ho"><span data-chu="dongYGiamHo"></span></label>
+          <label class="bm-dong-y"><input type="checkbox" id="cho-xep-hang"><span><span data-chu="choXepHang"></span><br><small class="bm-goi-y" data-chu="choXepHangGoiY"></small></span></label>
+          <div class="bm-nut-nhom"><button type="submit" class="ttv-nut" id="nut-luu-hs" data-chu="taoHoSo">Tạo hồ sơ</button></div>
+        </form>
+
+        <!-- 4. Xong -->
+        <div class="bm-the" id="khung-xong" hidden>
+          <h2 data-chu="xongTieuDe">Xong rồi!</h2>
+          <div class="bm-trau"><img src="/assets/trau/cheer.png" width="318" height="384" alt=""><p id="xong-trau"></p></div>
+          <p class="bm-tin thuong" id="tin-xac-nhan" hidden></p>
+          <div class="bm-nut-nhom">
+            <a class="ttv-nut" href="/hoc-tap/" data-chu="vaoHoc">Vào học</a>
+            <a class="ttv-nut-phu" href="/ho-so/" data-chu="xemHoSo">Xem hồ sơ</a>
+            <button type="button" class="ttv-nut-phu" id="nut-gui-lai" data-chu="guiLai" hidden>Gửi lại email xác nhận</button>
+            <button type="button" class="ttv-nut-phu" id="nut-ra" data-chu="dangXuat">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="cong-chan" data-cong-chan>
+    <!-- cong.js dựng phần trên; bộ mẫu điền dòng bản quyền mờ và liên hệ vào đây -->
+    <div data-ttv-chan></div>
+  </footer>
+<script type="module">
+import { auth, db } from "/js/firebase-cvcec.js";
+import {
+  GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+  sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import {
+  CON_VAT, NHOM_TUOI, DUOI_13, DOI_TUONG, VAI_TRO, PHIEN_BAN_DIEU_KHOAN, nhan, dsNuoc, doanNuoc,
+  kiemTraBietDanh, docTaiKhoan, docHoSo, taiKhoanDu, luuHoSo, dangXuat, luuTam
+} from "/js/tai-khoan.js?v=6";
+
+const $ = (id) => document.getElementById(id);
+const KHOA_TUOI = "cvcec-dk-tuoi";   // sessionStorage: nhóm tuổi chọn ở bước đăng ký
+const KHOA_NHAP = "cvcec-dk-nhap";   // sessionStorage: điền dở form tài khoản (khi mở Điều khoản rồi quay lại)
+const c = () => window.CONG.chu();
+const dien = (m, t) => String(m).replace(/\{(\w+)\}/g, (_, k) => (t && t[k] != null ? t[k] : ""));
+let cheDo = "vao", nguoiDung = null, taiKhoan = null, hoSo = null, dangChay = false;
+
+function ve() { window.CONG.capNhat(); }
+function bao(noiDung, loai = "sai") {
+  const t = $("tin");
+  if (!noiDung) { t.hidden = true; return; }
+  t.className = "bm-tin " + loai; t.textContent = noiDung; t.hidden = false;
+  t.scrollIntoView({ block: "nearest" });
+}
+function baoLoi(e) {
+  const ma = (e && e.code) || "macDinh";
+  const L = c().loi;
+  bao(L[ma] ? L[ma] : dien(L.macDinh, { ma }), "sai");
+}
+function hien(ten) {
+  ["tai", "vao", "tk", "hs", "xong"].forEach((k) => { $("khung-" + k).hidden = k !== ten; });
+}
+async function ban(nut, fn) {
+  if (dangChay) return;
+  dangChay = true; const cu = nut.innerHTML; nut.disabled = true; nut.textContent = c().dangXuLy;
+  try { await fn(); } catch (e) { console.error(e); baoLoi(e); }
+  finally { dangChay = false; nut.disabled = false; nut.innerHTML = cu; ve(); }
+}
+function radio(ten) { const r = document.querySelector('input[name="' + ten + '"]:checked'); return r ? r.value : null; }
+function chonRadio(ten, gt) { const r = document.querySelector('input[name="' + ten + '"][value="' + gt + '"]'); if (r) r.checked = true; }
+function dungRadio(id, ten, ds, laConVat) {
+  const o = $(id); o.textContent = "";
+  ds.forEach((m) => {
+    const l = document.createElement("label"), i = document.createElement("input"), s = document.createElement("span");
+    i.type = "radio"; i.name = ten; i.value = m.id;
+    if (laConVat) {
+      const e = document.createElement("span"); e.className = "tk-con-vat"; e.setAttribute("aria-hidden", "true"); e.textContent = m.e;
+      l.append(i, e);
+    } else l.append(i);
+    s.textContent = nhan(m); l.append(s); o.append(l);
+  });
+}
+function dungNuoc(id, chon) {
+  const s = $(id), cu = s.value || chon; s.textContent = "";
+  dsNuoc().forEach((n) => { const o = document.createElement("option"); o.value = n.ma; o.textContent = n.ten; s.append(o); });
+  s.value = cu || "CA";
+}
+function veDanhMuc() {
+  dungNuoc("nuoc", taiKhoan && taiKhoan.nuoc || doanNuoc());
+  dungNuoc("nuoc-hs", ($("nuoc").value) || doanNuoc());
+  const giu = { vaiTro: radio("vaiTro"), conVat: radio("conVat"), nhomTuoi: radio("nhomTuoi"), doiTuong: radio("doiTuong") };
+  dungRadio("chon-vai-tro", "vaiTro", VAI_TRO);
+  dungRadio("chon-con-vat", "conVat", CON_VAT, true);
+  dungRadio("chon-nhom-tuoi", "nhomTuoi", NHOM_TUOI);
+  dungRadio("chon-doi-tuong", "doiTuong", DOI_TUONG);
+  Object.entries(giu).forEach(([k, v]) => v && chonRadio(k, v));
+  capNhatGiamHo();
+}
+
+/* ---------- 1. Đăng nhập / đăng ký ---------- */
+function datCheDo(m) {
+  cheDo = m; bao(null);
+  $("tab-vao").setAttribute("aria-selected", String(m === "vao"));
+  $("tab-ky").setAttribute("aria-selected", String(m === "ky"));
+  $("o-tuoi-ky").hidden = m !== "ky";
+  $("nut-email").setAttribute("data-chu", m === "vao" ? "nutVao" : "nutKy");
+  $("nut-quen").hidden = m !== "vao";
+  $("goi-y-mk").hidden = m !== "ky";
+  $("mat-khau").autocomplete = m === "vao" ? "current-password" : "new-password";
+  capNhatCachVao(); ve();
+}
+function capNhatCachVao() {
+  const t = radio("tuoiKy");
+  const chan = cheDo === "ky" && t === "duoi-13";
+  $("chan-duoi-13").hidden = !chan;
+  $("cach-vao").hidden = chan || (cheDo === "ky" && !t);
+  if (cheDo === "ky" && t && t !== "duoi-13") { try { sessionStorage.setItem(KHOA_TUOI, t); } catch (e) {} }
+}
+$("tab-vao").addEventListener("click", () => datCheDo("vao"));
+$("tab-ky").addEventListener("click", () => datCheDo("ky"));
+document.querySelectorAll('input[name="tuoiKy"]').forEach((r) => r.addEventListener("change", capNhatCachVao));
+$("nut-google").addEventListener("click", () => ban($("nut-google"), async () => {
+  const p = new GoogleAuthProvider(); p.setCustomParameters({ prompt: "select_account" });
+  await signInWithPopup(auth, p);
+}));
+$("form-email").addEventListener("submit", (e) => {
+  e.preventDefault();
+  ban($("nut-email"), async () => {
+    const email = $("email").value.trim(), mk = $("mat-khau").value;
+    if (cheDo === "ky") {
+      const kq = await createUserWithEmailAndPassword(auth, email, mk);
+      try { auth.languageCode = window.CONG.ngonNgu(); await sendEmailVerification(kq.user); } catch (e) {}
+    } else await signInWithEmailAndPassword(auth, email, mk);
+  });
+});
+$("nut-quen").addEventListener("click", () => ban($("nut-quen"), async () => {
+  const email = $("email").value.trim();
+  if (!email) { bao(c().tinCanEmail, "thuong"); return; }
+  auth.languageCode = window.CONG.ngonNgu();
+  try { await sendPasswordResetEmail(auth, email); } catch (e) { if (e.code !== "auth/user-not-found") throw e; }
+  bao(dien(c().tinQuen, { email }), "dung");
+}));
+
+/* ---------- 2. Tài khoản ---------- */
+function luuNhap() {
+  try { sessionStorage.setItem(KHOA_NHAP, JSON.stringify({ hoTen: $("ho-ten").value, nuoc: $("nuoc").value, vaiTro: radio("vaiTro"), nhomTuoiTk: radio("nhomTuoiTk") })); } catch (e) {}
+}
+function moFormTk() {
+  hien("tk");
+  $("tin-dk-moi").hidden = !(taiKhoan && taiKhoan.phienBanDieuKhoan && taiKhoan.phienBanDieuKhoan !== PHIEN_BAN_DIEU_KHOAN);
+  let nhap = {}; try { nhap = JSON.parse(sessionStorage.getItem(KHOA_NHAP) || "{}"); } catch (e) {}
+  $("ho-ten").value = nhap.hoTen || (taiKhoan && taiKhoan.hoTen) || nguoiDung.displayName || "";
+  dungNuoc("nuoc", nhap.nuoc || (taiKhoan && taiKhoan.nuoc) || doanNuoc());
+  const vt = nhap.vaiTro || (taiKhoan && taiKhoan.vaiTro); if (vt) chonRadio("vaiTro", vt);
+  let tuoi = nhap.nhomTuoiTk || (taiKhoan && taiKhoan.nhomTuoi);
+  if (!tuoi) { try { tuoi = sessionStorage.getItem(KHOA_TUOI); } catch (e) {} }
+  if (tuoi) chonRadio("nhomTuoiTk", tuoi);
+  capNhatTuoiTk();
+}
+function capNhatTuoiTk() {
+  const duoi = radio("nhomTuoiTk") === "duoi-13";
+  $("tk-duoi-13").hidden = !duoi;
+  $("nut-luu-tk").disabled = duoi;
+}
+document.querySelectorAll('input[name="nhomTuoiTk"]').forEach((r) => r.addEventListener("change", () => { capNhatTuoiTk(); luuNhap(); }));
+["ho-ten", "nuoc"].forEach((id) => $(id).addEventListener("input", luuNhap));
+$("chon-vai-tro").addEventListener("change", luuNhap);
+$("khung-tk").addEventListener("submit", (e) => {
+  e.preventDefault();
+  ban($("nut-luu-tk"), async () => {
+    const hoTen = $("ho-ten").value.trim(), vaiTro = radio("vaiTro"), nhomTuoi = radio("nhomTuoiTk");
+    if (!hoTen || !vaiTro || !nhomTuoi || !$("nuoc").value) { bao(c().canDien); return; }
+    if (nhomTuoi === "duoi-13") return;
+    if (!$("dy-dieu-khoan").checked || !$("dy-bao-mat").checked) { bao(c().canDongY); return; }
+    const duLieu = {
+      hoTen, email: nguoiDung.email, nuoc: $("nuoc").value, vaiTro, nhomTuoi,
+      ngayTao: taiKhoan && taiKhoan.ngayTao ? taiKhoan.ngayTao : serverTimestamp(),
+      dongYLuc: serverTimestamp(), phienBanDieuKhoan: PHIEN_BAN_DIEU_KHOAN
+    };
+    await setDoc(doc(db, "users", nguoiDung.uid), duLieu);
+    try { sessionStorage.removeItem(KHOA_NHAP); sessionStorage.removeItem(KHOA_TUOI); } catch (e) {}
+    taiKhoan = await docTaiKhoan(nguoiDung.uid);
+    bao(null);
+    await tiepTuc();
+  });
+});
+
+/* ---------- 3. Hồ sơ học viên ---------- */
+function capNhatGiamHo() {
+  const nt = radio("nhomTuoi");
+  const duoi = DUOI_13.includes(nt);
+  $("o-giam-ho").hidden = !duoi;
+  const khongDuoc = duoi && taiKhoan && taiKhoan.nhomTuoi !== "18+";
+  $("loi-nguoi-lon").hidden = !khongDuoc;
+  // Tài khoản 13–17 tuổi: người học là chính mình, không chọn nhóm dưới 13
+  document.querySelectorAll('input[name="nhomTuoi"]').forEach((i) => { i.closest("label").hidden = !!taiKhoan && taiKhoan.nhomTuoi !== "18+" && DUOI_13.includes(i.value); });
+}
+function moFormHs() {
+  hien("hs");
+  if (!$("ten-goi").value) $("ten-goi").value = taiKhoan && taiKhoan.vaiTro === "nguoi-hoc" ? taiKhoan.hoTen : "";
+  dungNuoc("nuoc-hs", taiKhoan && taiKhoan.nuoc);
+  if (!radio("conVat")) chonRadio("conVat", "trau");
+  capNhatGiamHo();
+}
+$("chon-nhom-tuoi").addEventListener("change", capNhatGiamHo);
+$("biet-danh").addEventListener("input", () => {
+  const loi = kiemTraBietDanh($("biet-danh").value);
+  const o = $("loi-bd");
+  o.hidden = !loi || !$("biet-danh").value; o.textContent = loi ? c()[loi] : "";
+});
+$("khung-hs").addEventListener("submit", (e) => {
+  e.preventDefault();
+  ban($("nut-luu-hs"), async () => {
+    const d = {
+      tenGoi: $("ten-goi").value.trim(), bietDanh: $("biet-danh").value.normalize("NFC").trim(),
+      conVat: radio("conVat"), nhomTuoi: radio("nhomTuoi"), doiTuong: radio("doiTuong"),
+      nuoc: $("nuoc-hs").value, choXepHang: $("cho-xep-hang").checked
+    };
+    if (!d.tenGoi || !d.conVat || !d.nhomTuoi || !d.doiTuong || !d.nuoc) { bao(c().canDien); return; }
+    const loi = kiemTraBietDanh(d.bietDanh); if (loi) { bao(c()[loi]); $("biet-danh").focus(); return; }
+    if (DUOI_13.includes(d.nhomTuoi)) {
+      if (taiKhoan.nhomTuoi !== "18+") { bao(c().chiNguoiLon); return; }
+      if (!$("dy-giam-ho").checked) { bao(c().canGiamHo); return; }
+    }
+    hoSo = await luuHoSo(nguoiDung.uid, d, null);
+    bao(null);
+    await tiepTuc();
+  });
+});
+
+/* ---------- 4. Xong ---------- */
+function moXong() {
+  hien("xong");
+  $("xong-trau").textContent = dien(c().xongTrau, { ten: hoSo.bietDanh });
+  const chuaXN = nguoiDung && !nguoiDung.emailVerified && nguoiDung.providerData.some((p) => p.providerId === "password");
+  $("tin-xac-nhan").hidden = !chuaXN; $("nut-gui-lai").hidden = !chuaXN;
+  if (chuaXN) $("tin-xac-nhan").textContent = dien(c().chuaXacNhan, { email: nguoiDung.email });
+  const ve = new URLSearchParams(location.search).get("ve");
+  if (ve && /^\/[^/]/.test(ve) && !ve.startsWith("/dang-nhap")) location.replace(ve);
+}
+$("nut-gui-lai").addEventListener("click", () => ban($("nut-gui-lai"), async () => {
+  auth.languageCode = window.CONG.ngonNgu();
+  await sendEmailVerification(nguoiDung); bao(dien(c().tinGuiLai, { email: nguoiDung.email }), "dung");
+}));
+$("nut-ra").addEventListener("click", () => dangXuat("/"));
+
+/* ---------- Điều phối ---------- */
+async function tiepTuc() {
+  if (!nguoiDung) { hien("vao"); return; }
+  if (!taiKhoanDu(taiKhoan)) { moFormTk(); return; }
+  if (!hoSo) { moFormHs(); return; }
+  luuTam(nguoiDung.uid, hoSo);
+  moXong();
+}
+document.addEventListener("DOMContentLoaded", () => {
+  veDanhMuc();
+  window.CONG.khiDoiChu(() => { veDanhMuc(); if (hoSo && !$("khung-xong").hidden) $("xong-trau").textContent = dien(c().xongTrau, { ten: hoSo.bietDanh }); });
+  datCheDo(new URLSearchParams(location.search).get("che-do") === "ky" ? "ky" : "vao");
+  onAuthStateChanged(auth, async (u) => {
+    nguoiDung = u;
+    if (!u) { taiKhoan = null; hoSo = null; hien("vao"); return; }
+    hien("tai");
+    try { [taiKhoan, hoSo] = await Promise.all([docTaiKhoan(u.uid), docHoSo(u.uid)]); }
+    catch (e) { baoLoi(e); }
+    veDanhMuc();
+    await tiepTuc();
+    ve();
+  });
+});
+</script>
+</body>
+</html>
