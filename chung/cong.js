@@ -17,6 +17,7 @@
 
   // Các trang của cổng (thanh trên). Không phải góc học, không thuộc TTV_DANH_SACH.
   var TRANG = [
+    { id: "trang-chu", href: "/", chu: "navTrangChu" },
     { id: "hoc-tap", href: "/hoc-tap/", chu: "navHocTap" },
     { id: "tin-tuc", href: "/tin-tuc/", chu: "navTinTuc" },
     { id: "gioi-thieu", href: "/gioi-thieu/", chu: "navGioiThieu" },
@@ -26,7 +27,7 @@
 
   var CHU = {
     vi: {
-      navHocTap: "Học tập", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
+      navTrangChu: "Trang chủ", navHocTap: "Học tập", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
       navChao: "Điều hướng chính", ngonNgu: "Ngôn ngữ", veCong: "Về trang chủ Trường Tiếng Việt Của Em",
       chanCau: "Nền tảng học tiếng Việt dành cho trẻ em Việt Nam ở trong và ngoài nước.",
       chanDong: "Một chương trình của Canada Vietnam Cultural & Educational Council (CVCEC)",
@@ -37,7 +38,7 @@
       tabMoi: "(mở tab mới)"
     },
     en: {
-      navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navChungTay: "Donate", navGiaoVien: "Teachers",
+      navTrangChu: "Home", navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navChungTay: "Donate", navGiaoVien: "Teachers",
       navChao: "Main navigation", ngonNgu: "Language", veCong: "Back to the Trường Tiếng Việt Của Em home page",
       chanCau: "A Vietnamese learning platform for Vietnamese children in Vietnam and around the world.",
       chanDong: "A program of the Canada Vietnam Cultural & Educational Council (CVCEC)",
@@ -101,6 +102,7 @@
       a.setAttribute("data-chu", t.chu);
       a.textContent = CHU.vi[t.chu];
       if (t.id === trangNay) a.setAttribute("aria-current", "page");
+      if (t.id === "trang-chu") a.setAttribute("data-ve-chao", ""); // trên trang chủ: thoát chế độ đang học
       li.appendChild(a); ul.appendChild(li);
     });
     nav.appendChild(ul);

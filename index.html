@@ -105,11 +105,23 @@
     .cong-dai h1 { font-size: 1.05rem; }
     .cong-dai .ttv-nut-phu { padding: 4px 12px; font-size: .9rem; }
   }
+  .cong-thanh-hoc .tab-trang-chu {
+    flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+    min-height: var(--ttv-cham-toi-thieu); min-width: var(--ttv-cham-toi-thieu); padding: 0 12px;
+    border-radius: var(--ttv-bo-nut); border: 2px solid var(--ttv-vien); background: var(--ttv-nen);
+    color: var(--ttv-chu); font-family: var(--ttv-phong); font-weight: 800; font-size: 15px; text-decoration: none; white-space: nowrap;
+  }
+  .cong-thanh-hoc .tab-trang-chu:hover { background: var(--ttv-vien); }
+  .cong-thanh-hoc .tab-trang-chu .tab-nha { width: 20px; height: 20px; flex: 0 0 auto; }
+  @media (max-width: 640px) {
+    .cong-thanh-hoc .tab-trang-chu { padding: 0; justify-content: center; }
+    .cong-thanh-hoc .tab-trang-chu span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  }
   #tong-quan { background: var(--ttv-the); padding-bottom: 24px; }
   #cac-trang { background: var(--ttv-nen); }
 </style>
 </head>
-<body class="cong" data-ttv-khong-thanh data-trang="" data-che-do="chao">
+<body class="cong" data-ttv-khong-thanh data-trang="trang-chu" data-che-do="chao">
 
 <!-- ================= MÀN CHÀO (TRANG CHỦ) ================= -->
 <div id="man-chao">
@@ -308,6 +320,17 @@
 
   function dungTab() {
     tabGoc.textContent = "";
+    var nha = tao("a", "tab-trang-chu");
+    nha.href = "/";
+    nha.setAttribute("data-ve-chao", "");
+    nha.innerHTML = '<svg class="tab-nha" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></svg>';
+    var chuNha = tao("span", "", chu().navTrangChu);
+    chuNha.setAttribute("data-chu", "navTrangChu");
+    nha.appendChild(chuNha);
+    // Đặt ngoài dải tab cuộn ngang để luôn nhìn thấy
+    var cu = tabGoc.parentNode.querySelector(".tab-trang-chu");
+    if (cu) cu.parentNode.removeChild(cu);
+    tabGoc.parentNode.insertBefore(nha, tabGoc);
     DS.forEach(function (muc) {
       var li = tao("li");
       var a = tao("a");
@@ -332,7 +355,7 @@
   }
 
   function capNhatChuHoc() {
-    var tabs = tabGoc.querySelectorAll("a");
+    var tabs = tabGoc.querySelectorAll("a[data-goc]");
     for (var b = 0; b < tabs.length; b++) {
       var m = timGoc(tabs[b].getAttribute("data-goc"));
       if (!m) continue;
@@ -396,7 +419,7 @@
     tenGoc.textContent = ten(muc);
     moRieng.href = muc.url;
 
-    var tabs = tabGoc.querySelectorAll("a");
+    var tabs = tabGoc.querySelectorAll("a[data-goc]");
     var dang = null;
     for (var i = 0; i < tabs.length; i++) {
       if (tabs[i].getAttribute("data-goc") === id) { tabs[i].setAttribute("aria-current", "page"); dang = tabs[i]; }
