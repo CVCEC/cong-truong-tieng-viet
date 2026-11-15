@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Học tập · Trường Tiếng Việt Của Em</title>
+<meta name="description" content="Làng học tập Trâu Con: bảy góc học tiếng Việt và văn hoá Việt, miễn phí.">
+<meta property="og:title" content="Học tập · Trường Tiếng Việt Của Em">
+<meta property="og:description" content="Làng học tập Trâu Con: bảy góc học tiếng Việt và văn hoá Việt, miễn phí.">
+<meta property="og:image" content="https://vietclass.cvcec.org/assets/trang-tri/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
+<link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
+<link rel="stylesheet" href="/chung/cong.css">
+<script>window.CONG_CHU = {
+  "vi": {
+    "vaoHoc": "Vào học →",
+    "loiTai": "Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.",
+    "chonGoc": "Chọn một góc học",
+    "hocTapTieuDe": "Học tập",
+    "hocTapPhuDe": "Làng học tập Trâu Con"
+  },
+  "en": {
+    "vaoHoc": "Start →",
+    "loiTai": "The learning corners could not be loaded. Please reload the page.",
+    "chonGoc": "Choose a learning corner",
+    "hocTapTieuDe": "Learning",
+    "hocTapPhuDe": "Trâu Con's Learning Village"
+  }
+};</script>
+<script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="/chung/cong.js" defer></script>
+
+</head>
+<body class="cong" data-ttv-khong-thanh data-trang="hoc-tap" data-tieu-de="hocTapTieuDe">
+  <header class="cong-dau" data-cong-dau></header>
+  <main>
+    <section class="ttv-canh trang-dau" aria-labelledby="tieu-de-trang">
+      <div class="cong-ruot">
+        <h1 id="tieu-de-trang" data-chu="hocTapTieuDe">Học tập</h1>
+        <p class="trang-phu-de" data-chu="hocTapPhuDe">Làng học tập Trâu Con</p>
+      </div>
+    </section>
+    <section class="cong-phan trang-than" aria-labelledby="tieu-de-goc">
+      <div class="cong-ruot">
+        <h2 id="tieu-de-goc" class="cong-an" data-chu="chonGoc">Chọn một góc học</h2>
+        <ul class="cong-luoi" id="luoi-goc"></ul>
+        <p class="cong-doan" id="loi-tai" hidden data-chu="loiTai">Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="cong-chan" data-cong-chan>
+    <!-- cong.js dựng phần trên; bộ mẫu điền dòng bản quyền mờ và liên hệ vào đây -->
+    <div data-ttv-chan></div>
+  </footer>
+<script>
+(function () {
+  "use strict";
+  var DS = [], luoi = document.getElementById("luoi-goc");
+  var tao = function (t, l, c) { return window.CONG.tao(t, l, c); };
+  function anh(ten) { return window.CONG.anhBoMau(ten); }
+  function ganMau(el, muc) {
+    el.style.setProperty("--goc", muc.mau);
+    el.style.setProperty("--goc-dam", muc.mau_dam);
+    el.style.setProperty("--goc-nhat", muc.mau_nhat);
+  }
+  function dungLuoi() {
+    luoi.textContent = "";
+    DS.forEach(function (muc) {
+      var li = tao("li");
+      var a = tao("a", "cong-the");
+      a.href = "/#" + muc.id; // mở góc học trong khung của cổng
+      a.setAttribute("data-goc", muc.id);
+      ganMau(a, muc);
+
+      var tren = tao("span", "cong-the-tren");
+      tren.appendChild(tao("span", "cong-the-nhan"));
+      var img = tao("img");
+      img.src = anh(muc.trau);
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      tren.appendChild(img);
+      a.appendChild(tren);
+
+      var duoi = tao("span", "cong-the-duoi");
+      duoi.appendChild(tao("span", "cong-the-ten"));
+      duoi.appendChild(tao("span", "cong-the-mo-ta"));
+      duoi.appendChild(tao("span", "cong-the-vao"));
+      a.appendChild(duoi);
+      var mui = tao("span", "cong-the-mui", "→");
+      mui.setAttribute("aria-hidden", "true");
+      a.appendChild(mui);
+
+      li.appendChild(a);
+      luoi.appendChild(li);
+    });
+  }
+
+  function capNhatThe(nn) {
+    var c = window.CONG.chu();
+    var the = luoi.querySelectorAll(".cong-the");
+    for (var t = 0; t < the.length; t++) {
+      var muc = null;
+      for (var i = 0; i < DS.length; i++) if (DS[i].id === the[t].getAttribute("data-goc")) muc = DS[i];
+      if (!muc) continue;
+      the[t].querySelector(".cong-the-nhan").textContent = nn === "en" ? muc.ngan_en : muc.ngan_vi;
+      the[t].querySelector(".cong-the-ten").textContent = nn === "en" ? muc.ten_en : muc.ten_vi;
+      the[t].querySelector(".cong-the-mo-ta").textContent = nn === "en" ? muc.mo_ta_en : muc.mo_ta_vi;
+      the[t].querySelector(".cong-the-vao").textContent = c.vaoHoc;
+    }
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    DS = window.CONG.danhSach();
+    if (!DS.length) document.getElementById("loi-tai").hidden = false;
+    dungLuoi();
+    window.CONG.khiDoiChu(capNhatThe);
+    capNhatThe(window.CONG.ngonNgu());
+  });
+})();
+</script>
+</body>
+</html>

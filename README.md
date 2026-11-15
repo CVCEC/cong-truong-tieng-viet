@@ -2,7 +2,9 @@
 
 Cổng chính https://vietclass.cvcec.org (GitHub Pages). Nội quy chung: xem `CLAUDE.md`.
 
-- `index.html`: màn chào (trang chủ) và chế độ đang học (khung iframe cho 7 góc học, địa chỉ `#id`, ví dụ `#khobau`).
+- `index.html`: trang chủ (banner, tổng quan, các ô dẫn sang trang) và chế độ đang học (khung iframe cho 7 góc học, địa chỉ `#id`, ví dụ `#khobau`). Địa chỉ cũ `#goc-hoc`, `#tin-tuc`, `#gioi-thieu`, `#ho-tro` tự chuyển sang trang mới.
+- `hoc-tap/` – Học tập (Làng học tập Trâu Con, 7 góc học); `tin-tuc/` – Tin tức (báo chí, video); `gioi-thieu/` – Giới thiệu (sứ mệnh, ảnh lớp học, về dự án, bản quyền, lời cảm ơn); `chung-tay/` – Chung tay (tài trợ, góp sức).
+- `chung/cong.css`, `chung/cong.js`: phần dùng chung cho mọi trang của cổng – thanh trên (Học tập, Tin tức, Giới thiệu, Chung tay, Giáo viên), chân trang, nút VI/EN (khoá `ttv-ngon-ngu` của bộ mẫu), băng trượt, nút sao chép. Mỗi trang khai báo chữ riêng trong `window.CONG_CHU`.
 - `giao-vien/index.html`: trang Đội ngũ giáo viên (https://vietclass.cvcec.org/giao-vien/). Danh sách thầy cô nằm trong `giao-vien/teachers.json` (trường tiếng Việt và tiếng Anh); thêm thầy cô mới chỉ cần thêm một mục và đặt ảnh chân dung (tỉ lệ 4:5) vào `assets/giao-vien/`.
 - `thu-dang-nhap/index.html`: trang thử đăng nhập Firebase (https://vietclass.cvcec.org/thu-dang-nhap/), không có trên menu, `noindex`. Cấu hình dùng chung ở `js/firebase-cvcec.js`; ghi chép dự án Firebase ở `docs/firebase-cvcec.md`.
 - Bộ mẫu chung nạp từ `https://mau.cvcec.org/v1/` (màu, phông, logo, ảnh Trâu Con của các góc học, danh sách `TTV_DANH_SACH`).
