@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function dangNhapLa(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Hồ sơ người dùng: chỉ chính chủ đọc/ghi
+    match /users/{uid} {
+      allow read: if dangNhapLa(uid);
+
+      allow create: if dangNhapLa(uid)
+        && request.resource.data.keys().hasOnly(['hoTen', 'email', 'ngayTao'])
+        && request.resource.data.hoTen is string
+        && request.resource.data.hoTen.size() <= 100
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.ngayTao == request.time;
+
+      allow update: if dangNhapLa(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['hoTen'])
+        && request.resource.data.hoTen is string
+        && request.resource.data.hoTen.size() <= 100;
+
+      allow delete: if dangNhapLa(uid);
+    }
+
+    // Danh sách quản trị viên: chỉ xem được mục của chính mình, không ai ghi từ trang web
+    match /admins/{uid} {
+      allow read: if dangNhapLa(uid);
+      allow write: if false;
+    }
+
+    // Mọi thứ khác: chặn (mặc định)
+  }
+}
