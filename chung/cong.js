@@ -35,7 +35,9 @@
       chanUyBan: "Ủy ban Nhà nước về người Việt Nam ở nước ngoài – Bộ Ngoại giao",
       truoc: "Trước", sau: "Sau", denTrang: "Đến trang ",
       saoChep: "Sao chép", daChep: "Đã sao chép: ", khongChep: "Không sao chép được, các bạn chép tay giúp nhé.",
-      tabMoi: "(mở tab mới)"
+      tabMoi: "(mở tab mới)",
+      canhVanMieu: "Khuê Văn Các – Văn Miếu, Hà Nội", canhHoiAn: "Phố cổ Hội An", canhHoGuom: "Hồ Gươm – Tháp Rùa, Hà Nội",
+      canhHaLong: "Vịnh Hạ Long", canhDinhLang: "Đình làng và cây đa", canhHue: "Cầu Trường Tiền – sông Hương, Huế"
     },
     en: {
       navTrangChu: "Home", navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navChungTay: "Donate", navGiaoVien: "Teachers",
@@ -46,7 +48,9 @@
       chanUyBan: "State Committee for Overseas Vietnamese Affairs – Ministry of Foreign Affairs",
       truoc: "Previous", sau: "Next", denTrang: "Go to page ",
       saoChep: "Copy", daChep: "Copied: ", khongChep: "Couldn't copy. Please copy it by hand.",
-      tabMoi: "(opens in a new tab)"
+      tabMoi: "(opens in a new tab)",
+      canhVanMieu: "Khue Van Cac – Temple of Literature, Hanoi", canhHoiAn: "Hoi An Ancient Town", canhHoGuom: "Hoan Kiem Lake – Turtle Tower, Hanoi",
+      canhHaLong: "Ha Long Bay", canhDinhLang: "Village communal house and banyan tree", canhHue: "Truong Tien Bridge – Perfume River, Hue"
     }
   };
 
@@ -431,6 +435,28 @@
     window.addEventListener("pagehide", function () { ghi("rời trang"); });
   }
 
+  /* ---------- Banner địa danh (data-canh, cảnh vẽ trong /chung/canh.js) ---------- */
+  var ICON_GHIM = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>';
+  function themNhanCanh(noi, khoa) {
+    var nhan = tao("p", "canh-ten");
+    nhan.innerHTML = ICON_GHIM + '<span data-chu="' + khoa + '"></span>';
+    noi.appendChild(nhan);
+  }
+  function dungCanh() {
+    var CANH = window.CONG_CANH || {};
+    var ds = document.querySelectorAll("[data-canh]");
+    for (var i = 0; i < ds.length; i++) {
+      var c = CANH[ds[i].getAttribute("data-canh")];
+      if (!c || ds[i].querySelector(".canh-trang-svg")) continue;
+      var tam = document.createElement("div");
+      tam.innerHTML = '<svg class="vn-hero-canh canh-trang-svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">' + c.svg + '</svg>';
+      ds[i].insertBefore(tam.firstChild, ds[i].firstChild);
+      themNhanCanh(ds[i], c.ten);
+    }
+    var nhanTinh = document.querySelectorAll("[data-canh-ten]");
+    for (var j = 0; j < nhanTinh.length; j++) themNhanCanh(nhanTinh[j], nhanTinh[j].getAttribute("data-canh-ten"));
+  }
+
   /* ---------- Khởi động ---------- */
   function khoiDong() {
     if (window.CONG_CHU) them(window.CONG_CHU); // chữ riêng của trang, khai báo trước khi nạp tệp này
@@ -441,6 +467,7 @@
     var chan = document.querySelector("[data-cong-chan]");
     if (chan) dungChanTrang(chan);
     dungNutNgonNgu();
+    dungCanh();
     capNhat();
     hienMucDangMo();
     khoiTruot();

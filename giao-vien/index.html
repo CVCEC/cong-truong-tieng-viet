@@ -13,31 +13,16 @@
   vi: { tieuDe: "Đội ngũ giáo viên", noiCongTac: "Nơi công tác: ", loiTai: "Chưa tải được danh sách thầy cô. Các bạn tải lại trang nhé." },
   en: { tieuDe: "Our teachers", noiCongTac: "Workplace: ", loiTai: "The teacher list could not be loaded. Please reload the page." }
 };</script>
-<link rel="stylesheet" href="/chung/cong.css?v=3">
+<link rel="stylesheet" href="/chung/cong.css?v=4">
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
-<script src="/chung/cong.js?v=3" defer></script>
+<script src="/chung/canh.js?v=4" defer></script>
+<script src="/chung/cong.js?v=4" defer></script>
 <style>
   /* Trang Giáo viên. Màu và phông chỉ lấy từ biến --ttv-* của bộ mẫu. */
   :root {
     --gv-co: color-mix(in srgb, var(--ttv-lua-sang) 28%, var(--ttv-the));
-    --gv-hong: color-mix(in srgb, var(--ttv-la-phong) 35%, var(--ttv-the));
     --gv-khoang: 120px;
   }
-  /* ---------- Khung cảnh làng quê ---------- */
-  .gv-canh { padding-top: 56px; }
-  .gv-canh h1 {
-    margin: 0; font-family: var(--ttv-phong-tieu-de); font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--ttv-chu);
-  }
-  .gv-canh .cong-ruot { min-height: 110px; }
-  .gv-hoa-nhom { position: absolute; left: 0; right: 0; bottom: 0; height: 150px; z-index: 0 !important; pointer-events: none; }
-  .gv-hoa {
-    position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--ttv-sao);
-    box-shadow: 0 -8px 0 0 var(--hoa), 0 8px 0 0 var(--hoa), -8px 0 0 0 var(--hoa), 8px 0 0 0 var(--hoa);
-    --hoa: var(--ttv-may);
-  }
-  .gv-hoa.hong { --hoa: var(--gv-hong); }
-
   /* ---------- Con đường và các thẻ ---------- */
   .gv-than { background: var(--gv-co); padding: 48px 0 40px; }
   .gv-duong { position: relative; }
@@ -85,7 +70,6 @@
     .gv-the-dau { flex-direction: row; }
   }
   @media (max-width: 640px) {
-    .gv-canh { padding-top: 32px; }
     .gv-than { padding-top: 28px; }
     .gv-the { padding: 18px; }
     .gv-anh, .gv-anh .gv-chan-dung { width: 104px; }
@@ -103,16 +87,7 @@
 <header class="cong-dau" data-cong-dau></header>
 
 <main>
-  <section class="ttv-canh gv-canh" aria-labelledby="tieu-de-trang">
-    <div class="gv-hoa-nhom" aria-hidden="true">
-      <span class="gv-hoa" style="left:7%;bottom:92px"></span>
-      <span class="gv-hoa hong" style="left:19%;bottom:70px"></span>
-      <span class="gv-hoa" style="left:34%;bottom:46px"></span>
-      <span class="gv-hoa hong" style="left:52%;bottom:78px"></span>
-      <span class="gv-hoa" style="left:66%;bottom:40px"></span>
-      <span class="gv-hoa hong" style="left:81%;bottom:64px"></span>
-      <span class="gv-hoa" style="left:93%;bottom:30px"></span>
-    </div>
+  <section class="trang-dau co-canh" data-canh="hue" aria-labelledby="tieu-de-trang">
     <div class="cong-ruot">
       <h1 id="tieu-de-trang" data-chu="tieuDe">Đội ngũ giáo viên</h1>
     </div>

@@ -456,3 +456,25 @@ img { max-width: 100%; }
 .cong a, .cong img { -webkit-user-drag: none; }
 .cong a { -webkit-touch-callout: none; touch-action: manipulation; }
 .cong-the img, .o-the img, .cong-trau-hang img { pointer-events: none; -webkit-user-select: none; user-select: none; }
+
+/* ================= Banner địa danh các trang (cảnh trong /chung/canh.js) ================= */
+.trang-dau.co-canh { position: relative; overflow: hidden; isolation: isolate; background: var(--ttv-troi); padding: 30px 0 0; min-height: 300px; box-sizing: border-box; }
+.trang-dau.co-canh .canh-trang-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
+.trang-dau.co-canh > .cong-ruot { position: relative; z-index: 1; }
+.trang-dau.co-canh h1 { text-shadow: 0 2px 0 var(--ttv-the), 0 -2px 0 var(--ttv-the), 2px 0 0 var(--ttv-the), -2px 0 0 var(--ttv-the); }
+.canh-ten {
+  position: absolute; right: 16px; bottom: 12px; z-index: 2; margin: 0;
+  display: inline-flex; align-items: center; gap: 4px; max-width: calc(100% - 32px);
+  padding: 4px 12px 4px 8px; border-radius: var(--ttv-bo-nut); background: var(--ttv-the); color: var(--ttv-chu);
+  font-weight: 800; font-size: 13px; line-height: 1.3; box-shadow: 0 2px 6px rgba(0, 48, 96, .15);
+}
+.canh-ten svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--ttv-chinh); }
+.vn-hero-canh .vang-dam { fill: color-mix(in srgb, var(--ttv-sao) 60%, var(--ttv-chinh)); }
+.vn-hero-canh .buom { fill: color-mix(in srgb, var(--ttv-chinh) 55%, var(--ttv-kem-rom)); stroke: var(--ttv-chinh-dam); stroke-width: 1.5; }
+.vn-hero-canh .cau-thep path { fill: none; stroke: var(--ttv-chu); stroke-width: 5; stroke-linecap: round; }
+.vn-hero-canh .cau-thep .mong { stroke-width: 3; }
+.vn-hero-canh .cau-thep .mat-cau { stroke-width: 8; }
+@media (max-width: 640px) {
+  .trang-dau.co-canh { min-height: 250px; padding-top: 22px; }
+  .canh-ten { right: 10px; bottom: 8px; font-size: 12px; }
+}
