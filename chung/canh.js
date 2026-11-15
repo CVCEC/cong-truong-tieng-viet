@@ -28,7 +28,87 @@
     return s;
   }
 
+  // Cây dừa: thân cong, tàu lá xoè
+  function cayDua(x, y, cao, nghieng) {
+    var n = nghieng || 1;
+    var dinhX = x + 24 * n, dinhY = y - cao;
+    var s = '<path class="go" d="M' + (x - 5) + ' ' + y + ' Q' + (x + 4 * n) + ' ' + (y - cao / 2) + ' ' + (dinhX - 3) + ' ' + dinhY + ' L' + (dinhX + 3) + ' ' + dinhY + ' Q' + (x + 12 * n) + ' ' + (y - cao / 2) + ' ' + (x + 5) + ' ' + y + ' Z"/>';
+    s += '<g class="tre-la">';
+    [[-46, 14], [-30, -10], [0, -18], [30, -10], [46, 14], [-20, 22], [22, 22]].forEach(function (p) {
+      s += '<path d="M' + dinhX + ' ' + dinhY + ' Q' + (dinhX + p[0] * .6) + ' ' + (dinhY + p[1] - 14) + ' ' + (dinhX + p[0]) + ' ' + (dinhY + p[1]) + ' Q' + (dinhX + p[0] * .5) + ' ' + (dinhY + p[1] * .5 - 4) + ' ' + dinhX + ' ' + dinhY + ' Z"/>';
+    });
+    s += '</g><circle class="go" cx="' + (dinhX - 4) + '" cy="' + (dinhY + 6) + '" r="4"/><circle class="go" cx="' + (dinhX + 5) + '" cy="' + (dinhY + 7) + '" r="4"/>';
+    return s;
+  }
+  // Ghe chợ nổi: thân gỗ, mui cong, cây bẹo treo hàng
+  function ghe(x, y, dai, bheo) {
+    var s = '<path class="go" d="M' + (x - dai / 2) + ' ' + (y - 12) + ' Q' + x + ' ' + (y + 16) + ' ' + (x + dai / 2) + ' ' + (y - 12) + ' Z"/>';
+    s += '<path class="mai" d="M' + (x - dai / 2 + 6) + ' ' + (y - 10) + ' Q' + x + ' ' + (y + 6) + ' ' + (x + dai / 2 - 6) + ' ' + (y - 10)+ '" fill="none" stroke-width="3" style="fill:none;stroke:var(--ttv-chinh)"/>';
+    s += '<path class="non" d="M' + (x - dai / 5) + ' ' + (y - 12) + ' Q' + (x - dai / 5) + ' ' + (y - 36) + ' ' + x + ' ' + (y - 36) + ' Q' + (x + dai / 5) + ' ' + (y - 36) + ' ' + (x + dai / 5) + ' ' + (y - 12) + ' Z"/>';
+    if (bheo) {
+      var px = x - dai / 2 + 18;
+      s += '<path class="net-day" d="M' + px + ' ' + (y - 10) + ' V' + (y - 90) + '"/>';
+      s += '<circle class="vang" cx="' + (px + 8) + '" cy="' + (y - 80) + '" r="7"/><circle class="mai" cx="' + (px - 8) + '" cy="' + (y - 70) + '" r="6"/><circle class="lua" cx="' + (px + 7) + '" cy="' + (y - 62) + '" r="7"/>';
+    }
+    return s;
+  }
+  function nguoiNon(x, y) {
+    return '<path class="nguoi" d="M' + (x - 4) + ' ' + y + ' v-18 h8 v18 Z"/><path class="non" d="M' + (x - 14) + ' ' + (y - 16) + ' L' + x + ' ' + (y - 30) + ' L' + (x + 14) + ' ' + (y - 16) + ' Z"/>';
+  }
+  function trauVang(x, y) { // giỏ trái cây trên ghe
+    return '<circle class="vang" cx="' + x + '" cy="' + y + '" r="8"/><circle class="mai" cx="' + (x + 12) + '" cy="' + (y + 2) + '" r="7"/><circle class="lua" cx="' + (x - 12) + '" cy="' + (y + 2) + '" r="7"/><circle class="vang-dam" cx="' + (x + 4) + '" cy="' + (y - 8) + '" r="6"/>';
+  }
+  function co(x, y, k) { // cò trắng bay
+    k = k || 1;
+    return '<path class="may co" transform="translate(' + x + ' ' + y + ') scale(' + k + ')" d="M0 0 Q-14 -12 -30 -6 Q-14 -4 -4 4 L4 4 Q14 -4 30 -6 Q14 -12 0 0 Z"/>';
+  }
+  function nhaTranh(x, y, w) {
+    var h = w * .45;
+    var s = '<rect class="gach" x="' + x + '" y="' + (y - h) + '" width="' + w + '" height="' + h + '"/>';
+    s += '<rect class="go" x="' + (x + w / 2 - 9) + '" y="' + (y - h * .7) + '" width="18" height="' + (h * .7) + '"/>';
+    s += '<path class="rom" d="M' + (x - 14) + ' ' + (y - h + 4) + ' Q' + (x + w / 2) + ' ' + (y - h - w * .55) + ' ' + (x + w + 14) + ' ' + (y - h + 4) + ' Z"/>';
+    s += '<path class="net-day" d="M' + (x - 6) + ' ' + (y - h) + ' Q' + (x + w / 2) + ' ' + (y - h - w * .42) + ' ' + (x + w + 6) + ' ' + (y - h) + '"/>';
+    return s;
+  }
+
   var CANH = {
+    /* Chợ nổi Cái Răng, Cần Thơ (miền Nam) */
+    "cho-noi": {
+      ten: "canhChoNoi",
+      svg: TROI + MAT_TROI + may(330, 50) + may(780, 36, .8) +
+        '<path class="lua-dam" d="M0 196 C200 186 400 192 600 188 C800 184 1000 190 1200 194 V206 H0 Z"/>' +
+        cayDua(60, 200, 150, 1) + cayDua(150, 200, 120, -1) + cayDua(230, 200, 140, 1) +
+        cayDua(980, 200, 130, -1) + cayDua(1070, 200, 150, 1) + cayDua(1150, 200, 118, -1) +
+        '<path class="song" d="M0 200 H1200 V300 H0 Z"/>' +
+        '<path class="song-sang" d="M40 236 h60 M260 286 h60 M520 280 h50 M860 290 h60 M1080 246 h60"/>' +
+        ghe(330, 236, 140, true) + trauVang(330, 222) +
+        ghe(600, 262, 190, true) + trauVang(560, 246) + trauVang(640, 246) + nguoiNon(600, 236) +
+        ghe(860, 238, 150, true) + trauVang(880, 224) +
+        ghe(470, 288, 110, false) + nguoiNon(480, 262) +
+        ghe(1010, 276, 120, false) + nguoiNon(1000, 252)
+    },
+
+    /* Cánh đồng lúa và làng quê */
+    "lang-que": {
+      ten: "canhLangQue",
+      svg: TROI + MAT_TROI + may(140, 46) + may(860, 60, .8) +
+        co(280, 128, 1) + co(330, 110, .8) + co(960, 120, .9) +
+        // lũy tre và mái nhà làng sau cánh đồng
+        '<g class="tre-la"><ellipse cx="60" cy="182" rx="80" ry="34"/><ellipse cx="200" cy="176" rx="90" ry="40"/><ellipse cx="350" cy="184" rx="70" ry="28"/><ellipse cx="860" cy="182" rx="80" ry="32"/><ellipse cx="1010" cy="176" rx="90" ry="40"/><ellipse cx="1150" cy="182" rx="80" ry="34"/></g>' +
+        '<g class="lua-dam"><ellipse cx="130" cy="196" rx="60" ry="18"/><ellipse cx="940" cy="196" rx="60" ry="18"/></g>' +
+        nhaTranh(470, 206, 90) + nhaTranh(600, 204, 110) + nhaTranh(745, 206, 84) +
+        '<path class="lua-dam" d="M0 204 C300 198 900 198 1200 204 V214 H0 Z"/>' +
+        // ruộng lúa nhiều thửa
+        '<path class="lua-sang" d="M0 212 H1200 V300 H0 Z"/>' +
+        '<path class="lua" d="M0 236 C200 230 400 240 560 236 L600 300 H0 Z M640 236 C800 232 1000 240 1200 234 V300 H680 Z"/>' +
+        '<path class="lua-dam" d="M0 270 C200 262 380 272 540 268 L560 300 H0 Z M700 268 C860 264 1040 272 1200 266 V300 H720 Z"/>' +
+        '<path class="bo-ruong" d="M0 236 C200 230 400 240 560 236 M640 236 C800 232 1000 240 1200 234 M0 270 C200 262 380 272 540 268 M700 268 C860 264 1040 272 1200 266"/>' +
+        // đường làng
+        '<path class="duong-lang" d="M560 300 C580 270 590 240 600 214 C610 240 640 270 700 300 Z"/>' +
+        // người đội nón lá trên đồng
+        nguoiNon(300, 258) + nguoiNon(360, 262) + nguoiNon(900, 256)
+    },
+
     /* Phố cổ Hội An – Chùa Cầu */
     "hoi-an": {
       ten: "canhHoiAn",

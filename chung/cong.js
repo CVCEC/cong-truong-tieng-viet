@@ -37,7 +37,7 @@
       saoChep: "Sao chép", daChep: "Đã sao chép: ", khongChep: "Không sao chép được, các bạn chép tay giúp nhé.",
       tabMoi: "(mở tab mới)",
       canhVanMieu: "Khuê Văn Các – Văn Miếu, Hà Nội", canhHoiAn: "Phố cổ Hội An", canhHoGuom: "Hồ Gươm – Tháp Rùa, Hà Nội",
-      canhHaLong: "Vịnh Hạ Long", canhDinhLang: "Đình làng và cây đa", canhHue: "Cầu Trường Tiền – sông Hương, Huế"
+      canhHaLong: "Vịnh Hạ Long", canhDinhLang: "Đình làng và cây đa", canhHue: "Cầu Trường Tiền – sông Hương, Huế", canhChoNoi: "Chợ nổi Cái Răng, Cần Thơ", canhLangQue: "Cánh đồng lúa và làng quê"
     },
     en: {
       navTrangChu: "Home", navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navChungTay: "Donate", navGiaoVien: "Teachers",
@@ -50,7 +50,7 @@
       saoChep: "Copy", daChep: "Copied: ", khongChep: "Couldn't copy. Please copy it by hand.",
       tabMoi: "(opens in a new tab)",
       canhVanMieu: "Khue Van Cac – Temple of Literature, Hanoi", canhHoiAn: "Hoi An Ancient Town", canhHoGuom: "Hoan Kiem Lake – Turtle Tower, Hanoi",
-      canhHaLong: "Ha Long Bay", canhDinhLang: "Village communal house and banyan tree", canhHue: "Truong Tien Bridge – Perfume River, Hue"
+      canhHaLong: "Ha Long Bay", canhDinhLang: "Village communal house and banyan tree", canhHue: "Truong Tien Bridge – Perfume River, Hue", canhChoNoi: "Cai Rang Floating Market, Can Tho", canhLangQue: "Rice fields and village"
     }
   };
 

@@ -478,3 +478,6 @@ img { max-width: 100%; }
   .trang-dau.co-canh { min-height: 250px; padding-top: 22px; }
   .canh-ten { right: 10px; bottom: 8px; font-size: 12px; }
 }
+.vn-hero-canh .rom { fill: color-mix(in srgb, var(--ttv-sao) 55%, var(--ttv-kem-rom)); stroke: var(--ttv-chinh-dam); stroke-width: 1.5; }
+.vn-hero-canh .duong-lang { fill: var(--ttv-kem-rom); }
+.vn-hero-canh .co { stroke: var(--ttv-chu); stroke-width: 1; }
