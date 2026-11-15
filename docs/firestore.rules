@@ -1,31 +1,280 @@
 rules_version = '2';
+// Security Rules – Trường Tiếng Việt Của Em (dự án truong-tieng-viet-cvcec)
+// Bản 2: tài khoản + hồ sơ học viên + tiến độ học + bảng xếp hạng. Mặc định chặn tất cả.
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // ================= Hàm dùng chung =================
     function dangNhapLa(uid) {
       return request.auth != null && request.auth.uid == uid;
     }
-
-    // Hồ sơ người dùng: chỉ chính chủ đọc/ghi
-    match /users/{uid} {
-      allow read: if dangNhapLa(uid);
-
-      allow create: if dangNhapLa(uid)
-        && request.resource.data.keys().hasOnly(['hoTen', 'email', 'ngayTao'])
-        && request.resource.data.hoTen is string
-        && request.resource.data.hoTen.size() <= 100
-        && request.resource.data.email == request.auth.token.email
-        && request.resource.data.ngayTao == request.time;
-
-      allow update: if dangNhapLa(uid)
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['hoTen'])
-        && request.resource.data.hoTen is string
-        && request.resource.data.hoTen.size() <= 100;
-
-      allow delete: if dangNhapLa(uid);
+    function laQuanTri() {
+      return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function chuoi(v, toiDa) {
+      return v is string && v.size() >= 1 && v.size() <= toiDa;
+    }
+    function soNguyen(v, tu, den) {
+      return v is int && v >= tu && v <= den;
+    }
+    function maNuoc(v) {
+      return v is string && v.matches('^[A-Z]{2}$');
+    }
+    function duongDanHoSo(uid) {
+      return /databases/$(database)/documents/users/$(uid)/hoSo/chinh;
+    }
+    function duongDanTongHop(uid) {
+      return /databases/$(database)/documents/users/$(uid)/hoSo/chinh/tongHop/tatCa;
+    }
+    function tongHopTruoc(uid) {
+      return exists(duongDanTongHop(uid))
+        ? get(duongDanTongHop(uid)).data
+        : { 'soBaiXong': 0, 'tongSao': 0, 'tongGiay': 0, 'soHoatDong': 0, 'chuoiNgay': 0 };
+    }
+    function tongHopSau(uid) {
+      return existsAfter(duongDanTongHop(uid))
+        ? getAfter(duongDanTongHop(uid)).data
+        : { 'soBaiXong': 0, 'tongSao': 0, 'tongGiay': 0, 'soHoatDong': 0, 'chuoiNgay': 0 };
     }
 
-    // Danh sách quản trị viên: chỉ xem được mục của chính mình, không ai ghi từ trang web
+    // ================= Tài khoản =================
+    // Mỗi email một tài khoản (Firebase Authentication). Người dưới 13 tuổi không tự tạo tài khoản.
+    function hopLeTaiKhoan(d) {
+      return d.keys().hasOnly(['hoTen', 'email', 'ngayTao', 'nuoc', 'vaiTro', 'nhomTuoi', 'dongYLuc', 'phienBanDieuKhoan'])
+        && d.keys().hasAll(['hoTen', 'email', 'ngayTao', 'nuoc', 'vaiTro', 'nhomTuoi', 'dongYLuc', 'phienBanDieuKhoan'])
+        && chuoi(d.hoTen, 100)
+        && d.email == request.auth.token.email
+        && maNuoc(d.nuoc)
+        && d.vaiTro in ['nguoi-hoc', 'phu-huynh', 'giao-vien']
+        && d.nhomTuoi in ['13-17', '18+']
+        && d.dongYLuc is timestamp
+        && chuoi(d.phienBanDieuKhoan, 20);
+    }
+
+    match /users/{uid} {
+      allow read: if dangNhapLa(uid) || laQuanTri();
+
+      allow create: if dangNhapLa(uid)
+        && hopLeTaiKhoan(request.resource.data)
+        && request.resource.data.ngayTao == request.time
+        && request.resource.data.dongYLuc == request.time;
+
+      // Sửa: email và ngày tạo không đổi; đồng ý lại điều khoản thì thời điểm do máy chủ ghi.
+      // Tài khoản cũ (tạo từ trang thử, chỉ có hoTen/email/ngayTao) được bổ sung đủ ô một lần.
+      allow update: if dangNhapLa(uid)
+        && hopLeTaiKhoan(request.resource.data)
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.ngayTao == resource.data.ngayTao
+        && (request.resource.data.dongYLuc == request.time
+            || request.resource.data.dongYLuc == resource.data.get('dongYLuc', null));
+
+      allow delete: if dangNhapLa(uid);
+
+      // ================= Hồ sơ học viên (mỗi tài khoản đúng 1 hồ sơ: "chinh") =================
+      function duoi13(d) {
+        return d.nhomTuoi in ['duoi-6', '6-9', '10-12'];
+      }
+      function bietDanhSach(b) {
+        return chuoi(b, 20)
+          && !b.matches('.*@.*')                              // không chứa email
+          && !b.matches('.*([0-9][ .()+-]*){7,}.*')           // không chứa số điện thoại
+          && !b.matches('.*(https?:|www[.]).*');               // không chứa đường link
+      }
+      function hopLeHoSo(d) {
+        return d.keys().hasOnly(['tenGoi', 'bietDanh', 'conVat', 'nhomTuoi', 'doiTuong', 'nuoc', 'choXepHang', 'maCongKhai', 'dongYGiamHoLuc', 'ngayTao', 'capNhat'])
+          && d.keys().hasAll(['tenGoi', 'bietDanh', 'conVat', 'nhomTuoi', 'doiTuong', 'nuoc', 'choXepHang', 'maCongKhai', 'dongYGiamHoLuc', 'ngayTao', 'capNhat'])
+          && chuoi(d.tenGoi, 40)
+          && bietDanhSach(d.bietDanh)
+          && d.conVat in ['trau', 'meo', 'cho', 'tho', 'ga', 'vit', 'ca', 'voi', 'khi', 'gau', 'cu', 'rua']
+          && d.nhomTuoi in ['duoi-6', '6-9', '10-12', '13-17', '18-34', '35-54', '55+']
+          && d.doiTuong in ['con-em-kieu-bao', 'nguoi-viet-o-nuoc-ngoai', 'hoc-sinh-viet-nam', 'nguoi-nuoc-ngoai', 'khac']
+          && maNuoc(d.nuoc)
+          && d.choXepHang is bool
+          && d.maCongKhai is string && d.maCongKhai.matches('^[A-Za-z0-9]{20}$')
+          && d.capNhat == request.time
+          // Hồ sơ dưới 13 tuổi: bắt buộc cha mẹ/người giám hộ đồng ý, và chủ tài khoản phải từ 18 tuổi
+          && (duoi13(d)
+              ? (d.dongYGiamHoLuc is timestamp
+                 && getAfter(/databases/$(database)/documents/users/$(uid)).data.nhomTuoi == '18+')
+              : d.dongYGiamHoLuc == null);
+      }
+
+      match /hoSo/{maHoSo} {
+        allow read: if dangNhapLa(uid) || laQuanTri();
+
+        allow create: if dangNhapLa(uid) && maHoSo == 'chinh'
+          && exists(/databases/$(database)/documents/users/$(uid))
+          && hopLeHoSo(request.resource.data)
+          && request.resource.data.ngayTao == request.time
+          && (request.resource.data.dongYGiamHoLuc == null || request.resource.data.dongYGiamHoLuc == request.time);
+
+        allow update: if dangNhapLa(uid)
+          && hopLeHoSo(request.resource.data)
+          && request.resource.data.ngayTao == resource.data.ngayTao
+          && request.resource.data.maCongKhai == resource.data.maCongKhai
+          && (request.resource.data.dongYGiamHoLuc == null
+              || request.resource.data.dongYGiamHoLuc == request.time
+              || request.resource.data.dongYGiamHoLuc == resource.data.dongYGiamHoLuc);
+
+        allow delete: if dangNhapLa(uid);
+
+        // ---------- Kết quả từng bài: sao cao nhất của từng trò chơi ----------
+        // Mỗi lần ghi chỉ đổi một trò (hoatDongCuoi); sao chỉ tăng; bài "xong" một lần và không bỏ xong.
+        match /bai/{maBai} {
+          allow read: if dangNhapLa(uid) || laQuanTri();
+          allow delete: if dangNhapLa(uid);
+          allow create, update: if dangNhapLa(uid) && maHoSo == 'chinh'
+            && maBai.matches('^[a-z0-9-]{1,30}__[a-z0-9-]{1,40}$')
+            && hopLeBai(request.resource.data, resource == null ? null : resource.data)
+            // phải ghi cùng lượt với bản tổng hợp (không sửa riêng kết quả bài)
+            && getAfter(duongDanTongHop(uid)).data.baiCuoi == maBai
+            && getAfter(duongDanTongHop(uid)).data.capNhat == request.time;
+        }
+        function hopLeBai(d, cu) {
+          let hd = d.hoatDongCuoi;
+          let saoCu = cu == null ? {} : cu.saoTroChoi;
+          let truocHd = saoCu.get(hd, 0);
+          return d.keys().hasOnly(['chuongTrinh', 'bai', 'saoTroChoi', 'tongSao', 'soTroChoi', 'xong', 'xongLuc', 'lanCuoi', 'hoatDongCuoi'])
+            && chuoi(d.chuongTrinh, 30) && chuoi(d.bai, 40) && chuoi(hd, 40)
+            && soNguyen(d.soTroChoi, 1, 50)
+            && d.saoTroChoi is map
+            && d.saoTroChoi.size() <= 50
+            && d.saoTroChoi.diff(saoCu).affectedKeys().hasOnly([hd])
+            && soNguyen(d.saoTroChoi[hd], 0, 3)
+            && d.saoTroChoi[hd] >= truocHd
+            && d.tongSao == (cu == null ? 0 : cu.tongSao) + d.saoTroChoi[hd] - truocHd
+            && d.lanCuoi == request.time
+            && (cu == null || (d.chuongTrinh == cu.chuongTrinh && d.bai == cu.bai))
+            // xong khi đã chơi đủ mọi trò của bài; đã xong thì giữ nguyên
+            && (cu != null && cu.xong
+                ? (d.xong == true && d.xongLuc == cu.xongLuc)
+                : (d.xong == (d.saoTroChoi.size() >= d.soTroChoi)
+                   && (d.xong ? d.xongLuc == request.time : d.xongLuc == null)));
+        }
+
+        // ---------- Lịch sử học: mỗi trò chơi xong là một dòng; chỉ thêm, không sửa ----------
+        match /lichSu/{maLuot} {
+          allow read: if dangNhapLa(uid) || laQuanTri();
+          allow delete: if dangNhapLa(uid);
+          allow update: if false;
+          allow create: if dangNhapLa(uid) && maHoSo == 'chinh'
+            && request.resource.data.keys().hasOnly(['thoiDiem', 'chuongTrinh', 'bai', 'hoatDong', 'ketQua', 'diem', 'diemToiDa', 'sao', 'thoiGianGiay'])
+            && request.resource.data.thoiDiem == request.time
+            && chuoi(request.resource.data.chuongTrinh, 30)
+            && chuoi(request.resource.data.bai, 40)
+            && chuoi(request.resource.data.hoatDong, 40)
+            && request.resource.data.ketQua in ['hoan-thanh', 'chua-xong']
+            && soNguyen(request.resource.data.diemToiDa, 0, 1000)
+            && soNguyen(request.resource.data.diem, 0, request.resource.data.diemToiDa)
+            && soNguyen(request.resource.data.sao, 0, 3)
+            && soNguyen(request.resource.data.thoiGianGiay, 0, 7200);
+        }
+
+        // ---------- Bản tổng hợp của học viên ----------
+        // Mỗi lượt: đúng 1 hoạt động; tối đa +1 bài, +3 sao, +2 giờ; khớp với kết quả bài vừa ghi.
+        match /tongHop/{ten} {
+          allow read: if dangNhapLa(uid) || laQuanTri();
+          allow delete: if dangNhapLa(uid);
+          allow create, update: if dangNhapLa(uid) && maHoSo == 'chinh' && ten == 'tatCa'
+            && hopLeTongHop(request.resource.data, resource == null ? tongHopTruoc(uid) : resource.data);
+        }
+        function hopLeTongHop(d, cu) {
+          let duongDanBai = /databases/$(database)/documents/users/$(uid)/hoSo/chinh/bai/$(d.baiCuoi);
+          let coTruoc = exists(duongDanBai);
+          let baiTruoc = coTruoc ? get(duongDanBai).data : { 'tongSao': 0, 'xong': false };
+          let baiSau = getAfter(duongDanBai).data;
+          return d.keys().hasOnly(['soBaiXong', 'tongSao', 'tongGiay', 'soHoatDong', 'chuoiNgay', 'ngayHocCuoi', 'theoChuongTrinh', 'baiCuoi', 'capNhat'])
+            && d.capNhat == request.time
+            && d.baiCuoi is string && d.baiCuoi.matches('^[a-z0-9-]{1,30}__[a-z0-9-]{1,40}$')
+            && d.ngayHocCuoi is string && d.ngayHocCuoi.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+            && d.theoChuongTrinh is map && d.theoChuongTrinh.size() <= 20
+            && d.soBaiXong is int && d.tongSao is int && d.tongGiay is int && d.soHoatDong is int
+            && d.soHoatDong == cu.soHoatDong + 1
+            && soNguyen(d.tongGiay - cu.tongGiay, 0, 7200)
+            && soNguyen(d.chuoiNgay, 1, cu.chuoiNgay + 1)
+            && d.tongSao - cu.tongSao == baiSau.tongSao - baiTruoc.tongSao
+            && d.soBaiXong - cu.soBaiXong == ((baiSau.xong && !baiTruoc.xong) ? 1 : 0);
+        }
+
+        // ---------- Bản tổng hợp theo tháng (báo cáo, biểu đồ) ----------
+        // Phần tăng phải đúng bằng phần tăng của bản tổng hợp trong cùng lượt ghi.
+        match /thang/{maThang} {
+          allow read: if dangNhapLa(uid) || laQuanTri();
+          allow delete: if dangNhapLa(uid);
+          allow create, update: if dangNhapLa(uid) && maHoSo == 'chinh'
+            && maThang.matches('^[0-9]{4}-[0-9]{2}$')
+            && hopLeThang(request.resource.data,
+                 resource == null ? { 'soBaiXong': 0, 'tongSao': 0, 'tongGiay': 0, 'soHoatDong': 0 } : resource.data);
+        }
+        function hopLeThang(d, cu) {
+          let sau = tongHopSau(uid);
+          let truoc = tongHopTruoc(uid);
+          return d.keys().hasOnly(['soBaiXong', 'tongSao', 'tongGiay', 'soHoatDong', 'ngay', 'capNhat'])
+            && d.capNhat == request.time
+            && sau.capNhat == request.time
+            && d.soBaiXong is int && d.tongSao is int && d.tongGiay is int && d.soHoatDong is int
+            && d.ngay is map && d.ngay.size() <= 31
+            && d.soBaiXong - cu.soBaiXong == sau.soBaiXong - truoc.soBaiXong
+            && d.tongSao - cu.tongSao == sau.tongSao - truoc.tongSao
+            && d.tongGiay - cu.tongGiay == sau.tongGiay - truoc.tongGiay
+            && d.soHoatDong - cu.soHoatDong == sau.soHoatDong - truoc.soHoatDong;
+        }
+      }
+    }
+
+    // ================= Bảng xếp hạng (công khai) =================
+    // Mã dòng = maCongKhai của hồ sơ (ngẫu nhiên), không lộ mã tài khoản.
+    // Chỉ biệt danh, con vật, nước, nhóm tuổi, số bài xong, số sao. Không tên thật, không email.
+    match /bangXepHang/{ky}/hoSo/{maCongKhai} {
+      allow read: if true;
+
+      function hoSoSau() {
+        return getAfter(duongDanHoSo(request.auth.uid)).data;
+      }
+      function laChu() {
+        return request.auth != null
+          && exists(duongDanHoSo(request.auth.uid))
+          && get(duongDanHoSo(request.auth.uid)).data.maCongKhai == maCongKhai;
+      }
+      function soLieuThang(d, duongDanThang) {
+        return existsAfter(duongDanThang)
+          ? (d.soBaiXong == getAfter(duongDanThang).data.soBaiXong && d.tongSao == getAfter(duongDanThang).data.tongSao)
+          : (d.soBaiXong == 0 && d.tongSao == 0);
+      }
+      // Số liệu đúng của dòng này, lấy từ bản riêng của hồ sơ
+      function soLieuDung(d, cu) {
+        let uid = request.auth.uid;
+        let sau = tongHopSau(uid);
+        let truoc = tongHopTruoc(uid);
+        return ky == 'tat-ca'
+          ? (d.soBaiXong == sau.soBaiXong && d.tongSao == sau.tongSao)
+          : ky.matches('^thang-[0-9]{4}-[0-9]{2}$')
+            ? soLieuThang(d, /databases/$(database)/documents/users/$(uid)/hoSo/chinh/thang/$(ky.replace('thang-', '')))
+            // tuần: phần tăng bằng phần tăng của bản tổng hợp trong cùng lượt ghi
+            : (d.soBaiXong - cu.soBaiXong == sau.soBaiXong - truoc.soBaiXong
+               && d.tongSao - cu.tongSao == sau.tongSao - truoc.tongSao);
+      }
+
+      allow create, update: if laChu()
+        && ky.matches('^(tat-ca|thang-[0-9]{4}-[0-9]{2}|tuan-[0-9]{4}-W[0-9]{2})$')
+        && hoSoSau().choXepHang == true
+        && request.resource.data.keys().hasOnly(['bietDanh', 'conVat', 'nuoc', 'nhomTuoi', 'soBaiXong', 'tongSao', 'capNhat'])
+        && request.resource.data.bietDanh == hoSoSau().bietDanh
+        && request.resource.data.conVat == hoSoSau().conVat
+        && request.resource.data.nuoc == hoSoSau().nuoc
+        && request.resource.data.nhomTuoi == hoSoSau().nhomTuoi
+        && request.resource.data.soBaiXong is int && request.resource.data.soBaiXong >= 0
+        && request.resource.data.tongSao is int && request.resource.data.tongSao >= 0
+        && request.resource.data.capNhat == request.time
+        && soLieuDung(request.resource.data,
+             resource == null ? { 'soBaiXong': 0, 'tongSao': 0 } : resource.data);
+
+      // Tắt xếp hạng hoặc xoá tài khoản: chủ hồ sơ xoá dòng của mình
+      allow delete: if laChu();
+    }
+
+    // ================= Quản trị viên =================
+    // Chỉ xem được mục của chính mình; không ai ghi từ trang web (thêm bằng tay trong console).
     match /admins/{uid} {
       allow read: if dangNhapLa(uid);
       allow write: if false;

@@ -1,0 +1,13 @@
+{
+  "name": "thu-rules-cvcec",
+  "private": true,
+  "description": "Chạy thử Security Rules trên trình giả lập Firestore (không đụng tới dự án thật)",
+  "scripts": {
+    "thu": "firebase emulators:exec --only firestore --project truong-tieng-viet-cvcec \"node --test --test-concurrency=1 thu.test.mjs\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.0",
+    "firebase": "12.19.0",
+    "firebase-tools": "14.27.0"
+  }
+}
