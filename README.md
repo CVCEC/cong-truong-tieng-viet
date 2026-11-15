@@ -3,6 +3,7 @@
 Cổng chính https://vietclass.cvcec.org (GitHub Pages). Nội quy chung: xem `CLAUDE.md`.
 
 - `index.html`: màn chào (trang chủ) và chế độ đang học (khung iframe cho 7 góc học, địa chỉ `#id`, ví dụ `#khobau`).
+- `giao-vien/index.html`: trang Đội ngũ giáo viên (https://vietclass.cvcec.org/giao-vien/). Danh sách thầy cô nằm trong `giao-vien/teachers.json` (trường tiếng Việt và tiếng Anh); thêm thầy cô mới chỉ cần thêm một mục và đặt ảnh chân dung (tỉ lệ 4:5) vào `assets/giao-vien/`.
 - Bộ mẫu chung nạp từ `https://mau.cvcec.org/v1/` (màu, phông, logo, ảnh Trâu Con của các góc học, danh sách `TTV_DANH_SACH`).
 - `assets/`: ảnh chuyển từ trang cũ `truongtiengvietcuaem.cvcec.org` (tên miền sắp ngừng dùng), tải ngày 15-11-2026.
 
@@ -14,6 +15,7 @@ Tên mới = tên cũ bỏ đoạn mã 8 ký tự sau dấu gạch cuối.
 - `assets/lop-hoc/`: 11 ảnh lớp học. **Ảnh tạm**, đã cắt dải chữ tên miền cũ ở mép dưới (720×720 → 720×676, không kéo méo). Sẽ thay bằng ảnh gốc.
 - `assets/bao/`: ảnh bìa và logo các báo, ảnh poster video
 - `assets/doi-tac/`: logo đối tác ở chân trang
+- `assets/giao-vien/`: ảnh chân dung thầy cô và huy hiệu CVCEC (tải từ trang cũ /giao-vien)
 - `assets/trang-tri/`: chim Lạc, hoa sen, biểu tượng trang (favicon), ảnh chia sẻ (og-image), logo chữ của trang cũ (lưu lại, chưa dùng)
 
 | Tên cũ | Tên mới |
@@ -79,3 +81,9 @@ Tên mới = tên cũ bỏ đoạn mã 8 ký tự sau dấu gạch cuối.
 | /favicon-32.png | assets/trang-tri/favicon-32.png |
 | /apple-touch-icon.png | assets/trang-tri/apple-touch-icon.png |
 | /og-image.png | assets/trang-tri/og-image.png |
+| phan-thi-quynh-trang-CqUR6akJ.webp | assets/giao-vien/phan-thi-quynh-trang.webp |
+| hoang-minh-ha-B1ZJMunn.webp | assets/giao-vien/hoang-minh-ha.webp |
+| do-thi-phuong-mai-DvBHPowD.webp | assets/giao-vien/do-thi-phuong-mai.webp |
+| nguyen-thi-thanh-binh-MEXRFnad.webp | assets/giao-vien/nguyen-thi-thanh-binh.webp |
+| ngo-nguyen-ngoc-dieu-anh-BEstDerj.webp | assets/giao-vien/ngo-nguyen-ngoc-dieu-anh.webp |
+| cvcec-emblem-COV_jnu3.webp | assets/giao-vien/cvcec-emblem.webp |

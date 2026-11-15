@@ -335,18 +335,25 @@
     .chan-luoi { grid-template-columns: 1fr; }
   }
 
-  /* ================= Điện thoại ================= */
-  @media (max-width: 640px) {
-    .cong-ruot { padding: 0 16px; }
+  /* Thanh trên xuống hai hàng khi màn hẹp (5 mục + VI/EN) */
+  @media (max-width: 760px) {
     .cong-dau .cong-ruot { height: auto; flex-wrap: wrap; gap: 0 8px; padding-top: 8px; }
     .cong-dau .cong-logo img { height: 36px; }
     .cong-dau-nav { display: contents; }
     .cong-dau-nav .ttv-thanh-ngon-ngu { margin-left: auto; order: 1; }
     .cong-dau-nav ul {
       order: 2; flex: 1 0 100%; overflow-x: auto; scrollbar-width: none;
-      margin: 4px -16px 0; padding: 0 12px 4px;
+      margin: 4px -24px 0; padding: 0 20px 4px;
     }
     .cong-dau-nav ul::-webkit-scrollbar { display: none; }
+    .cong-phan { scroll-margin-top: 110px; }
+  }
+  @media (max-width: 640px) {
+    .cong-dau-nav ul { margin: 4px -16px 0; padding: 0 12px 4px; }
+  }
+  /* ================= Điện thoại ================= */
+  @media (max-width: 640px) {
+    .cong-ruot { padding: 0 16px; }
     .cong-hero { padding-top: 32px; }
     .cong-trau-hang { gap: 4px 10px; margin-top: 24px; padding-bottom: 20px; }
     .cong-trau-hang img { height: 54px; }
@@ -408,6 +415,7 @@
           <li><a href="#tin-tuc" data-cuon="tin-tuc" data-chu="navTinTuc">Tin tức</a></li>
           <li><a href="#gioi-thieu" data-cuon="gioi-thieu" data-chu="navGioiThieu">Giới thiệu</a></li>
           <li><a href="#ho-tro" data-cuon="ho-tro" data-chu="navHoTro">Hỗ trợ</a></li>
+          <li><a href="/giao-vien/" data-chu="navGiaoVien">Giáo viên</a></li>
         </ul>
         <div class="ttv-thanh-ngon-ngu" role="group" data-nhan="ngonNgu"></div>
       </nav>
@@ -656,7 +664,7 @@
   /* ================= CHỮ HAI NGÔN NGỮ ================= */
   var CHU = {
     vi: {
-      navGoc: "Góc học", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navHoTro: "Hỗ trợ",
+      navGoc: "Góc học", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navHoTro: "Hỗ trợ", navGiaoVien: "Giáo viên",
       chonGoc: "Chọn một góc học", vaoHoc: "Vào học →",
       loiTai: "Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.",
       suMenhNhan: "Sứ mệnh của dự án",
@@ -702,7 +710,7 @@
       khung: "Góc học: "
     },
     en: {
-      navGoc: "Corners", navTinTuc: "News", navGioiThieu: "About", navHoTro: "Support",
+      navGoc: "Corners", navTinTuc: "News", navGioiThieu: "About", navHoTro: "Support", navGiaoVien: "Teachers",
       chonGoc: "Choose a learning corner", vaoHoc: "Start →",
       loiTai: "The learning corners could not be loaded. Please reload the page.",
       suMenhNhan: "Our mission",
@@ -1408,6 +1416,15 @@
     }
   }
 
+  // Địa chỉ dạng /#tin-tuc (từ trang Giáo viên): cuộn tới phần đó khi màn chào đã dựng xong.
+  function cuonToiPhanTrongDiaChi() {
+    if (gocDangMo) return;
+    var h = (location.hash || "").replace(/^#/, "");
+    if (!/^[a-z-]+$/.test(h)) return;
+    var dich = document.getElementById(h);
+    if (dich && manChao.contains(dich) && dich.classList.contains("cong-phan")) dich.scrollIntoView({ block: "start" });
+  }
+
   /* ---------- Tin nhắn từ trang con ---------- */
   var NGUON_HOP_LE = /^https:\/\/([a-z0-9-]+\.)+cvcec\.org$/i;
   window.addEventListener("message", function (e) {
@@ -1460,7 +1477,8 @@
     capNhatChu();
     hienThi();
     veLaiTruot();
-    window.addEventListener("load", veLaiTruot);
+    cuonToiPhanTrongDiaChi();
+    window.addEventListener("load", function () { veLaiTruot(); cuonToiPhanTrongDiaChi(); });
   }
 
   // Script này chạy sau cvcec-chung.js (defer giữ đúng thứ tự trước DOMContentLoaded).
