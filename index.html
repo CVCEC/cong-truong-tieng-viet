@@ -44,6 +44,11 @@
     "khoaNd": "Mỗi bạn học có một tài khoản để Trâu Con lưu sao và tiến độ học. Bạn đăng nhập hoặc đăng ký để vào góc học này nhé.",
     "khoaChuaXong": "Bạn hoàn tất đăng ký (tạo hồ sơ học viên) để vào học nhé.",
     "khoaDangNhap": "Đăng nhập", "khoaDangKy": "Đăng ký", "khoaHoanTat": "Hoàn tất đăng ký", "khoaDangMo": "Đang mở góc học…",
+    "gtNhan": "Làng học tập Trâu Con", "gtCachHoc": "Học thế nào", "gtCoGi": "Trong góc học có gì", "gtBaiThu": "Bài học thử",
+    "gtVaoHoc": "Vào học", "gtHocThu": "Học thử bài 1", "gtDangNhapVao": "Đăng nhập để vào học", "gtDangNhapTiep": "Đăng nhập để học tiếp",
+    "gtHuongDan": "Hướng dẫn",
+    "gtGhiChuThu": "Bạn được học thử bài 1. Kết quả học thử không được lưu. Từ bài 2, bạn đăng nhập để học tiếp và lưu sao nhé.",
+    "gtGhiChuKhoa": "Bạn đăng nhập hoặc đăng ký để vào học góc này nhé. Trâu Con sẽ lưu sao và tiến độ cho bạn.",
     "navHoc": "Các góc học",
     "khung": "Góc học: ",
     "veChao": "Về trang chủ Trường Tiếng Việt Của Em"
@@ -70,6 +75,11 @@
     "khoaNd": "Every learner has an account so Trâu Con can save stars and progress. Please sign in or sign up to open this learning corner.",
     "khoaChuaXong": "Please finish signing up (create a learner profile) to start learning.",
     "khoaDangNhap": "Sign in", "khoaDangKy": "Sign up", "khoaHoanTat": "Finish signing up", "khoaDangMo": "Opening the learning corner…",
+    "gtNhan": "Trâu Con's Learning Village", "gtCachHoc": "How to learn", "gtCoGi": "What's inside", "gtBaiThu": "Trial lesson",
+    "gtVaoHoc": "Start learning", "gtHocThu": "Try lesson 1", "gtDangNhapVao": "Sign in to start learning", "gtDangNhapTiep": "Sign in to keep learning",
+    "gtHuongDan": "Guide",
+    "gtGhiChuThu": "You can try lesson 1. Trial results are not saved. From lesson 2, please sign in to keep learning and save your stars.",
+    "gtGhiChuKhoa": "Please sign in or sign up to learn in this corner. Trâu Con will save your stars and progress.",
     "navHoc": "Learning corners",
     "khung": "Learning corner: ",
     "veChao": "Back to the Trường Tiếng Việt Của Em home page"
@@ -77,6 +87,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=8" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -131,7 +142,44 @@
   .cong-khoa h2 { margin: 0 0 8px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.5rem; line-height: 1.25; color: var(--ttv-chu); }
   .cong-khoa p { margin: 0 0 16px; font-size: 1.05rem; }
   .cong-khoa .cong-nut-nhom { justify-content: flex-start; }
-  .cong-khoa-cho { font-weight: 700; color: var(--ttv-chu-phu); }
+  .cong-khoa-cho { font-weight: 700; color: var(--ttv-chu-phu); padding: 32px 24px; text-align: center; }
+  .cong-dai-nut { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .cong-dai .ttv-nut { flex: 0 0 auto; padding: 4px 16px; font-size: 1rem; border-bottom-width: 2px; white-space: nowrap; }
+  .cong-dai .ttv-nut-phu:active, .cong-dai .ttv-nut:active { transform: none; margin: 0; }
+  /* Màn giới thiệu góc học (infographic cách học + tổng quan) */
+  .gt-goc { height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; box-sizing: border-box; padding: 24px 24px 40px; }
+  .gt-goc > section { max-width: 980px; margin: 0 auto 20px; box-sizing: border-box; }
+  .gt-dau { display: flex; gap: 24px; align-items: center; background: var(--goc-nhat); border-radius: var(--ttv-bo-goc); padding: 24px; border-bottom: 6px solid var(--goc); }
+  .gt-dau img { width: 150px; height: auto; flex: 0 0 auto; }
+  .gt-dau h2 { margin: 0 0 8px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.2; color: var(--ttv-chu); }
+  .gt-nhan { display: inline-block; margin: 0 0 8px; padding: 3px 12px; border-radius: var(--ttv-bo-nut); background: var(--ttv-the); color: var(--goc-dam); font-weight: 800; font-size: .9rem; }
+  .gt-mo-ta { margin: 0 0 16px; font-size: 1.08rem; }
+  .gt-dau .cong-nut-nhom { justify-content: flex-start; }
+  .gt-ghi-chu { margin: 14px 0 0; font-size: .95rem; color: var(--ttv-chu); }
+  .gt-phan { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); padding: 22px 24px; }
+  .gt-phan h3 { margin: 0 0 16px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.35rem; color: var(--ttv-chu); }
+  .gt-buoc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px 12px; }
+  .gt-buoc li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 20px 12px 14px; border-radius: 18px; background: var(--ttv-nen); border: 2px solid var(--ttv-vien); }
+  .gt-so-buoc { position: absolute; top: -10px; left: -6px; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--goc-dam); color: #FFFFFF; font-weight: 800; font-family: var(--ttv-phong-tieu-de); }
+  .gt-bieu-tuong { font-size: 34px; line-height: 1; }
+  .gt-chu-buoc { font-weight: 700; line-height: 1.35; }
+  .gt-so { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .gt-so li { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: 18px; background: var(--goc-nhat); }
+  .gt-so strong { font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 2rem; line-height: 1.1; color: var(--goc-dam); }
+  .gt-so span { font-weight: 700; color: var(--ttv-chu); }
+  .gt-ds { margin: 0; padding-left: 1.2em; }
+  .gt-ds li { margin: 0 0 6px; }
+  .gt-thu { border-color: var(--goc); }
+  .gt-thu p { margin: 0; font-weight: 700; font-size: 1.05rem; }
+  @media (max-width: 640px) {
+    .gt-goc { padding: 14px 12px 32px; }
+    .gt-dau { flex-direction: column; text-align: center; padding: 18px; }
+    .gt-dau img { width: 110px; }
+    .gt-dau .cong-nut-nhom { justify-content: center; }
+    .gt-buoc { grid-template-columns: 1fr 1fr; }
+    .gt-phan { padding: 18px 14px; }
+    .cong-dai .ttv-nut, .cong-dai-nut .ttv-nut-phu { padding: 4px 10px; font-size: .85rem; }
+  }
   @media (max-width: 640px) { .cong-khoa { flex-direction: column; text-align: center; } .cong-khoa img { width: 110px; } .cong-khoa .cong-nut-nhom { justify-content: center; } }
   #tong-quan { background: var(--ttv-the); padding-bottom: 24px; }
   #cac-trang { background: var(--ttv-nen); }
@@ -297,6 +345,10 @@
   </nav>
   <div class="cong-dai">
     <h1 id="ten-goc-dang-hoc"></h1>
+    <div class="cong-dai-nut">
+      <a class="ttv-nut" id="nut-dang-nhap-tiep" href="/dang-nhap/" data-chu="gtDangNhapTiep" hidden>Đăng nhập để học tiếp</a>
+      <button type="button" class="ttv-nut-phu" id="nut-huong-dan" data-chu="gtHuongDan">Hướng dẫn</button>
+    </div>
   </div>
   <div class="cong-khung-boc" id="khung-boc"></div>
 </div>
@@ -400,45 +452,113 @@
     return "hoc";
   }
   var loaiDaVe = null;
-  function veKhoa(loai, muc) {
-    if (khung) { khungBoc.removeChild(khung); khung = null; }
-    khungBoc.textContent = "";
-    var hop = tao("div", "cong-khoa");
-    hop.setAttribute("role", "status");
-    if (loai === "cho") {
-      hop.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo));
+  var dangThu = null;       // id góc khách đang học thử bài 1
+  var xemGioiThieu = false; // bấm "Hướng dẫn" để xem lại giới thiệu
+  var KHOA_DA_XEM = "cvcec-da-xem-gioi-thieu"; // localStorage: các góc đã xem giới thiệu (người đã đăng nhập)
+  function daXem(id) { try { return JSON.parse(localStorage.getItem(KHOA_DA_XEM) || "[]").indexOf(id) >= 0; } catch (e) { return false; } }
+  function ghiDaXem(id) {
+    try { var ds = JSON.parse(localStorage.getItem(KHOA_DA_XEM) || "[]"); if (ds.indexOf(id) < 0) ds.push(id); localStorage.setItem(KHOA_DA_XEM, JSON.stringify(ds)); } catch (e) {}
+  }
+  function gt(id) { return (window.CONG_GT && window.CONG_GT[id]) || { buoc: [], tongQuan: [], phan: [] }; }
+  function chuNN(o) { return o ? (nn() === "en" ? o.en : o.vi) : ""; }
+  function nutLink(lop, chuoi, href) { var a = tao("a", lop, chuoi); a.href = href; return a; }
+
+  // Màn giới thiệu góc học: bảng "Học thế nào", tổng quan nội dung, học thử bài 1
+  function veGioiThieu(muc, loai) {
+    var g = gt(muc.id), c = chu();
+    var ve = encodeURIComponent("/#" + muc.id);
+    var hop = tao("div", "gt-goc");
+    ganMau(hop, muc);
+    var dau = tao("section", "gt-dau");
+    var img = tao("img"); img.src = window.CONG.anhBoMau(muc.trau); img.alt = ""; img.width = 160; dau.appendChild(img);
+    var nd = tao("div");
+    nd.appendChild(tao("p", "gt-nhan", c.gtNhan));
+    nd.appendChild(tao("h2", "", ten(muc)));
+    nd.appendChild(tao("p", "gt-mo-ta", chuNN(g.gioiThieu)));
+    var nhom = tao("div", "cong-nut-nhom");
+    if (loai === "hoc") {
+      var vao = tao("button", "ttv-nut", c.gtVaoHoc); vao.type = "button";
+      vao.addEventListener("click", function () { ghiDaXem(muc.id); xemGioiThieu = false; moKhung(muc); });
+      nhom.appendChild(vao);
     } else {
-      var img = tao("img"); img.src = "/assets/trau/wave.png"; img.width = 297; img.height = 342; img.alt = "";
-      hop.appendChild(img);
-      var nd = tao("div");
-      nd.appendChild(tao("h2", "", chu().khoaTieuDe));
-      nd.appendChild(tao("p", "", loai === "chua-xong" ? chu().khoaChuaXong : chu().khoaNd));
-      var ve = encodeURIComponent("/#" + muc.id);
-      var nhom = tao("div", "cong-nut-nhom");
-      if (loai === "chua-xong") {
-        var a0 = tao("a", "ttv-nut", chu().khoaHoanTat); a0.href = "/dang-nhap/?ve=" + ve; nhom.appendChild(a0);
-      } else {
-        var a1 = tao("a", "ttv-nut", chu().khoaDangNhap); a1.href = "/dang-nhap/?ve=" + ve; nhom.appendChild(a1);
-        var a2 = tao("a", "ttv-nut-phu", chu().khoaDangKy); a2.href = "/dang-nhap/?che-do=ky&ve=" + ve; nhom.appendChild(a2);
+      if (g.thu) {
+        var thu = tao("button", "ttv-nut", c.gtHocThu); thu.type = "button";
+        thu.addEventListener("click", function () { dangThu = muc.id; xemGioiThieu = false; moKhung(muc); });
+        nhom.appendChild(thu);
       }
-      nd.appendChild(nhom);
-      hop.appendChild(nd);
+      if (loai === "chua-xong") nhom.appendChild(nutLink(g.thu ? "ttv-nut-phu" : "ttv-nut", c.khoaHoanTat, "/dang-nhap/?ve=" + ve));
+      else {
+        nhom.appendChild(nutLink(g.thu ? "ttv-nut-phu" : "ttv-nut", g.thu ? c.khoaDangNhap : c.gtDangNhapVao, "/dang-nhap/?ve=" + ve));
+        nhom.appendChild(nutLink("ttv-nut-phu", c.khoaDangKy, "/dang-nhap/?che-do=ky&ve=" + ve));
+      }
+    }
+    nd.appendChild(nhom);
+    if (loai !== "hoc") nd.appendChild(tao("p", "gt-ghi-chu", g.thu ? c.gtGhiChuThu : c.gtGhiChuKhoa));
+    dau.appendChild(nd);
+    hop.appendChild(dau);
+
+    if (g.buoc && g.buoc.length) {
+      var s1 = tao("section", "gt-phan");
+      s1.appendChild(tao("h3", "", c.gtCachHoc));
+      var ol = tao("ol", "gt-buoc");
+      g.buoc.forEach(function (b, i) {
+        var li = tao("li");
+        li.appendChild(tao("span", "gt-so-buoc", String(i + 1)));
+        var e = tao("span", "gt-bieu-tuong", b.e); e.setAttribute("aria-hidden", "true"); li.appendChild(e);
+        li.appendChild(tao("span", "gt-chu-buoc", chuNN(b)));
+        ol.appendChild(li);
+      });
+      s1.appendChild(ol);
+      hop.appendChild(s1);
+    }
+    if ((g.tongQuan && g.tongQuan.length) || (g.phan && g.phan.length)) {
+      var s2 = tao("section", "gt-phan");
+      s2.appendChild(tao("h3", "", c.gtCoGi));
+      if (g.tongQuan && g.tongQuan.length) {
+        var ul = tao("ul", "gt-so");
+        g.tongQuan.forEach(function (t) { var li = tao("li"); li.appendChild(tao("strong", "", t.so)); li.appendChild(tao("span", "", chuNN(t))); ul.appendChild(li); });
+        s2.appendChild(ul);
+      }
+      if (g.phan && g.phan.length) {
+        var ul2 = tao("ul", "gt-ds");
+        g.phan.forEach(function (p) { ul2.appendChild(tao("li", "", chuNN(p))); });
+        s2.appendChild(ul2);
+      }
+      hop.appendChild(s2);
+    }
+    if (g.thu && loai !== "hoc") {
+      var s3 = tao("section", "gt-phan gt-thu");
+      s3.appendChild(tao("h3", "", c.gtBaiThu));
+      s3.appendChild(tao("p", "", chuNN(g.thu.ten)));
+      hop.appendChild(s3);
     }
     khungBoc.appendChild(hop);
   }
+
   function moKhung(muc) {
     var loai = loaiTk();
-    loaiDaVe = loai;
-    if (loai !== "hoc") { veKhoa(loai, muc); return; }
+    if (khung) { khungBoc.removeChild(khung); khung = null; }
     khungBoc.textContent = "";
-    khung = null;
+    var g = gt(muc.id);
+    var hocThu = loai !== "hoc" && dangThu === muc.id && !!g.thu;
+    loaiDaVe = loai;
+    var nutDN = document.getElementById("nut-dang-nhap-tiep");
+    nutDN.hidden = !(hocThu && !xemGioiThieu);
+    nutDN.href = "/dang-nhap/?ve=" + encodeURIComponent("/#" + muc.id);
+    document.getElementById("nut-huong-dan").hidden = loai === "cho";
+    if (loai === "cho") { khungBoc.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo)); return; }
+    var hienGT = xemGioiThieu || (loai === "hoc" ? !daXem(muc.id) : !hocThu);
+    if (hienGT) { veGioiThieu(muc, loai); return; }
+    moIframe(muc, hocThu ? g.thu.url : muc.url);
+  }
+  function moIframe(muc, url) {
     // Thay cả phần tử iframe (thay vì đặt lại src) để không tạo thêm mục lịch sử
     // trong khung: nút Quay lại của trình duyệt luôn về góc trước hoặc trang chủ.
     var moi = document.createElement("iframe");
     moi.setAttribute("allow", "autoplay; fullscreen");
     moi.setAttribute("allowfullscreen", "");
     moi.title = chu().khung + ten(muc);
-    moi.src = muc.url;
+    moi.src = url;
     if (khung) khungBoc.replaceChild(moi, khung);
     else khungBoc.appendChild(moi);
     khung = moi;
@@ -466,6 +586,8 @@
     }
 
     var muc = timGoc(id);
+    xemGioiThieu = false;
+    if (dangThu !== id) dangThu = null;
     manChao.hidden = true;
     manHoc.hidden = false;
     document.body.setAttribute("data-che-do", "hoc");
@@ -499,7 +621,11 @@
   document.addEventListener("cvcec-tk", function (e) {
     ttTk = e.detail;
     // Trạng thái đăng nhập đổi thì vẽ lại góc đang mở (khoá ↔ mở)
-    if (gocDangMo && loaiTk() !== loaiDaVe) moKhung(timGoc(gocDangMo));
+    if (gocDangMo && loaiTk() !== loaiDaVe) {
+      if (loaiTk() === "hoc" && dangThu === gocDangMo) { ghiDaXem(gocDangMo); }  // đang học thử rồi đăng nhập: vào học luôn
+      dangThu = null;
+      moKhung(timGoc(gocDangMo));
+    }
   });
 
   /* ---------- Tin nhắn từ trang con ---------- */
@@ -512,7 +638,12 @@
     // Góc học hỏi: "mình đang nằm trong cổng, người học đã đăng nhập chưa?"
     // Khung chỉ được tạo khi người học đã đăng nhập và có hồ sơ, nên trả lời là hợp lệ.
     if (d.loai === "cvcec-hoi-cong") {
-      try { e.source.postMessage({ loai: "cvcec-cong-tra-loi", hopLe: loaiTk() === "hoc" }, e.origin); } catch (err) {}
+      // Học chính thức: mở hết. Học thử: chỉ các trang của bài 1 (góc học tự kiểm tra đường dẫn).
+      var traLoi = { loai: "cvcec-cong-tra-loi", hopLe: false };
+      var gg = gocDangMo ? gt(gocDangMo) : null;
+      if (loaiTk() === "hoc") traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "hoc" };
+      else if (gocDangMo && dangThu === gocDangMo && gg && gg.thu) traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "thu", duongThu: gg.thu.duong, baiThu: gg.thu.baiThu || null };
+      try { e.source.postMessage(traLoi, e.origin); } catch (err) {}
       return;
     }
     if (d.loai !== "ttv-trang") return;
@@ -529,6 +660,13 @@
     var ve = document.querySelectorAll("[data-ve-chao]");
     for (var i = 0; i < ve.length; i++) ve[i].addEventListener("click", veChao);
     window.CONG.khiDoiChu(capNhatChuHoc);
+    // Nút "Hướng dẫn": đang học thì mở lại giới thiệu; đang xem giới thiệu thì quay về bài học
+    document.getElementById("nut-huong-dan").addEventListener("click", function () {
+      if (!gocDangMo) return;
+      xemGioiThieu = !!khung;
+      if (!xemGioiThieu && loaiTk() === "hoc") ghiDaXem(gocDangMo);
+      moKhung(timGoc(gocDangMo));
+    });
     window.CONG.capNhat();
     window.addEventListener("hashchange", hienThi);
     window.addEventListener("popstate", hienThi);
