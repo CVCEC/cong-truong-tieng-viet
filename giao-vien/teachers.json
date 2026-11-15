@@ -1,5 +1,5 @@
 {
-  "ghi_chu": "Danh sách thầy cô trên trang /giao-vien/. Giữ đúng thứ tự hiển thị. Thêm thầy cô mới: chép một mục, đặt ảnh chân dung (tỉ lệ 4:5) vào assets/giao-vien/ và ghi tên tệp vào trường anh. Tên người giữ nguyên tiếng Việt có dấu ở cả hai ngôn ngữ.",
+  "ghi_chu": "Danh sách thầy cô trên trang /giao-vien/. Giữ đúng thứ tự hiển thị. Thêm thầy cô mới: chép một mục, đặt ảnh chân dung (tỉ lệ 4:5, ví dụ 800×1000) vào assets/giao-vien/ và ghi tên tệp vào trường anh. Tên người giữ nguyên tiếng Việt có dấu ở cả hai ngôn ngữ.",
   "giao_vien": [
     {
       "id": "phan-thi-quynh-trang",
@@ -9,8 +9,8 @@
       "chuc_danh_en": "President of the Canada Vietnam Cultural & Educational Council (CVCEC)",
       "noi_cong_tac_vi": "CVCEC tại Canada",
       "noi_cong_tac_en": "CVCEC in Canada",
-      "gioi_thieu_vi": "Phó Tổng thư ký Mạng lưới giảng dạy tiếng Việt và văn hóa Việt Nam toàn cầu.",
-      "gioi_thieu_en": "Deputy Secretary General of the Global Network for Teaching Vietnamese Language and Culture."
+      "gioi_thieu_vi": "Phó Tổng thư ký Mạng lưới giảng dạy tiếng Việt và văn hóa Việt Nam toàn cầu (VIETLANGNET).",
+      "gioi_thieu_en": "Deputy Secretary General of the Global Network for Teaching Vietnamese Language and Culture (VIETLANGNET)."
     },
     {
       "id": "hoang-minh-ha",
@@ -32,7 +32,7 @@
       "noi_cong_tac_vi": "CVCEC tại Phần Lan",
       "noi_cong_tac_en": "CVCEC in Finland",
       "gioi_thieu_vi": "Với tư cách là Cố vấn Học thuật tại CVCEC (Phần Lan), cô Đỗ Thị Phương Mai chuyên sâu về phương pháp giảng dạy tiếng Việt, thiết kế các chương trình học dựa trên nền tảng di sản nhằm đảm bảo trải nghiệm học tập hiệu quả, lôi cuốn và mang đậm bản sắc văn hóa.",
-      "gioi_thieu_en": "As Academic Advisor at CVCEC (Finland), Ms. Đỗ Thị Phương Mai specializes in Vietnamese language teaching methods, designing heritage-based curricula that ensure an effective, engaging and culturally rich learning experience."
+      "gioi_thieu_en": "As Academic Advisor at CVCEC (Finland), Ms. Đỗ Thị Phương Mai specializes in Vietnamese language teaching methods, designing curricula rooted in Vietnamese culture that ensure an effective, engaging and culturally rich learning experience."
     },
     {
       "id": "nguyen-thi-thanh-binh",
@@ -43,7 +43,7 @@
       "noi_cong_tac_vi": "CVCEC tại PEI, Canada",
       "noi_cong_tac_en": "CVCEC in PEI, Canada",
       "gioi_thieu_vi": "Cô Nguyễn Thị Thanh Bình là nhà giáo dục tiếng Việt tận tâm thuộc CVCEC tại PEI, mang trong mình tình yêu nhiệt huyết với sứ mệnh bảo tồn di sản văn hóa và thúc đẩy sự gắn kết cộng đồng.",
-      "gioi_thieu_en": "Ms. Nguyễn Thị Thanh Bình is a dedicated Vietnamese language educator at CVCEC in PEI, with a deep passion for preserving cultural heritage and fostering community connection."
+      "gioi_thieu_en": "Ms. Nguyễn Thị Thanh Bình is a dedicated Vietnamese language educator at CVCEC in PEI, with a deep passion for preserving Vietnamese culture and fostering community connection."
     },
     {
       "id": "ngo-nguyen-ngoc-dieu-anh",

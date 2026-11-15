@@ -15,7 +15,7 @@ Tên mới = tên cũ bỏ đoạn mã 8 ký tự sau dấu gạch cuối.
 - `assets/lop-hoc/`: 11 ảnh lớp học. **Ảnh tạm**, đã cắt dải chữ tên miền cũ ở mép dưới (720×720 → 720×676, không kéo méo). Sẽ thay bằng ảnh gốc.
 - `assets/bao/`: ảnh bìa và logo các báo, ảnh poster video
 - `assets/doi-tac/`: logo đối tác ở chân trang
-- `assets/giao-vien/`: ảnh chân dung thầy cô và huy hiệu CVCEC (tải từ trang cũ /giao-vien)
+- `assets/giao-vien/`: ảnh chân dung thầy cô (tỉ lệ 4:5) và huy hiệu CVCEC. Ảnh của cô Trang, cô Hà, cô Bình, cô Diệu Anh đã thay bằng ảnh gốc do CVCEC gửi (cắt 4:5, 800×1000, giữ tên tệp); ảnh cô Mai và huy hiệu tải từ trang cũ /giao-vien.
 - `assets/trang-tri/`: chim Lạc, hoa sen, biểu tượng trang (favicon), ảnh chia sẻ (og-image), logo chữ của trang cũ (lưu lại, chưa dùng)
 
 | Tên cũ | Tên mới |
