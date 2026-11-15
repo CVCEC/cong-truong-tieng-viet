@@ -127,7 +127,12 @@ function docTam(uid) {
 const nghe = [];
 let trangThai = { daBiet: false, user: null, tomTat: null };
 export function theoDoi(fn) { nghe.push(fn); if (trangThai.daBiet) fn(trangThai); }
-function bao() { nghe.forEach((fn) => { try { fn(trangThai); } catch (e) { console.error(e); } }); }
+function bao() {
+  nghe.forEach((fn) => { try { fn(trangThai); } catch (e) { console.error(e); } });
+  // Cho các mã thường (không phải module), ví dụ trang chủ cần biết đã đăng nhập chưa trước khi mở góc học
+  window.CVCEC_TK = { trangThai };
+  try { document.dispatchEvent(new CustomEvent("cvcec-tk", { detail: trangThai })); } catch (e) {}
+}
 onAuthStateChanged(auth, async (user) => {
   if (!user) { xoaTam(); trangThai = { daBiet: true, user: null, tomTat: null }; bao(); return; }
   let tomTat = docTam(user.uid);

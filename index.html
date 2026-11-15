@@ -20,7 +20,7 @@
   })();
 </script>
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
-<link rel="stylesheet" href="/chung/cong.css?v=6">
+<link rel="stylesheet" href="/chung/cong.css?v=7">
 <script>window.CONG_CHU = {
   "vi": {
     "tqTieuDe": "Tiếng Việt – <span class=\"cong-nhan-manh\">nhịp cầu kết nối</span> những trái tim",
@@ -40,7 +40,10 @@
     "moiTieuDe": "Học tiếng Việt mọi lúc, mọi nơi",
     "moiNd": "Trâu con đội nón lá đã sẵn sàng. Mở bài học đầu tiên và bắt đầu hành trình của em.",
     "hocNgay": "Học ngay",
-    "moRieng": "Mở riêng trang này",
+    "khoaTieuDe": "Mời bạn đăng nhập để vào học",
+    "khoaNd": "Mỗi bạn học có một tài khoản để Trâu Con lưu sao và tiến độ học. Bạn đăng nhập hoặc đăng ký để vào góc học này nhé.",
+    "khoaChuaXong": "Bạn hoàn tất đăng ký (tạo hồ sơ học viên) để vào học nhé.",
+    "khoaDangNhap": "Đăng nhập", "khoaDangKy": "Đăng ký", "khoaHoanTat": "Hoàn tất đăng ký", "khoaDangMo": "Đang mở góc học…",
     "navHoc": "Các góc học",
     "khung": "Góc học: ",
     "veChao": "Về trang chủ Trường Tiếng Việt Của Em"
@@ -63,16 +66,19 @@
     "moiTieuDe": "Learn Vietnamese anytime, anywhere",
     "moiNd": "Trâu Con in a conical hat is ready. Open your first lesson and start your journey.",
     "hocNgay": "Start learning",
-    "moRieng": "Open this page on its own",
+    "khoaTieuDe": "Please sign in to start learning",
+    "khoaNd": "Every learner has an account so Trâu Con can save stars and progress. Please sign in or sign up to open this learning corner.",
+    "khoaChuaXong": "Please finish signing up (create a learner profile) to start learning.",
+    "khoaDangNhap": "Sign in", "khoaDangKy": "Sign up", "khoaHoanTat": "Finish signing up", "khoaDangMo": "Opening the learning corner…",
     "navHoc": "Learning corners",
     "khung": "Learning corner: ",
     "veChao": "Back to the Trường Tiếng Việt Của Em home page"
   }
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
-<script src="/chung/canh.js?v=6" defer></script>
-<script src="/chung/cong.js?v=6" defer></script>
-<script type="module" src="/js/tai-khoan.js?v=6"></script>
+<script src="/chung/canh.js?v=7" defer></script>
+<script src="/chung/cong.js?v=7" defer></script>
+<script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
   /* Trang chủ cổng + chế độ đang học (khung iframe cho 7 góc học, địa chỉ #id). */
   /* ================= CHẾ ĐỘ ĐANG HỌC ================= */
@@ -119,6 +125,14 @@
     .cong-thanh-hoc .tab-trang-chu { padding: 0; justify-content: center; }
     .cong-thanh-hoc .tab-trang-chu span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   }
+  .cong-khoa { min-height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 24px; padding: 32px 24px; flex-wrap: wrap; text-align: left; }
+  .cong-khoa img { width: 150px; height: auto; flex: 0 0 auto; }
+  .cong-khoa > div { max-width: 460px; background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); padding: 24px; }
+  .cong-khoa h2 { margin: 0 0 8px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.5rem; line-height: 1.25; color: var(--ttv-chu); }
+  .cong-khoa p { margin: 0 0 16px; font-size: 1.05rem; }
+  .cong-khoa .cong-nut-nhom { justify-content: flex-start; }
+  .cong-khoa-cho { font-weight: 700; color: var(--ttv-chu-phu); }
+  @media (max-width: 640px) { .cong-khoa { flex-direction: column; text-align: center; } .cong-khoa img { width: 110px; } .cong-khoa .cong-nut-nhom { justify-content: center; } }
   #tong-quan { background: var(--ttv-the); padding-bottom: 24px; }
   #cac-trang { background: var(--ttv-nen); }
 </style>
@@ -283,7 +297,6 @@
   </nav>
   <div class="cong-dai">
     <h1 id="ten-goc-dang-hoc"></h1>
-    <a class="ttv-nut-phu" id="mo-rieng" href="./" data-chu="moRieng">Mở riêng trang này</a>
   </div>
   <div class="cong-khung-boc" id="khung-boc"></div>
 </div>
@@ -301,7 +314,6 @@
   var manHoc = document.getElementById("man-hoc");
   var tabGoc = document.getElementById("tab-goc");
   var tenGoc = document.getElementById("ten-goc-dang-hoc");
-  var moRieng = document.getElementById("mo-rieng");
   var khungBoc = document.getElementById("khung-boc");
   var khung = null;
 
@@ -368,6 +380,7 @@
       var g = timGoc(gocDangMo);
       tenGoc.textContent = ten(g);
       if (khung) khung.title = chu().khung + ten(g);
+      else moKhung(g); // vẽ lại màn mời đăng nhập theo ngôn ngữ mới
     }
     capNhatTieuDe();
   }
@@ -378,7 +391,47 @@
     return timGoc(h) ? h : null;
   }
 
+  /* ---------- Chỉ người đã đăng nhập (có hồ sơ học viên) mới mở được góc học ---------- */
+  var ttTk = (window.CVCEC_TK && window.CVCEC_TK.trangThai) || null;
+  function loaiTk() {
+    if (!ttTk || !ttTk.daBiet) return "cho";
+    if (!ttTk.user) return "khach";
+    if (!ttTk.tomTat || ttTk.tomTat.chuaXong) return "chua-xong";
+    return "hoc";
+  }
+  var loaiDaVe = null;
+  function veKhoa(loai, muc) {
+    if (khung) { khungBoc.removeChild(khung); khung = null; }
+    khungBoc.textContent = "";
+    var hop = tao("div", "cong-khoa");
+    hop.setAttribute("role", "status");
+    if (loai === "cho") {
+      hop.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo));
+    } else {
+      var img = tao("img"); img.src = "/assets/trau/wave.png"; img.width = 297; img.height = 342; img.alt = "";
+      hop.appendChild(img);
+      var nd = tao("div");
+      nd.appendChild(tao("h2", "", chu().khoaTieuDe));
+      nd.appendChild(tao("p", "", loai === "chua-xong" ? chu().khoaChuaXong : chu().khoaNd));
+      var ve = encodeURIComponent("/#" + muc.id);
+      var nhom = tao("div", "cong-nut-nhom");
+      if (loai === "chua-xong") {
+        var a0 = tao("a", "ttv-nut", chu().khoaHoanTat); a0.href = "/dang-nhap/?ve=" + ve; nhom.appendChild(a0);
+      } else {
+        var a1 = tao("a", "ttv-nut", chu().khoaDangNhap); a1.href = "/dang-nhap/?ve=" + ve; nhom.appendChild(a1);
+        var a2 = tao("a", "ttv-nut-phu", chu().khoaDangKy); a2.href = "/dang-nhap/?che-do=ky&ve=" + ve; nhom.appendChild(a2);
+      }
+      nd.appendChild(nhom);
+      hop.appendChild(nd);
+    }
+    khungBoc.appendChild(hop);
+  }
   function moKhung(muc) {
+    var loai = loaiTk();
+    loaiDaVe = loai;
+    if (loai !== "hoc") { veKhoa(loai, muc); return; }
+    khungBoc.textContent = "";
+    khung = null;
     // Thay cả phần tử iframe (thay vì đặt lại src) để không tạo thêm mục lịch sử
     // trong khung: nút Quay lại của trình duyệt luôn về góc trước hoặc trang chủ.
     var moi = document.createElement("iframe");
@@ -419,7 +472,6 @@
     window.scrollTo(0, 0);
     ganMau(manHoc, muc);
     tenGoc.textContent = ten(muc);
-    moRieng.href = muc.url;
 
     var tabs = tabGoc.querySelectorAll("a[data-goc]");
     var dang = null;
@@ -444,13 +496,26 @@
     window.scrollTo(0, 0);
   }
 
+  document.addEventListener("cvcec-tk", function (e) {
+    ttTk = e.detail;
+    // Trạng thái đăng nhập đổi thì vẽ lại góc đang mở (khoá ↔ mở)
+    if (gocDangMo && loaiTk() !== loaiDaVe) moKhung(timGoc(gocDangMo));
+  });
+
   /* ---------- Tin nhắn từ trang con ---------- */
   var NGUON_HOP_LE = /^https:\/\/([a-z0-9-]+\.)+cvcec\.org$/i;
   window.addEventListener("message", function (e) {
     if (!khung || e.source !== khung.contentWindow) return;
     if (typeof e.origin !== "string" || !NGUON_HOP_LE.test(e.origin)) return;
     var d = e.data;
-    if (!d || typeof d !== "object" || d.loai !== "ttv-trang") return;
+    if (!d || typeof d !== "object") return;
+    // Góc học hỏi: "mình đang nằm trong cổng, người học đã đăng nhập chưa?"
+    // Khung chỉ được tạo khi người học đã đăng nhập và có hồ sơ, nên trả lời là hợp lệ.
+    if (d.loai === "cvcec-hoi-cong") {
+      try { e.source.postMessage({ loai: "cvcec-cong-tra-loi", hopLe: loaiTk() === "hoc" }, e.origin); } catch (err) {}
+      return;
+    }
+    if (d.loai !== "ttv-trang") return;
     if (typeof d.tieuDe === "string") {
       var t = d.tieuDe.replace(/\s+/g, " ").trim().slice(0, 150);
       if (t) { tieuDeTuTrangCon = t; capNhatTieuDe(); }
