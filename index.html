@@ -87,7 +87,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=10" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=11" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -540,6 +540,9 @@
     if (khung) { khungBoc.removeChild(khung); khung = null; }
     khungBoc.textContent = "";
     var g = gt(muc.id);
+    // Góc có trang chủ tự giới thiệu (vaoThang): mở thẳng trang của góc, không qua màn giới thiệu của cổng.
+    // Khách chưa đăng nhập vào chế độ học thử luôn.
+    if (g.vaoThang && !xemGioiThieu && (loai === "khach" || loai === "chua-xong") && g.thu) dangThu = muc.id;
     var hocThu = loai !== "hoc" && dangThu === muc.id && !!g.thu;
     loaiDaVe = loai;
     var nutDN = document.getElementById("nut-dang-nhap-tiep");
@@ -547,7 +550,7 @@
     nutDN.href = "/dang-nhap/?ve=" + encodeURIComponent("/#" + muc.id);
     document.getElementById("nut-huong-dan").hidden = loai === "cho";
     if (loai === "cho") { khungBoc.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo)); return; }
-    var hienGT = xemGioiThieu || (loai === "hoc" ? !daXem(muc.id) : !hocThu);
+    var hienGT = xemGioiThieu || (!g.vaoThang && (loai === "hoc" ? !daXem(muc.id) : !hocThu));
     if (hienGT) { veGioiThieu(muc, loai); return; }
     moIframe(muc, hocThu ? g.thu.url : muc.url);
   }

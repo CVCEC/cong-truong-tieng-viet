@@ -2,6 +2,7 @@
  * Giới thiệu từng góc học (cổng vietclass.cvcec.org): cách học (infographic) và tổng quan nội dung.
  * Số liệu lấy từ mã nguồn của từng góc (README, mục lục) ngày 15-11-2026. Sửa ở đây khi góc học thay đổi.
  * thu: bài học thử cho khách chưa đăng nhập.
+ * vaoThang: true thì bấm vào góc mở thẳng trang của góc (khách: chế độ học thử), nút "Hướng dẫn" vẫn xem lại được giới thiệu.
  *   url   – trang mở trong khung khi bấm "Học thử";
  *   duong – các đường dẫn khách được mở trong chế độ học thử (cổng gửi cho góc học qua postMessage);
  *   ten   – tên bài học thử.
@@ -68,7 +69,8 @@ window.CONG_GT = {
       { vi: "Quyển 1: nghe – nói, làm quen mặt chữ", en: "Book 1: listening and speaking, first letters" },
       { vi: "Quyển 2: luyện nói, bắt đầu đọc – viết", en: "Book 2: speaking practice, starting to read and write" }
     ],
-    thu: { url: "https://vuihoctiengviet.cvcec.org/quyen-1/bai-01/", duong: ["/", "/quyen-1/bai-01/"], ten: { vi: "Quyển 1 · Bài 1: Đây là ai?", en: "Book 1 · Lesson 1: Đây là ai? (Who is this?)" } }
+    vaoThang: true, // trang chủ Vui học đã có Tổng quan, Nhân vật, Hướng dẫn: mở thẳng, không qua màn giới thiệu
+    thu: { url: "https://vuihoctiengviet.cvcec.org/", duong: ["/", "/quyen-1/bai-01/"], ten: { vi: "Quyển 1 · Bài 1: Đây là ai?", en: "Book 1 · Lesson 1: Đây là ai? (Who is this?)" } }
   },
   vietnam: {
     gioiThieu: { vi: "Cùng Trâu Con đi dọc dải đất chữ S qua 31 trạm, từ Cột cờ Lũng Cú tới Đất Mũi Cà Mau, ghé cả quần đảo Hoàng Sa và Trường Sa.", en: "Travel the S-shaped land with Trâu Con through 31 stops, from the Lũng Cú flag tower to Cà Mau Cape, including the Hoàng Sa and Trường Sa islands." },
