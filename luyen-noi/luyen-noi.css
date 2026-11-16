@@ -111,8 +111,6 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
 .ln-nguon p { margin: 0 0 10px; }
 .ln-tai-lieu { margin: 0 0 14px; padding-left: 1.2em; color: var(--ttv-chu-phu); line-height: 1.5; }
 .ln-tai-lieu li { margin: 0 0 6px; }
-.ln-cam-on { margin: 0; padding-top: 10px; border-top: 2px solid var(--ttv-vien); }
-.ln-cam-on a { color: var(--ttv-chu); font-weight: 800; }
 .ln-an-chu { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 @media (max-width: 960px) {

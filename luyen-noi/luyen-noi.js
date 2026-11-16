@@ -1,6 +1,6 @@
 /*!
  * luyen-noi.js – Giao diện trang Luyện nói – Luyện thanh điệu (vietclass.cvcec.org/luyen-noi/).
- * Tự viết cho Trường Tiếng Việt Của Em (CVCEC). Ý tưởng tham khảo từ VietPhonLab; mã viết mới hoàn toàn.
+ * Tự viết cho Trường Tiếng Việt Của Em (CVCEC). Nguồn tham khảo: xem luyen-noi/NGUON.md.
  *
  * Âm thanh chỉ xử lý trên máy: ghi bằng Web Audio + MediaRecorder, phân tích bằng cao-do.js.
  * KHÔNG gửi âm thanh hay điểm lên máy chủ nào. Không dùng Firebase.
