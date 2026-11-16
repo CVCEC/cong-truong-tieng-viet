@@ -51,7 +51,7 @@ window.CONG_GT = {
     thu: { url: "https://baihoc.cvcec.org/bai-81/", duong: ["/", "/bai-81/"], ten: { vi: "Bài 81: Ngày Nhà giáo Việt Nam – Tri ân cha mẹ", en: "Lesson 81: Vietnamese Teachers' Day – Thanking our parents" } }
   },
   vuihoc: {
-    gioiThieu: { vi: "Bản tương tác của bộ sách Vui học tiếng Việt (Quyển 1, 2): nghe, nói theo, đóng vai, học hát và tô chữ.", en: "The interactive edition of the Vui học tiếng Việt books (Books 1 and 2): listen, repeat, role-play, sing and colour letters." },
+    gioiThieu: { vi: "Bản tương tác của bộ sách Vui học tiếng Việt (Quyển 1, 2). Cùng Nam, Mai và các bạn, bé nghe hiểu, nói được và nhận ra mặt chữ qua bốn chủ đề gần gũi: Gia đình, Thiên nhiên, Trường lớp, Cộng đồng.", en: "The interactive edition of the Vui học tiếng Việt books (Books 1 and 2). With Nam, Mai and friends, children learn to understand, speak and recognise letters through four familiar themes: Family, Nature, School and Community." },
     buoc: [
       { e: "👀", vi: "Nhìn hình, nghe và nhắc lại", en: "Look at the picture, listen and repeat" },
       { e: "🎭", vi: "Đóng vai, hỏi – đáp cùng Trâu Con", en: "Role-play questions and answers with Trâu Con" },
