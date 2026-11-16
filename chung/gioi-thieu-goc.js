@@ -149,13 +149,14 @@ window.CONG_GT = {
     ]
   },
   cuocsong: {
-    gioiThieu: { vi: "Bài học cuộc sống: thơ “Lên Sáu”, “Lên Tám” của Tản Đà. Nghe cô Hà đọc thơ và giảng, hiểu lời thơ xưa và học làm người.", en: "Life lessons from Tản Đà's poems “Lên Sáu” (Turning Six) and “Lên Tám” (Turning Eight). Listen to cô Hà read and explain the verses, understand the old poems and learn how to be a good person." },
+    gioiThieu: { vi: "Nâng cao, dành cho các bạn đã đọc thông, viết được câu: thơ “Lên Sáu”, “Lên Tám” của Tản Đà. Nghe cô Hà đọc thơ và giảng, hiểu “Thơ nói gì?”, làm “Em làm được” rồi viết theo mức Dễ – Vừa – Khó. Mới bắt đầu thì học “Thơ lễ nghĩa” trong Bài 1–145 trước nhé.", en: "Advanced, for children who can read well and write sentences: Tản Đà's poems “Lên Sáu” and “Lên Tám”. Listen to cô Hà read and explain the verses, then write at an Easy, Medium or Hard level. Beginners start with the short poem game in Lessons 1–145." },
     buoc: [
       { e: "📜", vi: "Nghe cô Hà đọc thơ và đọc theo", en: "Listen to cô Hà read the poem and read along" },
       { e: "🎬", vi: "Xem Trâu Con kể ý nghĩa khổ thơ", en: "Watch Trâu Con explain what the verses mean" },
       { e: "👂", vi: "Nghe cô Hà giảng, chữ sáng theo giọng cô", en: "Listen to cô Hà's lesson as the words light up" },
       { e: "🖼️", vi: "Trả lời câu hỏi có tranh, nhận sao", en: "Answer picture questions and earn stars" },
-      { e: "✏️", vi: "Viết vài câu: Dễ, Vừa, Khó", en: "Write a few sentences: Easy, Medium, Hard" }
+      { e: "🙇", vi: "Em làm được: chọn việc làm ngoan", en: "Em làm được: choose the good thing to do" },
+      { e: "✏️", vi: "Viết theo mức: Dễ, Vừa, Khó", en: "Write at your level: Easy, Medium, Hard" }
     ],
     tongQuan: [
       { so: "18", vi: "bài “Lên Sáu” (36 khổ)", en: "“Lên Sáu” lessons (36 verses)" },
