@@ -94,7 +94,7 @@ window.CONG_GT = {
     ]
   },
   venhaem: {
-    gioiThieu: { vi: "Về Nhà Em: gặp nhau ở buổi cà phê tại Canada, học nói tiếng Việt qua 8 bài nấu món Việt, rồi 5 người học giỏi nhất được tài trợ về Việt Nam mùa hè 2027.", en: "Về Nhà Em: meet us at a coffee talk in Canada, learn to speak Vietnamese through 8 cooking lessons, and the five top learners win a sponsored trip to Vietnam in summer 2027." },
+    gioiThieu: { vi: "Về Nhà Em: gặp nhau ở buổi cà phê tại Canada, học nói tiếng Việt qua 8 bài nấu món Việt, rồi 5 người học giỏi nhất được tài trợ về Việt Nam (ngày đi đang được thống nhất với các đối tác).", en: "Về Nhà Em: meet us at a coffee talk in Canada, learn to speak Vietnamese through 8 cooking lessons, and the five top learners win a sponsored trip to Vietnam (dates are being finalised with our partners)." },
     buoc: [
       { e: "👂", vi: "Nghe giới thiệu món ăn", en: "Listen to the dish's introduction" },
       { e: "🔤", vi: "Học từ của món", en: "Learn the dish's words" },
