@@ -94,7 +94,7 @@ window.CONG_GT = {
     ]
   },
   venhaem: {
-    gioiThieu: { vi: "Vào Bếp Nhà Em: 8 bài học nấu món Việt cùng gia đình. Nghe, học từ, nấu theo các bước rồi chơi.", en: "Vào Bếp Nhà Em (Into My Family's Kitchen): 8 lessons cooking Vietnamese dishes with family. Listen, learn words, cook step by step, then play." },
+    gioiThieu: { vi: "Về Nhà Em: gặp nhau ở buổi cà phê tại Canada, học nói tiếng Việt qua 8 bài nấu món Việt, rồi 5 người học giỏi nhất được tài trợ về Việt Nam mùa hè 2027.", en: "Về Nhà Em: meet us at a coffee talk in Canada, learn to speak Vietnamese through 8 cooking lessons, and the five top learners win a sponsored trip to Vietnam in summer 2027." },
     buoc: [
       { e: "👂", vi: "Nghe giới thiệu món ăn", en: "Listen to the dish's introduction" },
       { e: "🔤", vi: "Học từ của món", en: "Learn the dish's words" },
@@ -108,7 +108,9 @@ window.CONG_GT = {
     phan: [
       { vi: "Nem rán · Bún mọc · Phở gà · Cơm gà Hội An", en: "Nem rán · Bún mọc · Phở gà · Cơm gà Hội An" },
       { vi: "Phở cuốn · Bò lá lốt · Mâm cơm chay · Bánh xèo chay", en: "Phở cuốn · Bò lá lốt · Mâm cơm chay · Bánh xèo chay" }
-    ]
+    ],
+    vaoThang: true, // trang Về Nhà Em đã có "Bắt đầu ở đây": chương trình + hướng dẫn học
+    thu: { url: "https://venhaem.cvcec.org/", duong: ["/", "/vao-bep/"], baiThu: "nem", ten: { vi: "Món 1: Nem rán", en: "Dish 1: Nem rán (crispy fried spring rolls)" } }
   },
   khobau: {
     gioiThieu: { vi: "Kho báu lời ông bà: thành ngữ, tục ngữ, ca dao qua trò chơi. Mỗi câu có nghĩa đen, nghĩa bóng, từ khó và ví dụ.", en: "A treasure of ancestors' sayings: idioms, proverbs and folk verses through games. Each saying has its literal and figurative meaning, hard words and examples." },
