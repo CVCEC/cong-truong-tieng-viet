@@ -28,7 +28,8 @@ window.CONG_GT = {
       { vi: "Bài 3–70: âm và vần", en: "Lessons 3–70: sounds and rhymes" },
       { vi: "Bài 71–80: tập đọc", en: "Lessons 71–80: reading" }
     ],
-    thu: { url: "https://baihoc.cvcec.org/bai-1/", duong: ["/", "/bai-1/"], ten: { vi: "Bài 1: Bảng chữ cái, nguyên âm và phụ âm", en: "Lesson 1: The alphabet, vowels and consonants" } }
+    vaoThang: true, // mở thẳng danh sách Bài 1–80; khách học thử Bài 1, bài khác ghi "Đăng nhập để học"
+    thu: { url: "https://baihoc.cvcec.org/?phan=tieng-viet", duong: ["/", "/bai-1/"], ten: { vi: "Bài 1: Bảng chữ cái, nguyên âm và phụ âm", en: "Lesson 1: The alphabet, vowels and consonants" } }
   },
   vanhoa: {
     gioiThieu: { vi: "Văn hoá truyền thống: lễ Tết, phong tục và đời sống Việt qua bài đọc, từ mới và trò chơi.", en: "Traditional culture: Vietnamese festivals, customs and daily life through readings, new words and games." },
@@ -49,7 +50,8 @@ window.CONG_GT = {
       { vi: "Ẩm thực, áo dài, văn hoá dân gian, ca dao, tục ngữ", en: "Food, áo dài, folk culture, folk verses and proverbs" },
       { vi: "Đời sống: nghề nghiệp, giao thông, sức khoẻ, thiên nhiên", en: "Daily life: jobs, transport, health, nature" }
     ],
-    thu: { url: "https://baihoc.cvcec.org/bai-81/", duong: ["/", "/bai-81/"], ten: { vi: "Bài 81: Ngày Nhà giáo Việt Nam – Tri ân cha mẹ", en: "Lesson 81: Vietnamese Teachers' Day – Thanking our parents" } }
+    vaoThang: true, // mở thẳng danh sách Bài 81–145; khách học thử Bài 81
+    thu: { url: "https://baihoc.cvcec.org/?phan=van-hoa", duong: ["/", "/bai-81/"], ten: { vi: "Bài 81: Ngày Nhà giáo Việt Nam – Tri ân cha mẹ", en: "Lesson 81: Vietnamese Teachers' Day – Thanking our parents" } }
   },
   vuihoc: {
     gioiThieu: { vi: "Bản tương tác của bộ sách Vui học tiếng Việt (Quyển 1, 2). Cùng Nam, Mai và các bạn, bé nghe hiểu, nói được và nhận ra mặt chữ qua bốn chủ đề gần gũi: Gia đình, Thiên nhiên, Trường lớp, Cộng đồng.", en: "The interactive edition of the Vui học tiếng Việt books (Books 1 and 2). With Nam, Mai and friends, children learn to understand, speak and recognise letters through four familiar themes: Family, Nature, School and Community." },
