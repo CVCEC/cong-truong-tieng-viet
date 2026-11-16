@@ -526,6 +526,14 @@
   // Hiện tại KHÔNG lưu điểm lên đâu cả. Khi làm bảng thành tích, gán hàm vào window.LuyenNoi.khiCoDiem.
   window.LuyenNoi = window.LuyenNoi || { khiCoDiem: null };
 
+  // Thẻ "Luyện từ / Luyện câu" (luyen-cau.js) gọi hàm này khi các bạn bấm "Luyện thanh tiếng …".
+  window.LuyenNoi.chonTieng = function (dau, van, cuoi) {
+    if (S.dangGhi || !GhepTieng.hopLe(dau, van, cuoi)) return false;
+    S.chon = { dau: dau, van: van, cuoi: cuoi };
+    veBuoc2(); veBuoc3();
+    return true;
+  };
+
   function xongPhanTich(the, khoa, chu, th, m, mm, blob) {
     var pt = CaoDo.phanTich(mm.mau, mm.sr);
     var duong = CaoDo.duongGiong(pt, S.moc);

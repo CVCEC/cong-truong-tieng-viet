@@ -1,0 +1,132 @@
+# NỘI DUNG LUYỆN NÓI – Trường Tiếng Việt Của Em (vietclass.cvcec.org/luyen-noi/)
+#
+# Cách viết (mỗi dòng một mục; dòng bắt đầu bằng # là ghi chú, máy bỏ qua):
+#   CHỦ ĐỀ: tên tiếng Việt | tên tiếng Anh      → mở một chủ đề mới
+#   ẢNH: tên ảnh Trâu Con trong /assets/trau/   → ví dụ wave.png (không bắt buộc)
+#   TỪ: từ tiếng Việt | nghĩa tiếng Anh         → thẻ "Luyện từ"
+#   CÂU: câu tiếng Việt | nghĩa tiếng Anh       → thẻ "Luyện câu"
+#   HỘI THOẠI: tên đoạn | tên tiếng Anh         → mở một đoạn hội thoại mới (không bắt buộc)
+#   TRÂU CON: câu Trâu Con nói | tiếng Anh      → Trâu Con nói, các bạn nghe
+#   BẠN: câu các bạn đọc | tiếng Anh            → các bạn đọc, máy chấm
+#
+# Lưu ý:
+#   - Phần tiếng Anh sau dấu | có thể bỏ trống.
+#   - Trâu Con xưng "mình", gọi học sinh "các bạn". Không dùng tên thật của trẻ.
+#   - Sửa chữ của một câu thì câu đó cần tạo lại giọng Elio (luyen-noi/studio.html).
+
+CHỦ ĐỀ: Chào hỏi | Greetings
+ẢNH: wave.png
+TỪ: xin chào | hello
+TỪ: tạm biệt | goodbye
+TỪ: cảm ơn | thank you
+TỪ: xin lỗi | sorry
+TỪ: không sao | it's okay
+TỪ: bạn bè | friends
+TỪ: cô giáo | teacher (female)
+TỪ: thầy giáo | teacher (male)
+CÂU: Em chào cô ạ. | Hello, teacher.
+CÂU: Em cảm ơn cô ạ. | Thank you, teacher.
+CÂU: Hẹn gặp lại các bạn. | See you again, everyone.
+CÂU: Bạn có khỏe không? | How are you?
+CÂU: Mình khỏe, cảm ơn bạn. | I'm fine, thank you.
+HỘI THOẠI: Gặp Trâu Con | Meeting Trâu Con
+TRÂU CON: Chào các bạn! Mình là Trâu Con. | Hello everyone! I'm Trâu Con.
+BẠN: Chào Trâu Con! | Hello, Trâu Con!
+TRÂU CON: Hôm nay các bạn có khỏe không? | How are you today?
+BẠN: Mình khỏe, cảm ơn bạn. | I'm fine, thank you.
+TRÂU CON: Mình rất vui được gặp các bạn. | I'm very happy to meet you.
+BẠN: Mình cũng rất vui. | I'm very happy too.
+TRÂU CON: Tạm biệt các bạn nhé! | Goodbye, everyone!
+BẠN: Tạm biệt Trâu Con! | Goodbye, Trâu Con!
+
+CHỦ ĐỀ: Gia đình | Family
+ẢNH: peeking.png
+TỪ: gia đình | family
+TỪ: bố mẹ | parents
+TỪ: ông bà | grandparents
+TỪ: anh trai | older brother
+TỪ: chị gái | older sister
+TỪ: em bé | baby
+TỪ: ngôi nhà | house
+TỪ: yêu thương | to love
+CÂU: Đây là gia đình của em. | This is my family.
+CÂU: Nhà em có bốn người. | There are four people in my family.
+CÂU: Em yêu bố mẹ. | I love my parents.
+CÂU: Ông bà sống ở Việt Nam. | My grandparents live in Vietnam.
+CÂU: Em giúp mẹ nấu cơm. | I help my mother cook rice.
+HỘI THOẠI: Nhà của các bạn | Your family
+TRÂU CON: Nhà các bạn có mấy người? | How many people are in your family?
+BẠN: Nhà mình có bốn người. | There are four people in my family.
+TRÂU CON: Ồ, vui quá! Các bạn có anh chị em không? | Oh, how fun! Do you have brothers or sisters?
+BẠN: Mình có một em bé. | I have a baby sibling.
+TRÂU CON: Các bạn thường làm gì cùng gia đình? | What do you often do with your family?
+BẠN: Mình ăn cơm cùng gia đình. | I eat meals with my family.
+
+CHỦ ĐỀ: Ở trường | At school
+ẢNH: reading.png
+TỪ: trường học | school
+TỪ: lớp học | classroom
+TỪ: quyển sách | book
+TỪ: cái bút | pen
+TỪ: bài học | lesson
+TỪ: học sinh | student
+TỪ: giờ ra chơi | recess
+TỪ: tiếng Việt | Vietnamese language
+CÂU: Em đi học tiếng Việt. | I go to Vietnamese class.
+CÂU: Đây là quyển sách của em. | This is my book.
+CÂU: Em thích giờ ra chơi. | I like recess.
+CÂU: Cô giáo dạy em đọc. | The teacher teaches me to read.
+CÂU: Lớp em có nhiều bạn. | My class has many friends.
+HỘI THOẠI: Ở lớp tiếng Việt | In Vietnamese class
+TRÂU CON: Các bạn học tiếng Việt ở đâu? | Where do you learn Vietnamese?
+BẠN: Mình học ở Trường Tiếng Việt Của Em. | I learn at Trường Tiếng Việt Của Em.
+TRÂU CON: Các bạn thích học môn gì nhất? | Which subject do you like most?
+BẠN: Mình thích học tiếng Việt. | I like learning Vietnamese.
+TRÂU CON: Giỏi quá! Các bạn đọc cho mình nghe nhé. | Great! Read to me, please.
+BẠN: Mình đọc được rồi. | I can read now.
+
+CHỦ ĐỀ: Đồ ăn | Food
+ẢNH: eating-pho.png
+TỪ: phở bò | beef noodle soup
+TỪ: bánh mì | bread, sandwich
+TỪ: cơm | rice
+TỪ: nước | water
+TỪ: hoa quả | fruit
+TỪ: quả chuối | banana
+TỪ: bữa sáng | breakfast
+TỪ: ngon quá | so delicious
+CÂU: Em thích ăn phở. | I like eating phở.
+CÂU: Mẹ nấu cơm rất ngon. | Mom cooks very tasty food.
+CÂU: Em uống một cốc nước. | I drink a glass of water.
+CÂU: Bữa sáng em ăn bánh mì. | I eat bread for breakfast.
+CÂU: Em mời cả nhà ăn cơm. | Please enjoy the meal, everyone.
+HỘI THOẠI: Bữa trưa | Lunch time
+TRÂU CON: Các bạn ơi, các bạn đói chưa? | Hey, are you hungry yet?
+BẠN: Mình đói rồi. | I'm hungry now.
+TRÂU CON: Các bạn muốn ăn gì? | What do you want to eat?
+BẠN: Mình muốn ăn phở. | I want to eat phở.
+TRÂU CON: Mình cũng thích phở lắm! Phở có ngon không? | I love phở too! Is the phở tasty?
+BẠN: Phở ngon quá! | The phở is so tasty!
+
+CHỦ ĐỀ: Con vật | Animals
+ẢNH: pointing.png
+TỪ: con trâu | water buffalo
+TỪ: con mèo | cat
+TỪ: con chó | dog
+TỪ: con gà | chicken
+TỪ: con cá | fish
+TỪ: con chim | bird
+TỪ: con voi | elephant
+TỪ: con thỏ | rabbit
+CÂU: Con mèo đang ngủ. | The cat is sleeping.
+CÂU: Con chó chạy rất nhanh. | The dog runs very fast.
+CÂU: Con chim hót trên cây. | The bird sings in the tree.
+CÂU: Con trâu ăn cỏ ngoài đồng. | The buffalo eats grass in the field.
+CÂU: Em thích con thỏ trắng. | I like the white rabbit.
+HỘI THOẠI: Bạn thích con gì? | Which animal do you like?
+TRÂU CON: Mình là con trâu. Các bạn thích con vật nào? | I'm a buffalo. Which animal do you like?
+BẠN: Mình thích con mèo. | I like cats.
+TRÂU CON: Con mèo kêu thế nào nhỉ? | What sound does a cat make?
+BẠN: Con mèo kêu meo meo. | The cat says meow meow.
+TRÂU CON: Đúng rồi! Nhà các bạn có nuôi con gì không? | That's right! Do you have a pet at home?
+BẠN: Nhà mình có một con chó. | We have a dog at home.
