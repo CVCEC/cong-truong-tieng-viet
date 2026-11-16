@@ -142,6 +142,26 @@ window.CONG_GT = {
       { vi: "Nút EN giải thích ngắn bằng tiếng Anh ở mọi phần", en: "EN button with short English explanations in every part" }
     ]
   },
+  cuocsong: {
+    gioiThieu: { vi: "Bài học cuộc sống: thơ “Lên Sáu”, “Lên Tám” của Tản Đà. Nghe cô Hà đọc thơ và giảng, hiểu lời thơ xưa và học làm người.", en: "Life lessons from Tản Đà's poems “Lên Sáu” (Turning Six) and “Lên Tám” (Turning Eight). Listen to cô Hà read and explain the verses, understand the old poems and learn how to be a good person." },
+    buoc: [
+      { e: "📜", vi: "Nghe cô Hà đọc thơ và đọc theo", en: "Listen to cô Hà read the poem and read along" },
+      { e: "🎬", vi: "Xem Trâu Con kể ý nghĩa khổ thơ", en: "Watch Trâu Con explain what the verses mean" },
+      { e: "👂", vi: "Nghe cô Hà giảng, chữ sáng theo giọng cô", en: "Listen to cô Hà's lesson as the words light up" },
+      { e: "🖼️", vi: "Trả lời câu hỏi có tranh, nhận sao", en: "Answer picture questions and earn stars" },
+      { e: "✏️", vi: "Viết vài câu: Dễ, Vừa, Khó", en: "Write a few sentences: Easy, Medium, Hard" }
+    ],
+    tongQuan: [
+      { so: "18", vi: "bài “Lên Sáu” (36 khổ)", en: "“Lên Sáu” lessons (36 verses)" },
+      { so: "32", vi: "bài “Lên Tám” (64 khổ), đang thêm", en: "“Lên Tám” lessons (64 verses), more coming" },
+      { so: "2", vi: "khổ thơ mỗi bài", en: "verses per lesson" }
+    ],
+    phan: [
+      { vi: "Nút EN giải thích bằng tiếng Anh ở mọi phần", en: "EN button with English explanations in every part" }
+    ],
+    // Góc một trang: mọi bài cùng /kho.html#…, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
+    thu: { url: "https://cuocsong.cvcec.org/kho.html#lensau-1", duong: ["/", "/kho.html"], baiThu: "lensau-1", ten: { vi: "“Lên Sáu” – Bài 1: Học chữ nước ta", en: "“Lên Sáu” – Lesson 1: Learning our own language" } }
+  },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },
     buoc: [
