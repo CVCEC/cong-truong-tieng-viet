@@ -91,7 +91,9 @@ window.CONG_GT = {
     phan: [
       { vi: "Có hộ chiếu, huy hiệu theo vùng miền", en: "With a passport and regional badges" },
       { vi: "Nút EN giải thích ngắn bằng tiếng Anh", en: "EN button for short English explanations" }
-    ]
+    ],
+    vaoThang: true, // trang Khám phá Việt Nam có bản đồ, Tổng quan và Hướng dẫn: mở thẳng để khách thấy ngay bản đồ
+    thu: { url: "https://vietnam.cvcec.org/", duong: ["/"], baiThu: "lung-cu", ten: { vi: "Trạm 1: Cột cờ Lũng Cú", en: "Stop 1: Lũng Cú flag tower" } }
   },
   venhaem: {
     gioiThieu: { vi: "Về Nhà Em: gặp nhau ở buổi cà phê tại Canada, học nói tiếng Việt qua 8 bài nấu món Việt, rồi 5 người học giỏi nhất được tài trợ về Việt Nam (ngày đi đang được thống nhất với các đối tác).", en: "Về Nhà Em: meet us at a coffee talk in Canada, learn to speak Vietnamese through 8 cooking lessons, and the five top learners win a sponsored trip to Vietnam (dates are being finalised with our partners)." },
