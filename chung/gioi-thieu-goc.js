@@ -9,25 +9,46 @@
  */
 window.CONG_GT = {
   baihoc: {
-    gioiThieu: { vi: "Lộ trình tiếng Việt từ bảng chữ cái, âm, vần, tập đọc tới văn hoá truyền thống. Mỗi bài là một chuỗi trò chơi cùng Trâu Con.", en: "A step-by-step Vietnamese path from the alphabet, sounds and rhymes to reading and traditional culture. Each lesson is a series of games with Trâu Con." },
+    gioiThieu: { vi: "Tiếng Việt cơ bản: lộ trình từ bảng chữ cái, âm, vần tới tập đọc. Mỗi bài là một chuỗi trò chơi cùng Trâu Con.", en: "Basic Vietnamese: a step-by-step path from the alphabet, sounds and rhymes to reading. Each lesson is a series of games with Trâu Con." },
     buoc: [
       { e: "👂", vi: "Nghe Trâu Con dẫn bài và đọc mẫu", en: "Listen as Trâu Con introduces the lesson and reads aloud" },
       { e: "🎮", vi: "Chơi lần lượt các trò chơi của bài", en: "Play the lesson's games one by one" },
       { e: "⭐", vi: "Mỗi trò được 1–3 sao: càng ít lỗi, càng nhiều sao", en: "Earn 1–3 stars per game: fewer mistakes, more stars" },
+      { e: "🔁", vi: "Sau mỗi chặng có bài ôn tập", en: "Review lessons after each stage" },
       { e: "📝", vi: "In phiếu bài tập về nhà để luyện thêm", en: "Print the homework sheet for extra practice" }
     ],
     tongQuan: [
-      { so: "144", vi: "bài học", en: "lessons" },
+      { so: "80", vi: "bài học", en: "lessons" },
       { so: "12", vi: "bài ôn tập", en: "review lessons" },
       { so: "7–11", vi: "trò chơi mỗi bài", en: "games per lesson" }
     ],
     phan: [
       { vi: "Bài 1–2: bảng chữ cái, phụ âm ghép", en: "Lessons 1–2: the alphabet, consonant clusters" },
       { vi: "Bài 3–70: âm và vần", en: "Lessons 3–70: sounds and rhymes" },
-      { vi: "Bài 71–80: tập đọc", en: "Lessons 71–80: reading" },
-      { vi: "Bài 81–145: văn hoá truyền thống", en: "Lessons 81–145: traditional culture" }
+      { vi: "Bài 71–80: tập đọc", en: "Lessons 71–80: reading" }
     ],
     thu: { url: "https://baihoc.cvcec.org/bai-1/", duong: ["/", "/bai-1/"], ten: { vi: "Bài 1: Bảng chữ cái, nguyên âm và phụ âm", en: "Lesson 1: The alphabet, vowels and consonants" } }
+  },
+  vanhoa: {
+    gioiThieu: { vi: "Văn hoá truyền thống: lễ Tết, phong tục và đời sống Việt qua bài đọc, từ mới và trò chơi.", en: "Traditional culture: Vietnamese festivals, customs and daily life through readings, new words and games." },
+    buoc: [
+      { e: "📜", vi: "Đọc thơ mở đầu cùng Trâu Con", en: "Read the opening poem with Trâu Con" },
+      { e: "🔤", vi: "Học từ mới, từ khó", en: "Learn new and hard words" },
+      { e: "📖", vi: "Đọc từng đoạn và trả lời câu hỏi", en: "Read each passage and answer questions" },
+      { e: "🎮", vi: "Chơi trò ôn từ, xếp câu, điền từ", en: "Play word, sentence and fill-in games" },
+      { e: "⭐", vi: "Mỗi trò được 1–3 sao", en: "Earn 1–3 stars per game" }
+    ],
+    tongQuan: [
+      { so: "64", vi: "bài học (Bài 81–145)", en: "lessons (Lessons 81–145)" },
+      { so: "10", vi: "trò chơi mỗi bài", en: "games per lesson" }
+    ],
+    phan: [
+      { vi: "Lễ Tết: Giỗ Tổ Hùng Vương, Tết Đoan Ngọ, Tết Trung thu, Tết Nguyên đán…", en: "Festivals: Hùng Kings' Day, Đoan Ngọ, Mid-Autumn, Lunar New Year…" },
+      { vi: "Gia đình, thầy cô và những ngày tri ân", en: "Family, teachers and days of gratitude" },
+      { vi: "Ẩm thực, áo dài, văn hoá dân gian, ca dao, tục ngữ", en: "Food, áo dài, folk culture, folk verses and proverbs" },
+      { vi: "Đời sống: nghề nghiệp, giao thông, sức khoẻ, thiên nhiên", en: "Daily life: jobs, transport, health, nature" }
+    ],
+    thu: { url: "https://baihoc.cvcec.org/bai-81/", duong: ["/", "/bai-81/"], ten: { vi: "Bài 81: Ngày Nhà giáo Việt Nam – Tri ân cha mẹ", en: "Lesson 81: Vietnamese Teachers' Day – Thanking our parents" } }
   },
   vuihoc: {
     gioiThieu: { vi: "Bản tương tác của bộ sách Vui học tiếng Việt (Quyển 1, 2): nghe, nói theo, đóng vai, học hát và tô chữ.", en: "The interactive edition of the Vui học tiếng Việt books (Books 1 and 2): listen, repeat, role-play, sing and colour letters." },
