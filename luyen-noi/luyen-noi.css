@@ -106,9 +106,14 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
 .ln-diem-gan-dung { color: var(--ttv-chu); background: var(--ttv-kem-rom); border-color: var(--ttv-sao); }
 .ln-diem-can-luyen { color: var(--ttv-sai); background: var(--ttv-sai-nen); }
 
-.ln-nguon { margin: 8px 0 4px; color: var(--ttv-chu-phu); font-size: .9rem; text-align: center; }
-.ln-cam-on { margin: 0; text-align: center; font-size: .95rem; }
+.ln-nguon { font-size: .95rem; }
+.ln-nguon h2 { font-size: 1.25rem; }
+.ln-nguon p { margin: 0 0 10px; }
+.ln-tai-lieu { margin: 0 0 14px; padding-left: 1.2em; color: var(--ttv-chu-phu); line-height: 1.5; }
+.ln-tai-lieu li { margin: 0 0 6px; }
+.ln-cam-on { margin: 0; padding-top: 10px; border-top: 2px solid var(--ttv-vien); }
 .ln-cam-on a { color: var(--ttv-chu); font-weight: 800; }
+.ln-an-chu { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 @media (max-width: 960px) {
   .ln-luoi { grid-template-columns: repeat(2, minmax(0, 1fr)); }

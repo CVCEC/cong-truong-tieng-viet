@@ -22,8 +22,10 @@
   "b1": "Bước 1 – Đo giọng",
   "b2": "Bước 2 – Chọn tiếng",
   "b3": "Bước 3 – Đọc 6 thanh",
+  "nguonTieuDe": "Nguồn tham khảo",
+  "nguonGioiThieu": "Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.",
   "camOn": "Ý tưởng tham khảo từ VietPhonLab",
-  "nguon": "Đường mẫu theo số Chao: giọng Hà Nội theo Kirby (2011), giọng Sài Gòn theo Vũ Thanh Phương (1982) và Brunelle (2009).",
+  "camOnNd": "Cảm ơn VietPhonLab đã gợi ý ý tưởng một công cụ luyện thanh điệu. Trang này không dùng mã, hình ảnh hay nội dung nào của VietPhonLab.",
   "khongJs": "Trang này cần bật JavaScript để ghi âm và vẽ đường giọng."
  },
  "en": {
@@ -36,8 +38,10 @@
   "b1": "Step 1 – Measure my voice",
   "b2": "Step 2 – Choose a syllable",
   "b3": "Step 3 – Read the 6 tones",
+  "nguonTieuDe": "Sources",
+  "nguonGioiThieu": "The model tone lines, the pitch-tracking method and the spelling rules on this page come from the scientific publications and official documents below. All code, images and text on this page were written by CVCEC; the Trâu Con pictures belong to the school.",
   "camOn": "Idea inspired by VietPhonLab",
-  "nguon": "Model lines use Chao tone numbers: Hà Nội after Kirby (2011), Sài Gòn after Vũ Thanh Phương (1982) and Brunelle (2009).",
+  "camOnNd": "Thank you to VietPhonLab for the idea of a tone-practice tool. This page does not use any code, images or content from VietPhonLab.",
   "khongJs": "Please turn on JavaScript to record and draw your voice line."
  }
 };</script>
@@ -83,8 +87,21 @@
           <div id="ln-buoc-3-noi-dung"></div>
         </section>
 
-        <p class="ln-nguon" data-chu="nguon">Đường mẫu theo số Chao: giọng Hà Nội theo Kirby (2011), giọng Sài Gòn theo Vũ Thanh Phương (1982) và Brunelle (2009).</p>
-        <p class="ln-cam-on"><a href="https://ipa-vietnamese.vercel.app/phat-am" target="_blank" rel="noopener" data-chu="camOn">Ý tưởng tham khảo từ VietPhonLab</a></p>
+        <section class="ln-the ln-nguon" aria-labelledby="ln-tieu-de-nguon">
+          <h2 id="ln-tieu-de-nguon" data-chu="nguonTieuDe">Nguồn tham khảo</h2>
+          <p data-chu="nguonGioiThieu">Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.</p>
+          <ul class="ln-tai-lieu" lang="en">
+            <li>Kirby, J. P. (2011). Vietnamese (Hanoi Vietnamese). <i>Journal of the International Phonetic Association</i>, 41(3), 381–392. – số Chao giọng Hà Nội.</li>
+            <li>Vũ Thanh Phương (1982). Phonetic properties of Vietnamese tones across dialects. In D. Bradley (ed.), <i>Papers in South-East Asian Linguistics No. 8: Tonation</i>. Pacific Linguistics A-62. – số Chao giọng Sài Gòn.</li>
+            <li>Brunelle, M. (2009). Northern and Southern Vietnamese tone coarticulation: A comparative case study. <i>Journal of Southeast Asian Linguistics</i>, 1. – thanh điệu giọng Bắc và giọng Nam.</li>
+            <li>Chao, Y. R. (1930). A system of tone letters. <i>Le Maître Phonétique</i>, 30, 24–27. – thang 5 bậc và ký hiệu thanh điệu.</li>
+            <li>International Phonetic Association (1999). <i>Handbook of the International Phonetic Association</i>. Cambridge University Press. – ký hiệu IPA.</li>
+            <li>de Cheveigné, A. &amp; Kawahara, H. (2002). YIN, a fundamental frequency estimator for speech and music. <i>Journal of the Acoustical Society of America</i>, 111(4), 1917–1930. – thuật toán dò cao độ.</li>
+            <li>Sakoe, H. &amp; Chiba, S. (1978). Dynamic programming algorithm optimization for spoken word recognition. <i>IEEE Transactions on Acoustics, Speech, and Signal Processing</i>, 26(1), 43–49. – co giãn thời gian khi so đường (DTW).</li>
+            <li lang="vi">Bộ Giáo dục và Đào tạo (2018). Quyết định số 1989/QĐ-BGDĐT ban hành Quy định về chính tả tiếng Việt và thuật ngữ tiếng Việt trong sách giáo khoa giáo dục phổ thông. – quy tắc chính tả và vị trí dấu thanh.</li>
+          </ul>
+          <p class="ln-cam-on"><a href="https://ipa-vietnamese.vercel.app/phat-am" target="_blank" rel="noopener"><span data-chu="camOn">Ý tưởng tham khảo từ VietPhonLab</span><span class="ln-an-chu" data-tab-moi> (mở tab mới)</span></a><br><span data-chu="camOnNd">Cảm ơn VietPhonLab đã gợi ý ý tưởng một công cụ luyện thanh điệu. Trang này không dùng mã, hình ảnh hay nội dung nào của VietPhonLab.</span></p>
+        </section>
       </div>
     </section>
   </main>

@@ -1,6 +1,7 @@
 /*!
  * cao-do.js – Dò cao độ và so thanh điệu cho trang Luyện nói – Luyện thanh điệu.
- * Tự viết cho Trường Tiếng Việt Của Em (CVCEC). Chạy hoàn toàn trên máy: không gửi âm thanh đi đâu.
+ * Tự viết cho Trường Tiếng Việt Của Em (CVCEC) chỉ dựa trên các tài liệu khoa học ghi dưới đây và trong
+ * luyen-noi/NGUON.md. Không dùng mã của bên nào khác. Chạy hoàn toàn trên máy: không gửi âm thanh đi đâu.
  * Dùng được trong trình duyệt (window.CaoDo) và trong Node (require) để chạy bài kiểm thử.
  *
  * Gồm:
@@ -10,7 +11,9 @@
  *  - phanTich: chia khung 10 ms, tính năng lượng (RMS) và F0; khung lặng hoặc vô thanh bị bỏ.
  *  - duongGiong: đổi F0 sang semitone so với mốc giọng của bé, sửa lỗi quãng tám, làm mượt, cắt lấy đoạn tiếng chính.
  *  - MAU: đường mẫu 6 thanh (số Chao) cho giọng Hà Nội và Sài Gòn, kèm đường mẫu riêng cho tiếng tắc.
- *  - chamDiem: so đường giọng với đường mẫu sau khi co giãn thời gian (DTW), cho điểm 0–100.
+ *  - chamDiem: so đường giọng với đường mẫu sau khi co giãn thời gian (DTW, Sakoe & Chiba 1978,
+ *    "Dynamic programming algorithm optimization for spoken word recognition", IEEE Trans. ASSP 26(1)), cho điểm 0–100.
+ *  - Thang 5 bậc và ký hiệu thanh điệu: Chao, Y. R. (1930), "A system of tone letters", Le Maître Phonétique 30.
  */
 (function (goc, tao) {
   if (typeof module === "object" && module.exports) module.exports = tao();
@@ -205,9 +208,9 @@
    *    Một số tài liệu khác ghi huyền là 21 hoặc 31 (ví dụ Đoàn Thiện Thuật, Ngữ âm tiếng Việt, 1977);
    *    ở đây giữ 32 theo Kirby (2011). Hai cách ghi đều là "đi xuống nhẹ, thấp".
    *  - Sài Gòn: Vũ Thanh Phương (1982). Phonetic properties of Vietnamese tones across dialects.
-   *    Papers in South East Asian Linguistics 8: Tonation, Pacific Linguistics A-62, 55–75;
+   *    Papers in South-East Asian Linguistics No. 8: Tonation, Pacific Linguistics A-62;
    *    Brunelle, M. (2009). Northern and Southern Vietnamese tone coarticulation: A comparative case study.
-   *    Journal of Southeast Asian Linguistics 1, 49–62.
+   *    Journal of Southeast Asian Linguistics 1.
    *    Giọng Nam: hỏi và ngã nhập làm một (214), không có tắc thanh hầu rõ; ngang 33, huyền 21, sắc 45, nặng 212.
    *    Tiếng tắc: sắc 45, nặng 21 (ngắn).
    *  Số Chao là ước lượng theo tai nghe và đo đạc trung bình; giọng từng người có thể khác. Vì vậy điểm chỉ để tham khảo.

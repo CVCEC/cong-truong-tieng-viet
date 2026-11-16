@@ -1,6 +1,9 @@
 /*!
  * ghep-tieng.js – Bộ ghép âm đầu + vần + âm cuối, tự viết đúng chính tả tiếng Việt.
  * Tự viết cho Trường Tiếng Việt Của Em (CVCEC). Dùng trong trình duyệt (window.GhepTieng) và trong Node (kiểm thử).
+ * Nguồn quy tắc: Bộ Giáo dục và Đào tạo (2018), Quyết định số 1989/QĐ-BGDĐT ban hành Quy định về chính tả
+ * tiếng Việt và thuật ngữ tiếng Việt trong sách giáo khoa giáo dục phổ thông (dấu thanh đặt trên âm chính),
+ * cùng quy tắc chính tả c/k/q, g/gh, ng/ngh dạy trong sách Tiếng Việt lớp 1.
  *
  * Quy tắc chính tả được xử lý:
  *  - c / k / q: "k" trước e, ê, i (iê); "qu" khi có âm đệm; còn lại "c".
