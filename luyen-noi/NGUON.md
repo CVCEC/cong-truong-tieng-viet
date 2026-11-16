@@ -4,7 +4,7 @@ Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâ
 
 ## Cách làm
 - Toàn bộ mã (`cao-do.js`, `ghep-tieng.js`, `luyen-noi.js`, `luyen-noi.css`, `index.html`) và chữ trên trang do CVCEC viết mới vào tháng 11/2026.
-- Khi làm trang này, không mở, không tải và không sao chép mã nguồn, hình ảnh, chữ, đường mẫu hay dữ liệu của bất kỳ trang hay phần mềm luyện phát âm nào khác (kể cả VietPhonLab, https://ipa-vietnamese.vercel.app).
+- Khi làm trang này, không mở, không tải và không sao chép mã nguồn, hình ảnh, chữ, đường mẫu hay dữ liệu của bất kỳ trang hay phần mềm luyện phát âm nào khác.
 - Ý tưởng so đường cao độ với đường mẫu thanh điệu là cách làm phổ biến trong ngữ âm học và dạy ngôn ngữ có thanh điệu, có trong nhiều tài liệu và phần mềm nghiên cứu ngữ âm.
 - Ảnh Trâu Con là ảnh chính thức của trường (`/assets/trau/`). Màu và phông lấy từ bộ mẫu chung Làng Trâu Con (mau.cvcec.org).
 
