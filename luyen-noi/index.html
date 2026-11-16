@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luyện nói – Luyện thanh điệu · Trường Tiếng Việt Của Em</title>
+<meta name="description" content="Luyện nói – Luyện thanh điệu: đọc một tiếng, rồi xem đường giọng của em so với đường mẫu của 6 thanh điệu tiếng Việt. Âm thanh chỉ xử lý trên máy của em.">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
+<link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
+<link rel="stylesheet" href="/chung/cong.css?v=7">
+<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=1">
+<script>window.CONG_CHU = {
+ "vi": {
+  "tieuDe": "Luyện nói – Luyện thanh điệu",
+  "phuDe": "Đọc một tiếng, rồi xem đường giọng của em so với đường mẫu.",
+  "ghiChuRieng": "Âm thanh chỉ xử lý trên máy của em",
+  "ghiChuRiengNd": "Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.",
+  "ghiChuThanh": "Công cụ chỉ so thanh điệu",
+  "ghiChuThanhNd": "Máy chưa chấm phụ âm và nguyên âm. Điểm chỉ để tham khảo; thầy cô vẫn là người nghe giỏi nhất.",
+  "b1": "Bước 1 – Đo giọng",
+  "b2": "Bước 2 – Chọn tiếng",
+  "b3": "Bước 3 – Đọc 6 thanh",
+  "nguonTieuDe": "Nguồn tham khảo",
+  "nguonGioiThieu": "Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.",
+  "khongJs": "Trang này cần bật JavaScript để ghi âm và vẽ đường giọng."
+ },
+ "en": {
+  "tieuDe": "Speaking practice – Tones",
+  "phuDe": "Read a syllable, then compare your voice line with the model tone line.",
+  "ghiChuRieng": "Audio is processed only on your device",
+  "ghiChuRiengNd": "No audio is sent over the internet. Recordings disappear when you close the page, unless you press “Save recording”.",
+  "ghiChuThanh": "This tool only compares tones",
+  "ghiChuThanhNd": "It does not check consonants or vowels yet. Scores are for reference only; your teacher is still the best listener.",
+  "b1": "Step 1 – Measure my voice",
+  "b2": "Step 2 – Choose a syllable",
+  "b3": "Step 3 – Read the 6 tones",
+  "nguonTieuDe": "Sources",
+  "nguonGioiThieu": "The model tone lines, the pitch-tracking method and the spelling rules on this page come from the scientific publications and official documents below. All code, images and text on this page were written by CVCEC; the Trâu Con pictures belong to the school.",
+  "khongJs": "Please turn on JavaScript to record and draw your voice line."
+ }
+};</script>
+<script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="/chung/canh.js?v=7" defer></script>
+<script src="/chung/cong.js?v=7" defer></script>
+<script type="module" src="/js/tai-khoan.js?v=7"></script>
+<script src="/luyen-noi/cao-do.js?v=1" defer></script>
+<script src="/luyen-noi/ghep-tieng.js?v=1" defer></script>
+<script src="/luyen-noi/luyen-noi.js?v=1" defer></script>
+</head>
+<body class="cong" data-ttv-khong-thanh data-trang="hoc-tap" data-tieu-de="tieuDe">
+  <header class="cong-dau" data-cong-dau></header>
+  <main>
+    <section class="trang-dau co-canh" data-canh="lang-que" aria-labelledby="tieu-de-trang">
+      <div class="cong-ruot">
+        <h1 id="tieu-de-trang" data-chu="tieuDe">Luyện nói – Luyện thanh điệu</h1>
+        <p class="trang-phu-de" data-chu="phuDe">Đọc một tiếng, rồi xem đường giọng của em so với đường mẫu.</p>
+      </div>
+    </section>
+
+    <section class="cong-phan trang-than ln" data-ttv-nen="don-gian">
+      <div class="cong-ruot">
+        <noscript><p class="ln-tin ln-tin-sai" data-chu="khongJs">Trang này cần bật JavaScript để ghi âm và vẽ đường giọng.</p></noscript>
+
+        <div class="ln-ghi-chu">
+          <p><span class="ln-bieu-tuong" aria-hidden="true">🔒</span><span><strong data-chu="ghiChuRieng">Âm thanh chỉ xử lý trên máy của em</strong><br><span data-chu="ghiChuRiengNd">Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.</span></span></p>
+          <p><span class="ln-bieu-tuong" aria-hidden="true">🎵</span><span><strong data-chu="ghiChuThanh">Công cụ chỉ so thanh điệu</strong><br><span data-chu="ghiChuThanhNd">Máy chưa chấm phụ âm và nguyên âm. Điểm chỉ để tham khảo; thầy cô vẫn là người nghe giỏi nhất.</span></span></p>
+        </div>
+
+        <section class="ln-the" id="ln-buoc-1" aria-labelledby="ln-tieu-de-1">
+          <h2 id="ln-tieu-de-1"><span class="ln-so" aria-hidden="true">1</span><span data-chu="b1">Bước 1 – Đo giọng</span></h2>
+          <div id="ln-buoc-1-noi-dung"></div>
+        </section>
+
+        <section class="ln-the" id="ln-buoc-2" aria-labelledby="ln-tieu-de-2">
+          <h2 id="ln-tieu-de-2"><span class="ln-so" aria-hidden="true">2</span><span data-chu="b2">Bước 2 – Chọn tiếng</span></h2>
+          <div id="ln-buoc-2-noi-dung"></div>
+        </section>
+
+        <section class="ln-the" id="ln-buoc-3" aria-labelledby="ln-tieu-de-3">
+          <h2 id="ln-tieu-de-3"><span class="ln-so" aria-hidden="true">3</span><span data-chu="b3">Bước 3 – Đọc 6 thanh</span></h2>
+          <div id="ln-buoc-3-noi-dung"></div>
+        </section>
+
+        <section class="ln-the ln-nguon" aria-labelledby="ln-tieu-de-nguon">
+          <h2 id="ln-tieu-de-nguon" data-chu="nguonTieuDe">Nguồn tham khảo</h2>
+          <p data-chu="nguonGioiThieu">Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.</p>
+          <ul class="ln-tai-lieu" lang="en">
+            <li>Kirby, J. P. (2011). Vietnamese (Hanoi Vietnamese). <i>Journal of the International Phonetic Association</i>, 41(3), 381–392. – số Chao giọng Hà Nội.</li>
+            <li>Vũ Thanh Phương (1982). Phonetic properties of Vietnamese tones across dialects. In D. Bradley (ed.), <i>Papers in South-East Asian Linguistics No. 8: Tonation</i>. Pacific Linguistics A-62. – số Chao giọng Sài Gòn.</li>
+            <li>Brunelle, M. (2009). Northern and Southern Vietnamese tone coarticulation: A comparative case study. <i>Journal of Southeast Asian Linguistics</i>, 1. – thanh điệu giọng Bắc và giọng Nam.</li>
+            <li>Chao, Y. R. (1930). A system of tone letters. <i>Le Maître Phonétique</i>, 30, 24–27. – thang 5 bậc và ký hiệu thanh điệu.</li>
+            <li>International Phonetic Association (1999). <i>Handbook of the International Phonetic Association</i>. Cambridge University Press. – ký hiệu IPA.</li>
+            <li>de Cheveigné, A. &amp; Kawahara, H. (2002). YIN, a fundamental frequency estimator for speech and music. <i>Journal of the Acoustical Society of America</i>, 111(4), 1917–1930. – thuật toán dò cao độ.</li>
+            <li>Sakoe, H. &amp; Chiba, S. (1978). Dynamic programming algorithm optimization for spoken word recognition. <i>IEEE Transactions on Acoustics, Speech, and Signal Processing</i>, 26(1), 43–49. – co giãn thời gian khi so đường (DTW).</li>
+            <li lang="vi">Bộ Giáo dục và Đào tạo (2018). Quyết định số 1989/QĐ-BGDĐT ban hành Quy định về chính tả tiếng Việt và thuật ngữ tiếng Việt trong sách giáo khoa giáo dục phổ thông. – quy tắc chính tả và vị trí dấu thanh.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="cong-chan" data-cong-chan>
+    <!-- cong.js dựng phần trên; bộ mẫu điền dòng bản quyền mờ và liên hệ vào đây -->
+    <div data-ttv-chan></div>
+  </footer>
+</body>
+</html>
