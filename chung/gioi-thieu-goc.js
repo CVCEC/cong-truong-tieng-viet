@@ -227,7 +227,7 @@ window.CONG_GT = {
     gioiThieu: { vi: "Luyện nói – Luyện thanh cùng Trâu Con: học bảng âm tiếng Việt (IPA) và cách ghép âm vần, luyện 6 thanh điệu, luyện từ, luyện câu và nói chuyện với Trâu Con theo chủ đề. Máy nghe và chấm điểm từng chữ: đúng tô xanh, sai dấu tô cam. Có 4 mức từ bé tới lớn.", en: "Speaking and tones with Trâu Con: learn the Vietnamese sound chart (IPA) and how to blend sounds into syllables, practise the 6 tones, words and sentences, and talk with Trâu Con by topic. The computer listens and scores every word: green is correct, orange is a wrong tone. 4 levels from little ones to teens." },
     buoc: [
       { e: "🔈", vi: "Mở Bảng âm: nghe từng âm, xem cách ghép và đánh vần", en: "Open the Sound chart: hear each sound, see how to blend and spell" },
-      { e: "🎵", vi: "Luyện thanh: đo giọng rồi đọc 6 thanh, so đường giọng với đường mẫu", en: "Tones: measure your voice, read the 6 tones and compare with the model line" },
+      { e: "🎵", vi: "Luyện thanh: đi cùng Trâu Con qua 6 nhân vật dấu thanh, nói theo và thu sao", en: "Tones: walk with Trâu Con past the 6 tone-mark characters, speak along and collect stars" },
       { e: "🌱", vi: "Chọn mức: Mầm, Chồi, Lá hoặc Cây", en: "Choose a level: Sprout, Bud, Leaf or Tree" },
       { e: "📚", vi: "Chọn chủ đề: chào hỏi, gia đình, Tết…", en: "Choose a topic: greetings, family, Tết…" },
       { e: "👂", vi: "Nghe Trâu Con đọc mẫu", en: "Listen to Trâu Con read the model" },
@@ -250,11 +250,11 @@ window.CONG_GT = {
     tongQuan: [
       { so: "4", vi: "mức, từ dưới 6 tuổi tới 13 tuổi trở lên", en: "levels, from under 6 to 13 and older" },
       { so: "24", vi: "chủ đề", en: "topics" },
-      { so: "6", vi: "thanh điệu có đường mẫu để so", en: "tones with model lines to compare" }
+      { so: "6", vi: "nhân vật dấu thanh trên đường đi học", en: "tone-mark characters on the road to school" }
     ],
     phan: [
       { vi: "Bảng âm (IPA): âm đầu, nguyên âm, vần, âm cuối, thanh điệu, có loa đọc mẫu và cách ghép âm vần", en: "Sound chart (IPA): initials, vowels, rhymes, finals and tones, with model audio and syllable blending" },
-      { vi: "Luyện thanh: so đường giọng với đường mẫu", en: "Tones: compare your voice line with the model" },
+      { vi: "Luyện thanh – Đường đi học của Trâu Con: anh Sắc, bà Huyền, chú Hỏi, chị Ngã, bác Nặng; giọng của em hiện thành dấu chân Trâu Con", en: "Tones – Trâu Con's road to school: Mr Sắc, Grandma Huyền, Uncle Hỏi, Sister Ngã, Uncle Nặng; your voice appears as Trâu Con's hoofprints" },
       { vi: "Luyện từ, Luyện câu: mỗi chủ đề 8 từ, 5 câu", en: "Words and sentences: 8 words and 5 sentences per topic" },
       { vi: "Hội thoại cùng Trâu Con: 4–8 lượt mỗi đoạn", en: "Talk with Trâu Con: 4–8 turns per conversation" },
       { vi: "Chấm câu cần Chrome, Edge hoặc Safari; giọng đọc được gửi tới dịch vụ nhận dạng của Google hoặc Apple, CVCEC không lưu", en: "Scoring needs Chrome, Edge or Safari; your voice goes to Google's or Apple's recognition service, and CVCEC keeps nothing" }

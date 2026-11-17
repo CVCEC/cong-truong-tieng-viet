@@ -222,6 +222,10 @@
     THANH.forEach(function (t) { them(t.doc, "thanh"); them(t.tenDau, "dau"); them(t.vd, "vi-du"); });
     var bv = bangVan();
     bv.mo.concat(bv.cuoi, bv.dem).forEach(function (m) { them(m.chu, "van"); });
+    // Bước 3 (Đường đi học): đủ các thanh của mỗi tiếng gợi ý, để nút "Nghe mẫu" có giọng
+    GhepTieng.GOI_Y.forEach(function (g) {
+      GhepTieng.thanhDung(g.cuoi).forEach(function (th) { them(GhepTieng.ghep(g.dau, g.van, g.cuoi, th).chu, "luyen-thanh"); });
+    });
     // Các bước đánh vần của mọi tiếng ví dụ và tiếng gợi ý
     var tieng = [];
     [AM_DAU, NGUYEN_AM, NGUYEN_AM_DOI, AM_DEM, AM_CUOI].forEach(function (ds) { ds.forEach(function (a) { tieng = tieng.concat(a.vd || []); }); });
@@ -240,13 +244,13 @@
      ===================================================================== */
   var CHU = {
     vi: {
-      gioiThieu: "Bấm 🔈 để nghe Trâu Con đọc mẫu. Ký hiệu trong /…/ là IPA (bảng phiên âm quốc tế), ghi theo giọng Hà Nội; dòng “Giọng Sài Gòn” cho biết chỗ đọc khác.",
+      gioiThieu: "Bấm 🔈 để nghe Trâu Con đọc mẫu. Ký hiệu trong /…/ là IPA (bảng phiên âm quốc tế), ghi theo giọng phổ thông (Hà Nội).",
       chuaCoGiong: "Trâu Con đang tập đọc mẫu cho bảng này. Nút loa mờ là chưa có giọng đọc mẫu, các bạn quay lại sau nhé.",
       amDau: "Âm đầu (phụ âm đầu)", nguyenAm: "Nguyên âm", nguyenAmDoi: "Nguyên âm đôi", amDem: "Âm đệm",
       amCuoi: "Âm cuối", thanh: "Thanh điệu", bangVan: "Bảng vần", ghep: "Ghép âm vần",
       vanMo: "Vần không có âm cuối", vanCuoi: "Vần có âm cuối", vanDem: "Vần có âm đệm",
       sg: "Giọng Sài Gòn", nghe: "Nghe", viDu: "Ví dụ",
-      thanhCot: ["Thanh", "Dấu", "Ví dụ", "Hà Nội", "Sài Gòn", ""],
+      thanhCot: ["Thanh", "Dấu", "Ví dụ", "Hướng giọng", ""],
       luyenThanh: "Luyện thanh", khongDau: "không dấu",
       ghepHuongDan: "Chọn âm đầu, vần, âm cuối và thanh. Trâu Con ghép thành tiếng, ghi phiên âm và đánh vần cho các bạn.",
       ghepDau: "Âm đầu", ghepVan: "Vần", ghepCuoi: "Âm cuối", ghepThanh: "Thanh", khongCo: "không có",
@@ -256,13 +260,13 @@
       moVan: "Xem bảng vần", dongVan: "Thu gọn bảng vần"
     },
     en: {
-      gioiThieu: "Press 🔈 to hear Trâu Con read the model. Symbols in /…/ are IPA (the International Phonetic Alphabet) for the Hà Nội accent; the “Sài Gòn accent” line shows where it differs.",
+      gioiThieu: "Press 🔈 to hear Trâu Con read the model. Symbols in /…/ are IPA (the International Phonetic Alphabet) for standard Vietnamese (Hà Nội).",
       chuaCoGiong: "Trâu Con is still recording this chart. Faded speaker buttons have no model audio yet — please come back later.",
       amDau: "Initial consonants", nguyenAm: "Vowels", nguyenAmDoi: "Diphthongs", amDem: "Glide",
       amCuoi: "Final sounds", thanh: "Tones", bangVan: "Rhyme chart", ghep: "Blend sounds into a syllable",
       vanMo: "Rhymes without a final", vanCuoi: "Rhymes with a final", vanDem: "Rhymes with a glide",
       sg: "Sài Gòn accent", nghe: "Listen", viDu: "Example",
-      thanhCot: ["Tone", "Mark", "Example", "Hà Nội", "Sài Gòn", ""],
+      thanhCot: ["Tone", "Mark", "Example", "Voice goes", ""],
       luyenThanh: "Practise tone", khongDau: "no mark",
       ghepHuongDan: "Choose an initial, rhyme, final and tone. Trâu Con blends them into a syllable, writes the IPA and spells it out for you.",
       ghepDau: "Initial", ghepVan: "Rhyme", ghepCuoi: "Final", ghepThanh: "Tone", khongCo: "none",
@@ -336,7 +340,6 @@
       dau.appendChild(chu);
       if (a.ipa) dau.appendChild(tao("span", "ba-ipa", "/" + a.ipa + "/"));
       o.appendChild(dau);
-      if (a.sg) o.appendChild(tao("p", "ba-sg", T("sg") + ": /" + a.sg + "/"));
       if (a.ghiChu) o.appendChild(tao("p", "ba-ghi-chu", chuNN(a.ghiChu)));
       var hang = tao("div", "ba-loa-hang");
       if (coDoc && a.doc) hang.appendChild(nutLoa(a.doc, a.doc));
@@ -368,9 +371,10 @@
         var c1 = tao("td"); c1.appendChild(nutLoa(t.doc, t.ten)); r.appendChild(c1);
         r.appendChild(tao("td", "ba-dau", t.dau || T("khongDau")));
         var c3 = tao("td"); c3.appendChild(nutLoa(t.vd, t.vd)); r.appendChild(c3);
-        var hn = CaoDo.layMau("hanoi", t.ma), sg = CaoDo.layMau("saigon", t.ma);
-        r.appendChild(tao("td", "ba-ipa", CaoDo.chuIPA(hn.chao) + " " + hn.chao));
-        r.appendChild(tao("td", "ba-ipa", CaoDo.chuIPA(sg.chao) + " " + sg.chao));
+        // Mũi tên chỉ hướng giọng (giọng phổ thông), cùng hình với Bước 3 Luyện thanh
+        var cmt = tao("td", "cd-the-" + t.ma);
+        if (window.ConDuong) cmt.appendChild(window.ConDuong.veMuiTen(t.ma));
+        r.appendChild(cmt);
         var c6 = tao("td");
         var a = tao("button", "ttv-nut-phu ba-nut-nho", "🎵 " + T("luyenThanh"));
         a.type = "button";
@@ -456,7 +460,6 @@
         var o2 = tao("div", "ba-kq-o");
         o2.appendChild(tao("span", "ba-kq-nhan", T("phienAm")));
         o2.appendChild(tao("span", "ba-ipa ba-ipa-to", ipaTieng(chon.dau, chon.van, chon.cuoi, chon.thanh, "hanoi")));
-        o2.appendChild(tao("span", "ba-sg", T("sg") + ": " + ipaTieng(chon.dau, chon.van, chon.cuoi, chon.thanh, "saigon")));
         kq.appendChild(o2);
         noi.appendChild(kq);
 
