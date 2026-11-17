@@ -171,6 +171,29 @@ window.CONG_GT = {
     // Góc một trang: mọi bài cùng /kho.html#…, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
     thu: { url: "https://cuocsong.cvcec.org/kho.html#lensau-1", duong: ["/", "/kho.html"], baiThu: "lensau-1", ten: { vi: "“Lên Sáu” – Bài 1: Học chữ nước ta", en: "“Lên Sáu” – Lesson 1: Learning our own language" } }
   },
+  nguphap: {
+    gioiThieu: { vi: "Nâng cao, dành cho các bạn đã đọc được câu ngắn: 37 bài ngữ pháp từ tiếng, từ, cụm từ đến câu và hội thoại. Mỗi bài 4 bước: Khởi động, Khám phá, Luyện tập, Vận dụng. Mới bắt đầu thì học Tiếng Việt cơ bản trước nhé.", en: "Advanced, for children who can read short sentences: 37 grammar lessons from syllables and words to phrases, sentences and conversation. Each lesson has 4 steps: Warm-up, Discover, Practise, Apply. Beginners start with Basic Vietnamese." },
+    buoc: [
+      { e: "🌱", vi: "Khởi động: một câu hỏi vui và bức tranh", en: "Warm-up: a fun question and a picture" },
+      { e: "🔍", vi: "Khám phá 4 thẻ ví dụ", en: "Discover 4 example cards" },
+      { e: "✏️", vi: "Luyện tập 3 câu, tự đối chiếu gợi ý", en: "Practise 3 questions and check the hints" },
+      { e: "🗣️", vi: "Vận dụng: nói, viết về cuộc sống của em", en: "Apply: speak or write about your own life" },
+      { e: "⭐", vi: "Mỗi bước 1 sao, đủ 4 sao là xong bài", en: "1 star per step, 4 stars to finish a lesson" }
+    ],
+    tongQuan: [
+      { so: "37", vi: "bài học", en: "lessons" },
+      { so: "3", vi: "phần: Tập 1, Tập 2, Hiểu ý trong hội thoại", en: "parts: Part 1, Part 2, Understanding conversation" },
+      { so: "8", vi: "chủ đề", en: "topics" }
+    ],
+    phan: [
+      { vi: "Tập 1 (Bài 1–16): từ và từ loại", en: "Part 1 (Lessons 1–16): words and word classes" },
+      { vi: "Tập 2 (Bài 17–34): cụm từ và câu", en: "Part 2 (Lessons 17–34): phrases and sentences" },
+      { vi: "Bài 35–37: hiểu ý trong hội thoại", en: "Lessons 35–37: understanding meaning in conversation" }
+    ],
+    vaoThang: true, // trang chủ Ngữ pháp đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn: mở thẳng
+    // Góc một trang: mọi bài cùng /bai.html#bai-N, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
+    thu: { url: "https://nguphap.cvcec.org/bai.html#bai-1", duong: ["/", "/bai.html"], baiThu: "bai-1", ten: { vi: "Bài 1: Ngữ pháp quanh em", en: "Lesson 1: Grammar all around us" } }
+  },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },
     buoc: [
