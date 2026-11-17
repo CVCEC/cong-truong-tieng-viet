@@ -1,0 +1,16 @@
+{
+  "name": "xuat-nghien-cuu-cvcec",
+  "private": true,
+  "description": "Xuất dữ liệu học tập ĐÃ ẨN DANH của người học đã đồng ý cho nghiên cứu (chạy trên máy quản trị, không đặt trên trang web)",
+  "type": "module",
+  "scripts": {
+    "xuat": "node xuat.mjs",
+    "thu": "firebase emulators:exec --only firestore --project truong-tieng-viet-cvcec \"node thu.mjs\""
+  },
+  "dependencies": {
+    "firebase-admin": "13.6.0"
+  },
+  "devDependencies": {
+    "firebase-tools": "14.27.0"
+  }
+}

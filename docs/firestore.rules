@@ -1,6 +1,6 @@
 rules_version = '2';
 // Security Rules – Trường Tiếng Việt Của Em (dự án truong-tieng-viet-cvcec)
-// Bản 2: tài khoản + hồ sơ học viên + tiến độ học + bảng xếp hạng. Mặc định chặn tất cả.
+// Bản 3: tài khoản + hồ sơ học viên + tiến độ học + bảng xếp hạng + đồng ý nghiên cứu. Mặc định chặn tất cả.
 service cloud.firestore {
   match /databases/{database}/documents {
 
@@ -168,6 +168,21 @@ service cloud.firestore {
             && soNguyen(request.resource.data.diem, 0, request.resource.data.diemToiDa)
             && soNguyen(request.resource.data.sao, 0, 3)
             && soNguyen(request.resource.data.thoiGianGiay, 0, 7200);
+        }
+
+        // ---------- Đồng ý cho nghiên cứu (không bắt buộc; bản 3, từ 2026-12) ----------
+        // Một tài liệu "nghienCuu": dongY (bool), luc (thời điểm máy chủ), phienBan (bản Chính sách).
+        // Chủ hồ sơ bật/tắt bất cứ lúc nào; quản trị viên chỉ đọc.
+        match /dongY/{ten} {
+          allow read: if dangNhapLa(uid) || laQuanTri();
+          allow delete: if dangNhapLa(uid);
+          allow create, update: if dangNhapLa(uid) && maHoSo == 'chinh' && ten == 'nghienCuu'
+            && exists(/databases/$(database)/documents/users/$(uid)/hoSo/chinh)
+            && request.resource.data.keys().hasOnly(['dongY', 'luc', 'phienBan'])
+            && request.resource.data.keys().hasAll(['dongY', 'luc', 'phienBan'])
+            && request.resource.data.dongY is bool
+            && request.resource.data.luc == request.time
+            && chuoi(request.resource.data.phienBan, 20);
         }
 
         // ---------- Bản tổng hợp của học viên ----------

@@ -41,6 +41,12 @@
   "chiNguoiLon": "Hồ sơ dưới 13 tuổi chỉ được tạo bởi tài khoản của người từ 18 tuổi trở lên.",
   "luuHs": "Lưu hồ sơ học viên",
   "bxhTieuDe": "Bảng xếp hạng",
+  "ncTieuDe": "Nghiên cứu về việc học tiếng Việt",
+  "ncDongY": "Đồng ý cho CVCEC dùng dữ liệu học tập đã ẩn danh cho nghiên cứu",
+  "ncGoiY": "Không bắt buộc. Dữ liệu đưa cho nghiên cứu không có tên, email, tên gọi hay biệt danh. Mỗi nghiên cứu phải được hội đồng đạo đức nghiên cứu phê duyệt. Bạn tắt được bất cứ lúc nào; không đồng ý thì vẫn học bình thường. Hồ sơ dưới 13 tuổi: cha mẹ quyết định.",
+  "ncBat": "Cảm ơn bạn! Đã lưu: bạn đồng ý cho nghiên cứu.",
+  "ncTat": "Đã lưu: bạn không đồng ý cho nghiên cứu.",
+  "ncLoi": "Chưa lưu được lựa chọn này. Bạn thử lại sau ít phút nhé.",
   "choXepHang": "Hiện biệt danh của tôi trên bảng xếp hạng",
   "bxhGoiY": "Bảng xếp hạng chỉ hiện biệt danh, con vật, cờ nước, số bài đã xong và số sao. Không bao giờ hiện tên thật hay email. Tắt đi thì dòng của bạn bị xoá khỏi mọi bảng.",
   "bxhBat": "Đã bật: biệt danh của bạn sẽ hiện trên bảng xếp hạng.",
@@ -115,6 +121,12 @@
   "chiNguoiLon": "A profile under 13 can only be created by an account holder aged 18 or older.",
   "luuHs": "Save learner profile",
   "bxhTieuDe": "Leaderboard",
+  "ncTieuDe": "Research on learning Vietnamese",
+  "ncDongY": "Allow CVCEC to use my de-identified learning data for research",
+  "ncGoiY": "Optional. Data shared for research has no name, email, display name or nickname. Each study must be approved by a research ethics board. You can turn this off at any time; learning works the same either way. For profiles under 13, the parent decides.",
+  "ncBat": "Thank you! Saved: you allow research use.",
+  "ncTat": "Saved: you do not allow research use.",
+  "ncLoi": "This choice could not be saved yet. Please try again in a few minutes.",
   "choXepHang": "Show my nickname on the leaderboard",
   "bxhGoiY": "The leaderboard shows only the nickname, animal, country flag, number of lessons completed and stars. It never shows a real name or email. Turning it off removes your row from every leaderboard.",
   "bxhBat": "On: your nickname will appear on the leaderboard.",
@@ -164,7 +176,7 @@
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/cong.js?v=8" defer></script>
-<script type="module" src="/js/tai-khoan.js?v=7"></script>
+<script type="module" src="/js/tai-khoan.js?v=8"></script>
 
 </head>
 <body class="cong" data-ttv-khong-thanh data-trang="ho-so" data-tieu-de="tieuDe">
@@ -217,6 +229,12 @@
             <label class="bm-cong-tac"><input type="checkbox" role="switch" id="cho-xep-hang"><span><strong data-chu="choXepHang"></strong><br><span class="bm-goi-y" data-chu="bxhGoiY"></span></span></label>
           </div>
 
+          <!-- Nghiên cứu (không bắt buộc) -->
+          <div class="bm-the">
+            <h2 data-chu="ncTieuDe">Nghiên cứu về việc học tiếng Việt</h2>
+            <label class="bm-cong-tac"><input type="checkbox" role="switch" id="dong-y-nc"><span><strong data-chu="ncDongY"></strong><br><span class="bm-goi-y" data-chu="ncGoiY"></span></span></label>
+          </div>
+
           <!-- Dữ liệu của tôi -->
           <div class="bm-the">
             <h2 data-chu="dlTieuDe">Dữ liệu của tôi</h2>
@@ -254,8 +272,8 @@ import { onAuthStateChanged, GoogleAuthProvider, reauthenticateWithPopup, reauth
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 import {
   CON_VAT, NHOM_TUOI, DUOI_13, DOI_TUONG, VAI_TRO, nhan, dsNuoc, kiemTraBietDanh, docTaiKhoan, docHoSo, taiKhoanDu,
-  luuHoSo, layDuLieu, taiTep, xoaHoSo, xoaTaiKhoan, luuTam
-} from "/js/tai-khoan.js?v=7";
+  luuHoSo, layDuLieu, taiTep, xoaHoSo, xoaTaiKhoan, luuTam, docDongYNghienCuu, luuDongYNghienCuu
+} from "/js/tai-khoan.js?v=8";
 
 const $ = (id) => document.getElementById(id);
 const c = () => window.CONG.chu();
@@ -318,6 +336,7 @@ function dienForm() {
   chonRadio("conVat", hoSo.conVat); chonRadio("nhomTuoi", hoSo.nhomTuoi); chonRadio("doiTuong", hoSo.doiTuong);
   $("dy-giam-ho").checked = !!hoSo.dongYGiamHoLuc;
   $("cho-xep-hang").checked = !!hoSo.choXepHang;
+  docDongYNghienCuu(nguoiDung.uid).then((d) => { $("dong-y-nc").checked = !!(d && d.dongY); });
   capNhatGiamHo(); veDongY();
 }
 $("chon-nhom-tuoi").addEventListener("change", capNhatGiamHo);
@@ -351,6 +370,11 @@ $("cho-xep-hang").addEventListener("change", () => ban($("cho-xep-hang"), async 
   const bat = $("cho-xep-hang").checked;
   const ok = await luuHs({ ...duLieuHoSo(), choXepHang: bat });
   if (ok) bao(bat ? c().bxhBat : c().bxhTat, "dung"); else $("cho-xep-hang").checked = !bat;
+}));
+$("dong-y-nc").addEventListener("change", () => ban($("dong-y-nc"), async () => {
+  const bat = $("dong-y-nc").checked;
+  try { await luuDongYNghienCuu(nguoiDung.uid, bat); bao(bat ? c().ncBat : c().ncTat, "dung"); }
+  catch (e) { console.error(e); $("dong-y-nc").checked = !bat; bao(c().ncLoi); }
 }));
 $("nut-tai").addEventListener("click", () => ban($("nut-tai"), async () => {
   taiTep("du-lieu-truong-tieng-viet-" + new Date().toISOString().slice(0, 10) + ".json", await layDuLieu(nguoiDung.uid));

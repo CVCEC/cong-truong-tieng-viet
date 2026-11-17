@@ -9,10 +9,10 @@
 import { auth, db } from "./firebase-cvcec.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import {
-  doc, getDoc, getDocs, collection, writeBatch, serverTimestamp, query, orderBy, limit
+  doc, getDoc, getDocs, setDoc, collection, writeBatch, serverTimestamp, query, orderBy, limit
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-export const PHIEN_BAN_DIEU_KHOAN = "2026-11";
+export const PHIEN_BAN_DIEU_KHOAN = "2026-11-17";
 const KHOA_TAM = "cvcec-tk-tam"; // sessionStorage: tóm tắt hồ sơ để đỡ đọc lại mỗi trang
 
 /* ================= Danh mục ================= */
@@ -221,6 +221,18 @@ export async function luuHoSo(uid, duLieu, hsCu) {
   return hsSau;
 }
 
+/* ================= Đồng ý cho nghiên cứu (không bắt buộc) ================= */
+// users/{uid}/hoSo/chinh/dongY/nghienCuu = { dongY, luc (máy chủ ghi), phienBan }. Xem docs/de-xuat-du-lieu-nghien-cuu.md
+export async function docDongYNghienCuu(uid) {
+  try {
+    const s = await getDoc(doc(db, "users", uid, "hoSo", "chinh", "dongY", "nghienCuu"));
+    return s.exists() ? s.data() : null;
+  } catch (e) { return null; }
+}
+export async function luuDongYNghienCuu(uid, dongY) {
+  await setDoc(doc(db, "users", uid, "hoSo", "chinh", "dongY", "nghienCuu"), { dongY: !!dongY, luc: serverTimestamp(), phienBan: PHIEN_BAN_DIEU_KHOAN });
+}
+
 /* ================= Tải dữ liệu của tôi ================= */
 function sangJson(v) {
   if (v && typeof v.toDate === "function") return v.toDate().toISOString();
@@ -231,7 +243,7 @@ function sangJson(v) {
 export async function layDuLieu(uid) {
   const goc = `users/${uid}/hoSo/chinh`;
   const kq = { taiXuong: new Date().toISOString(), nguon: "Trường Tiếng Việt Của Em – vietclass.cvcec.org", taiKhoan: await docTaiKhoan(uid), hoSo: await docHoSo(uid) };
-  for (const ten of ["tongHop", "thang", "bai", "lichSu"]) {
+  for (const ten of ["tongHop", "thang", "bai", "lichSu", "dongY"]) {
     const s = await getDocs(collection(db, `${goc}/${ten}`));
     kq[ten] = s.docs.map((d) => ({ id: d.id, ...d.data() }));
   }
@@ -264,7 +276,7 @@ export async function xoaHoSo(uid) {
   const hs = await docHoSo(uid);
   const ds = [];
   if (hs && hs.maCongKhai) xoaDongBxh({ delete: (r) => ds.push(r) }, hs);
-  for (const ten of ["lichSu", "bai", "thang", "tongHop"]) {
+  for (const ten of ["lichSu", "bai", "thang", "tongHop", "dongY"]) {
     const s = await getDocs(collection(db, `${goc}/${ten}`));
     s.docs.forEach((d) => ds.push(d.ref));
   }

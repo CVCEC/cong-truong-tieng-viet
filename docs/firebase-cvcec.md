@@ -30,6 +30,7 @@ Cập nhật lần cuối: 14-11-2026
   - Hiện tại trang gửi email bằng mẫu tiếng Việt có sẵn (`auth.languageCode = "vi"`). Lời ký cuối thư là "Đội ngũ Trường Tiếng Việt Của Em".
   - Người gửi tạm thời là `noreply@truong-tieng-viet-cvcec.firebaseapp.com`.
   - **Việc cần làm:** khoảng một tuần sau, thử lại ở Authentication → Templates. Đặt tên người gửi là "Trường Tiếng Việt Của Em" và tiêu đề song ngữ cho email xác nhận và email đặt lại mật khẩu. Nội dung thư xác nhận do Firebase khoá, không sửa được.
+- **Firestore → Rules – VIỆC CẦN LÀM NGAY (17-11-2026):** xuất bản **bản 3** trong `docs/firestore.rules` (thêm `hoSo/chinh/dongY/nghienCuu` cho ô đồng ý nghiên cứu). Cách làm: mở Firestore Database → Rules, dán toàn bộ nội dung tệp, bấm Publish. Đã chạy thử 18 tình huống trên trình giả lập (`docs/thu-rules/`). Trước khi xuất bản, ô đồng ý nghiên cứu sẽ báo "chưa lưu được"; các phần khác không bị ảnh hưởng.
 - **Firestore → Rules**: bản mới (bản 2: tài khoản, hồ sơ học viên, tiến độ học, bảng xếp hạng) lưu ở [`docs/firestore.rules`](firestore.rules). **Đã xuất bản** (15-11-2026). Đã chạy thử 15 tình huống trên trình giả lập (xem [`docs/thu-rules/`](thu-rules/)) và 14 tình huống trên dự án thật bằng một tài khoản thử tạm thời, đã xoá sạch sau khi thử.
 - Bản 1 (xuất bản 14-11-2026) dưới đây được thay bằng bản 2:
   - Mặc định chặn tất cả.

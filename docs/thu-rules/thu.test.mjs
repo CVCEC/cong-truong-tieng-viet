@@ -258,3 +258,19 @@ test('cổng ghi kết quả khi hồ sơ tắt xếp hạng (không đụng b�
   const th = (await getDoc(doc(a, 'users/a/hoSo/chinh/tongHop/tatCa'))).data();
   if (th.tongGiay !== 60 + 7200 || th.tongSao !== 4) throw new Error('tổng hợp sai ' + JSON.stringify(th));
 });
+test('đồng ý nghiên cứu: chủ hồ sơ bật/tắt, người khác không đọc/ghi được, sai dạng bị chặn', async () => {
+  const a = nguoi('a', 'a@x.org');
+  const p = 'users/a/hoSo/chinh/dongY/nghienCuu';
+  await assertFails(setDoc(doc(a, p), { dongY: true, luc: serverTimestamp(), phienBan: '2026-12' }));   // chưa có hồ sơ
+  await taoTaiKhoanVaHoSo(a, 'a');
+  await assertSucceeds(setDoc(doc(a, p), { dongY: true, luc: serverTimestamp(), phienBan: '2026-12' }));
+  await assertSucceeds(setDoc(doc(a, p), { dongY: false, luc: serverTimestamp(), phienBan: '2026-12' }));
+  await assertFails(setDoc(doc(a, p), { dongY: 'co', luc: serverTimestamp(), phienBan: '2026-12' }));
+  await assertFails(setDoc(doc(a, p), { dongY: true, luc: new Date(2020, 0, 1), phienBan: '2026-12' }));
+  await assertFails(setDoc(doc(a, p), { dongY: true, luc: serverTimestamp(), phienBan: '2026-12', them: 1 }));
+  await assertFails(setDoc(doc(a, 'users/a/hoSo/chinh/dongY/khac'), { dongY: true, luc: serverTimestamp(), phienBan: '2026-12' }));
+  const b = nguoi('b', 'b@x.org');
+  await assertFails(getDoc(doc(b, p)));
+  await assertFails(setDoc(doc(b, p), { dongY: true, luc: serverTimestamp(), phienBan: '2026-12' }));
+  await assertSucceeds(deleteDoc(doc(a, p)));
+});

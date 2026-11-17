@@ -57,6 +57,12 @@
   "canGiamHo": "Hồ sơ dưới 13 tuổi cần cha/mẹ hoặc người giám hộ đồng ý.",
   "chiNguoiLon": "Hồ sơ dưới 13 tuổi chỉ được tạo bởi tài khoản của người từ 18 tuổi trở lên.",
   "choXepHang": "Cho phép hiện biệt danh trên bảng xếp hạng.",
+  "ncTieuDe": "Nghiên cứu về việc học tiếng Việt",
+  "ncDongY": "Đồng ý cho CVCEC dùng dữ liệu học tập đã ẩn danh cho nghiên cứu",
+  "ncGoiY": "Không bắt buộc. Dữ liệu đưa cho nghiên cứu không có tên, email, tên gọi hay biệt danh. Mỗi nghiên cứu phải được hội đồng đạo đức nghiên cứu phê duyệt. Bạn tắt được bất cứ lúc nào; không đồng ý thì vẫn học bình thường. Hồ sơ dưới 13 tuổi: cha mẹ quyết định.",
+  "ncBat": "Cảm ơn bạn! Đã lưu: bạn đồng ý cho nghiên cứu.",
+  "ncTat": "Đã lưu: bạn không đồng ý cho nghiên cứu.",
+  "ncLoi": "Chưa lưu được lựa chọn này. Bạn thử lại sau ít phút nhé.",
   "choXepHangGoiY": "Bảng xếp hạng chỉ hiện biệt danh, con vật, cờ nước, số bài và số sao. Bạn tắt được bất cứ lúc nào trong trang Hồ sơ.",
   "taoHoSo": "Tạo hồ sơ",
   "bdTrong": "Bạn đặt biệt danh nhé.",
@@ -144,6 +150,12 @@
   "canGiamHo": "A profile under 13 needs a parent or guardian's consent.",
   "chiNguoiLon": "A profile under 13 can only be created by an account holder aged 18 or older.",
   "choXepHang": "Allow my nickname to appear on the leaderboard.",
+  "ncTieuDe": "Research on learning Vietnamese",
+  "ncDongY": "Allow CVCEC to use my de-identified learning data for research",
+  "ncGoiY": "Optional. Data shared for research has no name, email, display name or nickname. Each study must be approved by a research ethics board. You can turn this off at any time; learning works the same either way. For profiles under 13, the parent decides.",
+  "ncBat": "Thank you! Saved: you allow research use.",
+  "ncTat": "Saved: you do not allow research use.",
+  "ncLoi": "This choice could not be saved yet. Please try again in a few minutes.",
   "choXepHangGoiY": "The leaderboard shows only the nickname, animal, country flag, number of lessons and stars. You can turn it off any time on the Profile page.",
   "taoHoSo": "Create profile",
   "bdTrong": "Please choose a nickname.",
@@ -190,7 +202,7 @@
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/cong.js?v=8" defer></script>
-<script type="module" src="/js/tai-khoan.js?v=7"></script>
+<script type="module" src="/js/tai-khoan.js?v=8"></script>
 <style>
   .dn-tab { display: flex; gap: 8px; margin: 0 0 18px; }
   .dn-tab button { flex: 1; }
@@ -279,6 +291,7 @@
           <div class="bm-o"><label for="nuoc-hs"><span data-chu="nuocHoc">Nước tham dự</span> *</label><select id="nuoc-hs" required></select></div>
           <label class="bm-dong-y" id="o-giam-ho" hidden><input type="checkbox" id="dy-giam-ho"><span data-chu="dongYGiamHo"></span></label>
           <label class="bm-dong-y"><input type="checkbox" id="cho-xep-hang"><span><span data-chu="choXepHang"></span><br><small class="bm-goi-y" data-chu="choXepHangGoiY"></small></span></label>
+          <label class="bm-dong-y"><input type="checkbox" id="dong-y-nc"><span><span data-chu="ncDongY"></span><br><small class="bm-goi-y" data-chu="ncGoiY"></small></span></label>
           <div class="bm-nut-nhom"><button type="submit" class="ttv-nut" id="nut-luu-hs" data-chu="taoHoSo">Tạo hồ sơ</button></div>
         </form>
 
@@ -310,8 +323,8 @@ import {
 import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 import {
   CON_VAT, NHOM_TUOI, DUOI_13, DOI_TUONG, VAI_TRO, PHIEN_BAN_DIEU_KHOAN, nhan, dsNuoc, doanNuoc,
-  kiemTraBietDanh, docTaiKhoan, docHoSo, taiKhoanDu, luuHoSo, dangXuat, luuTam
-} from "/js/tai-khoan.js?v=7";
+  kiemTraBietDanh, docTaiKhoan, docHoSo, taiKhoanDu, luuHoSo, dangXuat, luuTam, luuDongYNghienCuu
+} from "/js/tai-khoan.js?v=8";
 
 const $ = (id) => document.getElementById(id);
 const KHOA_TUOI = "cvcec-dk-tuoi";   // sessionStorage: nhóm tuổi chọn ở bước đăng ký
@@ -498,6 +511,8 @@ $("khung-hs").addEventListener("submit", (e) => {
       if (!$("dy-giam-ho").checked) { bao(c().canGiamHo); return; }
     }
     hoSo = await luuHoSo(nguoiDung.uid, d, null);
+    // Đồng ý nghiên cứu (không bắt buộc): chỉ ghi khi người dùng chọn; lỗi thì bỏ qua, chỉnh lại được ở trang Hồ sơ
+    if ($("dong-y-nc").checked) { try { await luuDongYNghienCuu(nguoiDung.uid, true); } catch (e) { console.warn(e); } }
     bao(null);
     await tiepTuc();
   });

@@ -1,7 +1,7 @@
 # Đề xuất: dùng dữ liệu học tập cho báo cáo và nghiên cứu khoa học
 
-> **Bản đề xuất, CHƯA áp dụng.** Chưa sửa Chính sách bảo mật, Security Rules hay giao diện. Cần CVCEC duyệt và nên có ý kiến pháp lý trước khi làm.
-> Soạn ngày 17-11-2026.
+> **ĐÃ ÁP DỤNG ngày 17-11-2026** (CVCEC đồng ý). Chính sách bảo mật và Điều khoản lên bản `2026-11-17`; trang Hồ sơ và bước tạo hồ sơ có ô đồng ý; rules bản 3 nằm trong `docs/firestore.rules` (**cần xuất bản trong console**, xem `firebase-cvcec.md`); công cụ xuất: `docs/xuat-nghien-cuu/`.
+> Nên có ý kiến pháp lý khi có điều kiện, và mỗi nghiên cứu cụ thể vẫn cần hội đồng đạo đức phê duyệt.
 
 ## 1. Hiện trạng
 
@@ -31,10 +31,10 @@ CVCEC dùng được ngay **số liệu tổng hợp** cho báo cáo (ví dụ b
 
 ### Thay đổi kỹ thuật cần làm khi được duyệt
 
-- `firestore.rules`: hồ sơ thêm 2 trường `dongYNghienCuu` (bool) và `dongYNghienCuuLuc` (timestamp hoặc null, do máy chủ ghi). Phải xuất bản rules trong console **trước** khi trang ghi hai trường này. Nếu làm ngược lại, việc lưu hồ sơ sẽ bị chặn.
+- `firestore.rules` (đã làm): tài liệu riêng `users/{uid}/hoSo/chinh/dongY/nghienCuu` = `{ dongY, luc (máy chủ), phienBan }`, chủ hồ sơ bật/tắt, quản trị viên chỉ đọc. Không đổi cấu trúc hồ sơ, nên khi rules chưa xuất bản thì chỉ ô đồng ý báo "chưa lưu được", mọi việc khác vẫn chạy.
 - `dang-nhap/`, `ho-so/`: thêm ô đồng ý và nút rút lại.
-- Chính sách bảo mật: tăng phiên bản (ví dụ 2026-12). Cổng sẽ đề nghị mọi người đọc và đồng ý lại khi đăng nhập (đã có sẵn cơ chế `phienBanDieuKhoan`).
-- Công cụ xuất dữ liệu ẩn danh: chạy riêng bằng tài khoản quản trị, không đặt trên trang web.
+- Chính sách bảo mật (đã làm): bản 2026-11-17. Cổng sẽ đề nghị mọi người đọc và đồng ý lại khi đăng nhập (đã có sẵn cơ chế `phienBanDieuKhoan`).
+- Công cụ xuất dữ liệu ẩn danh (đã làm): `docs/xuat-nghien-cuu/xuat.mjs`, chạy trên máy quản trị bằng khoá service account (không đưa khoá vào kho). Nước có dưới 10 người được gộp thành "khac"; mã người học đổi mỗi lần xuất. Thử trên trình giả lập: `npm run thu`.
 
 ### Đoạn đề xuất thêm vào Chính sách bảo mật (mục 3)
 

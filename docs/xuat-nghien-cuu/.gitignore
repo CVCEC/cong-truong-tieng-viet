@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+firestore-debug.log
+# Dữ liệu xuất ra KHÔNG BAO GIỜ được đưa vào kho
+du-lieu-nghien-cuu-*/
+*.csv
