@@ -152,8 +152,8 @@ window.CONG_GT = {
     ],
     phan: [
       { vi: "Đồng dao (Bài 1–12): vừa đọc vừa chơi", en: "Chants (Lessons 1–12): chant while you play" },
-      { vi: "Vè (Bài 13–16): chim, cá, trái cây, loài vật", en: "Folk rhymes (Lessons 13–16): birds, fish, fruit, animals" },
-      { vi: "Dân ca & hát ru (Bài 17–24)", en: "Folk songs & lullabies (Lessons 17–24)" }
+      { vi: "Vè và ca dao vui (Bài 13–16): vè chim, mèo trèo cây cau, lúa ngô, vè nói ngược", en: "Folk rhymes (Lessons 13–16): the bird rhyme, the cat up the areca tree, rice and corn, the topsy-turvy rhyme" },
+      { vi: "Dân ca & hát ru (Bài 17–24): ba miền Bắc, Trung, Nam", en: "Folk songs & lullabies (Lessons 17–24): North, Central and South" }
     ],
     vaoThang: true, // trang chủ đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn
     thu: { url: "https://hatca.cvcec.org/", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
