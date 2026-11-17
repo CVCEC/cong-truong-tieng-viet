@@ -97,6 +97,7 @@
 
   <div class="card">
     <h2>4. Danh sách câu</h2>
+    <p style="margin:0 0 8px;font-weight:700">Chọn một chủ đề ở ô dưới đây thì nút “Bắt đầu / Tiếp tục” chỉ tạo giọng cho chủ đề đó (ví dụ chọn “Bảng âm (IPA)” để có loa cho Bảng âm trước).</p>
     <div class="row" style="margin-bottom:10px"><select id="filter" style="max-width:320px"></select><label style="display:flex;gap:6px;align-items:center;font-weight:700"><input type="checkbox" id="onlyMissing" style="width:auto"> Chỉ hiện câu chưa có</label></div>
     <div class="tbl"><table><thead><tr><th>Câu</th><th>Chủ đề</th><th></th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
     <p style="font-size:13px;color:var(--ttv-chu-phu)">Khi sửa chữ trong noi-dung.txt, câu đã sửa sẽ hiện là "chưa có" để tạo lại; các câu khác giữ nguyên.</p>
@@ -207,8 +208,10 @@
     running = true; $('runBtn').disabled = true; $('stopBtn').disabled = false;
     const skipped = new Set();
     while (running) {
-      const want = LIST.filter(x => !HAVE.has(x.key) && !skipped.has(x.key));
-      if (!want.length) { status('Xong! Đã có giọng cho tất cả các câu. Hãy tải gói giọng ở phần 3.'); break; }
+      // Chọn một chủ đề (ví dụ "Bảng âm (IPA)") ở ô lọc thì chỉ tạo giọng cho chủ đề đó
+      const nhom = $('filter').value || 'all';
+      const want = LIST.filter(x => (nhom === 'all' || x.g === nhom) && !HAVE.has(x.key) && !skipped.has(x.key));
+      if (!want.length) { status(nhom === 'all' ? 'Xong! Đã có giọng cho tất cả các câu. Hãy tải gói giọng ở phần 3.' : 'Xong chủ đề "' + tenChuDe(nhom) + '"! Hãy tải gói giọng ở phần 3.'); break; }
       const it = want[0];
       status(`Đang đọc: "${it.t}" (${tenChuDe(it.g)})`);
       try {
