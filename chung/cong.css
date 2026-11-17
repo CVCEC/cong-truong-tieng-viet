@@ -573,3 +573,31 @@ a.tk-nut { text-decoration: none; padding: 0 16px; background: var(--ttv-chu); c
 .van-ban a { color: var(--ttv-chu); font-weight: 800; }
 .van-ban .van-ban-ngay { color: var(--ttv-chu-phu); font-weight: 700; }
 @media (max-width: 640px) { .van-ban { padding: 20px 18px; font-size: 1rem; } }
+
+/* Thanh tab ở chế độ học: dấu ngăn trước các góc của Lộ trình theo khung năng lực (15+) */
+.tab-ngan { flex: 0 0 auto; display: flex; align-items: center; padding: 0 6px 0 12px; margin-left: 6px; border-left: 2px solid var(--ttv-vien); color: var(--ttv-chu-phu); font-weight: 800; font-size: .8rem; white-space: nowrap; }
+
+/* Trang chủ: hai khối USP (17-11-2026) */
+.tq-nut { justify-content: center; }
+.usp { text-align: center; }
+.usp .cong-ruot { max-width: 980px; }
+.usp-nhan { display: inline-block; margin: 0 0 8px; padding: 2px 14px; border-radius: 999px; background: var(--ttv-kem-rom); color: var(--ttv-chu); font-weight: 800; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+.usp h2 { margin: 0 0 10px; text-wrap: balance; }
+.usp-phu { max-width: 44em; margin: 0 auto 20px; font-size: 1.12rem; }
+.usp-nd { max-width: 44em; margin: 18px auto 18px; }
+.usp-nguon { max-width: 48em; margin: 16px auto 0; font-size: .88rem; color: var(--ttv-chu-phu); }
+.usp-bac { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; align-items: end; }
+.usp-bac li { display: flex; flex-direction: column; gap: 2px; padding: 10px 6px; border-radius: 16px; background: var(--ttv-the); border: 2px dashed var(--ttv-vien); color: var(--ttv-chu-phu); }
+.usp-bac li:nth-child(1) { min-height: 86px; } .usp-bac li:nth-child(2) { min-height: 100px; } .usp-bac li:nth-child(3) { min-height: 114px; } .usp-bac li:nth-child(4) { min-height: 128px; } .usp-bac li:nth-child(5) { min-height: 142px; }
+.usp-bac li.co { border-style: solid; border-color: var(--ttv-lua-dam); border-bottom-width: 6px; color: var(--ttv-chu); }
+.usp-bac b { font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.1rem; }
+.usp-bac span { font-weight: 800; }
+.usp-bac small { margin-top: auto; font-weight: 700; font-size: .78rem; }
+.usp-the { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; text-align: left; }
+.usp-the li { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-bottom: 6px solid var(--ttv-sao); border-radius: var(--ttv-bo-goc); padding: 16px 18px; }
+.usp-bt { font-size: 1.8rem; }
+.usp-the h3 { margin: 6px 0 6px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.15rem; color: var(--ttv-chu); }
+.usp-the p { margin: 0; }
+.usp-chot { max-width: 44em; margin: 0 auto 18px; font-weight: 700; }
+.usp .cong-nut-nhom { justify-content: center; }
+@media (max-width: 760px) { .usp-the { grid-template-columns: 1fr; } .usp-bac { gap: 5px; } .usp-bac li { padding: 8px 2px; } .usp-bac b { font-size: .95rem; } .usp-bac small { font-size: .7rem; } }

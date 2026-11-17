@@ -12,13 +12,20 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
-<link rel="stylesheet" href="/chung/cong.css?v=8">
+<link rel="stylesheet" href="/chung/cong.css?v=10">
 <style>
-  .ht-lo-trinh { max-width: 46em; margin: 0 auto 24px; text-align: center; color: var(--ttv-chu); font-size: 1.05rem; }
-  .ht-lo-trinh a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; color: var(--ttv-chu); }
-  .cong-luoi li { position: relative; }
-  .ht-so { position: absolute; z-index: 2; top: -10px; left: -6px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ttv-chu); color: #FFFFFF; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.05rem; box-shadow: 0 0 0 3px var(--ttv-nen); pointer-events: none; }
-  .ht-bac { display: inline-block; align-self: flex-start; margin: 2px 0 4px; padding: 2px 10px; border-radius: 999px; background: var(--ttv-kem-rom); color: var(--ttv-chu); font-weight: 800; font-size: .85rem; }
+  /* Hai lối vào: Làng học tập Trâu Con (dưới 15 tuổi) và Lộ trình theo khung năng lực (15+) */
+  .ht-loi-vao { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 0 28px; }
+  .ht-loi { display: flex; gap: 14px; align-items: center; min-height: 96px; padding: 14px 18px; background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-bottom-width: 6px; border-radius: var(--ttv-bo-goc); color: var(--ttv-chu); text-decoration: none; }
+  .ht-loi[aria-current="true"] { border-color: var(--ttv-lua-dam); }
+  .ht-loi img { width: 64px; height: auto; flex: 0 0 auto; }
+  .ht-loi b { display: block; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.25rem; line-height: 1.2; }
+  .ht-loi span span { display: block; color: var(--ttv-chu-phu); font-weight: 700; font-size: .95rem; margin-top: 2px; }
+  .ht-nhom-h { font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.5rem; margin: 8px 0 4px; color: var(--ttv-chu); }
+  .ht-nhom-mo-ta { margin: 0 0 16px; color: var(--ttv-chu-phu); max-width: 52em; }
+  .ht-nhom-15 { margin-top: 40px; }
+  .ht-nhom-15 .ttv-nut-phu { margin-top: 16px; }
+  @media (max-width: 700px) { .ht-loi-vao { grid-template-columns: 1fr; } }
 </style>
 <script>window.CONG_CHU = {
   "vi": {
@@ -27,10 +34,14 @@
     "chonGoc": "Chọn một góc học",
     "hocTapTieuDe": "Học tập",
     "hocTapPhuDe": "Làng học tập Trâu Con",
-    "loTrinh": "Các góc học xếp theo lộ trình \"Đường làng của Trâu Con\" (Khung năng lực tiếng Việt dùng cho người nước ngoài): người mới bắt đầu đi từ góc số 1. Nhãn bậc cho biết góc học hợp với chặng nào: Bậc 0 Làm quen, Sơ cấp Bậc 1–2, Trung cấp Bậc 3–4.",
-    "xemTienDo": "Xem chặng đường của bạn",
-    "bac": "Bậc {a}",
-    "bacTu": "Bậc {a}–{b}"
+    "loiLang": "Làng học tập Trâu Con",
+    "loiLangPhu": "Cho các bạn dưới 15 tuổi: học vui qua trò chơi",
+    "loiLoTrinh": "Lộ trình theo khung năng lực",
+    "loiLoTrinhPhu": "Từ 15 tuổi: học theo bậc và 4 kỹ năng",
+    "langMoTa": "Các góc học cho các bạn nhỏ, đi từ dễ đến khó: luyện nói, chữ cái và vần, rồi văn hoá, thơ ca, truyện.",
+    "loTrinhH": "Lộ trình theo khung năng lực (từ 15 tuổi)",
+    "loTrinhMoTa": "Học theo sách Vui học tiếng Việt Quyển 1–2 và Về Nhà Em, xếp theo bậc của Khung năng lực tiếng Việt dùng cho người nước ngoài.",
+    "xemLoTrinh": "Xem lộ trình theo bậc"
   },
   "en": {
     "vaoHoc": "Start →",
@@ -38,16 +49,19 @@
     "chonGoc": "Choose a learning corner",
     "hocTapTieuDe": "Learning",
     "hocTapPhuDe": "Trâu Con's Learning Village",
-    "loTrinh": "The corners follow the \"Trâu Con's village path\" learning path (Vietnamese Language Proficiency Framework for foreigners): beginners start at corner 1. The level label shows which stop each corner suits: Level 0 Getting started, Elementary Levels 1–2, Intermediate Levels 3–4.",
-    "xemTienDo": "See your learning path",
-    "bac": "Level {a}",
-    "bacTu": "Levels {a}–{b}"
+    "loiLang": "Trâu Con's Learning Village",
+    "loiLangPhu": "For children under 15: learn through play",
+    "loiLoTrinh": "Proficiency-based learning path",
+    "loiLoTrinhPhu": "Ages 15+: learn by level and the 4 skills",
+    "langMoTa": "Learning corners for children, from easy to harder: speaking, letters and rhymes, then culture, songs and stories.",
+    "loTrinhH": "Proficiency-based learning path (ages 15+)",
+    "loTrinhMoTa": "Learn with the Vui học tiếng Việt books 1–2 and Về Nhà Em, arranged by the levels of the Vietnamese Language Proficiency Framework for foreigners.",
+    "xemLoTrinh": "See the path by level"
   }
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
-<script src="https://mau.cvcec.org/v1/ttv-lo-trinh.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/cong.js?v=9" defer></script>
+<script src="/chung/cong.js?v=10" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=8"></script>
 
 </head>
@@ -63,9 +77,20 @@
     <section class="cong-phan trang-than" aria-labelledby="tieu-de-goc">
       <div class="cong-ruot">
         <h2 id="tieu-de-goc" class="cong-an" data-chu="chonGoc">Chọn một góc học</h2>
-        <p class="ht-lo-trinh"><span data-chu="loTrinh"></span><br><a href="/goc-hoc-tap/" data-chu="xemTienDo">Xem chặng đường của bạn</a></p>
-        <ol class="cong-luoi" id="luoi-goc"></ol>
+        <nav class="ht-loi-vao" aria-label="Hai hướng học">
+          <a class="ht-loi" href="#lang"><img src="/assets/trau/wave.png" alt=""><span><b data-chu="loiLang">Làng học tập Trâu Con</b><span data-chu="loiLangPhu"></span></span></a>
+          <a class="ht-loi" href="/lo-trinh/"><img src="/assets/trau/reading.png" alt=""><span><b data-chu="loiLoTrinh">Lộ trình theo khung năng lực</b><span data-chu="loiLoTrinhPhu"></span></span></a>
+        </nav>
+        <h2 class="ht-nhom-h" id="lang" data-chu="loiLang">Làng học tập Trâu Con</h2>
+        <p class="ht-nhom-mo-ta" data-chu="langMoTa"></p>
+        <ul class="cong-luoi" id="luoi-goc"></ul>
         <p class="cong-doan" id="loi-tai" hidden data-chu="loiTai">Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.</p>
+        <div class="ht-nhom-15">
+          <h2 class="ht-nhom-h" id="lo-trinh" data-chu="loTrinhH">Lộ trình theo khung năng lực (từ 15 tuổi)</h2>
+          <p class="ht-nhom-mo-ta" data-chu="loTrinhMoTa"></p>
+          <ul class="cong-luoi" id="luoi-15"></ul>
+          <a class="ttv-nut-phu" href="/lo-trinh/" data-chu="xemLoTrinh">Xem lộ trình theo bậc</a>
+        </div>
       </div>
     </section>
   </main>
@@ -76,7 +101,9 @@
 <script>
 (function () {
   "use strict";
-  var DS = [], luoi = document.getElementById("luoi-goc");
+  var DS = [], luoi = document.getElementById("luoi-goc"), luoi15 = document.getElementById("luoi-15");
+  // Góc của Lộ trình theo khung năng lực (15+) có nhom: "lo-trinh" trong TTV_DANH_SACH
+  function la15(muc) { return muc.nhom === "lo-trinh"; }
   var tao = function (t, l, c) { return window.CONG.tao(t, l, c); };
   function anh(ten) { return window.CONG.anhBoMau(ten); }
   function ganMau(el, muc) {
@@ -85,12 +112,9 @@
     el.style.setProperty("--goc-nhat", muc.mau_nhat);
   }
   function dungLuoi() {
-    luoi.textContent = "";
-    DS.forEach(function (muc, thuTu) {
+    luoi.textContent = ""; luoi15.textContent = "";
+    DS.forEach(function (muc) {
       var li = tao("li");
-      var so = tao("span", "ht-so", String(thuTu + 1));
-      so.setAttribute("aria-hidden", "true");
-      li.appendChild(so);
       var a = tao("a", "cong-the");
       a.href = "/#" + muc.id; // mở góc học trong khung của cổng
       a.setAttribute("data-goc", muc.id);
@@ -108,7 +132,6 @@
 
       var duoi = tao("span", "cong-the-duoi");
       duoi.appendChild(tao("span", "cong-the-ten"));
-      duoi.appendChild(tao("span", "ht-bac"));
       duoi.appendChild(tao("span", "cong-the-mo-ta"));
       duoi.appendChild(tao("span", "cong-the-vao"));
       a.appendChild(duoi);
@@ -117,13 +140,13 @@
       a.appendChild(mui);
 
       li.appendChild(a);
-      luoi.appendChild(li);
+      (la15(muc) ? luoi15 : luoi).appendChild(li);
     });
   }
 
   function capNhatThe(nn) {
     var c = window.CONG.chu();
-    var the = luoi.querySelectorAll(".cong-the");
+    var the = document.querySelectorAll("#luoi-goc .cong-the, #luoi-15 .cong-the");
     for (var t = 0; t < the.length; t++) {
       var muc = null;
       for (var i = 0; i < DS.length; i++) if (DS[i].id === the[t].getAttribute("data-goc")) muc = DS[i];
@@ -132,15 +155,7 @@
       the[t].querySelector(".cong-the-ten").textContent = nn === "en" ? muc.ten_en : muc.ten_vi;
       the[t].querySelector(".cong-the-mo-ta").textContent = nn === "en" ? muc.mo_ta_en : muc.mo_ta_vi;
       the[t].querySelector(".cong-the-vao").textContent = c.vaoHoc;
-      // Nhãn bậc lấy từ lộ trình chung (mau.cvcec.org/v1/ttv-lo-trinh.js)
-      var bac = window.TTV_LO_TRINH ? window.TTV_LO_TRINH.bacCuaGoc(muc.id) : [];
-      var nhanBac = the[t].querySelector(".ht-bac");
-      if (bac.length) {
-        var a1 = bac[0], b1 = bac[bac.length - 1];
-        nhanBac.textContent = a1 === b1 ? c.bac.replace("{a}", a1) : c.bacTu.replace("{a}", a1).replace("{b}", b1);
-        nhanBac.hidden = false;
-      } else nhanBac.hidden = true;
-      the[t].setAttribute("aria-label", (t + 1) + ". " + (nn === "en" ? muc.ten_en : muc.ten_vi) + (bac.length ? " – " + nhanBac.textContent : ""));
+      the[t].setAttribute("aria-label", nn === "en" ? muc.ten_en : muc.ten_vi);
     }
   }
   document.addEventListener("DOMContentLoaded", function () {

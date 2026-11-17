@@ -19,6 +19,7 @@
   var TRANG = [
     { id: "trang-chu", href: "/", chu: "navTrangChu" },
     { id: "hoc-tap", href: "/hoc-tap/", chu: "navHocTap" },
+    { id: "lo-trinh", href: "/lo-trinh/", chu: "navLoTrinh" },
     { id: "hoat-dong", href: "/hoat-dong/", chu: "navHoatDong" },
     { id: "tin-tuc", href: "/tin-tuc/", chu: "navTinTuc" },
     { id: "gioi-thieu", href: "/gioi-thieu/", chu: "navGioiThieu" },
@@ -34,7 +35,7 @@
 
   var CHU = {
     vi: {
-      navTrangChu: "Trang chủ", navHocTap: "Học tập", navHoatDong: "Hoạt động", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navTrienLam: "Triển lãm", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
+      navTrangChu: "Trang chủ", navHocTap: "Học tập", navLoTrinh: "Lộ trình", navHoatDong: "Hoạt động", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navTrienLam: "Triển lãm", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
       navChao: "Điều hướng chính", ngonNgu: "Ngôn ngữ", veCong: "Về trang chủ Trường Tiếng Việt Của Em",
       chanCau: "Nền tảng học tiếng Việt dành cho mọi đối tượng yêu tiếng Việt.",
       chanDong: "Một chương trình của Canada Vietnam Cultural & Educational Council (CVCEC)",
@@ -47,7 +48,7 @@
       canhHaLong: "Vịnh Hạ Long", canhDinhLang: "Đình làng và cây đa", canhHue: "Cầu Trường Tiền – sông Hương, Huế", canhChoNoi: "Chợ nổi Cái Răng, Cần Thơ", canhLangQue: "Cánh đồng lúa và làng quê"
     },
     en: {
-      navTrangChu: "Home", navHocTap: "Learning", navHoatDong: "Activities", navTinTuc: "News", navGioiThieu: "About", navTrienLam: "Exhibition", navChungTay: "Donate", navGiaoVien: "Teachers",
+      navTrangChu: "Home", navHocTap: "Learning", navLoTrinh: "Learning path", navHoatDong: "Activities", navTinTuc: "News", navGioiThieu: "About", navTrienLam: "Exhibition", navChungTay: "Donate", navGiaoVien: "Teachers",
       navChao: "Main navigation", ngonNgu: "Language", veCong: "Back to the Trường Tiếng Việt Của Em home page",
       chanCau: "A Vietnamese learning platform for everyone who loves the Vietnamese language.",
       chanDong: "A program of the Canada Vietnam Cultural & Educational Council (CVCEC)",
