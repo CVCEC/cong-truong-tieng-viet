@@ -46,7 +46,7 @@
     "khoaChuaXong": "Bạn hoàn tất đăng ký (tạo hồ sơ học viên) để vào học nhé.",
     "khoaDangNhap": "Đăng nhập", "khoaDangKy": "Đăng ký", "khoaHoanTat": "Hoàn tất đăng ký", "khoaDangMo": "Đang mở góc học…",
     "gtNhan": "Làng học tập Trâu Con", "gtCachHoc": "Học thế nào", "gtCoGi": "Trong góc học có gì", "gtBaiThu": "Bài học thử",
-    "gtVaoHoc": "Vào học", "gtHocThu": "Học thử một bài", "gtDangNhapVao": "Đăng nhập để vào học", "gtDangNhapTiep": "Đăng nhập để học tiếp",
+    "gtVaoHoc": "Vào học", "gtVaoXem": "Vào xem triển lãm", "gtHocThu": "Học thử một bài", "gtDangNhapVao": "Đăng nhập để vào học", "gtDangNhapTiep": "Đăng nhập để học tiếp",
     "gtHuongDan": "Hướng dẫn",
     "gtGhiChuThu": "Bạn được học thử một bài. Kết quả học thử không được lưu. Muốn học các bài tiếp theo, bạn đăng nhập để học và lưu sao nhé.",
     "gtGhiChuKhoa": "Bạn đăng nhập hoặc đăng ký để vào học góc này nhé. Trâu Con sẽ lưu sao và tiến độ cho bạn.",
@@ -78,7 +78,7 @@
     "khoaChuaXong": "Please finish signing up (create a learner profile) to start learning.",
     "khoaDangNhap": "Sign in", "khoaDangKy": "Sign up", "khoaHoanTat": "Finish signing up", "khoaDangMo": "Opening the learning corner…",
     "gtNhan": "Trâu Con's Learning Village", "gtCachHoc": "How to learn", "gtCoGi": "What's inside", "gtBaiThu": "Trial lesson",
-    "gtVaoHoc": "Start learning", "gtHocThu": "Try one lesson", "gtDangNhapVao": "Sign in to start learning", "gtDangNhapTiep": "Sign in to keep learning",
+    "gtVaoHoc": "Start learning", "gtVaoXem": "Open the exhibition", "gtHocThu": "Try one lesson", "gtDangNhapVao": "Sign in to start learning", "gtDangNhapTiep": "Sign in to keep learning",
     "gtHuongDan": "Guide",
     "gtGhiChuThu": "You can try one lesson. Trial results are not saved. To continue with the next lessons, please sign in to learn and save your stars.",
     "gtGhiChuKhoa": "Please sign in or sign up to learn in this corner. Trâu Con will save your stars and progress.",
@@ -89,7 +89,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=16" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=17" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -478,8 +478,8 @@
     nd.appendChild(tao("h2", "", ten(muc)));
     nd.appendChild(tao("p", "gt-mo-ta", chuNN(g.gioiThieu)));
     var nhom = tao("div", "cong-nut-nhom");
-    if (loai === "hoc") {
-      var vao = tao("button", "ttv-nut", c.gtVaoHoc); vao.type = "button";
+    if (loai === "hoc" || g.congKhai) {
+      var vao = tao("button", "ttv-nut", g.congKhai ? c.gtVaoXem : c.gtVaoHoc); vao.type = "button";
       vao.addEventListener("click", function () { ghiDaXem(muc.id); xemGioiThieu = false; moKhung(muc); });
       nhom.appendChild(vao);
     } else {
@@ -495,7 +495,7 @@
       }
     }
     nd.appendChild(nhom);
-    if (loai !== "hoc") nd.appendChild(tao("p", "gt-ghi-chu", g.thu ? c.gtGhiChuThu : c.gtGhiChuKhoa));
+    if (loai !== "hoc" && !g.congKhai) nd.appendChild(tao("p", "gt-ghi-chu", g.thu ? c.gtGhiChuThu : c.gtGhiChuKhoa));
     dau.appendChild(nd);
     hop.appendChild(dau);
 
@@ -552,6 +552,8 @@
     nutDN.href = "/dang-nhap/?ve=" + encodeURIComponent("/#" + muc.id);
     document.getElementById("nut-huong-dan").hidden = loai === "cho";
     if (loai === "cho") { khungBoc.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo)); return; }
+    // Góc công khai (congKhai, ví dụ Triển lãm): ai cũng xem được, không cần đăng nhập, mở thẳng trang của góc
+    if (g.congKhai && !xemGioiThieu) { moIframe(muc, muc.url); return; }
     var hienGT = xemGioiThieu || (!g.vaoThang && (loai === "hoc" ? !daXem(muc.id) : !hocThu));
     if (hienGT) { veGioiThieu(muc, loai); return; }
     moIframe(muc, hocThu ? g.thu.url : muc.url);
@@ -646,7 +648,7 @@
       // Học chính thức: mở hết. Học thử: chỉ các trang của bài 1 (góc học tự kiểm tra đường dẫn).
       var traLoi = { loai: "cvcec-cong-tra-loi", hopLe: false };
       var gg = gocDangMo ? gt(gocDangMo) : null;
-      if (loaiTk() === "hoc") traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "hoc" };
+      if (loaiTk() === "hoc" || (gg && gg.congKhai)) traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "hoc" };
       else if (gocDangMo && dangThu === gocDangMo && gg && gg.thu) traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "thu", duongThu: gg.thu.duong, baiThu: gg.thu.baiThu || null };
       try { e.source.postMessage(traLoi, e.origin); } catch (err) {}
       return;

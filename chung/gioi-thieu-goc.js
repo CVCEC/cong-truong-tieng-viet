@@ -2,6 +2,7 @@
  * Giới thiệu từng góc học (cổng vietclass.cvcec.org): cách học (infographic) và tổng quan nội dung.
  * Số liệu lấy từ mã nguồn của từng góc (README, mục lục) ngày 15-11-2026. Sửa ở đây khi góc học thay đổi.
  * thu: bài học thử cho khách chưa đăng nhập.
+ * congKhai: true thì ai cũng xem được trong cổng, không cần đăng nhập: cổng mở thẳng trang và trả lời góc học là hợp lệ.
  * vaoThang: true thì bấm vào góc mở thẳng trang của góc (khách: chế độ học thử), nút "Hướng dẫn" vẫn xem lại được giới thiệu.
  *   url   – trang mở trong khung khi bấm "Học thử";
  *   duong – các đường dẫn khách được mở trong chế độ học thử (cổng gửi cho góc học qua postMessage);
@@ -180,7 +181,9 @@ window.CONG_GT = {
     ],
     tongQuan: [],
     phan: [
-      { vi: "Tài liệu chỉ để xem, không tải về", en: "Materials are for viewing only, not for download" }
-    ]
+      { vi: "Tài liệu chỉ để xem, không tải về", en: "Materials are for viewing only, not for download" },
+      { vi: "Ai cũng xem được, không cần đăng nhập", en: "Open to everyone, no sign-in needed" }
+    ],
+    congKhai: true // xem công khai trong cổng, không cần đăng nhập (17-11-2026)
   }
 };
