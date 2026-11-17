@@ -11,12 +11,20 @@
  *   "luyen-noi-chu-de"  – chủ đề đang chọn
  *   "luyen-noi-hien-anh" – "1" hiện nghĩa tiếng Anh, "0" ẩn
  *   "luyen-noi-the"      – thẻ đang mở (luyen-thanh | luyen-tu | luyen-cau | hoi-thoai)
+ *   "luyen-noi-muc"      – mức đang chọn (1–4)
  */
 (function () {
   "use strict";
 
   var ChamCau = window.ChamCau, GhepTieng = window.GhepTieng;
-  var KHOA_CHU_DE = "luyen-noi-chu-de", KHOA_ANH = "luyen-noi-hien-anh", KHOA_THE = "luyen-noi-the";
+  var KHOA_CHU_DE = "luyen-noi-chu-de", KHOA_ANH = "luyen-noi-hien-anh", KHOA_THE = "luyen-noi-the", KHOA_MUC = "luyen-noi-muc";
+  // Bốn mức, từ bé tới lớn (khớp nhóm tuổi trong hồ sơ học viên). Mức của mỗi chủ đề ghi ở dòng "MỨC:" trong noi-dung.txt.
+  var CAC_MUC = [
+    { so: 1, vi: "Mầm", en: "Sprout", tuoi: { vi: "Dưới 6 tuổi", en: "Under 6" }, anh: "peeking.png" },
+    { so: 2, vi: "Chồi", en: "Bud", tuoi: { vi: "6–9 tuổi", en: "Ages 6–9" }, anh: "reading.png" },
+    { so: 3, vi: "Lá", en: "Leaf", tuoi: { vi: "10–12 tuổi", en: "Ages 10–12" }, anh: "running.png" },
+    { so: 4, vi: "Cây", en: "Tree", tuoi: { vi: "13 tuổi trở lên", en: "13 and older" }, anh: "hiking.png" }
+  ];
   var CAC_THE = ["luyen-thanh", "luyen-tu", "luyen-cau", "hoi-thoai"];
 
   /* ---------- Chữ trên trang (VI / EN) ---------- */
@@ -24,7 +32,8 @@
     vi: {
       dangTai: "Mình đang lấy bài…",
       loiTai: "Mình chưa lấy được bài luyện nói. Các bạn kiểm tra mạng rồi tải lại trang nhé.",
-      chonChuDe: "Chọn chủ đề", hienAnh: "Hiện nghĩa tiếng Anh",
+      chonChuDe: "Chọn chủ đề", hienAnh: "Hiện nghĩa tiếng Anh", chonMuc: "Chọn mức", nhanMuc: "Mức",
+      mucTrong: "Mức này chưa có chủ đề. Các bạn chọn mức khác nhé.",
       ngheMau: "Nghe mẫu", doc: "Đọc", dangNghe: "Mình đang nghe…", docLai: "Đọc lại",
       chuaCoGiong: "Câu này chưa có giọng mẫu của Trâu Con.",
       tuHuongDan: "Bấm “Nghe mẫu”, rồi bấm “Đọc” và đọc to từ đó.",
@@ -62,7 +71,8 @@
     en: {
       dangTai: "Loading the lessons…",
       loiTai: "I couldn't load the speaking lessons. Please check your internet and reload the page.",
-      chonChuDe: "Choose a topic", hienAnh: "Show English meaning",
+      chonChuDe: "Choose a topic", hienAnh: "Show English meaning", chonMuc: "Choose a level", nhanMuc: "Level",
+      mucTrong: "This level has no topics yet. Please choose another level.",
       ngheMau: "Listen", doc: "Read", dangNghe: "I'm listening…", docLai: "Read again",
       chuaCoGiong: "Trâu Con hasn't recorded this one yet.",
       tuHuongDan: "Press “Listen”, then press “Read” and say the word out loud.",
@@ -123,15 +133,24 @@
   var S = {
     nd: null, loiTai: false,
     chuDe: doc(KHOA_CHU_DE) || "",
+    muc: parseInt(doc(KHOA_MUC), 10) || 0,
     hienAnh: doc(KHOA_ANH) !== "0",
     ketQua: {},          // ma câu → kết quả chấm gần nhất
     dangNghe: false,
     ht: { chuDe: "", so: 0, buoc: -1, diem: {} } // hội thoại: buoc = số lượt đã hiện (-1: chưa bắt đầu)
   };
+  function chuDeTheoMuc(m) { return S.nd ? S.nd.chuDe.filter(function (c) { return c.muc === m; }) : []; }
+  /** Mức đang chọn: lấy từ lần trước; chưa có thì lấy mức của chủ đề đã chọn, không thì Mức 1. */
+  function mucDangChon() {
+    if (S.muc >= 1 && S.muc <= CAC_MUC.length) return S.muc;
+    if (S.nd) for (var i = 0; i < S.nd.chuDe.length; i++) if (S.nd.chuDe[i].id === S.chuDe) return S.nd.chuDe[i].muc;
+    return 1;
+  }
   function chuDeDangChon() {
-    if (!S.nd || !S.nd.chuDe.length) return null;
-    for (var i = 0; i < S.nd.chuDe.length; i++) if (S.nd.chuDe[i].id === S.chuDe) return S.nd.chuDe[i];
-    return S.nd.chuDe[0];
+    var ds = chuDeTheoMuc(mucDangChon());
+    if (!ds.length) return null;
+    for (var i = 0; i < ds.length; i++) if (ds[i].id === S.chuDe) return ds[i];
+    return ds[0];
   }
 
   /* =====================================================================
@@ -318,11 +337,35 @@
     if (!NhanDang) { var kh = tao("p", "ln-tin ln-tin-sai ln-khong-ho-tro", T("khongHoTro")); kh.setAttribute("role", "note"); hop.appendChild(kh); }
 
     var the = tao("section", "ln-the ln-chu-de");
+    // Chọn mức
+    var hm = tao("h2"); hm.appendChild(tao("span", null, T("chonMuc"))); the.appendChild(hm);
+    var hangMuc = tao("div", "ln-muc-hang");
+    hangMuc.setAttribute("role", "group"); hangMuc.setAttribute("aria-label", T("chonMuc"));
+    var mucNay = mucDangChon(), nn = ngonNgu();
+    CAC_MUC.forEach(function (m) {
+      var b = nut("ln-muc-nut", null, function () {
+        if (S.dangNghe) return;
+        S.muc = m.so; ghi(KHOA_MUC, String(m.so));
+        S.ht = { chuDe: "", so: 0, buoc: -1, diem: {} };
+        dungPhat(); veMoi();
+      });
+      b.setAttribute("aria-pressed", m.so === mucNay ? "true" : "false");
+      b.appendChild(imgTrau(m.anh));
+      var chuMuc = tao("span", "ln-muc-chu");
+      chuMuc.appendChild(tao("span", "ln-muc-so", T("nhanMuc") + " " + m.so));
+      chuMuc.appendChild(tao("span", "ln-muc-ten", m[nn]));
+      chuMuc.appendChild(tao("span", "ln-muc-tuoi", m.tuoi[nn]));
+      b.appendChild(chuMuc);
+      hangMuc.appendChild(b);
+    });
+    the.appendChild(hangMuc);
+
     var h = tao("h2"); h.appendChild(tao("span", null, T("chonChuDe"))); the.appendChild(h);
     var hang = tao("div", "ln-chu-de-hang");
     hang.setAttribute("role", "group"); hang.setAttribute("aria-label", T("chonChuDe"));
     var cd = chuDeDangChon();
-    S.nd.chuDe.forEach(function (c) {
+    if (!cd) the.appendChild(tao("p", "ln-tin", T("mucTrong")));
+    chuDeTheoMuc(mucNay).forEach(function (c) {
       var b = nut("ln-chu-de-nut", null, function () {
         if (S.dangNghe) return;
         S.chuDe = c.id; ghi(KHOA_CHU_DE, c.id);
@@ -488,6 +531,7 @@
     if (!veTrangThaiTai(hop)) return;
     veDauPanel(hop);
     var cd = chuDeDangChon();
+    if (!cd) return;
     var the = tao("section", "ln-the");
     var h = tao("h2");
     h.appendChild(imgTrau(cd.anh || "wave.png", "ln-h2-trau"));
@@ -512,6 +556,7 @@
     if (!veTrangThaiTai(hop)) return;
     veDauPanel(hop);
     var cd = chuDeDangChon();
+    if (!cd) return;
     if (S.ht.chuDe !== cd.id) S.ht = { chuDe: cd.id, so: 0, buoc: -1, diem: {} };
     var the = tao("section", "ln-the ln-ht");
     var h = tao("h2");

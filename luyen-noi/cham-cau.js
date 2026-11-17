@@ -132,16 +132,17 @@
   function boDau(s) { return nfc(s).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D"); }
   function khoaDong(k) { return boDau(k).toUpperCase().replace(/\s+/g, " ").trim(); }
   var LOAI = {
-    "CHU DE": "chuDe", "ANH": "anh", "TU": "tu", "CAU": "cau", "HOI THOAI": "hoiThoai",
+    "CHU DE": "chuDe", "MUC": "muc", "ANH": "anh", "TU": "tu", "CAU": "cau", "HOI THOAI": "hoiThoai",
     "TRAU CON": "trau", "BAN": "ban", "EM": "ban"
   };
+  var SO_MUC = 4;
   function tenFileAn(chu) {
     return boDau(chu).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "chu-de";
   }
 
   /**
    * Đọc nội dung. Trả về { chuDe: [...], loi: [{ dong, noiDung, lyDo }] }.
-   * Mỗi chủ đề: { id, ten, tenEn, anh, tu: [muc], cau: [muc], hoiThoai: [{ ten, tenEn, luot: [{ ai: "trau"|"ban", chu, en, ma }] }] }.
+   * Mỗi chủ đề: { id, ten, tenEn, muc: 1–4 (mặc định 2), anh, tu: [muc], cau: [muc], hoiThoai: [{ ten, tenEn, luot: [{ ai: "trau"|"ban", chu, en, ma }] }] }.
    * Mỗi mục: { chu, en, ma }.
    */
   function docNoiDung(van) {
@@ -164,7 +165,7 @@
         var id = tenFileAn(m.chu), k = 2;
         while (daCoId[id]) id = tenFileAn(m.chu) + "-" + (k++);
         daCoId[id] = true;
-        cd = { id: id, ten: m.chu, tenEn: m.en, anh: "", tu: [], cau: [], hoiThoai: [] };
+        cd = { id: id, ten: m.chu, tenEn: m.en, muc: 2, coMuc: false, anh: "", tu: [], cau: [], hoiThoai: [] };
         ht = null;
         ds.push(cd);
         continue;
@@ -172,6 +173,11 @@
       if (!cd) { loi.push({ dong: i + 1, noiDung: d, lyDo: "chua-co-chu-de" }); continue; }
       if (!phan) { loi.push({ dong: i + 1, noiDung: d, lyDo: "trong" }); continue; }
       if (loai === "anh") { cd.anh = phan.replace(/[^a-zA-Z0-9._-]/g, ""); continue; }
+      if (loai === "muc") {
+        var so = parseInt(phan, 10);
+        if (so >= 1 && so <= SO_MUC) { cd.muc = so; cd.coMuc = true; } else loi.push({ dong: i + 1, noiDung: d, lyDo: "muc-sai" });
+        continue;
+      }
       if (loai === "tu") { cd.tu.push(muc(phan)); continue; }
       if (loai === "cau") { cd.cau.push(muc(phan)); continue; }
       if (loai === "hoiThoai") { var mh = muc(phan); ht = { ten: mh.chu, tenEn: mh.en, luot: [] }; cd.hoiThoai.push(ht); continue; }
