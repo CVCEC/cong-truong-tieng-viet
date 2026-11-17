@@ -1,0 +1,620 @@
+# NỘI DUNG LUYỆN NÓI – Trường Tiếng Việt Của Em (vietclass.cvcec.org/luyen-noi/)
+#
+# Cách viết (mỗi dòng một mục; dòng bắt đầu bằng # là ghi chú, máy bỏ qua):
+#   CHỦ ĐỀ: tên tiếng Việt | tên tiếng Anh      → mở một chủ đề mới
+#   MỨC: 1, 2, 3 hoặc 4                          → mức của chủ đề (xem bảng dưới)
+#   ẢNH: tên ảnh Trâu Con trong /assets/trau/   → ví dụ wave.png (không bắt buộc)
+#   TỪ: từ tiếng Việt | nghĩa tiếng Anh         → thẻ "Luyện từ"
+#   CÂU: câu tiếng Việt | nghĩa tiếng Anh       → thẻ "Luyện câu"
+#   HỘI THOẠI: tên đoạn | tên tiếng Anh         → mở một đoạn hội thoại mới (không bắt buộc)
+#   TRÂU CON: câu Trâu Con nói | tiếng Anh      → Trâu Con nói, các bạn nghe
+#   BẠN: câu các bạn đọc | tiếng Anh            → các bạn đọc, máy chấm
+#
+# Các mức (từ bé tới lớn):
+#   MỨC: 1 – Mầm (dưới 6 tuổi): từ 1–2 tiếng, câu 3–5 tiếng, hội thoại 4 lượt.
+#   MỨC: 2 – Chồi (6–9 tuổi): câu 4–7 tiếng, hội thoại 6 lượt.
+#   MỨC: 3 – Lá (10–12 tuổi): câu 7–12 tiếng, có từ nối (vì, nên, khi, sau khi…), hội thoại 8 lượt.
+#   MỨC: 4 – Cây (13 tuổi trở lên): câu ghép, nêu ý kiến, chủ đề văn hóa – xã hội, hội thoại 8 lượt.
+#
+# Lưu ý:
+#   - Phần tiếng Anh sau dấu | có thể bỏ trống.
+#   - Trâu Con xưng "mình", gọi học sinh "các bạn". Không dùng tên thật của trẻ.
+#   - Sửa chữ của một câu thì câu đó cần tạo lại giọng Elio (luyen-noi/studio.html).
+
+# ===================== MỨC 1 – MẦM (dưới 6 tuổi) =====================
+
+CHỦ ĐỀ: Cơ thể em | My body
+MỨC: 1
+ẢNH: wave.png
+TỪ: cái đầu | head
+TỪ: đôi mắt | eyes
+TỪ: cái mũi | nose
+TỪ: cái miệng | mouth
+TỪ: đôi tai | ears
+TỪ: bàn tay | hand
+TỪ: bàn chân | foot
+TỪ: cái bụng | tummy
+CÂU: Đây là mắt. | These are eyes.
+CÂU: Em có hai tay. | I have two hands.
+CÂU: Em vỗ tay. | I clap my hands.
+CÂU: Mũi em nhỏ xinh. | My nose is small and cute.
+CÂU: Em rửa tay sạch. | I wash my hands clean.
+HỘI THOẠI: Chỉ vào đâu nào? | Point to it!
+TRÂU CON: Các bạn chỉ vào mũi nào! | Point to your nose!
+BẠN: Đây là mũi. | This is my nose.
+TRÂU CON: Giỏi quá! Còn tai ở đâu? | Great! Where are your ears?
+BẠN: Đây là tai. | These are my ears.
+
+CHỦ ĐỀ: Màu sắc | Colours
+MỨC: 1
+ẢNH: pointing.png
+TỪ: màu đỏ | red
+TỪ: màu xanh | blue, green
+TỪ: màu vàng | yellow
+TỪ: màu trắng | white
+TỪ: màu đen | black
+TỪ: màu hồng | pink
+TỪ: màu tím | purple
+TỪ: cầu vồng | rainbow
+CÂU: Quả táo màu đỏ. | The apple is red.
+CÂU: Bầu trời màu xanh. | The sky is blue.
+CÂU: Em thích màu hồng. | I like pink.
+CÂU: Con mèo màu đen. | The cat is black.
+CÂU: Cầu vồng đẹp quá! | The rainbow is so pretty!
+HỘI THOẠI: Màu gì đây? | What colour is it?
+TRÂU CON: Lá cây màu gì hả các bạn? | What colour are the leaves?
+BẠN: Lá cây màu xanh. | The leaves are green.
+TRÂU CON: Đúng rồi! Các bạn thích màu gì? | That's right! What colour do you like?
+BẠN: Mình thích màu vàng. | I like yellow.
+
+CHỦ ĐỀ: Đếm số | Counting
+MỨC: 1
+ẢNH: thumbs-up.png
+TỪ: số một | one
+TỪ: số hai | two
+TỪ: số ba | three
+TỪ: số bốn | four
+TỪ: số năm | five
+TỪ: số sáu | six
+TỪ: số bảy | seven
+TỪ: số mười | ten
+CÂU: Một, hai, ba, bốn. | One, two, three, four.
+CÂU: Em có một quả bóng. | I have one ball.
+CÂU: Em có ba con gà. | I have three chickens.
+CÂU: Em có bốn cái bút. | I have four pens.
+CÂU: Em có mười ngón tay. | I have ten fingers.
+HỘI THOẠI: Cùng đếm nào | Let's count
+TRÂU CON: Các bạn đếm cùng mình nhé! | Count with me!
+BẠN: Một, hai, ba, bốn, năm. | One, two, three, four, five.
+TRÂU CON: Giỏi quá! Các bạn có mấy ngón tay? | Great! How many fingers do you have?
+BẠN: Mình có mười ngón tay. | I have ten fingers.
+
+CHỦ ĐỀ: Đồ chơi | Toys
+MỨC: 1
+ẢNH: cheer.png
+TỪ: quả bóng | ball
+TỪ: búp bê | doll
+TỪ: ô tô | toy car
+TỪ: gấu bông | teddy bear
+TỪ: xếp hình | building blocks
+TỪ: cánh diều | kite
+TỪ: bút màu | crayons
+TỪ: đồ chơi | toy
+CÂU: Em chơi bóng. | I play ball.
+CÂU: Đây là búp bê. | This is a doll.
+CÂU: Em thả diều. | I fly a kite.
+CÂU: Ô tô chạy nhanh. | The car goes fast.
+CÂU: Em cất đồ chơi. | I put my toys away.
+HỘI THOẠI: Chơi gì nào? | What shall we play?
+TRÂU CON: Các bạn thích chơi gì? | What do you like to play?
+BẠN: Mình thích chơi bóng. | I like playing ball.
+TRÂU CON: Mình cùng chơi nhé! | Let's play together!
+BẠN: Vâng, mình chơi nào! | Yes, let's play!
+
+CHỦ ĐỀ: Quả ngon | Yummy fruit
+MỨC: 1
+ẢNH: eating-pho.png
+TỪ: quả táo | apple
+TỪ: quả cam | orange
+TỪ: quả nho | grapes
+TỪ: dưa hấu | watermelon
+TỪ: quả xoài | mango
+TỪ: quả dâu | strawberry
+TỪ: quả lê | pear
+TỪ: quả dừa | coconut
+CÂU: Em ăn quả táo. | I eat an apple.
+CÂU: Quả cam tròn tròn. | The orange is round.
+CÂU: Dưa hấu ngọt quá! | The watermelon is so sweet!
+CÂU: Em thích quả xoài. | I like mangoes.
+CÂU: Em rửa quả nho. | I wash the grapes.
+HỘI THOẠI: Ăn quả nào | Let's eat fruit
+TRÂU CON: Các bạn muốn ăn quả gì? | What fruit would you like?
+BẠN: Mình muốn ăn quả cam. | I want an orange.
+TRÂU CON: Quả cam có ngon không? | Is the orange tasty?
+BẠN: Quả cam ngon lắm! | The orange is very tasty!
+
+CHỦ ĐỀ: Cảm xúc | Feelings
+MỨC: 1
+ẢNH: peeking-over.png
+TỪ: vui vẻ | happy
+TỪ: buồn bã | sad
+TỪ: sợ hãi | scared
+TỪ: tức giận | angry
+TỪ: mệt mỏi | tired
+TỪ: buồn ngủ | sleepy
+TỪ: khóc nhè | crying
+TỪ: cười tươi | big smile
+CÂU: Em vui quá! | I'm so happy!
+CÂU: Em buồn ngủ rồi. | I'm sleepy now.
+CÂU: Em cười thật tươi. | I smile brightly.
+CÂU: Bạn đừng khóc nhé. | Please don't cry.
+CÂU: Em ôm mẹ thật chặt. | I hug Mom tightly.
+HỘI THOẠI: Hôm nay thế nào? | How do you feel today?
+TRÂU CON: Hôm nay các bạn vui hay buồn? | Are you happy or sad today?
+BẠN: Mình vui lắm! | I'm very happy!
+TRÂU CON: Mình cũng vui! Mình cười nào! | Me too! Let's smile!
+BẠN: Mình cười thật tươi! | I'm smiling big!
+
+# ===================== MỨC 2 – CHỒI (6–9 tuổi) =====================
+
+CHỦ ĐỀ: Chào hỏi | Greetings
+MỨC: 2
+ẢNH: wave.png
+TỪ: xin chào | hello
+TỪ: tạm biệt | goodbye
+TỪ: cảm ơn | thank you
+TỪ: xin lỗi | sorry
+TỪ: không sao | it's okay
+TỪ: bạn bè | friends
+TỪ: cô giáo | teacher (female)
+TỪ: thầy giáo | teacher (male)
+CÂU: Em chào cô ạ. | Hello, teacher.
+CÂU: Em cảm ơn cô ạ. | Thank you, teacher.
+CÂU: Hẹn gặp lại các bạn. | See you again, everyone.
+CÂU: Bạn có khỏe không? | How are you?
+CÂU: Mình khỏe, cảm ơn bạn. | I'm fine, thank you.
+HỘI THOẠI: Gặp Trâu Con | Meeting Trâu Con
+TRÂU CON: Chào các bạn! Mình là Trâu Con. | Hello everyone! I'm Trâu Con.
+BẠN: Chào Trâu Con! | Hello, Trâu Con!
+TRÂU CON: Hôm nay các bạn có khỏe không? | How are you today?
+BẠN: Mình khỏe, cảm ơn bạn. | I'm fine, thank you.
+TRÂU CON: Mình rất vui được gặp các bạn. | I'm very happy to meet you.
+BẠN: Mình cũng rất vui. | I'm very happy too.
+TRÂU CON: Tạm biệt các bạn nhé! | Goodbye, everyone!
+BẠN: Tạm biệt Trâu Con! | Goodbye, Trâu Con!
+
+CHỦ ĐỀ: Gia đình | Family
+MỨC: 2
+ẢNH: peeking.png
+TỪ: gia đình | family
+TỪ: bố mẹ | parents
+TỪ: ông bà | grandparents
+TỪ: anh trai | older brother
+TỪ: chị gái | older sister
+TỪ: em bé | baby
+TỪ: ngôi nhà | house
+TỪ: yêu thương | to love
+CÂU: Đây là gia đình của em. | This is my family.
+CÂU: Nhà em có bốn người. | There are four people in my family.
+CÂU: Em yêu bố mẹ. | I love my parents.
+CÂU: Ông bà sống ở Việt Nam. | My grandparents live in Vietnam.
+CÂU: Em giúp mẹ nấu cơm. | I help my mother cook rice.
+HỘI THOẠI: Nhà của các bạn | Your family
+TRÂU CON: Nhà các bạn có mấy người? | How many people are in your family?
+BẠN: Nhà mình có bốn người. | There are four people in my family.
+TRÂU CON: Ồ, vui quá! Các bạn có anh chị em không? | Oh, how fun! Do you have brothers or sisters?
+BẠN: Mình có một em bé. | I have a baby sibling.
+TRÂU CON: Các bạn thường làm gì cùng gia đình? | What do you often do with your family?
+BẠN: Mình ăn cơm cùng gia đình. | I eat meals with my family.
+
+CHỦ ĐỀ: Ở trường | At school
+MỨC: 2
+ẢNH: reading.png
+TỪ: trường học | school
+TỪ: lớp học | classroom
+TỪ: quyển sách | book
+TỪ: cái bút | pen
+TỪ: bài học | lesson
+TỪ: học sinh | student
+TỪ: giờ ra chơi | recess
+TỪ: tiếng Việt | Vietnamese language
+CÂU: Em đi học tiếng Việt. | I go to Vietnamese class.
+CÂU: Đây là quyển sách của em. | This is my book.
+CÂU: Em thích giờ ra chơi. | I like recess.
+CÂU: Cô giáo dạy em đọc. | The teacher teaches me to read.
+CÂU: Lớp em có nhiều bạn. | My class has many friends.
+HỘI THOẠI: Ở lớp tiếng Việt | In Vietnamese class
+TRÂU CON: Các bạn học tiếng Việt ở đâu? | Where do you learn Vietnamese?
+BẠN: Mình học ở Trường Tiếng Việt Của Em. | I learn at Trường Tiếng Việt Của Em.
+TRÂU CON: Các bạn thích học môn gì nhất? | Which subject do you like most?
+BẠN: Mình thích học tiếng Việt. | I like learning Vietnamese.
+TRÂU CON: Giỏi quá! Các bạn đọc cho mình nghe nhé. | Great! Read to me, please.
+BẠN: Mình đọc được rồi. | I can read now.
+
+CHỦ ĐỀ: Đồ ăn | Food
+MỨC: 2
+ẢNH: eating-pho.png
+TỪ: phở bò | beef noodle soup
+TỪ: bánh mì | bread, sandwich
+TỪ: cơm | rice
+TỪ: nước | water
+TỪ: hoa quả | fruit
+TỪ: quả chuối | banana
+TỪ: bữa sáng | breakfast
+TỪ: ngon quá | so delicious
+CÂU: Em thích ăn phở. | I like eating phở.
+CÂU: Mẹ nấu cơm rất ngon. | Mom cooks very tasty food.
+CÂU: Em uống một cốc nước. | I drink a glass of water.
+CÂU: Bữa sáng em ăn bánh mì. | I eat bread for breakfast.
+CÂU: Em mời cả nhà ăn cơm. | Please enjoy the meal, everyone.
+HỘI THOẠI: Bữa trưa | Lunch time
+TRÂU CON: Các bạn ơi, các bạn đói chưa? | Hey, are you hungry yet?
+BẠN: Mình đói rồi. | I'm hungry now.
+TRÂU CON: Các bạn muốn ăn gì? | What do you want to eat?
+BẠN: Mình muốn ăn phở. | I want to eat phở.
+TRÂU CON: Mình cũng thích phở lắm! Phở có ngon không? | I love phở too! Is the phở tasty?
+BẠN: Phở ngon quá! | The phở is so tasty!
+
+CHỦ ĐỀ: Con vật | Animals
+MỨC: 2
+ẢNH: pointing.png
+TỪ: con trâu | water buffalo
+TỪ: con mèo | cat
+TỪ: con chó | dog
+TỪ: con gà | chicken
+TỪ: con cá | fish
+TỪ: con chim | bird
+TỪ: con voi | elephant
+TỪ: con thỏ | rabbit
+CÂU: Con mèo đang ngủ. | The cat is sleeping.
+CÂU: Con chó chạy rất nhanh. | The dog runs very fast.
+CÂU: Con chim hót trên cây. | The bird sings in the tree.
+CÂU: Con trâu ăn cỏ ngoài đồng. | The buffalo eats grass in the field.
+CÂU: Em thích con thỏ trắng. | I like the white rabbit.
+HỘI THOẠI: Bạn thích con gì? | Which animal do you like?
+TRÂU CON: Mình là con trâu. Các bạn thích con vật nào? | I'm a buffalo. Which animal do you like?
+BẠN: Mình thích con mèo. | I like cats.
+TRÂU CON: Con mèo kêu thế nào nhỉ? | What sound does a cat make?
+BẠN: Con mèo kêu meo meo. | The cat says meow meow.
+TRÂU CON: Đúng rồi! Nhà các bạn có nuôi con gì không? | That's right! Do you have a pet at home?
+BẠN: Nhà mình có một con chó. | We have a dog at home.
+
+CHỦ ĐỀ: Thời tiết | Weather
+MỨC: 2
+ẢNH: flying.png
+TỪ: trời nắng | sunny
+TỪ: trời mưa | rainy
+TỪ: tuyết rơi | snow is falling
+TỪ: gió thổi | the wind blows
+TỪ: trời lạnh | cold
+TỪ: trời nóng | hot
+TỪ: cái ô | umbrella
+TỪ: mùa đông | winter
+CÂU: Hôm nay trời nắng đẹp. | It's sunny and nice today.
+CÂU: Trời mưa, em mang ô. | It's raining, so I bring an umbrella.
+CÂU: Mùa đông ở Canada có tuyết. | Winter in Canada has snow.
+CÂU: Em mặc áo ấm đi học. | I wear a warm coat to school.
+CÂU: Gió thổi mát quá. | The breeze is so cool.
+HỘI THOẠI: Trời hôm nay | Today's weather
+TRÂU CON: Hôm nay trời thế nào hả các bạn? | How's the weather today?
+BẠN: Hôm nay trời lạnh lắm. | It's very cold today.
+TRÂU CON: Ở Canada có tuyết không? | Is there snow in Canada?
+BẠN: Có, mùa đông có nhiều tuyết. | Yes, there's lots of snow in winter.
+TRÂU CON: Các bạn thích làm gì khi có tuyết? | What do you like to do when it snows?
+BẠN: Mình thích nặn người tuyết. | I like building a snowman.
+
+# ===================== MỨC 3 – LÁ (10–12 tuổi) =====================
+
+CHỦ ĐỀ: Sở thích | Hobbies
+MỨC: 3
+ẢNH: running.png
+TỪ: sở thích | hobby
+TỪ: đá bóng | play soccer
+TỪ: vẽ tranh | draw, paint
+TỪ: đọc sách | read books
+TỪ: bơi lội | swimming
+TỪ: chơi đàn | play an instrument
+TỪ: nấu ăn | cooking
+TỪ: thời gian rảnh | free time
+CÂU: Sở thích của em là vẽ tranh phong cảnh. | My hobby is painting landscapes.
+CÂU: Cuối tuần, em thường đi bơi với bố. | On weekends, I often go swimming with Dad.
+CÂU: Em thích đọc sách vì sách giúp em hiểu biết hơn. | I like reading because books help me know more.
+CÂU: Khi rảnh, em hay chơi đàn piano. | In my free time, I often play the piano.
+CÂU: Em muốn học nấu ăn cùng bà ngoại. | I want to learn to cook with my grandmother.
+HỘI THOẠI: Các bạn thích làm gì? | What do you like doing?
+TRÂU CON: Các bạn ơi, khi rảnh các bạn thích làm gì? | What do you like doing in your free time?
+BẠN: Khi rảnh, mình thích đá bóng với các bạn. | In my free time, I like playing soccer with my friends.
+TRÂU CON: Hay quá! Các bạn đá bóng ở đâu? | Cool! Where do you play soccer?
+BẠN: Mình đá bóng ở sân trường vào cuối tuần. | I play at the school field on weekends.
+TRÂU CON: Ngoài đá bóng, các bạn còn thích gì nữa? | Besides soccer, what else do you like?
+BẠN: Mình còn thích vẽ tranh và đọc truyện. | I also like drawing and reading stories.
+TRÂU CON: Mình cũng thích đọc truyện cổ tích lắm! | I love reading fairy tales too!
+BẠN: Lần sau mình cùng đọc truyện nhé. | Let's read stories together next time.
+
+CHỦ ĐỀ: Một ngày của em | My day
+MỨC: 3
+ẢNH: reading-sitting.png
+TỪ: thức dậy | wake up
+TỪ: đánh răng | brush teeth
+TỪ: ăn sáng | eat breakfast
+TỪ: đi học | go to school
+TỪ: làm bài tập | do homework
+TỪ: tắm rửa | wash up
+TỪ: đi ngủ | go to bed
+TỪ: buổi tối | evening
+CÂU: Mỗi sáng, em thức dậy lúc bảy giờ. | Every morning, I wake up at seven o'clock.
+CÂU: Sau khi đánh răng, em ăn sáng cùng gia đình. | After brushing my teeth, I have breakfast with my family.
+CÂU: Buổi chiều, em làm bài tập rồi mới đi chơi. | In the afternoon, I do my homework before I play.
+CÂU: Trước khi đi ngủ, em đọc sách mười lăm phút. | Before bed, I read for fifteen minutes.
+CÂU: Em đi ngủ sớm để sáng mai không bị mệt. | I go to bed early so I won't be tired tomorrow.
+HỘI THOẠI: Buổi sáng của các bạn | Your morning
+TRÂU CON: Các bạn thường thức dậy lúc mấy giờ? | What time do you usually wake up?
+BẠN: Mình thường thức dậy lúc bảy giờ sáng. | I usually wake up at seven in the morning.
+TRÂU CON: Sau đó các bạn làm gì? | What do you do after that?
+BẠN: Mình đánh răng, rửa mặt rồi ăn sáng. | I brush my teeth, wash my face, then eat breakfast.
+TRÂU CON: Bữa sáng hôm nay các bạn ăn gì? | What did you have for breakfast today?
+BẠN: Hôm nay mình ăn bánh mì và uống sữa. | Today I had bread and milk.
+TRÂU CON: Ngon quá! Các bạn đi học bằng gì? | Yummy! How do you get to school?
+BẠN: Mình đi học bằng xe buýt của trường. | I go to school by school bus.
+
+CHỦ ĐỀ: Đi chợ | Going to the market
+MỨC: 3
+ẢNH: hiking.png
+TỪ: đi chợ | go to the market
+TỪ: bao nhiêu tiền | how much
+TỪ: đắt quá | too expensive
+TỪ: giá rẻ | cheap
+TỪ: mua bán | buying and selling
+TỪ: rau xanh | green vegetables
+TỪ: trả tiền | pay
+TỪ: người bán hàng | seller
+CÂU: Cuối tuần, em cùng mẹ đi chợ mua rau. | On weekends, I go to the market with Mom to buy vegetables.
+CÂU: Cô ơi, quả xoài này bao nhiêu tiền ạ? | Excuse me, how much is this mango?
+CÂU: Vì rau rất tươi nên mẹ mua hai bó. | Because the vegetables are fresh, Mom buys two bunches.
+CÂU: Em giúp mẹ xách túi đồ về nhà. | I help Mom carry the bags home.
+CÂU: Chợ Việt ở Toronto lúc nào cũng đông vui. | The Vietnamese market in Toronto is always busy and lively.
+HỘI THOẠI: Mua hoa quả | Buying fruit
+TRÂU CON: Các bạn ơi, hôm nay mình cùng đi chợ nhé! | Let's go to the market together today!
+BẠN: Hay quá! Mình muốn mua hoa quả. | Great! I want to buy some fruit.
+TRÂU CON: Các bạn muốn mua quả gì? | What fruit do you want to buy?
+BẠN: Mình muốn mua ba quả xoài. | I want to buy three mangoes.
+TRÂU CON: Các bạn hỏi cô bán hàng giá bao nhiêu nhé. | Ask the seller how much it costs.
+BẠN: Cô ơi, ba quả xoài bao nhiêu tiền ạ? | Excuse me, how much are three mangoes?
+TRÂU CON: Cô nói năm đô. Các bạn trả tiền nào! | She says five dollars. Go ahead and pay!
+BẠN: Cháu gửi cô tiền ạ. Cháu cảm ơn cô! | Here's the money. Thank you!
+
+CHỦ ĐỀ: Tết Nguyên Đán | Lunar New Year
+MỨC: 3
+ẢNH: flag.png
+TỪ: Tết Nguyên Đán | Lunar New Year
+TỪ: lì xì | lucky money
+TỪ: bánh chưng | square sticky rice cake
+TỪ: hoa đào | peach blossoms
+TỪ: chúc Tết | New Year wishes
+TỪ: pháo hoa | fireworks
+TỪ: áo dài | áo dài
+TỪ: năm mới | new year
+CÂU: Tết là dịp cả gia đình sum họp. | Tết is when the whole family gets together.
+CÂU: Em mặc áo dài đi chúc Tết ông bà. | I wear an áo dài to give New Year wishes to my grandparents.
+CÂU: Bà gói bánh chưng bằng lá dong. | Grandma wraps bánh chưng in dong leaves.
+CÂU: Em chúc ông bà mạnh khỏe, sống lâu. | I wish my grandparents good health and a long life.
+CÂU: Đêm giao thừa, em được xem pháo hoa. | On New Year's Eve, I get to watch fireworks.
+HỘI THOẠI: Chúc Tết | New Year wishes
+TRÂU CON: Sắp đến Tết rồi! Các bạn có vui không? | Tết is coming! Are you excited?
+BẠN: Mình vui lắm, vì Tết được gặp cả nhà. | Very, because at Tết I get to see the whole family.
+TRÂU CON: Tết này các bạn đi chúc Tết ai? | Who will you visit with New Year wishes?
+BẠN: Mình đi chúc Tết ông bà và cô chú. | I'll visit my grandparents, aunts and uncles.
+TRÂU CON: Các bạn chúc ông bà thế nào? | What will you wish your grandparents?
+BẠN: Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ. | I wish you good health and a long life in the new year.
+TRÂU CON: Hay quá! Năm nay các bạn có điều ước gì không? | Lovely! Do you have a wish this year?
+BẠN: Mình ước học giỏi tiếng Việt hơn. | I wish to get better at Vietnamese.
+
+CHỦ ĐỀ: Bảo vệ môi trường | Protecting the environment
+MỨC: 3
+ẢNH: thumbs-up.png
+TỪ: môi trường | environment
+TỪ: rác thải | waste
+TỪ: tái chế | recycle
+TỪ: trồng cây | plant trees
+TỪ: tiết kiệm nước | save water
+TỪ: ô nhiễm | pollution
+TỪ: túi ni lông | plastic bag
+TỪ: thùng rác | trash bin
+CÂU: Em bỏ rác vào đúng thùng rác. | I put trash in the right bin.
+CÂU: Chúng ta nên tắt đèn khi ra khỏi phòng. | We should turn off the lights when we leave a room.
+CÂU: Lớp em trồng cây xanh ở sân trường. | My class plants trees in the schoolyard.
+CÂU: Em mang túi vải đi chợ thay cho túi ni lông. | I bring a cloth bag to the market instead of plastic bags.
+CÂU: Nếu mọi người cùng tiết kiệm nước, Trái Đất sẽ xanh hơn. | If everyone saves water, the Earth will be greener.
+HỘI THOẠI: Giữ cho Trái Đất xanh | Keeping the Earth green
+TRÂU CON: Các bạn ơi, làm sao để giữ cho Trái Đất xanh? | How can we keep the Earth green?
+BẠN: Mình nghĩ chúng ta nên trồng thêm nhiều cây. | I think we should plant more trees.
+TRÂU CON: Đúng rồi! Ở nhà các bạn làm gì để bảo vệ môi trường? | Right! What do you do at home to protect the environment?
+BẠN: Ở nhà, mình phân loại rác để tái chế. | At home, I sort the trash for recycling.
+TRÂU CON: Giỏi quá! Còn khi đánh răng thì sao? | Great! What about when you brush your teeth?
+BẠN: Mình khóa vòi nước để tiết kiệm nước. | I turn off the tap to save water.
+TRÂU CON: Các bạn đúng là bạn của thiên nhiên! | You really are friends of nature!
+BẠN: Cảm ơn Trâu Con, mình sẽ cố gắng hơn nữa. | Thank you, Trâu Con, I'll try even harder.
+
+CHỦ ĐỀ: Kỳ nghỉ hè | Summer holidays
+MỨC: 3
+ẢNH: flying.png
+TỪ: kỳ nghỉ hè | summer holidays
+TỪ: bãi biển | beach
+TỪ: cắm trại | camping
+TỪ: du lịch | travel
+TỪ: máy bay | airplane
+TỪ: về quê | visit the hometown
+TỪ: chụp ảnh | take photos
+TỪ: kỷ niệm | memories
+CÂU: Kỳ nghỉ hè này, em được về quê thăm ông bà. | This summer, I get to visit my grandparents in their hometown.
+CÂU: Gia đình em đi cắm trại bên hồ. | My family goes camping by the lake.
+CÂU: Em đi máy bay lần đầu nên hơi sợ. | It was my first flight, so I was a little scared.
+CÂU: Ở bãi biển, em xây lâu đài cát. | At the beach, I build sandcastles.
+CÂU: Em chụp nhiều ảnh để làm kỷ niệm. | I take lots of photos to keep as memories.
+HỘI THOẠI: Mùa hè của các bạn | Your summer
+TRÂU CON: Kỳ nghỉ hè vừa rồi các bạn đi đâu? | Where did you go last summer?
+BẠN: Mình về Việt Nam thăm ông bà. | I went to Vietnam to visit my grandparents.
+TRÂU CON: Ôi, thích quá! Các bạn đi bằng gì? | Wow, lucky you! How did you travel?
+BẠN: Mình đi máy bay hơn hai mươi tiếng. | I flew for more than twenty hours.
+TRÂU CON: Ở Việt Nam các bạn thích nhất điều gì? | What did you like most in Vietnam?
+BẠN: Mình thích nhất là được ăn món bà nấu. | I liked eating Grandma's cooking the most.
+TRÂU CON: Hè sau các bạn muốn đi đâu? | Where do you want to go next summer?
+BẠN: Hè sau mình muốn đi cắm trại trên núi. | Next summer I want to go camping in the mountains.
+
+# ===================== MỨC 4 – CÂY (13 tuổi trở lên) =====================
+
+CHỦ ĐỀ: Giới thiệu bản thân | Introducing yourself
+MỨC: 4
+ẢNH: wave.png
+TỪ: giới thiệu | introduce
+TỪ: bản thân | oneself
+TỪ: tính cách | personality
+TỪ: điểm mạnh | strength
+TỪ: song ngữ | bilingual
+TỪ: trung học | high school
+TỪ: tình nguyện | volunteer
+TỪ: tự tin | confident
+CÂU: Xin phép cho em giới thiệu đôi nét về bản thân. | Allow me to introduce myself briefly.
+CÂU: Em đang học lớp chín tại một trường trung học ở Toronto. | I'm in grade nine at a high school in Toronto.
+CÂU: Em nói được cả tiếng Anh lẫn tiếng Việt. | I can speak both English and Vietnamese.
+CÂU: Ước mơ của em là trở thành bác sĩ để giúp đỡ mọi người. | My dream is to become a doctor to help people.
+CÂU: Ngoài giờ học, em tham gia hoạt động tình nguyện ở thư viện. | Outside of school, I volunteer at the library.
+HỘI THOẠI: Làm quen | Getting to know each other
+TRÂU CON: Chào các bạn! Các bạn giới thiệu một chút về mình nhé? | Hi! Could you tell me a little about yourself?
+BẠN: Chào Trâu Con! Mình là học sinh trung học và đang học tiếng Việt. | Hi, Trâu Con! I'm a high school student learning Vietnamese.
+TRÂU CON: Vì sao các bạn muốn học tiếng Việt? | Why do you want to learn Vietnamese?
+BẠN: Mình muốn nói chuyện được với ông bà và hiểu thêm về cội nguồn. | I want to talk with my grandparents and understand my roots.
+TRÂU CON: Thật ý nghĩa! Các bạn có ước mơ gì cho tương lai? | That's meaningful! What's your dream for the future?
+BẠN: Mình mơ ước trở thành kỹ sư để xây những cây cầu. | I dream of becoming an engineer and building bridges.
+TRÂU CON: Các bạn thấy học hai ngôn ngữ có khó không? | Do you find learning two languages hard?
+BẠN: Có lúc khó, nhưng biết hai ngôn ngữ giúp mình tự tin hơn. | Sometimes, but knowing two languages makes me more confident.
+
+CHỦ ĐỀ: Quê hương Việt Nam | Vietnam, our homeland
+MỨC: 4
+ẢNH: hiking.png
+TỪ: quê hương | homeland
+TỪ: đất nước | country
+TỪ: thủ đô | capital city
+TỪ: ruộng bậc thang | terraced rice fields
+TỪ: vịnh Hạ Long | Hạ Long Bay
+TỪ: miền Bắc | the North
+TỪ: miền Trung | Central Vietnam
+TỪ: miền Nam | the South
+CÂU: Việt Nam có hình chữ S, trải dài từ Bắc vào Nam. | Vietnam is S-shaped and stretches from North to South.
+CÂU: Hà Nội là thủ đô của Việt Nam. | Hà Nội is the capital of Vietnam.
+CÂU: Vịnh Hạ Long nổi tiếng với hàng nghìn hòn đảo đá vôi. | Hạ Long Bay is famous for its thousands of limestone islands.
+CÂU: Mỗi miền có giọng nói và món ăn riêng rất thú vị. | Each region has its own interesting accent and food.
+CÂU: Dù sống xa quê, em vẫn luôn tự hào là người Việt Nam. | Even though I live far away, I'm always proud to be Vietnamese.
+HỘI THOẠI: Kể về quê hương | Talking about the homeland
+TRÂU CON: Các bạn đã bao giờ về Việt Nam chưa? | Have you ever been to Vietnam?
+BẠN: Mình về rồi, quê mình ở miền Trung. | Yes, my family's hometown is in Central Vietnam.
+TRÂU CON: Miền Trung có những nơi nào đẹp? | What beautiful places are there in Central Vietnam?
+BẠN: Mình rất thích phố cổ Hội An và biển Đà Nẵng. | I really love Hội An's old town and the beach in Đà Nẵng.
+TRÂU CON: Nếu giới thiệu Việt Nam cho bạn bè, các bạn sẽ nói gì? | If you introduced Vietnam to your friends, what would you say?
+BẠN: Mình sẽ nói Việt Nam có thiên nhiên đẹp và con người thân thiện. | I'd say Vietnam has beautiful nature and friendly people.
+TRÂU CON: Các bạn có muốn mời bạn bè cùng về thăm không? | Would you invite your friends to visit with you?
+BẠN: Có chứ, mình muốn đưa các bạn đi ăn phở ở Hà Nội. | Of course, I'd take them to eat phở in Hà Nội.
+
+CHỦ ĐỀ: Ẩm thực Việt | Vietnamese cuisine
+MỨC: 4
+ẢNH: eating-pho.png
+TỪ: ẩm thực | cuisine
+TỪ: nước mắm | fish sauce
+TỪ: gỏi cuốn | fresh spring rolls
+TỪ: bún chả | grilled pork with noodles
+TỪ: đặc sản | local specialty
+TỪ: hương vị | flavour
+TỪ: công thức | recipe
+TỪ: nguyên liệu | ingredients
+CÂU: Ẩm thực Việt Nam nổi tiếng vì tươi ngon và cân bằng. | Vietnamese cuisine is famous for being fresh and balanced.
+CÂU: Gỏi cuốn gồm bánh tráng, bún, rau sống và tôm. | Fresh spring rolls have rice paper, noodles, fresh herbs and shrimp.
+CÂU: Theo em, nước mắm là linh hồn của món ăn Việt. | In my opinion, fish sauce is the soul of Vietnamese food.
+CÂU: Mỗi vùng miền đều có đặc sản riêng. | Every region has its own specialties.
+CÂU: Cuối tuần này, em sẽ thử nấu bún chả theo công thức của mẹ. | This weekend, I'll try cooking bún chả with Mom's recipe.
+HỘI THOẠI: Món ăn yêu thích | Favourite dishes
+TRÂU CON: Theo các bạn, món ăn Việt nào ngon nhất? | Which Vietnamese dish do you think is the best?
+BẠN: Theo mình, phở ngon nhất vì nước dùng rất thơm. | I think phở is the best because the broth is so fragrant.
+TRÂU CON: Các bạn đã bao giờ tự nấu món Việt chưa? | Have you ever cooked a Vietnamese dish yourself?
+BẠN: Mình đã cùng mẹ làm gỏi cuốn vào dịp Tết. | I made fresh spring rolls with Mom at Tết.
+TRÂU CON: Bạn bè người Canada của các bạn có thích món Việt không? | Do your Canadian friends like Vietnamese food?
+BẠN: Họ rất thích, nhất là bánh mì và gỏi cuốn. | They love it, especially bánh mì and spring rolls.
+TRÂU CON: Nếu mở một quán ăn, các bạn sẽ bán món gì? | If you opened a restaurant, what would you sell?
+BẠN: Mình sẽ bán bún chả, vì ở đây ít người biết món này. | I'd sell bún chả, because few people here know this dish.
+
+CHỦ ĐỀ: Sống giữa hai nền văn hóa | Living between two cultures
+MỨC: 4
+ẢNH: thinking.png
+TỪ: văn hóa | culture
+TỪ: truyền thống | tradition
+TỪ: bản sắc | identity
+TỪ: phong tục | custom
+TỪ: cộng đồng | community
+TỪ: tôn trọng | respect
+TỪ: cội nguồn | roots
+TỪ: giữ gìn | preserve
+CÂU: Em lớn lên ở Canada nhưng vẫn giữ gìn tiếng Việt. | I grew up in Canada but I still keep my Vietnamese.
+CÂU: Ở nhà em nói tiếng Việt, còn ở trường em nói tiếng Anh. | At home I speak Vietnamese, and at school I speak English.
+CÂU: Gia đình em vừa đón Tết Nguyên Đán, vừa đón lễ Tạ ơn. | My family celebrates both Lunar New Year and Thanksgiving.
+CÂU: Biết hai nền văn hóa giúp em hiểu và tôn trọng người khác hơn. | Knowing two cultures helps me understand and respect others more.
+CÂU: Cộng đồng người Việt ở Toronto thường tổ chức hội chợ Tết. | The Vietnamese community in Toronto often holds a Tết fair.
+HỘI THOẠI: Hai nền văn hóa | Two cultures
+TRÂU CON: Các bạn thấy sống giữa hai nền văn hóa thế nào? | What's it like living between two cultures?
+BẠN: Mình thấy thú vị, vì mình được học hỏi từ cả hai. | I find it interesting, because I get to learn from both.
+TRÂU CON: Có lúc nào các bạn thấy khó khăn không? | Is it ever hard for you?
+BẠN: Đôi khi mình quên từ tiếng Việt khi nói chuyện với bà. | Sometimes I forget Vietnamese words when talking with Grandma.
+TRÂU CON: Lúc đó các bạn làm thế nào? | What do you do then?
+BẠN: Mình hỏi lại bà và ghi từ mới vào sổ tay. | I ask Grandma and write the new word in my notebook.
+TRÂU CON: Các bạn muốn giữ truyền thống nào của người Việt? | Which Vietnamese tradition do you want to keep?
+BẠN: Mình muốn giữ phong tục chúc Tết và lì xì cho các em nhỏ. | I want to keep giving New Year wishes and lucky money to younger children.
+
+CHỦ ĐỀ: Công nghệ và mạng xã hội | Technology and social media
+MỨC: 4
+ẢNH: peeking.png
+TỪ: công nghệ | technology
+TỪ: điện thoại | phone
+TỪ: mạng xã hội | social media
+TỪ: trí tuệ nhân tạo | artificial intelligence
+TỪ: thông tin | information
+TỪ: an toàn | safe
+TỪ: mật khẩu | password
+TỪ: người lạ | stranger
+CÂU: Công nghệ giúp em học tiếng Việt dễ dàng hơn. | Technology helps me learn Vietnamese more easily.
+CÂU: Em không chia sẻ mật khẩu với bất kỳ ai. | I don't share my password with anyone.
+CÂU: Trước khi tin một thông tin, em kiểm tra lại nguồn. | Before I believe any information, I check the source.
+CÂU: Theo em, dùng điện thoại quá nhiều không tốt cho mắt. | I think using a phone too much is bad for your eyes.
+CÂU: Mỗi tối, em giới hạn thời gian dùng mạng xã hội. | Every evening, I limit my time on social media.
+HỘI THOẠI: Dùng mạng an toàn | Staying safe online
+TRÂU CON: Các bạn thường dùng điện thoại để làm gì? | What do you usually use your phone for?
+BẠN: Mình dùng điện thoại để học bài và nhắn tin cho bạn bè. | I use it to study and to text my friends.
+TRÂU CON: Theo các bạn, mạng xã hội có lợi hay có hại? | Do you think social media is helpful or harmful?
+BẠN: Mình nghĩ có cả lợi lẫn hại, tùy cách mình sử dụng. | I think it's both, depending on how we use it.
+TRÂU CON: Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao? | What if a stranger online asks for your home address?
+BẠN: Mình sẽ không trả lời và báo ngay cho bố mẹ. | I won't answer, and I'll tell my parents right away.
+TRÂU CON: Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không? | Well done! Any advice for younger kids?
+BẠN: Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn. | Use the internet in moderation and always ask a grown-up.
+
+CHỦ ĐỀ: Ước mơ và nghề nghiệp | Dreams and careers
+MỨC: 4
+ẢNH: reading.png
+TỪ: nghề nghiệp | career
+TỪ: ước mơ | dream
+TỪ: kỹ sư | engineer
+TỪ: giáo viên | teacher
+TỪ: y tá | nurse
+TỪ: lập trình viên | programmer
+TỪ: doanh nhân | entrepreneur
+TỪ: kinh nghiệm | experience
+CÂU: Nghề nào cũng đáng quý nếu mình làm bằng cả trái tim. | Every job is valuable if you do it with your whole heart.
+CÂU: Em muốn trở thành giáo viên dạy tiếng Việt cho trẻ em. | I want to become a teacher of Vietnamese for children.
+CÂU: Để làm lập trình viên, em cần học giỏi môn toán. | To become a programmer, I need to be good at math.
+CÂU: Mùa hè này, em đi làm thêm để có kinh nghiệm. | This summer, I'm working part-time to gain experience.
+CÂU: Bố mẹ luôn ủng hộ em theo đuổi ước mơ của mình. | My parents always support me in following my dreams.
+HỘI THOẠI: Nghề mơ ước | Dream job
+TRÂU CON: Lớn lên các bạn muốn làm nghề gì? | What job do you want when you grow up?
+BẠN: Mình muốn trở thành y tá để chăm sóc người bệnh. | I want to become a nurse to care for sick people.
+TRÂU CON: Vì sao các bạn chọn nghề đó? | Why did you choose that job?
+BẠN: Vì mình thích giúp đỡ người khác và tìm hiểu về cơ thể con người. | Because I like helping others and learning about the human body.
+TRÂU CON: Các bạn cần chuẩn bị những gì cho nghề này? | What do you need to prepare for this job?
+BẠN: Mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn. | I need to do well in biology and practise patience.
+TRÂU CON: Biết tiếng Việt thì nghề này có lợi gì? | How does knowing Vietnamese help in this job?
+BẠN: Mình có thể giúp các cụ người Việt chưa nói được tiếng Anh. | I can help elderly Vietnamese people who don't speak English yet.

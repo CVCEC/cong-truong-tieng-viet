@@ -3,18 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Luyện nói – Luyện thanh điệu · Trường Tiếng Việt Của Em</title>
-<meta name="description" content="Luyện nói – Luyện thanh điệu: đọc một tiếng, rồi xem đường giọng của em so với đường mẫu của 6 thanh điệu tiếng Việt. Âm thanh chỉ xử lý trên máy của em.">
+<title>Luyện nói · Trường Tiếng Việt Của Em</title>
+<meta name="description" content="Luyện nói cùng Trâu Con: luyện thanh điệu, luyện từ, luyện câu theo chủ đề và nói chuyện với Trâu Con. Máy chấm điểm để các bạn tự luyện.">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
 <link rel="stylesheet" href="/chung/cong.css?v=7">
-<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=1">
+<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=3">
 <script>window.CONG_CHU = {
  "vi": {
-  "tieuDe": "Luyện nói – Luyện thanh điệu",
-  "phuDe": "Đọc một tiếng, rồi xem đường giọng của em so với đường mẫu.",
+  "tieuDe": "Luyện nói",
+  "phuDe": "Luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.",
+  "tabThanh": "Luyện thanh",
+  "tabTu": "Luyện từ",
+  "tabCau": "Luyện câu",
+  "tabHoiThoai": "Hội thoại cùng Trâu Con",
+  "tabNhan": "Chọn cách luyện nói",
   "ghiChuRieng": "Âm thanh chỉ xử lý trên máy của em",
   "ghiChuRiengNd": "Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.",
   "ghiChuThanh": "Công cụ chỉ so thanh điệu",
@@ -24,11 +29,16 @@
   "b3": "Bước 3 – Đọc 6 thanh",
   "nguonTieuDe": "Nguồn tham khảo",
   "nguonGioiThieu": "Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.",
-  "khongJs": "Trang này cần bật JavaScript để ghi âm và vẽ đường giọng."
+  "khongJs": "Trang này cần bật JavaScript để ghi âm, chấm điểm và vẽ đường giọng."
  },
  "en": {
-  "tieuDe": "Speaking practice – Tones",
-  "phuDe": "Read a syllable, then compare your voice line with the model tone line.",
+  "tieuDe": "Speaking practice",
+  "phuDe": "Practise tones, words and sentences, and talk with Trâu Con.",
+  "tabThanh": "Tones",
+  "tabTu": "Words",
+  "tabCau": "Sentences",
+  "tabHoiThoai": "Talk with Trâu Con",
+  "tabNhan": "Choose how to practise",
   "ghiChuRieng": "Audio is processed only on your device",
   "ghiChuRiengNd": "No audio is sent over the internet. Recordings disappear when you close the page, unless you press “Save recording”.",
   "ghiChuThanh": "This tool only compares tones",
@@ -47,21 +57,33 @@
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <script src="/luyen-noi/cao-do.js?v=1" defer></script>
 <script src="/luyen-noi/ghep-tieng.js?v=1" defer></script>
-<script src="/luyen-noi/luyen-noi.js?v=1" defer></script>
+<script src="/luyen-noi/luyen-noi.js?v=2" defer></script>
+<script src="/luyen-noi/cham-cau.js?v=2" defer></script>
+<script src="/luyen-noi/giong-elio.js?v=1" defer></script>
+<script src="/luyen-noi/luyen-cau.js?v=2" defer></script>
 </head>
 <body class="cong" data-ttv-khong-thanh data-trang="hoc-tap" data-tieu-de="tieuDe">
   <header class="cong-dau" data-cong-dau></header>
   <main>
     <section class="trang-dau co-canh" data-canh="lang-que" aria-labelledby="tieu-de-trang">
       <div class="cong-ruot">
-        <h1 id="tieu-de-trang" data-chu="tieuDe">Luyện nói – Luyện thanh điệu</h1>
-        <p class="trang-phu-de" data-chu="phuDe">Đọc một tiếng, rồi xem đường giọng của em so với đường mẫu.</p>
+        <h1 id="tieu-de-trang" data-chu="tieuDe">Luyện nói</h1>
+        <p class="trang-phu-de" data-chu="phuDe">Luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.</p>
       </div>
     </section>
 
     <section class="cong-phan trang-than ln" data-ttv-nen="don-gian">
       <div class="cong-ruot">
-        <noscript><p class="ln-tin ln-tin-sai" data-chu="khongJs">Trang này cần bật JavaScript để ghi âm và vẽ đường giọng.</p></noscript>
+        <noscript><p class="ln-tin ln-tin-sai" data-chu="khongJs">Trang này cần bật JavaScript để ghi âm, chấm điểm và vẽ đường giọng.</p></noscript>
+
+        <div class="ln-tabs" role="tablist" aria-label="Chọn cách luyện nói">
+          <button type="button" role="tab" id="ln-tab-luyen-thanh" aria-controls="ln-panel-luyen-thanh" aria-selected="true"><span aria-hidden="true">🎵</span> <span data-chu="tabThanh">Luyện thanh</span></button>
+          <button type="button" role="tab" id="ln-tab-luyen-tu" aria-controls="ln-panel-luyen-tu" aria-selected="false" tabindex="-1"><span aria-hidden="true">🔤</span> <span data-chu="tabTu">Luyện từ</span></button>
+          <button type="button" role="tab" id="ln-tab-luyen-cau" aria-controls="ln-panel-luyen-cau" aria-selected="false" tabindex="-1"><span aria-hidden="true">📖</span> <span data-chu="tabCau">Luyện câu</span></button>
+          <button type="button" role="tab" id="ln-tab-hoi-thoai" aria-controls="ln-panel-hoi-thoai" aria-selected="false" tabindex="-1"><span aria-hidden="true">💬</span> <span data-chu="tabHoiThoai">Hội thoại cùng Trâu Con</span></button>
+        </div>
+
+        <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-thanh" aria-labelledby="ln-tab-luyen-thanh">
 
         <div class="ln-ghi-chu">
           <p><span class="ln-bieu-tuong" aria-hidden="true">🔒</span><span><strong data-chu="ghiChuRieng">Âm thanh chỉ xử lý trên máy của em</strong><br><span data-chu="ghiChuRiengNd">Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.</span></span></p>
@@ -82,6 +104,12 @@
           <h2 id="ln-tieu-de-3"><span class="ln-so" aria-hidden="true">3</span><span data-chu="b3">Bước 3 – Đọc 6 thanh</span></h2>
           <div id="ln-buoc-3-noi-dung"></div>
         </section>
+
+        </div>
+
+        <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-tu" aria-labelledby="ln-tab-luyen-tu" hidden><div id="ln-panel-luyen-tu-noi-dung"></div></div>
+        <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-cau" aria-labelledby="ln-tab-luyen-cau" hidden><div id="ln-panel-luyen-cau-noi-dung"></div></div>
+        <div class="ln-panel" role="tabpanel" id="ln-panel-hoi-thoai" aria-labelledby="ln-tab-hoi-thoai" hidden><div id="ln-panel-hoi-thoai-noi-dung"></div></div>
 
         <section class="ln-the ln-nguon" aria-labelledby="ln-tieu-de-nguon">
           <h2 id="ln-tieu-de-nguon" data-chu="nguonTieuDe">Nguồn tham khảo</h2>

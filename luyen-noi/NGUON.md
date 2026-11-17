@@ -1,4 +1,4 @@
-# Nguồn gốc của trang Luyện nói – Luyện thanh điệu
+# Nguồn gốc của trang Luyện nói
 
 Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâu, để khi cần có thể chứng minh trang được làm độc lập.
 
@@ -20,3 +20,8 @@ Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâ
 | Quy tắc chính tả, vị trí dấu thanh | Bộ GD&ĐT (2018), Quyết định 1989/QĐ-BGDĐT – Quy định về chính tả tiếng Việt và thuật ngữ tiếng Việt trong sách giáo khoa giáo dục phổ thông; quy tắc c/k/q, g/gh, ng/ngh trong sách Tiếng Việt lớp 1. |
 | Cách đổi số Chao ra semitone (1 bậc = 2,5 semitone), cách chấm điểm và ngưỡng ba mức | CVCEC tự đặt, chỉ để tham khảo. |
 | Tiếng gợi ý (ta, ma, ba, mẹ…) | Bài học của trường (baihoc.cvcec.org). |
+| Từ, câu và hội thoại trong `noi-dung.txt` | CVCEC tự viết (tháng 11/2026), người quản lý duyệt và sửa thêm. |
+| Nhận dạng giọng nói ở thẻ Luyện từ, Luyện câu, Hội thoại | Web Speech API có sẵn trong trình duyệt (W3C Community Group, *Web Speech API*). Trình duyệt gửi giọng đọc tới dịch vụ nhận dạng của Google hoặc Apple; trang không ghi lại âm thanh. |
+| Cách so câu (khoảng cách sửa theo từng tiếng, tách dấu thanh) | Levenshtein, V. I. (1966). Binary codes capable of correcting deletions, insertions, and reversals. *Soviet Physics Doklady*, 10(8), 707–710. Viết lại từ mô tả. Cách tính điểm và ngưỡng ba mức do CVCEC tự đặt, chỉ để tham khảo. |
+| Giọng mẫu Trâu Con | Giọng "Elio" tạo bằng Google AI Studio qua `studio.html`, như các góc học khác của trường. |
+| Thư viện của `studio.html` | JSZip 3.10.1 (MIT), lamejs 1.2.1 (LGPL-3.0) – xem `vendor/THIRD-PARTY.txt`. |
