@@ -195,6 +195,31 @@ window.CONG_GT = {
     // Góc một trang: mọi bài cùng /bai.html#bai-N, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
     thu: { url: "https://nguphap.cvcec.org/bai.html#bai-1", duong: ["/", "/bai.html"], baiThu: "bai-1", ten: { vi: "Bài 1: Ngữ pháp quanh em", en: "Lesson 1: Grammar all around us" } }
   },
+  luyennoi: {
+    gioiThieu: { vi: "Luyện nói cùng Trâu Con: luyện 6 thanh điệu, luyện từ, luyện câu và nói chuyện với Trâu Con theo chủ đề. Máy nghe và chấm điểm từng chữ: đúng tô xanh, sai dấu tô cam. Có 4 mức từ bé tới lớn.", en: "Speaking practice with Trâu Con: practise the 6 tones, words and sentences, and talk with Trâu Con by topic. The computer listens and scores every word: green is correct, orange is a wrong tone. 4 levels from little ones to teens." },
+    buoc: [
+      { e: "🌱", vi: "Chọn mức: Mầm, Chồi, Lá hoặc Cây", en: "Choose a level: Sprout, Bud, Leaf or Tree" },
+      { e: "📚", vi: "Chọn chủ đề: chào hỏi, gia đình, Tết…", en: "Choose a topic: greetings, family, Tết…" },
+      { e: "👂", vi: "Nghe Trâu Con đọc mẫu", en: "Listen to Trâu Con read the model" },
+      { e: "🎤", vi: "Bấm Đọc và đọc to, máy chấm điểm", en: "Press Read and say it out loud; the computer scores it" },
+      { e: "🎵", vi: "Sai dấu thì sang Luyện thanh tiếng đó", en: "Wrong tone? Practise that syllable's tone" },
+      { e: "💬", vi: "Nói chuyện cùng Trâu Con theo lượt", en: "Take turns talking with Trâu Con" }
+    ],
+    tongQuan: [
+      { so: "4", vi: "mức, từ dưới 6 tuổi tới 13 tuổi trở lên", en: "levels, from under 6 to 13 and older" },
+      { so: "24", vi: "chủ đề", en: "topics" },
+      { so: "6", vi: "thanh điệu có đường mẫu để so", en: "tones with model lines to compare" }
+    ],
+    phan: [
+      { vi: "Luyện thanh: so đường giọng với đường mẫu", en: "Tones: compare your voice line with the model" },
+      { vi: "Luyện từ, Luyện câu: mỗi chủ đề 8 từ, 5 câu", en: "Words and sentences: 8 words and 5 sentences per topic" },
+      { vi: "Hội thoại cùng Trâu Con: 4–8 lượt mỗi đoạn", en: "Talk with Trâu Con: 4–8 turns per conversation" },
+      { vi: "Chấm câu cần Chrome, Edge hoặc Safari; giọng đọc được gửi tới dịch vụ nhận dạng của Google hoặc Apple, CVCEC không lưu", en: "Scoring needs Chrome, Edge or Safari; your voice goes to Google's or Apple's recognition service, and CVCEC keeps nothing" }
+    ],
+    vaoThang: true, // trang Luyện nói tự có hướng dẫn trên từng thẻ: mở thẳng
+    // Góc một trang: khách học thử được dùng cả trang Luyện nói
+    thu: { url: "https://vietclass.cvcec.org/luyen-noi/#luyen-tu", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói: Luyện từ", en: "Speaking: Words" } }
+  },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },
     buoc: [
