@@ -2,12 +2,12 @@
  * con-duong.js – "Đường đi học của Trâu Con": 6 thanh điệu là 6 nhân vật trên đường.
  * Tự viết cho Trường Tiếng Việt Của Em (CVCEC).
  *
- *  - Thanh ngang: Trâu Con thong thả trên đường bằng   - Thanh sắc: anh Sắc leo dốc
- *  - Thanh huyền: bà Huyền đi xuống đồi                 - Thanh hỏi: chú Hỏi hay thắc mắc (xuống rồi vòng lên)
- *  - Thanh ngã: chị Ngã vấp ổ gà rồi bật dậy           - Thanh nặng: bác Nặng ngồi phịch xuống bậc thềm
+ *  Mọi nhân vật đều là Trâu Con. Mỗi con đường có hình giống hệt dấu thanh: ngang – đường bằng; sắc – dốc lên như dấu sắc;
+ *  huyền – dốc xuống như dấu huyền; hỏi – đường cong móc câu như dấu hỏi; ngã – đường lượn sóng như dấu ngã;
+ *  nặng – đường xuống ngắn, dừng trên một chấm tròn như dấu nặng.
  *
- * Con đường vẽ đúng theo đường cao độ mẫu (giọng phổ thông Hà Nội, cao-do.js). Giọng của bé hiện thành
- * dấu chân Trâu Con chồng lên con đường. Không hiện điểm số: bé thu sao (1–3) và nhân vật nói một câu khích lệ.
+ * Giọng của bé hiện thành dấu chân Trâu Con dọc con đường: khớp đường cao độ mẫu (giọng phổ thông Hà Nội, cao-do.js)
+ * thì dấu chân nằm trên đường; cao hơn mẫu thì lệch lên, thấp hơn thì lệch xuống. Không hiện điểm số: bé thu sao (1–3) và nhân vật nói một câu khích lệ.
  * Nhân vật là chính dấu thanh, có mắt và miệng cười (vẽ SVG). Thanh ngang dùng ảnh Trâu Con chính thức.
  * Muốn thay bằng ảnh do hoạ sĩ vẽ: đặt ảnh vào /luyen-noi/nhan-vat/<thanh>.png (ví dụ sac.png) và
  * ghi tên vào ANH_NHAN_VAT bên dưới.
@@ -22,62 +22,71 @@
   var ANH_NHAN_VAT = {};
 
   /* ---------- Nhân vật, câu giới thiệu, mũi tên, câu khích lệ ---------- */
+  // Mọi nhân vật đều là Trâu Con (xưng "mình", gọi "các bạn"). hinhDuong: hình con đường giống hệt dấu thanh,
+  // các điểm [ngang 0–1 từ trái sang phải, dọc 0–1 từ trên xuống], nối mượt.
   var NHAN_VAT = {
     ngang: {
       ten: { vi: "Trâu Con", en: "Trâu Con" },
       gioiThieu: { vi: "Trâu Con đi thong thả trên đường bằng.", en: "Trâu Con strolls along a flat road." },
       muiTen: [[0, 0.5], [1, 0.5]],
+      hinhDuong: [[0, 0.55], [1, 0.55]],
       khen: {
         3: { vi: "Trâu Con khen: Các bạn đi đều quá, giỏi lắm!", en: "Trâu Con says: So smooth and steady — great job!" },
-        2: { vi: "Trâu Con nhắc: Giữ giọng bằng phẳng thêm chút nhé!", en: "Trâu Con says: Keep your voice a little flatter!" },
+        2: { vi: "Trâu Con nhắc: Mình giữ giọng bằng phẳng thêm chút nhé!", en: "Trâu Con says: Keep your voice a little flatter!" },
         1: { vi: "Trâu Con nhắc: Mình đi thẳng, không lên không xuống nhé!", en: "Trâu Con says: Walk straight — not up, not down!" }
       }
     },
     sac: {
-      ten: { vi: "Anh Sắc", en: "Mr Sắc" },
-      gioiThieu: { vi: "Anh Sắc leo dốc, giọng đi lên cao.", en: "Mr Sắc climbs the hill — your voice goes up." },
+      ten: { vi: "Trâu Con", en: "Trâu Con" },
+      gioiThieu: { vi: "Trâu Con leo dốc như dấu sắc, giọng đi lên cao.", en: "Trâu Con climbs a slope shaped like the sắc mark — your voice goes up." },
       muiTen: [[0, 0.85], [1, 0.15]],
+      hinhDuong: [[0, 0.9], [1, 0.1]],
       khen: {
-        3: { vi: "Anh Sắc khen: Em leo dốc giỏi lắm!", en: "Mr Sắc says: Great hill climbing!" },
-        2: { vi: "Anh Sắc nhắc: Gần tới đỉnh rồi, leo cao thêm chút nữa nhé!", en: "Mr Sắc says: Almost at the top — climb a little higher!" },
-        1: { vi: "Anh Sắc nhắc: Mình cùng leo dốc lên cao nhé!", en: "Mr Sắc says: Let's climb up high together!" }
+        3: { vi: "Trâu Con khen: Các bạn leo dốc giỏi lắm!", en: "Trâu Con says: Great hill climbing!" },
+        2: { vi: "Trâu Con nhắc: Gần tới đỉnh rồi, mình leo cao thêm chút nữa nhé!", en: "Trâu Con says: Almost at the top — climb a little higher!" },
+        1: { vi: "Trâu Con nhắc: Mình cùng leo dốc lên cao nhé!", en: "Trâu Con says: Let's climb up high together!" }
       }
     },
     huyen: {
-      ten: { vi: "Bà Huyền", en: "Grandma Huyền" },
-      gioiThieu: { vi: "Bà Huyền đi xuống đồi, giọng thấp dần.", en: "Grandma Huyền walks down the hill — your voice goes low." },
+      ten: { vi: "Trâu Con", en: "Trâu Con" },
+      gioiThieu: { vi: "Trâu Con đi xuống dốc như dấu huyền, giọng thấp dần.", en: "Trâu Con walks down a slope shaped like the huyền mark — your voice goes low." },
       muiTen: [[0, 0.3], [1, 0.8]],
+      hinhDuong: [[0, 0.1], [1, 0.9]],
       khen: {
-        3: { vi: "Bà Huyền khen: Em xuống đồi thật êm!", en: "Grandma Huyền says: Such a gentle walk down!" },
-        2: { vi: "Bà Huyền nhắc: Mình xuống đồi chậm thêm chút nhé!", en: "Grandma Huyền says: Walk down a little more slowly!" },
-        1: { vi: "Bà Huyền nhắc: Giọng mình đi xuống thấp dần nhé!", en: "Grandma Huyền says: Let your voice go down, low and soft!" }
+        3: { vi: "Trâu Con khen: Các bạn xuống dốc thật êm!", en: "Trâu Con says: Such a gentle walk down!" },
+        2: { vi: "Trâu Con nhắc: Mình xuống dốc chậm thêm chút nhé!", en: "Trâu Con says: Walk down a little more slowly!" },
+        1: { vi: "Trâu Con nhắc: Giọng mình đi xuống thấp dần nhé!", en: "Trâu Con says: Let your voice go down, low and soft!" }
       }
     },
     hoi: {
-      ten: { vi: "Chú Hỏi", en: "Uncle Hỏi" },
-      gioiThieu: { vi: "Chú Hỏi hay thắc mắc: xuống rồi vòng lên.", en: "Uncle Hỏi is curious: down, then curling up." },
+      ten: { vi: "Trâu Con", en: "Trâu Con" },
+      gioiThieu: { vi: "Trâu Con đi đường cong như dấu hỏi: lên, vòng qua rồi xuống.", en: "Trâu Con follows a road curled like the hỏi mark: up, around and down." },
       muiTen: [[0, 0.35], [0.5, 0.85], [1, 0.55]],
+      hinhDuong: [[0, 0.62], [0.14, 0.26], [0.4, 0.08], [0.66, 0.16], [0.74, 0.4], [0.6, 0.62], [0.56, 0.92]],
       khen: {
-        1: { vi: "Chú Hỏi khen: Em đi đường vòng rồi! Các bạn so dấu chân với con đường nhé.", en: "Uncle Hỏi says: You took the curvy road! Compare your footprints with the road." }
+        1: { vi: "Trâu Con khen: Các bạn đi đường dấu hỏi rồi! Mình so dấu chân với con đường nhé.", en: "Trâu Con says: You walked the hỏi road! Compare your hoofprints with the road." }
       }
     },
     nga: {
-      ten: { vi: "Chị Ngã", en: "Sister Ngã" },
-      gioiThieu: { vi: "Chị Ngã vấp ổ gà rồi bật dậy thật cao.", en: "Sister Ngã trips on a bump, then springs up high." },
+      ten: { vi: "Trâu Con", en: "Trâu Con" },
+      gioiThieu: { vi: "Trâu Con đi đường lượn sóng như dấu ngã, rồi bật lên cao.", en: "Trâu Con follows a wavy road like the ngã mark, then springs up high." },
       muiTen: [[0, 0.5], [0.42, 0.6], null, [0.58, 0.55], [1, 0.1]],
+      hinhDuong: [[0, 0.72], [0.24, 0.36], [0.5, 0.64], [0.76, 0.3], [1, 0.12]],
       khen: {
-        1: { vi: "Chị Ngã khen: Em vấp rồi bật dậy, giỏi lắm! Các bạn so dấu chân với con đường nhé.", en: "Sister Ngã says: You tripped and sprang up — well done! Compare your footprints with the road." }
+        1: { vi: "Trâu Con khen: Các bạn đi đường dấu ngã rồi, giỏi lắm! Mình so dấu chân với con đường nhé.", en: "Trâu Con says: You walked the ngã road — well done! Compare your hoofprints with the road." }
       }
     },
     nang: {
-      ten: { vi: "Bác Nặng", en: "Uncle Nặng" },
-      gioiThieu: { vi: "Bác Nặng ngồi phịch xuống bậc thềm.", en: "Uncle Nặng plops down on the step." },
+      ten: { vi: "Trâu Con", en: "Trâu Con" },
+      gioiThieu: { vi: "Trâu Con đi xuống rồi ngồi phịch lên dấu nặng.", en: "Trâu Con goes down, then plops onto the nặng dot." },
       muiTen: [[0, 0.45], [0.7, 0.9]],
+      hinhDuong: [[0, 0.32], [0.62, 0.62]],
+      cham: [0.74, 0.78], // dấu chấm (hòn đá tròn) ở cuối đường
       dung: true,
       khen: {
-        3: { vi: "Bác Nặng khen: Ngồi phịch thật gọn, giỏi lắm!", en: "Uncle Nặng says: A neat little plop — great!" },
-        2: { vi: "Bác Nặng nhắc: Xuống nhanh rồi dừng ngay nhé!", en: "Uncle Nặng says: Go down quickly, then stop!" },
-        1: { vi: "Bác Nặng nhắc: Giọng mình đi xuống thấp, ngắn gọn nhé!", en: "Uncle Nặng says: Make it low and short!" }
+        3: { vi: "Trâu Con khen: Ngồi phịch thật gọn, giỏi lắm!", en: "Trâu Con says: A neat little plop — great!" },
+        2: { vi: "Trâu Con nhắc: Mình xuống nhanh rồi dừng ngay nhé!", en: "Trâu Con says: Go down quickly, then stop!" },
+        1: { vi: "Trâu Con nhắc: Giọng mình đi xuống thấp, ngắn gọn nhé!", en: "Trâu Con says: Make it low and short!" }
       }
     }
   };
@@ -129,18 +138,22 @@
     var than;
     if (thanh === "sac") than = el("path", { d: "M -14 22 L 10 -24 Q 14 -30 19 -26 Q 23 -22 19 -17 L -4 25 Z" }, g);
     else if (thanh === "huyen") than = el("path", { d: "M 14 22 L -10 -24 Q -14 -30 -19 -26 Q -23 -22 -19 -17 L 4 25 Z" }, g);
-    else if (thanh === "hoi") than = el("path", { d: "M -16 -10 Q -16 -28 2 -28 Q 20 -28 20 -12 Q 20 0 6 4 L 6 14 L -6 14 L -6 -2 Q 8 -4 8 -12 Q 8 -18 2 -18 Q -4 -18 -4 -10 Z" }, g);
+    else if (thanh === "hoi") {
+      // Dấu hỏi: móc câu cong (nửa trên của "?"), không có chấm
+      el("path", { d: "M -13 -10 C -13 -28 15 -28 15 -11 C 15 0 1 1 1 16", "class": "cd-net-vien" }, g);
+      than = el("path", { d: "M -13 -10 C -13 -28 15 -28 15 -11 C 15 0 1 1 1 16", "class": "cd-net-loi cd-net-hoi" }, g);
+    }
     else if (thanh === "nga") {
       // Dấu ngã: nét lượn sóng dày (viền + lõi màu)
-      el("path", { d: "M -24 8 C -18 -14 -6 -12 0 0 S 18 12 24 -10", "class": "cd-nga-vien" }, g);
-      than = el("path", { d: "M -24 8 C -18 -14 -6 -12 0 0 S 18 12 24 -10", "class": "cd-nga-loi" }, g);
+      el("path", { d: "M -24 8 C -18 -14 -6 -12 0 0 S 18 12 24 -10", "class": "cd-net-vien" }, g);
+      than = el("path", { d: "M -24 8 C -18 -14 -6 -12 0 0 S 18 12 24 -10", "class": "cd-net-loi cd-net-nga" }, g);
     }
     else than = el("circle", { r: 18, cy: 4 }, g);
-    if (thanh !== "nga") than.setAttribute("class", "cd-than");
+    if (thanh !== "nga" && thanh !== "hoi") than.setAttribute("class", "cd-than");
     // Mắt và miệng cười
-    var mat = { sac: [[2, -8], [10, -12]], huyen: [[-2, -8], [-10, -12]], hoi: [[-4, -20], [8, -20]], nga: [[-15, -6], [-7, -8]], nang: [[-6, 0], [6, 0]] }[thanh];
+    var mat = { sac: [[2, -8], [10, -12]], huyen: [[-2, -8], [-10, -12]], hoi: [[-7, -19], [5, -21]], nga: [[-15, -6], [-7, -8]], nang: [[-6, 0], [6, 0]] }[thanh];
     mat.forEach(function (m) { el("circle", { cx: m[0], cy: m[1], r: 2.6, "class": "cd-mat" }, g); });
-    var mieng = { sac: "M 0 -2 Q 6 2 10 -4", huyen: "M 0 -2 Q -6 2 -10 -4", hoi: "M -2 -14 Q 2 -10 6 -14", nga: "M -16 1 Q -11 5 -6 0", nang: "M -6 8 Q 0 14 6 8" }[thanh];
+    var mieng = { sac: "M 0 -2 Q 6 2 10 -4", huyen: "M 0 -2 Q -6 2 -10 -4", hoi: "M 6 -9 Q 10 -6 13 -10", nga: "M -16 1 Q -11 5 -6 0", nang: "M -6 8 Q 0 14 6 8" }[thanh];
     el("path", { d: mieng, "class": "cd-mieng" }, g);
     return g;
   }
@@ -164,65 +177,109 @@
     return svg;
   }
 
+  /* ---------- Hình con đường giống dấu thanh ---------- */
+  var KHUNG = { trai: 34, phai: 288, tren: 50, duoi: 138 }; // chừa chỗ phía trên để Trâu Con không bị cắt đầu
+  // Nối các điểm bằng đường cong Catmull-Rom rồi lấy dày, kèm độ dài cộng dồn để đi theo đường.
+  function duongMuot(hinh) {
+    var P = hinh.map(function (q) { return [KHUNG.trai + q[0] * (KHUNG.phai - KHUNG.trai), KHUNG.tren + q[1] * (KHUNG.duoi - KHUNG.tren)]; });
+    var ra = [];
+    if (P.length === 2) { for (var k = 0; k <= 40; k++) ra.push([P[0][0] + (P[1][0] - P[0][0]) * k / 40, P[0][1] + (P[1][1] - P[0][1]) * k / 40]); }
+    else {
+      for (var i = 0; i < P.length - 1; i++) {
+        var p0 = P[Math.max(0, i - 1)], p1 = P[i], p2 = P[i + 1], p3 = P[Math.min(P.length - 1, i + 2)];
+        for (var j = 0; j < 20; j++) {
+          var t = j / 20, t2 = t * t, t3 = t2 * t;
+          ra.push([0, 1].map(function (c) {
+            return 0.5 * ((2 * p1[c]) + (-p0[c] + p2[c]) * t + (2 * p0[c] - 5 * p1[c] + 4 * p2[c] - p3[c]) * t2 + (-p0[c] + 3 * p1[c] - 3 * p2[c] + p3[c]) * t3);
+          }));
+        }
+      }
+      ra.push(P[P.length - 1]);
+    }
+    var dai = [0];
+    for (var n = 1; n < ra.length; n++) dai.push(dai[n - 1] + Math.hypot(ra[n][0] - ra[n - 1][0], ra[n][1] - ra[n - 1][1]));
+    return { diem: ra, dai: dai, tong: dai[dai.length - 1] };
+  }
+  /** Điểm và hướng tại vị trí t (0–1 theo chiều dài con đường). */
+  function tai(d, t) {
+    t = Math.max(0, Math.min(1, t));
+    var can = t * d.tong, i = 1;
+    while (i < d.dai.length - 1 && d.dai[i] < can) i++;
+    var a = d.diem[i - 1], b = d.diem[i], l = (d.dai[i] - d.dai[i - 1]) || 1, u = (can - d.dai[i - 1]) / l;
+    var dx = (b[0] - a[0]) / l, dy = (b[1] - a[1]) / l;
+    return { x: a[0] + (b[0] - a[0]) * u, y: a[1] + (b[1] - a[1]) * u, dx: dx, dy: dy };
+  }
+
   /**
    * Vẽ cả con đường cho một thẻ. Trả về đối tượng điều khiển:
-   *   chay(tienDo 0–1): đặt Trâu Con tại vị trí tienDo trên đường
-   *   dauChan(duongBe): vẽ dấu chân theo giọng của bé (CaoDo.duongGiong), hiện dần
+   *   chay(tienDo 0–1): đặt Trâu Con tại vị trí tienDo trên đường (Trâu Con quay mặt theo hướng đi)
+   *   dauChan(duongBe): vẽ dấu chân theo giọng của bé, hiện dần. Giọng khớp mẫu thì dấu chân nằm trên đường;
+   *   giọng cao hơn mẫu thì dấu chân lệch lên trên, thấp hơn thì lệch xuống dưới con đường.
    */
-  function veConDuong(hop, CaoDo, mau, thanh, anhTrauChay, anhTrauNgang) {
+  function veConDuong(hop, CaoDo, mau, thanh, anhTrauChay) {
     hop.textContent = "";
+    var nv = NHAN_VAT[thanh];
     var svg = el("svg", { viewBox: "0 0 " + W + " " + H, "class": "cd-svg", role: "img" }, hop);
-    var ds = diemDuong(CaoDo, mau);
-    var cuoi = ds[ds.length - 1];
-    // Nền: trời, đồi xa
+    var d = duongMuot(nv.hinhDuong);
+    var chuoi = chuoiDuong(d.diem);
+    // Nền: trời, đồi xa, ruộng
     el("rect", { x: 0, y: 0, width: W, height: H, "class": "cd-troi" }, svg);
-    el("path", { d: "M 0 120 Q 60 96 120 116 T 240 112 T 320 118 L 320 170 L 0 170 Z", "class": "cd-doi-xa" }, svg);
-    // Đất dưới con đường
-    el("path", { d: chuoiDuong(ds) + " L " + cuoi[0].toFixed(1) + " " + H + " L " + ds[0][0].toFixed(1) + " " + H + " Z", "class": "cd-dat" }, svg);
-    if (mau.dai < 1) el("rect", { x: cuoi[0], y: cuoi[1], width: W - cuoi[0], height: H - cuoi[1], "class": "cd-dat" }, svg);
-    // Mặt đường + vạch giữa
-    el("path", { d: chuoiDuong(ds), "class": "cd-mat-duong" }, svg);
-    el("path", { d: chuoiDuong(ds), "class": "cd-vach" }, svg);
-    // Chi tiết riêng: ổ gà (ngã), bậc thềm (nặng)
-    if (mau.ngat != null && thanh === "nga") {
-      var pn = [xU(mau.ngat * mau.dai), yST(CaoDo.giaTriMau(mau, mau.ngat))];
-      el("ellipse", { cx: pn[0], cy: pn[1] + 3, rx: 11, ry: 4, "class": "cd-o-ga" }, svg);
-    }
-    if (thanh === "nang") {
-      el("rect", { x: cuoi[0] - 2, y: cuoi[1] - 2, width: 30, height: 10, rx: 2, "class": "cd-bac-them" }, svg);
-      el("rect", { x: cuoi[0] + 8, y: cuoi[1] + 8, width: 30, height: 10, rx: 2, "class": "cd-bac-them" }, svg);
+    el("path", { d: "M 0 128 Q 60 108 120 124 T 240 120 T 320 126 L 320 170 L 0 170 Z", "class": "cd-doi-xa" }, svg);
+    el("path", { d: "M 0 150 Q 160 138 320 150 L 320 170 L 0 170 Z", "class": "cd-dat" }, svg);
+    // Con đường hình dấu thanh: viền, mặt đường, vạch giữa
+    el("path", { d: chuoi, "class": "cd-vien-duong" }, svg);
+    el("path", { d: chuoi, "class": "cd-mat-duong" }, svg);
+    el("path", { d: chuoi, "class": "cd-vach" }, svg);
+    var cuoi = d.diem[d.diem.length - 1];
+    if (nv.cham) { // dấu nặng: hòn đá tròn ở cuối đường
+      var cx = KHUNG.trai + nv.cham[0] * (KHUNG.phai - KHUNG.trai), cy = KHUNG.tren + nv.cham[1] * (KHUNG.duoi - KHUNG.tren);
+      el("circle", { cx: cx, cy: cy, r: 16, "class": "cd-cham-nang" }, svg);
+      cuoi = [cx, cy - 16];
     }
     // Cờ đích
-    el("path", { d: "M " + (cuoi[0] + (thanh === "nang" ? 22 : 0)) + " " + (cuoi[1] - 2) + " l 0 -26 l 14 5 l -14 5", "class": "cd-co" }, svg);
+    el("path", { d: "M " + (cuoi[0] + 10).toFixed(1) + " " + (cuoi[1] - 2).toFixed(1) + " l 0 -24 l 13 5 l -13 5", "class": "cd-co" }, svg);
     // Lớp dấu chân
     var lopChan = el("g", { "class": "cd-lop-chan" }, svg);
-    // Trâu Con (ảnh chính thức "đang chạy", chỉ di chuyển, không vẽ lại)
-    var trau = el("image", { href: thanh === "ngang" && anhTrauNgang ? anhTrauNgang : anhTrauChay, width: 44, height: 52, "class": "cd-trau" }, svg);
+    // Trâu Con: ảnh chính thức "đang chạy"; chỉ di chuyển và quay mặt theo hướng đi (lật ngang), không vẽ lại.
+    var trauG = el("g", { "class": "cd-trau" }, svg);
+    el("image", { href: anhTrauChay, x: -22, y: -50, width: 44, height: 52 }, trauG);
     function chay(t) {
-      t = Math.max(0, Math.min(1, t));
-      var u = t, x = xU(u * mau.dai), y = yST(CaoDo.giaTriMau(mau, u));
-      trau.setAttribute("x", (x - 22).toFixed(1));
-      trau.setAttribute("y", (y - 50).toFixed(1));
+      var p;
+      if (nv.cham && t > 0.86) { // đoạn cuối: ngồi phịch lên dấu chấm
+        var e = tai(d, 1);
+        p = { x: e.x + (cuoi[0] - e.x) * (t - 0.86) / 0.14, y: e.y + (cuoi[1] - e.y) * (t - 0.86) / 0.14, dx: 1 };
+      } else p = tai(d, nv.cham ? t / 0.86 : t);
+      // Ảnh gốc Trâu Con chạy sang trái: lật ngang để Trâu Con quay mặt sang phải khi đi về bên phải
+      var lat = p.dx >= -0.05 ? -1 : 1;
+      trauG.setAttribute("transform", "translate(" + p.x.toFixed(1) + " " + p.y.toFixed(1) + ") scale(" + lat + " 1)");
     }
     chay(0);
     function dauChan(duong, hienDan) {
       lopChan.textContent = "";
       if (!duong || !duong.diem || duong.diem.length < 2) return;
-      var d = duong.diem, t0 = duong.batDau, dai = Math.max(0.05, duong.ketThuc - t0);
-      var pts = d.map(function (p) { return [xU((p.t - t0) / dai * mau.dai), yST(p.st)]; });
-      // Đặt dấu chân cách đều ~14 đơn vị dọc đường của bé, chân trái/phải xen kẽ
-      var chan = [], tichLuy = 0, trai = true;
-      for (var i = 1; i < pts.length; i++) {
-        var dx = pts[i][0] - pts[i - 1][0], dy = pts[i][1] - pts[i - 1][1], l = Math.sqrt(dx * dx + dy * dy);
-        tichLuy += l;
-        if (tichLuy >= 14 || i === 1) {
-          tichLuy = 0;
-          var goc = Math.atan2(dy, dx) * 180 / Math.PI, lech = trai ? -5 : 5;
-          var nx = -dy / (l || 1), ny = dx / (l || 1);
-          chan.push({ x: pts[i][0] + nx * lech, y: pts[i][1] + ny * lech, goc: goc });
+      var ds = duong.diem, t0 = duong.batDau, dai = Math.max(0.05, duong.ketThuc - t0);
+      // Độ lệch giọng so với mẫu (semitone), bỏ phần lệch đều cả tiếng (bé đọc cao/thấp hơn lúc đo giọng)
+      var lech = ds.map(function (q) { var u = (q.t - t0) / dai; return q.st - CaoDo.giaTriMau(mau, u); });
+      var tb = lech.reduce(function (a, b) { return a + b; }, 0) / lech.length;
+      tb = Math.max(-1.5, Math.min(1.5, tb));
+      var PX_MOI_ST = 7, TOI_DA = 40;
+      var chan = [], quang = 0, trai = true, truoc = null;
+      ds.forEach(function (q, n) {
+        var u = (q.t - t0) / dai, p = tai(d, nv.cham ? u * 0.98 : u);
+        var lechPx = Math.max(-TOI_DA, Math.min(TOI_DA, (lech[n] - tb) * PX_MOI_ST));
+        // pháp tuyến hướng "lên trên" của con đường (giọng cao hơn → lệch lên)
+        var nx = p.dy, ny = -p.dx;
+        if (ny > 0) { nx = -nx; ny = -ny; }
+        var x = p.x + nx * lechPx, y = p.y + ny * lechPx;
+        if (truoc) quang += Math.hypot(x - truoc[0], y - truoc[1]);
+        if (!truoc || quang >= 14) {
+          quang = 0;
+          var lechChan = trai ? -4 : 4;
+          chan.push({ x: x + p.dy * lechChan, y: y - p.dx * lechChan, goc: Math.atan2(p.dy, p.dx) * 180 / Math.PI });
           trai = !trai;
         }
-      }
+        truoc = [x, y];
+      });
       chan.forEach(function (c, n) {
         var g = el("g", { transform: "translate(" + c.x.toFixed(1) + " " + c.y.toFixed(1) + ") rotate(" + (c.goc + 90).toFixed(0) + ")", "class": "cd-chan" }, lopChan);
         // Dấu chân trâu: hai móng

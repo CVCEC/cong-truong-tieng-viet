@@ -255,7 +255,7 @@ window.CONG_GT = {
     ],
     phan: [
       { vi: "Bảng âm (IPA): âm đầu, nguyên âm, vần, âm cuối, thanh điệu, có loa đọc mẫu và cách ghép âm vần", en: "Sound chart (IPA): initials, vowels, rhymes, finals and tones, with model audio and syllable blending" },
-      { vi: "Luyện thanh – Đường đi học của Trâu Con: anh Sắc, bà Huyền, chú Hỏi, chị Ngã, bác Nặng; giọng của em hiện thành dấu chân Trâu Con", en: "Tones – Trâu Con's road to school: Mr Sắc, Grandma Huyền, Uncle Hỏi, Sister Ngã, Uncle Nặng; your voice appears as Trâu Con's hoofprints" },
+      { vi: "Luyện thanh – Đường đi học của Trâu Con: 6 con đường có hình giống hệt 6 dấu thanh; giọng của em hiện thành dấu chân Trâu Con", en: "Tones – Trâu Con's road to school: 6 roads shaped exactly like the 6 tone marks; your voice appears as Trâu Con's hoofprints" },
       { vi: "Luyện từ, Luyện câu: mỗi chủ đề 8 từ, 5 câu", en: "Words and sentences: 8 words and 5 sentences per topic" },
       { vi: "Hội thoại cùng Trâu Con: 4–8 lượt mỗi đoạn", en: "Talk with Trâu Con: 4–8 turns per conversation" },
       { vi: "Chấm câu cần Chrome, Edge hoặc Safari; giọng đọc được gửi tới dịch vụ nhận dạng của Google hoặc Apple, CVCEC không lưu", en: "Scoring needs Chrome, Edge or Safari; your voice goes to Google's or Apple's recognition service, and CVCEC keeps nothing" }
