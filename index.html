@@ -96,6 +96,7 @@
 <script src="/chung/gioi-thieu-goc.js?v=25" defer></script>
 <script src="/chung/cong.js?v=8" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
+<script type="module" src="/js/ghi-ket-qua.js?v=1"></script>
 <style>
   /* Trang chủ cổng + chế độ đang học (khung iframe cho các góc học, địa chỉ #id). */
   /* ================= CHẾ ĐỘ ĐANG HỌC ================= */
@@ -676,6 +677,14 @@
       if (loaiTk() === "hoc" || (gg && gg.congKhai)) traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "hoc" };
       else if (gocDangMo && dangThu === gocDangMo && gg && gg.thu) traLoi = { loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "thu", duongThu: gg.thu.duong, baiThu: gg.thu.baiThu || null };
       try { e.source.postMessage(traLoi, e.origin); } catch (err) {}
+      return;
+    }
+    // Góc học báo kết quả một trò chơi (TTV.ghiKetQua của bộ mẫu). Chỉ nhận từ đúng góc đang mở,
+    // khi người học đã đăng nhập (không ghi khi học thử). js/ghi-ket-qua.js ghi vào tài khoản.
+    if (d.loai === "ttv-ket-qua") {
+      if (loaiTk() === "hoc" && gocDangMo && d.chuongTrinh === gocDangMo) {
+        try { document.dispatchEvent(new CustomEvent("cvcec-ket-qua", { detail: d })); } catch (err) {}
+      }
       return;
     }
     if (d.loai !== "ttv-trang") return;

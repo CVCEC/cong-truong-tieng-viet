@@ -214,3 +214,47 @@ test('quản trị viên chỉ xem, không sửa; không ai tự thêm mình là
   await assertFails(updateDoc(doc(qt, 'users/a/hoSo/chinh'), { bietDanh: 'Đổi', capNhat: serverTimestamp() }));
   await assertFails(setDoc(doc(a, 'admins', 'a'), { ten: 'Tự phong' }));
 });
+
+// ---------------- Cổng ghi kết quả bằng js/luot-choi.js (đúng mã trang dùng) ----------------
+import { lamSachKetQua, tinhLuot, ganThoiGian } from '../../js/luot-choi.js';
+async function ghiBangCong(db, uid, tin, ky = { thang: '2026-11', tuan: '2026-W47' }, homNay = '2026-11-17') {
+  const goc = `users/${uid}/hoSo/chinh`;
+  const kq = lamSachKetQua(tin);
+  if (!kq) throw new Error('kết quả không hợp lệ');
+  const maBai = `${kq.chuongTrinh}__${kq.bai}`;
+  const lay = async (p) => { const s = await getDoc(doc(db, p)); return s.exists() ? s.data() : null; };
+  const hoSo = await lay(goc);
+  const tuanBxh = hoSo.choXepHang ? await lay(`bangXepHang/tuan-${ky.tuan}/hoSo/${hoSo.maCongKhai}`) : null;
+  const l = ganThoiGian(tinhLuot(kq, { hoSo, bai: await lay(`${goc}/bai/${maBai}`), tongHop: await lay(`${goc}/tongHop/tatCa`), thang: await lay(`${goc}/thang/${ky.thang}`), tuanBxh }, ky, homNay), serverTimestamp());
+  const b = writeBatch(db);
+  b.set(doc(collection(db, `${goc}/lichSu`)), l.lichSu);
+  b.set(doc(db, `${goc}/bai/${l.maBai}`), l.bai);
+  b.set(doc(db, `${goc}/tongHop/tatCa`), l.tongHop);
+  b.set(doc(db, `${goc}/thang/${ky.thang}`), l.thang);
+  if (l.bxh) for (const k of Object.keys(l.bxh)) b.set(doc(db, `bangXepHang/${k}/hoSo/${hoSo.maCongKhai}`), l.bxh[k]);
+  return b.commit();
+}
+test('cổng ghi kết quả từ TTV.ghiKetQua: xong bài, giữ sao cao nhất, chuỗi ngày, bảng xếp hạng', async () => {
+  const a = nguoi('a', 'a@x.org');
+  await taoTaiKhoanVaHoSo(a, 'a');
+  const tin = (o) => ({ loai: 'ttv-ket-qua', chuongTrinh: 'vuihoc', bai: 'q1-b01', hoatDong: 'tn1', soTroChoi: 2, diem: 8, diemToiDa: 10, sao: 2, thoiGianGiay: 90, ketQua: 'hoan-thanh', ...o });
+  await assertSucceeds(ghiBangCong(a, 'a', tin({}), undefined, '2026-11-16'));
+  await assertSucceeds(ghiBangCong(a, 'a', tin({ hoatDong: 'tn2', sao: 3 }), undefined, '2026-11-17'));   // đủ 2 trò → xong; ngày kế tiếp → chuỗi 2
+  await assertSucceeds(ghiBangCong(a, 'a', tin({ sao: 1 }), undefined, '2026-11-17'));                    // chơi lại kém hơn: giữ 2 sao
+  await assertSucceeds(ghiBangCong(a, 'a', tin({ chuongTrinh: 'baihoc', bai: 'bai-3', hoatDong: 'g1', soTroChoi: 11, sao: 3 }), undefined, '2026-11-17'));
+  const th = (await getDoc(doc(a, 'users/a/hoSo/chinh/tongHop/tatCa'))).data();
+  if (th.soBaiXong !== 1 || th.tongSao !== 8 || th.soHoatDong !== 4 || th.chuoiNgay !== 2) throw new Error('tổng hợp sai ' + JSON.stringify(th));
+  if (th.theoChuongTrinh.vuihoc.soBaiXong !== 1 || th.theoChuongTrinh.baihoc.tongSao !== 3) throw new Error('theo góc sai ' + JSON.stringify(th.theoChuongTrinh));
+  const bxh = (await getDoc(doc(a, `bangXepHang/tat-ca/hoSo/${ma20('A')}`))).data();
+  if (bxh.tongSao !== 8 || bxh.soBaiXong !== 1) throw new Error('bảng xếp hạng sai');
+  // Tin nhắn sai dạng bị loại trước khi ghi
+  if (lamSachKetQua(tin({ chuongTrinh: 'Vui Học' })) !== null) throw new Error('phải loại mã góc sai');
+});
+test('cổng ghi kết quả khi hồ sơ tắt xếp hạng (không đụng bảng xếp hạng)', async () => {
+  const a = nguoi('a', 'a@x.org');
+  await taoTaiKhoanVaHoSo(a, 'a', {}, { choXepHang: false });
+  await assertSucceeds(ghiBangCong(a, 'a', { chuongTrinh: 'nguphap', bai: 'bai-12', hoatDong: 'tro-1', soTroChoi: 3, diem: 3, diemToiDa: 3, sao: 3, thoiGianGiay: 60 }));
+  await assertSucceeds(ghiBangCong(a, 'a', { chuongTrinh: 'nguphap', bai: 'bai-12', hoatDong: 'tro-2', soTroChoi: 3, diem: 1, diemToiDa: 3, sao: 1, thoiGianGiay: 9999 }));
+  const th = (await getDoc(doc(a, 'users/a/hoSo/chinh/tongHop/tatCa'))).data();
+  if (th.tongGiay !== 60 + 7200 || th.tongSao !== 4) throw new Error('tổng hợp sai ' + JSON.stringify(th));
+});
