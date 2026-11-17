@@ -5,29 +5,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Góc học tập của em · Trường Tiếng Việt Của Em</title>
-<meta name="description" content="Góc học tập của em.">
+<meta name="description" content="Thành tích và lộ trình học của em.">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
 <link rel="stylesheet" href="/chung/cong.css?v=8">
+<style>
+  .ght-luoi-so { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 24px; }
+  .ght-o-so { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-bottom: 6px solid var(--ttv-sao); border-radius: var(--ttv-bo-goc); padding: 14px 16px; }
+  .ght-o-so b { display: block; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 2rem; line-height: 1.1; color: var(--ttv-chu); }
+  .ght-o-so span { color: var(--ttv-chu-phu); font-weight: 700; font-size: .95rem; }
+  .ght-h2 { font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.5rem; margin: 32px 0 6px; color: var(--ttv-chu); }
+  .ght-mo-ta { margin: 0 0 14px; color: var(--ttv-chu-phu); }
+  .ght-duong { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+  .ght-chang { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); padding: 14px; position: relative; }
+  .ght-chang.dang-o { border-color: var(--ttv-lua-dam); border-bottom: 6px solid var(--ttv-lua-dam); }
+  .ght-chang .so-bac { display: block; font-weight: 800; font-size: .85rem; color: var(--ttv-chu-phu); }
+  .ght-chang h3 { margin: 2px 0 2px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.2rem; line-height: 1.2; }
+  .ght-chang p { margin: 0 0 10px; font-size: .9rem; color: var(--ttv-chu-phu); }
+  .ght-thanh { height: 12px; border-radius: 999px; background: var(--ttv-vien); overflow: hidden; }
+  .ght-thanh i { display: block; height: 100%; background: var(--ttv-lua-dam); border-radius: 999px; }
+  .ght-chang .so { margin: 6px 0 0; font-weight: 800; font-size: .9rem; color: var(--ttv-chu); }
+  .ght-dang-o { display: inline-block; margin: 0 0 6px; padding: 2px 10px; border-radius: 999px; background: var(--ttv-chu); color: #FFFFFF; font-weight: 800; font-size: .8rem; }
+  .ght-lam-duoc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .ght-lam-duoc .ttv-the { border-bottom-color: var(--ttv-lua-dam); padding: 16px 18px; }
+  .ght-lam-duoc h3 { margin: 0 0 6px; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.1rem; }
+  .ght-lam-duoc ul { margin: 0; padding-left: 20px; }
+  .ght-lam-duoc li { margin: 4px 0; }
+  .ght-goc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+  .ght-goc li { display: flex; align-items: center; gap: 12px; background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-left: 8px solid var(--ttv-goc); border-radius: 18px; padding: 10px 14px; }
+  .ght-goc img { width: 44px; height: auto; flex: 0 0 auto; }
+  .ght-goc strong { display: block; font-weight: 800; }
+  .ght-goc span { color: var(--ttv-chu-phu); font-size: .92rem; }
+  .ght-cot { display: flex; align-items: flex-end; gap: 10px; height: 170px; padding: 12px 14px 0; background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); }
+  .ght-cot div { flex: 1 1 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; min-width: 0; }
+  .ght-cot i { display: block; width: 70%; max-width: 48px; background: var(--ttv-lua); border-radius: 10px 10px 0 0; min-height: 2px; }
+  .ght-cot b { font-size: .85rem; margin-bottom: 4px; }
+  .ght-cot small { display: block; padding: 6px 0 8px; font-size: .8rem; color: var(--ttv-chu-phu); font-weight: 700; }
+  .ght-gan-day { list-style: none; margin: 0; padding: 0; }
+  .ght-gan-day li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; padding: 12px 16px; background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: 18px; margin: 0 0 8px; }
+  .ght-gan-day .phu { color: var(--ttv-chu-phu); font-size: .92rem; }
+  .ght-gan-day .sao { display: inline-flex; gap: 2px; align-items: center; }
+  .ght-gan-day .ttv-sao { width: 22px; height: 22px; }
+  .ght-ghi-chu { margin: 28px 0 0; font-size: .9rem; color: var(--ttv-chu-phu); }
+  @media (max-width: 900px) {
+    .ght-duong { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ght-lam-duoc { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .ght-luoi-so { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ght-o-so b { font-size: 1.6rem; }
+    .ght-duong { grid-template-columns: 1fr; }
+  }
+</style>
 <script>window.CONG_CHU = {
  "vi": {
   "tieuDe": "Góc học tập của em",
-  "sapCo": "Góc học tập của em sắp ra mắt! Ở đây bạn sẽ xem số bài đã học, số sao, tiến độ từng chương trình và báo cáo học tập.",
+  "dangTai": "Trâu Con đang mở sổ học tập của bạn…",
+  "chuaDangNhap": "Bạn đăng nhập để xem sao, bài đã học và chặng đường của mình nhé.",
+  "dangNhap": "Đăng nhập",
+  "chuaXong": "Bạn hoàn tất đăng ký (tạo hồ sơ học viên) để Trâu Con lưu sao cho bạn nhé.",
+  "hoanTat": "Hoàn tất đăng ký",
+  "loi": "Trâu Con chưa mở được sổ học tập. Bạn kiểm tra mạng rồi tải lại trang nhé.",
+  "chao": "Chào {ten}! Đây là sổ học tập của bạn.",
+  "tongSao": "sao đã nhận",
+  "baiXong": "bài đã xong",
+  "chuoiNgay": "ngày học liên tiếp",
+  "thoiGian": "thời gian học",
+  "gio": "{g} giờ {p} phút",
+  "phut": "{p} phút",
+  "duongLang": "Đường làng của Trâu Con",
+  "duongLangMoTa": "Lộ trình học theo Khung năng lực tiếng Việt dùng cho người nước ngoài: Làm quen, Sơ cấp (Bậc 1–2), Trung cấp (Bậc 3–4). Đây là lộ trình học, không phải chứng chỉ.",
+  "bac": "Bậc {so}",
+  "bacKhong": "Chặng đầu",
+  "dangO": "Bạn đang ở đây",
+  "soBai": "{xong}/{tong} bài",
+  "lamDuoc": "Ở chặng {chang}, bạn sẽ làm được…",
+  "lamDuocMoTa": "Mục tiêu của chặng bạn đang đi. Học đều ở các góc học có bài của chặng này nhé.",
+  "theoGoc": "Theo góc học",
+  "theoGocTrong": "Bạn chưa học bài nào. Vào học thôi!",
+  "theoGocSo": "{bai} bài xong · {sao} sao · {hd} lượt chơi",
+  "theoThang": "Số lượt chơi 6 tháng gần đây",
+  "ganDay": "Bài học gần đây",
+  "ganDayTrong": "Chưa có bài nào.",
+  "xong": "Đã xong",
+  "dangHoc": "Đang học",
+  "ghiChu": "Chỉ bạn (và quản trị viên CVCEC) xem được trang này. Tải về hoặc xoá dữ liệu ở trang Hồ sơ.",
   "vaoHoc": "Vào học"
  },
  "en": {
   "tieuDe": "My learning corner",
-  "sapCo": "My learning corner is coming soon! Here you will see your lessons, stars, progress in each program and learning reports.",
+  "dangTai": "Trâu Con is opening your learning book…",
+  "chuaDangNhap": "Please sign in to see your stars, finished lessons and your learning path.",
+  "dangNhap": "Sign in",
+  "chuaXong": "Please finish signing up (create a learner profile) so Trâu Con can save your stars.",
+  "hoanTat": "Finish signing up",
+  "loi": "Trâu Con could not open your learning book. Please check your connection and reload the page.",
+  "chao": "Hello, {ten}! This is your learning book.",
+  "tongSao": "stars earned",
+  "baiXong": "lessons finished",
+  "chuoiNgay": "days in a row",
+  "thoiGian": "time learning",
+  "gio": "{g} h {p} min",
+  "phut": "{p} min",
+  "duongLang": "Trâu Con's village path",
+  "duongLangMoTa": "A learning path based on the Vietnamese Language Proficiency Framework for foreigners: Getting started, Elementary (Levels 1–2), Intermediate (Levels 3–4). It is a learning path, not a certificate.",
+  "bac": "Level {so}",
+  "bacKhong": "First stop",
+  "dangO": "You are here",
+  "soBai": "{xong}/{tong} lessons",
+  "lamDuoc": "At the {chang} stop, you will be able to…",
+  "lamDuocMoTa": "The goals of the stop you are on. Keep learning in the corners that have lessons for this stop.",
+  "theoGoc": "By learning corner",
+  "theoGocTrong": "You have not started a lesson yet. Let's go!",
+  "theoGocSo": "{bai} lessons finished · {sao} stars · {hd} plays",
+  "theoThang": "Plays in the last 6 months",
+  "ganDay": "Recent lessons",
+  "ganDayTrong": "No lessons yet.",
+  "xong": "Finished",
+  "dangHoc": "In progress",
+  "ghiChu": "Only you (and CVCEC administrators) can see this page. Download or delete your data on the Profile page.",
   "vaoHoc": "Start learning"
  }
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="https://mau.cvcec.org/v1/ttv-lo-trinh.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/cong.js?v=8" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
-
 </head>
 <body class="cong" data-ttv-khong-thanh data-trang="goc-hoc-tap" data-tieu-de="tieuDe">
   <header class="cong-dau" data-cong-dau></header>
@@ -35,10 +141,13 @@
     <section class="trang-dau co-canh" data-canh="lang-que" aria-labelledby="tieu-de-trang">
       <div class="cong-ruot">
         <h1 id="tieu-de-trang" data-chu="tieuDe">Góc học tập của em</h1>
+        <p class="trang-phu-de" id="chao" hidden></p>
       </div>
     </section>
     <section class="cong-phan trang-than">
-      <div class="cong-ruot"><div class="bm-the"><div class="bm-trau"><img src="/assets/trau/reading-sitting.png" width="319" height="360" alt=""><p data-chu="sapCo"></p></div><a class="ttv-nut" href="/hoc-tap/" data-chu="vaoHoc">Vào học</a></div></div>
+      <div class="cong-ruot" id="noi-dung" aria-live="polite">
+        <div class="bm-the"><div class="bm-trau"><img src="/assets/trau/reading-sitting.png" width="319" height="360" alt=""><p data-chu="dangTai">Trâu Con đang mở sổ học tập của bạn…</p></div></div>
+      </div>
     </section>
   </main>
   <footer class="cong-chan" data-cong-chan>
@@ -46,5 +155,190 @@
     <div data-ttv-chan></div>
   </footer>
 
+<script type="module">
+// Góc học tập của em: chỉ chủ tài khoản xem (rules: users/{uid}/… chỉ chính chủ đọc).
+// Bậc của từng bài lấy từ TTV_LO_TRINH (mau.cvcec.org/v1/ttv-lo-trinh.js).
+import { db } from "/js/firebase-cvcec.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import { theoDoi, docHoSo } from "/js/tai-khoan.js?v=7";
+
+const $ = (id) => document.getElementById(id);
+const c = () => window.CONG.chu();
+const nn = () => (window.CONG ? window.CONG.ngonNgu() : "vi");
+const dien = (m, t) => String(m).replace(/\{(\w+)\}/g, (_, k) => (t && t[k] != null ? t[k] : ""));
+function tao(the, lop, chu) { const e = document.createElement(the); if (lop) e.className = lop; if (chu != null) e.textContent = chu; return e; }
+
+let trangThai = null;   // "khach" | "chua-xong" | "loi" | "co"
+let duLieu = null;      // { hoSo, tongHop, bai: [], thang: [] }
+
+async function taiDuLieu(uid) {
+  const goc = `users/${uid}/hoSo/chinh`;
+  const [hoSo, th, bai, thang] = await Promise.all([
+    docHoSo(uid),
+    getDocs(collection(db, `${goc}/tongHop`)),
+    getDocs(collection(db, `${goc}/bai`)),
+    getDocs(collection(db, `${goc}/thang`))
+  ]);
+  const tongHop = th.docs.find((d) => d.id === "tatCa");
+  return {
+    hoSo,
+    tongHop: tongHop ? tongHop.data() : { soBaiXong: 0, tongSao: 0, tongGiay: 0, soHoatDong: 0, chuoiNgay: 0, theoChuongTrinh: {} },
+    bai: bai.docs.map((d) => d.data()),
+    thang: thang.docs.map((d) => ({ id: d.id, ...d.data() }))
+  };
+}
+
+function thoiGian(giay) {
+  const p = Math.round((giay || 0) / 60), g = Math.floor(p / 60);
+  return g ? dien(c().gio, { g, p: p % 60 }) : dien(c().phut, { p });
+}
+const tenBac = (so) => (so === 0 ? c().bacKhong : dien(c().bac, { so }));
+
+function veThongBao(chu, nut, href) {
+  const o = $("noi-dung"); o.textContent = "";
+  const the = tao("div", "bm-the"), t = tao("div", "bm-trau"), img = tao("img");
+  img.src = "/assets/trau/reading-sitting.png"; img.width = 319; img.height = 360; img.alt = "";
+  t.append(img, tao("p", "", chu)); the.append(t);
+  if (nut) { const a = tao("a", "ttv-nut", nut); a.href = href; the.append(a); }
+  o.append(the);
+}
+
+function ve() {
+  if (!window.CONG) return;
+  const C = c();
+  $("chao").hidden = true;
+  const ve = "/dang-nhap/?ve=" + encodeURIComponent("/goc-hoc-tap/");
+  if (trangThai === "khach") return veThongBao(C.chuaDangNhap, C.dangNhap, ve);
+  if (trangThai === "chua-xong") return veThongBao(C.chuaXong, C.hoanTat, ve);
+  if (trangThai === "loi") return veThongBao(C.loi);
+  if (trangThai !== "co" || !duLieu) return;
+
+  const L = window.TTV_LO_TRINH, TTV = window.TTV, en = nn() === "en";
+  const { hoSo, tongHop, bai, thang } = duLieu;
+  $("chao").textContent = dien(C.chao, { ten: hoSo.bietDanh }); $("chao").hidden = false;
+  const o = $("noi-dung"); o.textContent = "";
+
+  // 1. Số liệu chính
+  const luoi = tao("div", "ght-luoi-so");
+  [[tongHop.tongSao, C.tongSao], [tongHop.soBaiXong, C.baiXong], [tongHop.chuoiNgay, C.chuoiNgay], [thoiGian(tongHop.tongGiay), C.thoiGian]]
+    .forEach(([so, nhan]) => { const d = tao("div", "ght-o-so"); d.append(tao("b", "", String(so)), tao("span", "", nhan)); luoi.append(d); });
+  o.append(luoi);
+
+  // 2. Đường làng: số bài đã xong theo bậc.
+  // Chặng đang đi = bậc gặp nhiều nhất trong 10 bài xong gần đây nhất (bằng nhau thì lấy bậc cao hơn).
+  const xongTheoBac = {}, ganDayXong = [];
+  bai.forEach((b) => {
+    if (!b.xong || !L) return;
+    const nh = L.nhanCuaBai(b.chuongTrinh, b.bai);
+    if (!nh) return;
+    xongTheoBac[nh.bac] = (xongTheoBac[nh.bac] || 0) + 1;
+    ganDayXong.push({ bac: nh.bac, luc: b.lanCuoi && b.lanCuoi.toMillis ? b.lanCuoi.toMillis() : 0 });
+  });
+  const dem = {};
+  ganDayXong.sort((x, y) => y.luc - x.luc).slice(0, 10).forEach((x) => { dem[x.bac] = (dem[x.bac] || 0) + 1; });
+  let bacHienTai = 0, nhieuNhat = 0;
+  Object.keys(dem).map(Number).sort((x, y) => x - y).forEach((k) => { if (dem[k] >= nhieuNhat) { nhieuNhat = dem[k]; bacHienTai = k; } });
+  if (L) {
+    o.append(tao("h2", "ght-h2", C.duongLang), tao("p", "ght-mo-ta", C.duongLangMoTa));
+    const tong = L.soBaiTheoBac();
+    const ul = tao("ol", "ght-duong");
+    L.bac.forEach((b) => {
+      const li = tao("li", "ght-chang" + (b.bac === bacHienTai ? " dang-o" : ""));
+      if (b.bac === bacHienTai) li.append(tao("span", "ght-dang-o", C.dangO));
+      li.append(tao("span", "so-bac", tenBac(b.bac)), tao("h3", "", en ? b.chang_en : b.chang_vi), tao("p", "", en ? b.ten_en : b.ten_vi));
+      const xong = xongTheoBac[b.bac] || 0, t = tong[b.bac] || 0;
+      const thanh = tao("div", "ght-thanh"), i = tao("i");
+      i.style.width = (t ? Math.min(100, Math.round(xong * 100 / t)) : 0) + "%";
+      thanh.setAttribute("aria-hidden", "true");
+      thanh.append(i);
+      li.append(thanh, tao("p", "so", dien(C.soBai, { xong, tong: t })));
+      ul.append(li);
+    });
+    o.append(ul);
+
+    // 3. "Mình làm được…" của chặng đang đi
+    const b = L.timBac(bacHienTai);
+    o.append(tao("h2", "ght-h2", dien(C.lamDuoc, { chang: en ? b.chang_en : b.chang_vi })), tao("p", "ght-mo-ta", C.lamDuocMoTa));
+    const ld = tao("div", "ght-lam-duoc");
+    L.kyNang.forEach((kn) => {
+      const ds = (b.lam_duoc || {})[kn.id] || [];
+      if (!ds.length) return;
+      const the = tao("div", "ttv-the"); the.append(tao("h3", "", en ? kn.en : kn.vi));
+      const u = tao("ul"); ds.forEach((cau) => u.append(tao("li", "", en ? cau[1] : cau[0]))); the.append(u); ld.append(the);
+    });
+    o.append(ld);
+  }
+
+  // 4. Theo góc học
+  o.append(tao("h2", "ght-h2", C.theoGoc));
+  const tc = tongHop.theoChuongTrinh || {}, maGoc = Object.keys(tc);
+  if (!maGoc.length) {
+    o.append(tao("p", "ght-mo-ta", C.theoGocTrong));
+    const a = tao("a", "ttv-nut", C.vaoHoc); a.href = "/hoc-tap/"; o.append(a);
+  } else {
+    const ul = tao("ul", "ght-goc");
+    maGoc.sort((x, y) => (tc[y].soHoatDong || 0) - (tc[x].soHoatDong || 0)).forEach((ma) => {
+      const g = TTV && TTV.goc(ma), s = tc[ma], li = tao("li");
+      if (g) { li.style.setProperty("--ttv-goc", g.mau); const img = tao("img"); img.src = TTV.anh(g.trau); img.alt = ""; li.append(img); }
+      const d = tao("div");
+      d.append(tao("strong", "", g ? (en ? g.ten_en : g.ten_vi) : ma), tao("span", "", dien(C.theoGocSo, { bai: s.soBaiXong || 0, sao: s.tongSao || 0, hd: s.soHoatDong || 0 })));
+      li.append(d); ul.append(li);
+    });
+    o.append(ul);
+  }
+
+  // 5. Số lượt chơi 6 tháng gần đây (tháng theo giờ UTC, giống tài liệu thang/{yyyy-mm})
+  o.append(tao("h2", "ght-h2", C.theoThang));
+  const nay = new Date(), cot = tao("div", "ght-cot"), theoMa = {};
+  thang.forEach((t) => { theoMa[t.id] = t.soHoatDong || 0; });
+  const cacThang = [];
+  for (let k = 5; k >= 0; k--) cacThang.push(new Date(Date.UTC(nay.getUTCFullYear(), nay.getUTCMonth() - k, 1)).toISOString().slice(0, 7));
+  const lonNhat = Math.max(1, ...cacThang.map((m) => theoMa[m] || 0));
+  cacThang.forEach((m) => {
+    const so = theoMa[m] || 0, d = tao("div"), i = tao("i");
+    i.style.height = Math.round(so * 80 / lonNhat) + "%";
+    d.append(tao("b", "", String(so)), i, tao("small", "", Number(m.slice(5)) + "/" + m.slice(2, 4)));
+    cot.append(d);
+  });
+  cot.setAttribute("role", "img");
+  cot.setAttribute("aria-label", cacThang.map((m) => m + ": " + (theoMa[m] || 0)).join(", "));
+  o.append(cot);
+
+  // 6. Bài học gần đây
+  o.append(tao("h2", "ght-h2", C.ganDay));
+  const gan = bai.filter((b) => b.lanCuoi && b.lanCuoi.toMillis).sort((x, y) => y.lanCuoi.toMillis() - x.lanCuoi.toMillis()).slice(0, 6);
+  if (!gan.length) o.append(tao("p", "ght-mo-ta", C.ganDayTrong));
+  else {
+    const ul = tao("ul", "ght-gan-day");
+    gan.forEach((b) => {
+      const g = TTV && TTV.goc(b.chuongTrinh), nh = L && L.nhanCuaBai(b.chuongTrinh, b.bai), li = tao("li");
+      const trai = tao("div");
+      trai.append(tao("strong", "", (g ? (en ? g.ten_en : g.ten_vi) : b.chuongTrinh) + " · " + b.bai.replace(/-/g, " ")));
+      trai.append(document.createElement("br"), tao("span", "phu", (b.xong ? C.xong : C.dangHoc) + (nh ? " · " + tenBac(nh.bac) : "")));
+      const sao = tao("span", "sao"), toiDa = 3 * (b.soTroChoi || 1), soSao = Math.round(3 * (b.tongSao || 0) / toiDa);
+      sao.setAttribute("role", "img"); sao.setAttribute("aria-label", soSao + "/3");
+      for (let k = 0; k < 3; k++) sao.append(tao("span", "ttv-sao" + (k < soSao ? "" : " ttv-sao-tat")));
+      li.append(trai, sao); ul.append(li);
+    });
+    o.append(ul);
+  }
+  o.append(tao("p", "ght-ghi-chu", C.ghiChu));
+}
+
+theoDoi(async (tt) => {
+  if (!tt.daBiet) return;
+  if (!tt.user) { trangThai = "khach"; duLieu = null; ve(); return; }
+  if (!tt.tomTat || tt.tomTat.chuaXong) { trangThai = "chua-xong"; ve(); return; }
+  try {
+    duLieu = await taiDuLieu(tt.user.uid);
+    trangThai = duLieu.hoSo ? "co" : "chua-xong";
+  } catch (e) { console.error(e); trangThai = "loi"; }
+  ve();
+});
+const ganDoiChu = () => window.CONG && window.CONG.khiDoiChu(ve);
+if (window.CONG) ganDoiChu(); else document.addEventListener("DOMContentLoaded", ganDoiChu);
+// Lộ trình nạp (defer) có thể xong sau dữ liệu: vẽ lại khi trang tải xong
+window.addEventListener("load", ve);
+</script>
 </body>
 </html>
