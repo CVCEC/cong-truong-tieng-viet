@@ -4,6 +4,7 @@
  * thu: bài học thử cho khách chưa đăng nhập.
  * congKhai: true thì ai cũng xem được trong cổng, không cần đăng nhập: cổng mở thẳng trang và trả lời góc học là hợp lệ.
  * luonGioiThieu: true thì lần nào vào góc cũng hiện màn giới thiệu trước (không nhớ "đã xem").
+ * urlVao: trang mở khi bấm "Vào học" (mặc định là url của góc trong TTV_DANH_SACH).
  * vaoThang: true thì bấm vào góc mở thẳng trang của góc (khách: chế độ học thử), nút "Hướng dẫn" vẫn xem lại được giới thiệu.
  *   url   – trang mở trong khung khi bấm "Học thử";
  *   duong – các đường dẫn khách được mở trong chế độ học thử (cổng gửi cho góc học qua postMessage);
@@ -236,7 +237,9 @@ window.CONG_GT = {
     // Lần nào vào góc cũng hiện màn giới thiệu trước (cách học, mục tiêu, học xong em sẽ…); bấm "Vào học" / "Học thử" mới mở trang.
     luonGioiThieu: true,
     // Góc một trang: khách học thử được dùng cả trang Luyện nói
-    thu: { url: "https://vietclass.cvcec.org/luyen-noi/", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói – Luyện thanh: Bảng âm, Luyện thanh, Luyện từ", en: "Speaking & Tones: sound chart, tones, words" } }
+    // Vào học / Học thử: mở thẳng thẻ Luyện thanh (thẻ đầu tiên), để bé đi lần lượt từ trái sang phải
+    urlVao: "https://vietclass.cvcec.org/luyen-noi/#luyen-thanh",
+    thu: { url: "https://vietclass.cvcec.org/luyen-noi/#luyen-thanh", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói – Luyện thanh: Luyện thanh, Bảng âm, Luyện từ", en: "Speaking & Tones: tones, sound chart, words" } }
   },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },

@@ -89,7 +89,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=20" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=21" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -570,7 +570,8 @@
     if (g.congKhai && !xemGioiThieu) { moIframe(muc, muc.url); return; }
     var hienGT = xemGioiThieu || (!g.vaoThang && (loai === "hoc" ? !daXem(muc.id) : !hocThu));
     if (hienGT) { veGioiThieu(muc, loai); return; }
-    moIframe(muc, hocThu ? g.thu.url : muc.url);
+    // urlVao: trang mở khi bấm "Vào học" (ví dụ Luyện nói mở thẳng thẻ đầu tiên, Luyện thanh)
+    moIframe(muc, hocThu ? g.thu.url : (g.urlVao || muc.url));
   }
   function moIframe(muc, url) {
     // Thay cả phần tử iframe (thay vì đặt lại src) để không tạo thêm mục lịch sử
