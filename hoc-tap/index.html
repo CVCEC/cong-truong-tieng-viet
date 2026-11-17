@@ -13,23 +13,39 @@
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
 <link rel="stylesheet" href="/chung/cong.css?v=8">
+<style>
+  .ht-lo-trinh { max-width: 46em; margin: 0 auto 24px; text-align: center; color: var(--ttv-chu); font-size: 1.05rem; }
+  .ht-lo-trinh a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; color: var(--ttv-chu); }
+  .cong-luoi li { position: relative; }
+  .ht-so { position: absolute; z-index: 2; top: -10px; left: -6px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ttv-chu); color: #FFFFFF; font-family: var(--ttv-phong-tieu-de); font-weight: 800; font-size: 1.05rem; box-shadow: 0 0 0 3px var(--ttv-nen); pointer-events: none; }
+  .ht-bac { display: inline-block; align-self: flex-start; margin: 2px 0 4px; padding: 2px 10px; border-radius: 999px; background: var(--ttv-kem-rom); color: var(--ttv-chu); font-weight: 800; font-size: .85rem; }
+</style>
 <script>window.CONG_CHU = {
   "vi": {
     "vaoHoc": "Vào học →",
     "loiTai": "Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.",
     "chonGoc": "Chọn một góc học",
     "hocTapTieuDe": "Học tập",
-    "hocTapPhuDe": "Làng học tập Trâu Con"
+    "hocTapPhuDe": "Làng học tập Trâu Con",
+    "loTrinh": "Các góc học xếp theo lộ trình \"Đường làng của Trâu Con\" (Khung năng lực tiếng Việt dùng cho người nước ngoài): người mới bắt đầu đi từ góc số 1. Nhãn bậc cho biết góc học hợp với chặng nào: Bậc 0 Làm quen, Sơ cấp Bậc 1–2, Trung cấp Bậc 3–4.",
+    "xemTienDo": "Xem chặng đường của bạn",
+    "bac": "Bậc {a}",
+    "bacTu": "Bậc {a}–{b}"
   },
   "en": {
     "vaoHoc": "Start →",
     "loiTai": "The learning corners could not be loaded. Please reload the page.",
     "chonGoc": "Choose a learning corner",
     "hocTapTieuDe": "Learning",
-    "hocTapPhuDe": "Trâu Con's Learning Village"
+    "hocTapPhuDe": "Trâu Con's Learning Village",
+    "loTrinh": "The corners follow the \"Trâu Con's village path\" learning path (Vietnamese Language Proficiency Framework for foreigners): beginners start at corner 1. The level label shows which stop each corner suits: Level 0 Getting started, Elementary Levels 1–2, Intermediate Levels 3–4.",
+    "xemTienDo": "See your learning path",
+    "bac": "Level {a}",
+    "bacTu": "Levels {a}–{b}"
   }
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="https://mau.cvcec.org/v1/ttv-lo-trinh.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/cong.js?v=8" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=8"></script>
@@ -47,7 +63,8 @@
     <section class="cong-phan trang-than" aria-labelledby="tieu-de-goc">
       <div class="cong-ruot">
         <h2 id="tieu-de-goc" class="cong-an" data-chu="chonGoc">Chọn một góc học</h2>
-        <ul class="cong-luoi" id="luoi-goc"></ul>
+        <p class="ht-lo-trinh"><span data-chu="loTrinh"></span><br><a href="/goc-hoc-tap/" data-chu="xemTienDo">Xem chặng đường của bạn</a></p>
+        <ol class="cong-luoi" id="luoi-goc"></ol>
         <p class="cong-doan" id="loi-tai" hidden data-chu="loiTai">Chưa tải được danh sách góc học. Các bạn tải lại trang nhé.</p>
       </div>
     </section>
@@ -69,8 +86,11 @@
   }
   function dungLuoi() {
     luoi.textContent = "";
-    DS.forEach(function (muc) {
+    DS.forEach(function (muc, thuTu) {
       var li = tao("li");
+      var so = tao("span", "ht-so", String(thuTu + 1));
+      so.setAttribute("aria-hidden", "true");
+      li.appendChild(so);
       var a = tao("a", "cong-the");
       a.href = "/#" + muc.id; // mở góc học trong khung của cổng
       a.setAttribute("data-goc", muc.id);
@@ -88,6 +108,7 @@
 
       var duoi = tao("span", "cong-the-duoi");
       duoi.appendChild(tao("span", "cong-the-ten"));
+      duoi.appendChild(tao("span", "ht-bac"));
       duoi.appendChild(tao("span", "cong-the-mo-ta"));
       duoi.appendChild(tao("span", "cong-the-vao"));
       a.appendChild(duoi);
@@ -111,6 +132,15 @@
       the[t].querySelector(".cong-the-ten").textContent = nn === "en" ? muc.ten_en : muc.ten_vi;
       the[t].querySelector(".cong-the-mo-ta").textContent = nn === "en" ? muc.mo_ta_en : muc.mo_ta_vi;
       the[t].querySelector(".cong-the-vao").textContent = c.vaoHoc;
+      // Nhãn bậc lấy từ lộ trình chung (mau.cvcec.org/v1/ttv-lo-trinh.js)
+      var bac = window.TTV_LO_TRINH ? window.TTV_LO_TRINH.bacCuaGoc(muc.id) : [];
+      var nhanBac = the[t].querySelector(".ht-bac");
+      if (bac.length) {
+        var a1 = bac[0], b1 = bac[bac.length - 1];
+        nhanBac.textContent = a1 === b1 ? c.bac.replace("{a}", a1) : c.bacTu.replace("{a}", a1).replace("{b}", b1);
+        nhanBac.hidden = false;
+      } else nhanBac.hidden = true;
+      the[t].setAttribute("aria-label", (t + 1) + ". " + (nn === "en" ? muc.ten_en : muc.ten_vi) + (bac.length ? " – " + nhanBac.textContent : ""));
     }
   }
   document.addEventListener("DOMContentLoaded", function () {
