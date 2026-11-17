@@ -25,7 +25,7 @@
     { so: 3, vi: "Lá", en: "Leaf", tuoi: { vi: "10–12 tuổi", en: "Ages 10–12" }, anh: "running.png" },
     { so: 4, vi: "Cây", en: "Tree", tuoi: { vi: "13 tuổi trở lên", en: "13 and older" }, anh: "hiking.png" }
   ];
-  var CAC_THE = ["luyen-thanh", "luyen-tu", "luyen-cau", "hoi-thoai"];
+  var CAC_THE = ["luyen-thanh", "bang-am", "luyen-tu", "luyen-cau", "hoi-thoai"];
 
   /* ---------- Chữ trên trang (VI / EN) ---------- */
   var CHU = {

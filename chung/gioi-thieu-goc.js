@@ -3,6 +3,7 @@
  * Số liệu lấy từ mã nguồn của từng góc (README, mục lục) ngày 15-11-2026. Sửa ở đây khi góc học thay đổi.
  * thu: bài học thử cho khách chưa đăng nhập.
  * congKhai: true thì ai cũng xem được trong cổng, không cần đăng nhập: cổng mở thẳng trang và trả lời góc học là hợp lệ.
+ * luonGioiThieu: true thì lần nào vào góc cũng hiện màn giới thiệu trước (không nhớ "đã xem").
  * vaoThang: true thì bấm vào góc mở thẳng trang của góc (khách: chế độ học thử), nút "Hướng dẫn" vẫn xem lại được giới thiệu.
  *   url   – trang mở trong khung khi bấm "Học thử";
  *   duong – các đường dẫn khách được mở trong chế độ học thử (cổng gửi cho góc học qua postMessage);
@@ -197,8 +198,10 @@ window.CONG_GT = {
     thu: { url: "https://nguphap.cvcec.org/", duong: ["/", "/bai.html"], baiThu: "bai-1", ten: { vi: "Bài 1: Ngữ pháp quanh em", en: "Lesson 1: Grammar all around us" } }
   },
   luyennoi: {
-    gioiThieu: { vi: "Luyện nói cùng Trâu Con: luyện 6 thanh điệu, luyện từ, luyện câu và nói chuyện với Trâu Con theo chủ đề. Máy nghe và chấm điểm từng chữ: đúng tô xanh, sai dấu tô cam. Có 4 mức từ bé tới lớn.", en: "Speaking practice with Trâu Con: practise the 6 tones, words and sentences, and talk with Trâu Con by topic. The computer listens and scores every word: green is correct, orange is a wrong tone. 4 levels from little ones to teens." },
+    gioiThieu: { vi: "Luyện nói – Luyện thanh cùng Trâu Con: học bảng âm tiếng Việt (IPA) và cách ghép âm vần, luyện 6 thanh điệu, luyện từ, luyện câu và nói chuyện với Trâu Con theo chủ đề. Máy nghe và chấm điểm từng chữ: đúng tô xanh, sai dấu tô cam. Có 4 mức từ bé tới lớn.", en: "Speaking and tones with Trâu Con: learn the Vietnamese sound chart (IPA) and how to blend sounds into syllables, practise the 6 tones, words and sentences, and talk with Trâu Con by topic. The computer listens and scores every word: green is correct, orange is a wrong tone. 4 levels from little ones to teens." },
     buoc: [
+      { e: "🔈", vi: "Mở Bảng âm: nghe từng âm, xem cách ghép và đánh vần", en: "Open the Sound chart: hear each sound, see how to blend and spell" },
+      { e: "🎵", vi: "Luyện thanh: đo giọng rồi đọc 6 thanh, so đường giọng với đường mẫu", en: "Tones: measure your voice, read the 6 tones and compare with the model line" },
       { e: "🌱", vi: "Chọn mức: Mầm, Chồi, Lá hoặc Cây", en: "Choose a level: Sprout, Bud, Leaf or Tree" },
       { e: "📚", vi: "Chọn chủ đề: chào hỏi, gia đình, Tết…", en: "Choose a topic: greetings, family, Tết…" },
       { e: "👂", vi: "Nghe Trâu Con đọc mẫu", en: "Listen to Trâu Con read the model" },
@@ -206,20 +209,34 @@ window.CONG_GT = {
       { e: "🎵", vi: "Sai dấu thì sang Luyện thanh tiếng đó", en: "Wrong tone? Practise that syllable's tone" },
       { e: "💬", vi: "Nói chuyện cùng Trâu Con theo lượt", en: "Take turns talking with Trâu Con" }
     ],
+    mucTieu: [
+      { vi: "Nghe và nhận ra các âm của tiếng Việt: âm đầu, nguyên âm, vần, âm cuối", en: "Hear and recognise Vietnamese sounds: initials, vowels, rhymes and finals" },
+      { vi: "Phân biệt và đọc đúng 6 thanh: ngang, huyền, ngã, hỏi, sắc, nặng", en: "Tell apart and say the 6 tones correctly: ngang, huyền, ngã, hỏi, sắc, nặng" },
+      { vi: "Biết ghép âm đầu, vần và thanh thành tiếng, đánh vần theo cách của lớp tiếng Việt", en: "Blend initial, rhyme and tone into a syllable and spell it the way Vietnamese class does" },
+      { vi: "Mạnh dạn nói từ, câu ngắn và trò chuyện theo chủ đề gần gũi", en: "Speak words, short sentences and simple conversations on everyday topics with confidence" }
+    ],
+    hocXong: [
+      { vi: "Đọc được một tiếng với đủ 6 thanh và tự nghe ra mình đọc đúng hay chưa", en: "Read a syllable in all 6 tones and hear for yourself whether it is right" },
+      { vi: "Tự đánh vần một tiếng mới, ví dụ: bờ – a – ba – huyền – bà", en: "Spell out a new syllable on your own, e.g. bờ – a – ba – huyền – bà" },
+      { vi: "Đọc bảng âm tiếng Việt theo ký hiệu IPA, biết chỗ giọng Hà Nội và giọng Sài Gòn khác nhau", en: "Read the Vietnamese sound chart in IPA and know where Hà Nội and Sài Gòn accents differ" },
+      { vi: "Tự tin chào hỏi, giới thiệu bản thân và nói chuyện ngắn bằng tiếng Việt", en: "Greet people, introduce yourself and hold a short conversation in Vietnamese with confidence" }
+    ],
     tongQuan: [
       { so: "4", vi: "mức, từ dưới 6 tuổi tới 13 tuổi trở lên", en: "levels, from under 6 to 13 and older" },
       { so: "24", vi: "chủ đề", en: "topics" },
       { so: "6", vi: "thanh điệu có đường mẫu để so", en: "tones with model lines to compare" }
     ],
     phan: [
+      { vi: "Bảng âm (IPA): âm đầu, nguyên âm, vần, âm cuối, thanh điệu, có loa đọc mẫu và cách ghép âm vần", en: "Sound chart (IPA): initials, vowels, rhymes, finals and tones, with model audio and syllable blending" },
       { vi: "Luyện thanh: so đường giọng với đường mẫu", en: "Tones: compare your voice line with the model" },
       { vi: "Luyện từ, Luyện câu: mỗi chủ đề 8 từ, 5 câu", en: "Words and sentences: 8 words and 5 sentences per topic" },
       { vi: "Hội thoại cùng Trâu Con: 4–8 lượt mỗi đoạn", en: "Talk with Trâu Con: 4–8 turns per conversation" },
       { vi: "Chấm câu cần Chrome, Edge hoặc Safari; giọng đọc được gửi tới dịch vụ nhận dạng của Google hoặc Apple, CVCEC không lưu", en: "Scoring needs Chrome, Edge or Safari; your voice goes to Google's or Apple's recognition service, and CVCEC keeps nothing" }
     ],
-    vaoThang: true, // trang Luyện nói tự có hướng dẫn trên từng thẻ: mở thẳng
+    // Lần nào vào góc cũng hiện màn giới thiệu trước (cách học, mục tiêu, học xong em sẽ…); bấm "Vào học" / "Học thử" mới mở trang.
+    luonGioiThieu: true,
     // Góc một trang: khách học thử được dùng cả trang Luyện nói
-    thu: { url: "https://vietclass.cvcec.org/luyen-noi/#luyen-tu", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói: Luyện từ", en: "Speaking: Words" } }
+    thu: { url: "https://vietclass.cvcec.org/luyen-noi/", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói – Luyện thanh: Bảng âm, Luyện thanh, Luyện từ", en: "Speaking & Tones: sound chart, tones, words" } }
   },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },

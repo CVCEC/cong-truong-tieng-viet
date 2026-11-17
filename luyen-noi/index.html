@@ -10,13 +10,15 @@
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
 <link rel="stylesheet" href="/chung/cong.css?v=7">
-<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=4">
+<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=5">
 <script>try { if (window.self !== window.top) document.documentElement.classList.add("ln-trong-khung"); } catch (e) { document.documentElement.classList.add("ln-trong-khung"); }</script>
 <script>window.CONG_CHU = {
  "vi": {
-  "tieuDe": "Luyện nói",
-  "phuDe": "Luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.",
+  "tieuDe": "Luyện nói – Luyện thanh",
+  "phuDe": "Bảng âm, luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.",
   "tabThanh": "Luyện thanh",
+  "tabBangAm": "Bảng âm (IPA)",
+  "cachHoc": "Cách học, mục tiêu và học xong em sẽ…",
   "tabTu": "Luyện từ",
   "tabCau": "Luyện câu",
   "tabHoiThoai": "Hội thoại cùng Trâu Con",
@@ -33,9 +35,11 @@
   "khongJs": "Trang này cần bật JavaScript để ghi âm, chấm điểm và vẽ đường giọng."
  },
  "en": {
-  "tieuDe": "Speaking practice",
-  "phuDe": "Practise tones, words and sentences, and talk with Trâu Con.",
+  "tieuDe": "Speaking & Tones",
+  "phuDe": "Sound chart, tones, words, sentences and talking with Trâu Con.",
   "tabThanh": "Tones",
+  "tabBangAm": "Sound chart (IPA)",
+  "cachHoc": "How to learn, goals and what you will be able to do",
   "tabTu": "Words",
   "tabCau": "Sentences",
   "tabHoiThoai": "Talk with Trâu Con",
@@ -61,15 +65,18 @@
 <script src="/luyen-noi/luyen-noi.js?v=2" defer></script>
 <script src="/luyen-noi/cham-cau.js?v=2" defer></script>
 <script src="/luyen-noi/giong-elio.js?v=1" defer></script>
-<script src="/luyen-noi/luyen-cau.js?v=2" defer></script>
+<script src="/luyen-noi/luyen-cau.js?v=3" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=20" defer></script>
+<script src="/luyen-noi/bang-am.js?v=1" defer></script>
+<script src="/luyen-noi/huong-dan.js?v=1" defer></script>
 </head>
 <body class="cong" data-ttv-khong-thanh data-trang="hoc-tap" data-tieu-de="tieuDe">
   <header class="cong-dau" data-cong-dau></header>
   <main>
     <section class="trang-dau co-canh" data-canh="lang-que" aria-labelledby="tieu-de-trang">
       <div class="cong-ruot">
-        <h1 id="tieu-de-trang" data-chu="tieuDe">Luyện nói</h1>
-        <p class="trang-phu-de" data-chu="phuDe">Luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.</p>
+        <h1 id="tieu-de-trang" data-chu="tieuDe">Luyện nói – Luyện thanh</h1>
+        <p class="trang-phu-de" data-chu="phuDe">Bảng âm, luyện thanh, luyện từ, luyện câu và nói chuyện cùng Trâu Con.</p>
       </div>
     </section>
 
@@ -77,8 +84,14 @@
       <div class="cong-ruot">
         <noscript><p class="ln-tin ln-tin-sai" data-chu="khongJs">Trang này cần bật JavaScript để ghi âm, chấm điểm và vẽ đường giọng.</p></noscript>
 
+        <details class="ln-the ln-cach-hoc" id="ln-cach-hoc">
+          <summary><span aria-hidden="true">📘</span> <span data-chu="cachHoc">Cách học, mục tiêu và học xong em sẽ…</span></summary>
+          <div id="ln-cach-hoc-noi-dung"></div>
+        </details>
+
         <div class="ln-tabs" role="tablist" aria-label="Chọn cách luyện nói">
           <button type="button" role="tab" id="ln-tab-luyen-thanh" aria-controls="ln-panel-luyen-thanh" aria-selected="true"><span aria-hidden="true">🎵</span> <span data-chu="tabThanh">Luyện thanh</span></button>
+          <button type="button" role="tab" id="ln-tab-bang-am" aria-controls="ln-panel-bang-am" aria-selected="false" tabindex="-1"><span aria-hidden="true">🔈</span> <span data-chu="tabBangAm">Bảng âm (IPA)</span></button>
           <button type="button" role="tab" id="ln-tab-luyen-tu" aria-controls="ln-panel-luyen-tu" aria-selected="false" tabindex="-1"><span aria-hidden="true">🔤</span> <span data-chu="tabTu">Luyện từ</span></button>
           <button type="button" role="tab" id="ln-tab-luyen-cau" aria-controls="ln-panel-luyen-cau" aria-selected="false" tabindex="-1"><span aria-hidden="true">📖</span> <span data-chu="tabCau">Luyện câu</span></button>
           <button type="button" role="tab" id="ln-tab-hoi-thoai" aria-controls="ln-panel-hoi-thoai" aria-selected="false" tabindex="-1"><span aria-hidden="true">💬</span> <span data-chu="tabHoiThoai">Hội thoại cùng Trâu Con</span></button>
@@ -108,6 +121,7 @@
 
         </div>
 
+        <div class="ln-panel" role="tabpanel" id="ln-panel-bang-am" aria-labelledby="ln-tab-bang-am" hidden><div id="ln-panel-bang-am-noi-dung"></div></div>
         <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-tu" aria-labelledby="ln-tab-luyen-tu" hidden><div id="ln-panel-luyen-tu-noi-dung"></div></div>
         <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-cau" aria-labelledby="ln-tab-luyen-cau" hidden><div id="ln-panel-luyen-cau-noi-dung"></div></div>
         <div class="ln-panel" role="tabpanel" id="ln-panel-hoi-thoai" aria-labelledby="ln-tab-hoi-thoai" hidden><div id="ln-panel-hoi-thoai-noi-dung"></div></div>
@@ -123,6 +137,8 @@
             <li>International Phonetic Association (1999). <i>Handbook of the International Phonetic Association</i>. Cambridge University Press. – ký hiệu IPA.</li>
             <li>de Cheveigné, A. &amp; Kawahara, H. (2002). YIN, a fundamental frequency estimator for speech and music. <i>Journal of the Acoustical Society of America</i>, 111(4), 1917–1930. – thuật toán dò cao độ.</li>
             <li>Sakoe, H. &amp; Chiba, S. (1978). Dynamic programming algorithm optimization for spoken word recognition. <i>IEEE Transactions on Acoustics, Speech, and Signal Processing</i>, 26(1), 43–49. – co giãn thời gian khi so đường (DTW).</li>
+            <li>Thompson, L. C. (1965). <i>A Vietnamese Grammar</i>. University of Washington Press. – hệ thống âm tiếng Việt, khác biệt giọng Bắc và giọng Nam.</li>
+            <li lang="vi">Đoàn Thiện Thuật (1977). <i>Ngữ âm tiếng Việt</i>. Hà Nội: Nhà xuất bản Đại học và Trung học chuyên nghiệp. – bảng âm, âm đệm, vần và âm cuối.</li>
             <li lang="vi">Bộ Giáo dục và Đào tạo (2018). Quyết định số 1989/QĐ-BGDĐT ban hành Quy định về chính tả tiếng Việt và thuật ngữ tiếng Việt trong sách giáo khoa giáo dục phổ thông. – quy tắc chính tả và vị trí dấu thanh.</li>
           </ul>
         </section>

@@ -105,6 +105,9 @@
 </div>
 
 <script src="/luyen-noi/cham-cau.js?v=2"></script>
+<script src="/luyen-noi/ghep-tieng.js?v=1"></script>
+<script src="/luyen-noi/cao-do.js?v=1"></script>
+<script src="/luyen-noi/bang-am.js?v=1"></script>
 <script src="/luyen-noi/vendor/jszip.min.js"></script>
 <script src="/luyen-noi/vendor/lame.min.js"></script>
 <script>
@@ -114,7 +117,7 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   let ND = null, LIST = [], HAVE = new Map();
-  const tenChuDe = id => ((ND && ND.chuDe.find(c => c.id === id)) || {}).ten || id;
+  const tenChuDe = id => id === 'bang-am' ? 'Bảng âm (IPA)' : (((ND && ND.chuDe.find(c => c.id === id)) || {}).ten || id);
 
   /* ---------- Cài đặt (lưu trên máy này) ---------- */
   const fields = ['apiKey', 'voice', 'model', 'pace', 'styleVi'];
@@ -312,7 +315,9 @@
       ND = ChamCau.docNoiDung(new TextDecoder('utf-8').decode(await r.arrayBuffer()));
     } catch (e) { status('Không tải được noi-dung.txt. Kiểm tra mạng rồi tải lại trang.', 'err'); return; }
     LIST = ChamCau.tatCaCau(ND).map(x => ({ key: x.ma, t: x.chu, g: x.chuDe }));
-    $('filter').innerHTML = '<option value="all">Tất cả chủ đề</option>' + ND.chuDe.map(c => `<option value="${esc(c.id)}">${esc(c.ten)}</option>`).join('');
+    // Thẻ Bảng âm (IPA): âm, vần, tên thanh, tiếng ví dụ và các bước đánh vần (luyen-noi/bang-am.js)
+    if (window.BangAm) { const co = new Set(LIST.map(x => x.key)); BangAm.tatCaAm().forEach(x => { if (!co.has(x.ma)) { co.add(x.ma); LIST.push({ key: x.ma, t: x.chu, g: 'bang-am' }); } }); }
+    $('filter').innerHTML = '<option value="all">Tất cả chủ đề</option>' + ND.chuDe.map(c => `<option value="${esc(c.id)}">${esc(c.ten)}</option>`).join('') + '<option value="bang-am">Bảng âm (IPA)</option>';
     if (ND.loi.length) log('⚠ noi-dung.txt có ' + ND.loi.length + ' dòng máy chưa hiểu: dòng ' + ND.loi.map(l => l.dong).join(', '));
     status('Sẵn sàng. Dán mã API rồi bấm "Bắt đầu / Tiếp tục".');
     await refresh();
