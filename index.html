@@ -94,7 +94,7 @@
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/gioi-thieu-goc.js?v=27" defer></script>
-<script src="/chung/cong.js?v=8" defer></script>
+<script src="/chung/cong.js?v=9" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=8"></script>
 <script type="module" src="/js/ghi-ket-qua.js?v=1"></script>
 <style>
@@ -682,7 +682,11 @@
     // Góc học báo kết quả một trò chơi (TTV.ghiKetQua của bộ mẫu). Chỉ nhận từ đúng góc đang mở,
     // khi người học đã đăng nhập (không ghi khi học thử). js/ghi-ket-qua.js ghi vào tài khoản.
     if (d.loai === "ttv-ket-qua") {
-      if (loaiTk() === "hoc" && gocDangMo && d.chuongTrinh === gocDangMo) {
+      // Nhận khi góc gửi về cùng tên miền với góc đang mở (baihoc/vanhoa chung baihoc.cvcec.org) và đúng nguồn tin nhắn
+      var gocGui = typeof d.chuongTrinh === "string" ? timGoc(d.chuongTrinh) : null, gocMo = gocDangMo ? timGoc(gocDangMo) : null;
+      var cungNguon = false;
+      try { cungNguon = !!(gocGui && gocMo && new URL(gocGui.url).origin === e.origin && new URL(gocMo.url).origin === e.origin); } catch (err) {}
+      if (loaiTk() === "hoc" && cungNguon) {
         try { document.dispatchEvent(new CustomEvent("cvcec-ket-qua", { detail: d })); } catch (err) {}
       }
       return;

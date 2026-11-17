@@ -36,7 +36,7 @@
     vi: {
       navTrangChu: "Trang chủ", navHocTap: "Học tập", navHoatDong: "Hoạt động", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navTrienLam: "Triển lãm", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
       navChao: "Điều hướng chính", ngonNgu: "Ngôn ngữ", veCong: "Về trang chủ Trường Tiếng Việt Của Em",
-      chanCau: "Nền tảng học tiếng Việt dành cho trẻ em Việt Nam ở trong và ngoài nước.",
+      chanCau: "Nền tảng học tiếng Việt dành cho mọi đối tượng yêu tiếng Việt.",
       chanDong: "Một chương trình của Canada Vietnam Cultural & Educational Council (CVCEC)",
       chanHocTap: "Học tập", chanTrang: "Cổng trường", chanDieuKhoan: "Điều khoản sử dụng", chanBaoMat: "Chính sách bảo mật",
       chanUyBan: "Ủy ban Nhà nước về người Việt Nam ở nước ngoài – Bộ Ngoại giao",
@@ -49,7 +49,7 @@
     en: {
       navTrangChu: "Home", navHocTap: "Learning", navHoatDong: "Activities", navTinTuc: "News", navGioiThieu: "About", navTrienLam: "Exhibition", navChungTay: "Donate", navGiaoVien: "Teachers",
       navChao: "Main navigation", ngonNgu: "Language", veCong: "Back to the Trường Tiếng Việt Của Em home page",
-      chanCau: "A Vietnamese learning platform for Vietnamese children in Vietnam and around the world.",
+      chanCau: "A Vietnamese learning platform for everyone who loves the Vietnamese language.",
       chanDong: "A program of the Canada Vietnam Cultural & Educational Council (CVCEC)",
       chanHocTap: "Learning", chanTrang: "School portal", chanDieuKhoan: "Terms of use", chanBaoMat: "Privacy policy",
       chanUyBan: "State Committee for Overseas Vietnamese Affairs – Ministry of Foreign Affairs",
