@@ -143,12 +143,13 @@ window.CONG_GT = {
       { e: "🧠", vi: "Nhớ lời: điền từ, xếp câu, che dần chữ", en: "Remember the lyrics: fill the gaps, put lines in order, hide the words" },
       { e: "🎮", vi: "Chơi mà nhớ: lật thẻ tìm vần, tiếp sức đọc bài", en: "Play to remember: rhyme memory cards and a line relay" },
       { e: "🤸", vi: "Cùng chơi: trò chơi dân gian thật với bạn bè, gia đình", en: "Play together: the real folk game with friends and family" },
+      { e: "🎼", vi: "Học hát cùng giảng viên âm nhạc (video đang cập nhật)", en: "Learn to sing with a music teacher (video coming soon)" },
       { e: "⭐", vi: "Mỗi bước 1 sao, đủ 5 sao là thuộc bài", en: "1 star per step, 5 stars when you know the song" }
     ],
     tongQuan: [
       { so: "24", vi: "bài học", en: "lessons" },
       { so: "3", vi: "phần: Đồng dao, Vè, Dân ca & hát ru", en: "parts: Chants, Folk rhymes, Folk songs & lullabies" },
-      { so: "5", vi: "bước, 5 sao mỗi bài", en: "steps, 5 stars per lesson" }
+      { so: "6", vi: "bước, 5 sao mỗi bài", en: "steps, 5 stars per lesson" }
     ],
     phan: [
       { vi: "Đồng dao (Bài 1–12): vừa đọc vừa chơi", en: "Chants (Lessons 1–12): chant while you play" },
