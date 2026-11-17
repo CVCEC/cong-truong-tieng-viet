@@ -514,7 +514,7 @@
     var giua = tao("div", "cd-the-giua");
     var c = tao("p", "cd-tieng", chu); c.lang = "vi";
     giua.appendChild(c);
-    giua.appendChild(tao("p", "cd-ten-nv", (nn === "en" ? nv.ten.en : nv.ten.vi) + " · " + T("thanh")[th]));
+    giua.appendChild(tao("p", "cd-ten-nv", T("thanh")[th]));
     dau.appendChild(giua);
     dau.appendChild(ConDuong.veMuiTen(th));
     the.appendChild(dau);

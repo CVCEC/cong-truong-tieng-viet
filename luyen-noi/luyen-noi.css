@@ -334,8 +334,10 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
 .cd-hinh-nv { width: 64px; height: 64px; flex: 0 0 auto; }
 .cd-than { fill: var(--cd-mau); stroke: var(--ttv-chu); stroke-width: 2; stroke-linejoin: round; }
 .cd-mat { fill: var(--ttv-chu); }
-.cd-nga-vien { fill: none; stroke: var(--ttv-chu); stroke-width: 15; stroke-linecap: round; }
-.cd-nga-loi { fill: none; stroke: var(--cd-nga); stroke-width: 11; stroke-linecap: round; }
+.cd-net-vien { fill: none; stroke: var(--ttv-chu); stroke-width: 15; stroke-linecap: round; }
+.cd-net-loi { fill: none; stroke-width: 11; stroke-linecap: round; }
+.cd-net-nga { stroke: var(--cd-nga); }
+.cd-net-hoi { stroke: var(--cd-hoi); }
 .cd-mieng { fill: none; stroke: var(--ttv-chu); stroke-width: 2.4; stroke-linecap: round; }
 .cd-nv-nang .cd-mat, .cd-nv-huyen .cd-mat { fill: var(--ttv-the); }
 .cd-nv-nang .cd-mieng, .cd-nv-huyen .cd-mieng { stroke: var(--ttv-the); }
@@ -351,10 +353,12 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
 .cd-troi { fill: var(--ttv-troi); }
 .cd-doi-xa { fill: var(--ttv-lua-sang); opacity: .55; }
 .cd-dat { fill: var(--ttv-lua); }
-.cd-mat-duong { fill: none; stroke: var(--ttv-kem-rom); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+.cd-vien-duong { fill: none; stroke: var(--cd-mau); stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+.cd-mat-duong { fill: none; stroke: var(--ttv-kem-rom); stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
 .cd-vach { fill: none; stroke: var(--ttv-the); stroke-width: 2; stroke-dasharray: 7 7; stroke-linecap: round; }
 .cd-o-ga { fill: var(--cd-nang); opacity: .55; }
 .cd-bac-them { fill: var(--ttv-kem-rom); stroke: var(--cd-nang); stroke-width: 2; }
+.cd-cham-nang { fill: var(--cd-nang); stroke: var(--ttv-chu); stroke-width: 2; }
 .cd-co { fill: var(--ttv-chinh); stroke: var(--ttv-chu); stroke-width: 2; stroke-linejoin: round; }
 .cd-chan ellipse { fill: var(--ttv-chinh); stroke: var(--ttv-the); stroke-width: .8; }
 .cd-chan-hien { animation: cd-hien .25s ease-out forwards; }

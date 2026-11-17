@@ -24,8 +24,8 @@ test("sao: 3 / 2 / 1 theo mức so đường; thanh không chấm (hỏi, ngã) 
 });
 
 test("câu khích lệ đúng nhân vật, không có số điểm", () => {
-  assert.equal(D.cauKhen("sac", 3, "vi"), "Anh Sắc khen: Em leo dốc giỏi lắm!");
-  assert.equal(D.cauKhen("huyen", 2, "vi"), "Bà Huyền nhắc: Mình xuống đồi chậm thêm chút nhé!");
-  assert.match(D.cauKhen("hoi", 3, "vi"), /^Chú Hỏi/); // hỏi chỉ có một câu chung
+  assert.equal(D.cauKhen("sac", 3, "vi"), "Trâu Con khen: Các bạn leo dốc giỏi lắm!");
+  assert.equal(D.cauKhen("huyen", 2, "vi"), "Trâu Con nhắc: Mình xuống dốc chậm thêm chút nhé!");
+  assert.match(D.cauKhen("hoi", 3, "vi"), /^Trâu Con/); // hỏi chỉ có một câu chung
   for (const th of Object.keys(D.NHAN_VAT)) for (const s of [1, 2, 3]) assert.doesNotMatch(D.cauKhen(th, s, "vi"), /\d/);
 });
