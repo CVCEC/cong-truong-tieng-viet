@@ -156,7 +156,7 @@ window.CONG_GT = {
       { vi: "Dân ca & hát ru (Bài 17–24)", en: "Folk songs & lullabies (Lessons 17–24)" }
     ],
     vaoThang: true, // trang chủ đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn
-    thu: { url: "https://hatca.cvcec.org/bai.html#dung-dang-dung-de", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
+    thu: { url: "https://hatca.cvcec.org/", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
   },
   cotich: {
     gioiThieu: { vi: "Trâu Con kể chuyện: 30 truyện cổ tích Việt Nam, mỗi ngày một truyện, đọc trong sách lật và chơi trò ôn từ.", en: "Trâu Con tells stories: 30 Vietnamese fairy tales, one a day, read in a flip book with word games." },
