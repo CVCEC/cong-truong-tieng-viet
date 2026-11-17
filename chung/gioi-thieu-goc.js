@@ -135,6 +135,29 @@ window.CONG_GT = {
     ],
     phan: []
   },
+  hatca: {
+    gioiThieu: { vi: "Dành cho mọi bạn, kể cả bạn mới bắt đầu: học tiếng Việt qua đồng dao, vè, dân ca và hát ru. Vỗ tay theo nhịp mõ, hiểu lời, học thuộc, chơi trò chơi để nhớ, rồi chơi trò dân gian thật cùng gia đình.", en: "For every learner, including beginners: learn Vietnamese through traditional chants, folk rhymes, folk songs and lullabies. Clap to the beat, understand the words, learn them by heart, play games to remember, then play the real folk game with your family." },
+    buoc: [
+      { e: "🎵", vi: "Nghe và đọc theo nhịp mõ, vỗ tay mỗi tiếng", en: "Chant along to the woodblock beat, one clap per syllable" },
+      { e: "🔍", vi: "Hiểu lời: thẻ từ cần biết và câu hỏi nhanh", en: "Understand the words: word cards and quick questions" },
+      { e: "🧠", vi: "Nhớ lời: điền từ, xếp câu, che dần chữ", en: "Remember the lyrics: fill the gaps, put lines in order, hide the words" },
+      { e: "🎮", vi: "Chơi mà nhớ: lật thẻ tìm vần, tiếp sức đọc bài", en: "Play to remember: rhyme memory cards and a line relay" },
+      { e: "🤸", vi: "Cùng chơi: trò chơi dân gian thật với bạn bè, gia đình", en: "Play together: the real folk game with friends and family" },
+      { e: "⭐", vi: "Mỗi bước 1 sao, đủ 5 sao là thuộc bài", en: "1 star per step, 5 stars when you know the song" }
+    ],
+    tongQuan: [
+      { so: "24", vi: "bài học", en: "lessons" },
+      { so: "3", vi: "phần: Đồng dao, Vè, Dân ca & hát ru", en: "parts: Chants, Folk rhymes, Folk songs & lullabies" },
+      { so: "5", vi: "bước, 5 sao mỗi bài", en: "steps, 5 stars per lesson" }
+    ],
+    phan: [
+      { vi: "Đồng dao (Bài 1–12): vừa đọc vừa chơi", en: "Chants (Lessons 1–12): chant while you play" },
+      { vi: "Vè (Bài 13–16): chim, cá, trái cây, loài vật", en: "Folk rhymes (Lessons 13–16): birds, fish, fruit, animals" },
+      { vi: "Dân ca & hát ru (Bài 17–24)", en: "Folk songs & lullabies (Lessons 17–24)" }
+    ],
+    vaoThang: true, // trang chủ đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn
+    thu: { url: "https://hatca.cvcec.org/bai.html#dung-dang-dung-de", duong: ["/", "/bai.html"], baiThu: "dung-dang-dung-de", ten: { vi: "Bài 1: Dung dăng dung dẻ", en: "Lesson 1: Dung dăng dung dẻ (Walking hand in hand)" } }
+  },
   cotich: {
     gioiThieu: { vi: "Trâu Con kể chuyện: 30 truyện cổ tích Việt Nam, mỗi ngày một truyện, đọc trong sách lật và chơi trò ôn từ.", en: "Trâu Con tells stories: 30 Vietnamese fairy tales, one a day, read in a flip book with word games." },
     buoc: [
