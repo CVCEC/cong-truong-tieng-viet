@@ -192,8 +192,9 @@ window.CONG_GT = {
       { vi: "Bài 35–37: hiểu ý trong hội thoại", en: "Lessons 35–37: understanding meaning in conversation" }
     ],
     vaoThang: true, // trang chủ Ngữ pháp đã có Mục tiêu, Học xong, Tổng quan, Hướng dẫn: mở thẳng
-    // Góc một trang: mọi bài cùng /bai.html#bai-N, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
-    thu: { url: "https://nguphap.cvcec.org/bai.html#bai-1", duong: ["/", "/bai.html"], baiThu: "bai-1", ten: { vi: "Bài 1: Ngữ pháp quanh em", en: "Lesson 1: Grammar all around us" } }
+    // Khách học thử cũng vào trang chủ trước (Mục tiêu, Hướng dẫn), rồi mới chọn Bài 1.
+    // Mọi bài cùng /bai.html#bai-N, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
+    thu: { url: "https://nguphap.cvcec.org/", duong: ["/", "/bai.html"], baiThu: "bai-1", ten: { vi: "Bài 1: Ngữ pháp quanh em", en: "Lesson 1: Grammar all around us" } }
   },
   luyennoi: {
     gioiThieu: { vi: "Luyện nói cùng Trâu Con: luyện 6 thanh điệu, luyện từ, luyện câu và nói chuyện với Trâu Con theo chủ đề. Máy nghe và chấm điểm từng chữ: đúng tô xanh, sai dấu tô cam. Có 4 mức từ bé tới lớn.", en: "Speaking practice with Trâu Con: practise the 6 tones, words and sentences, and talk with Trâu Con by topic. The computer listens and scores every word: green is correct, orange is a wrong tone. 4 levels from little ones to teens." },
