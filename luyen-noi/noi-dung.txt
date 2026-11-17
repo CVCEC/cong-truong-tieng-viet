@@ -14,7 +14,7 @@
 #   MỨC: 1 – Mầm (dưới 6 tuổi): từ 1–2 tiếng, câu 3–5 tiếng, hội thoại 4 lượt.
 #   MỨC: 2 – Chồi (6–9 tuổi): câu 4–7 tiếng, hội thoại 6 lượt.
 #   MỨC: 3 – Lá (10–12 tuổi): câu 7–12 tiếng, có từ nối (vì, nên, khi, sau khi…), hội thoại 8 lượt.
-#   MỨC: 4 – Cây (13 tuổi trở lên): câu ghép, nêu ý kiến, chủ đề văn hoá – xã hội, hội thoại 8 lượt.
+#   MỨC: 4 – Cây (13 tuổi trở lên): câu ghép, nêu ý kiến, chủ đề văn hóa – xã hội, hội thoại 8 lượt.
 #
 # Lưu ý:
 #   - Phần tiếng Anh sau dấu | có thể bỏ trống.
@@ -80,8 +80,8 @@ TỪ: số bảy | seven
 TỪ: số mười | ten
 CÂU: Một, hai, ba, bốn. | One, two, three, four.
 CÂU: Em có một quả bóng. | I have one ball.
-CÂU: Nhà em có ba con gà. | We have three chickens.
-CÂU: Em có hai bàn tay. | I have two hands.
+CÂU: Em có ba con gà. | I have three chickens.
+CÂU: Em có bốn cái bút. | I have four pens.
 CÂU: Em có mười ngón tay. | I have ten fingers.
 HỘI THOẠI: Cùng đếm nào | Let's count
 TRÂU CON: Các bạn đếm cùng mình nhé! | Count with me!
@@ -372,15 +372,15 @@ CÂU: Cuối tuần, em cùng mẹ đi chợ mua rau. | On weekends, I go to the
 CÂU: Cô ơi, quả xoài này bao nhiêu tiền ạ? | Excuse me, how much is this mango?
 CÂU: Vì rau rất tươi nên mẹ mua hai bó. | Because the vegetables are fresh, Mom buys two bunches.
 CÂU: Em giúp mẹ xách túi đồ về nhà. | I help Mom carry the bags home.
-CÂU: Chợ Việt Nam lúc nào cũng đông vui. | Vietnamese markets are always busy and lively.
+CÂU: Chợ Việt ở Toronto lúc nào cũng đông vui. | The Vietnamese market in Toronto is always busy and lively.
 HỘI THOẠI: Mua hoa quả | Buying fruit
 TRÂU CON: Các bạn ơi, hôm nay mình cùng đi chợ nhé! | Let's go to the market together today!
 BẠN: Hay quá! Mình muốn mua hoa quả. | Great! I want to buy some fruit.
 TRÂU CON: Các bạn muốn mua quả gì? | What fruit do you want to buy?
-BẠN: Mình muốn mua một cân xoài. | I want to buy a kilo of mangoes.
+BẠN: Mình muốn mua ba quả xoài. | I want to buy three mangoes.
 TRÂU CON: Các bạn hỏi cô bán hàng giá bao nhiêu nhé. | Ask the seller how much it costs.
-BẠN: Cô ơi, một cân xoài bao nhiêu tiền ạ? | Excuse me, how much is a kilo of mangoes?
-TRÂU CON: Cô nói năm mươi nghìn đồng. Các bạn trả tiền nào! | She says fifty thousand đồng. Go ahead and pay!
+BẠN: Cô ơi, ba quả xoài bao nhiêu tiền ạ? | Excuse me, how much are three mangoes?
+TRÂU CON: Cô nói năm đô. Các bạn trả tiền nào! | She says five dollars. Go ahead and pay!
 BẠN: Cháu gửi cô tiền ạ. Cháu cảm ơn cô! | Here's the money. Thank you!
 
 CHỦ ĐỀ: Tết Nguyên Đán | Lunar New Year
@@ -541,10 +541,10 @@ BẠN: Họ rất thích, nhất là bánh mì và gỏi cuốn. | They love it,
 TRÂU CON: Nếu mở một quán ăn, các bạn sẽ bán món gì? | If you opened a restaurant, what would you sell?
 BẠN: Mình sẽ bán bún chả, vì ở đây ít người biết món này. | I'd sell bún chả, because few people here know this dish.
 
-CHỦ ĐỀ: Sống giữa hai nền văn hoá | Living between two cultures
+CHỦ ĐỀ: Sống giữa hai nền văn hóa | Living between two cultures
 MỨC: 4
 ẢNH: thinking.png
-TỪ: văn hoá | culture
+TỪ: văn hóa | culture
 TỪ: truyền thống | tradition
 TỪ: bản sắc | identity
 TỪ: phong tục | custom
@@ -555,10 +555,10 @@ TỪ: giữ gìn | preserve
 CÂU: Em lớn lên ở Canada nhưng vẫn giữ gìn tiếng Việt. | I grew up in Canada but I still keep my Vietnamese.
 CÂU: Ở nhà em nói tiếng Việt, còn ở trường em nói tiếng Anh. | At home I speak Vietnamese, and at school I speak English.
 CÂU: Gia đình em vừa đón Tết Nguyên Đán, vừa đón lễ Tạ ơn. | My family celebrates both Lunar New Year and Thanksgiving.
-CÂU: Biết hai nền văn hoá giúp em hiểu và tôn trọng người khác hơn. | Knowing two cultures helps me understand and respect others more.
+CÂU: Biết hai nền văn hóa giúp em hiểu và tôn trọng người khác hơn. | Knowing two cultures helps me understand and respect others more.
 CÂU: Cộng đồng người Việt ở Toronto thường tổ chức hội chợ Tết. | The Vietnamese community in Toronto often holds a Tết fair.
-HỘI THOẠI: Hai nền văn hoá | Two cultures
-TRÂU CON: Các bạn thấy sống giữa hai nền văn hoá thế nào? | What's it like living between two cultures?
+HỘI THOẠI: Hai nền văn hóa | Two cultures
+TRÂU CON: Các bạn thấy sống giữa hai nền văn hóa thế nào? | What's it like living between two cultures?
 BẠN: Mình thấy thú vị, vì mình được học hỏi từ cả hai. | I find it interesting, because I get to learn from both.
 TRÂU CON: Có lúc nào các bạn thấy khó khăn không? | Is it ever hard for you?
 BẠN: Đôi khi mình quên từ tiếng Việt khi nói chuyện với bà. | Sometimes I forget Vietnamese words when talking with Grandma.
