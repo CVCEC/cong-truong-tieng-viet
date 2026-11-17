@@ -25,3 +25,6 @@ Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâ
 | Cách so câu (khoảng cách sửa theo từng tiếng, tách dấu thanh) | Levenshtein, V. I. (1966). Binary codes capable of correcting deletions, insertions, and reversals. *Soviet Physics Doklady*, 10(8), 707–710. Viết lại từ mô tả. Cách tính điểm và ngưỡng ba mức do CVCEC tự đặt, chỉ để tham khảo. |
 | Giọng mẫu Trâu Con | Giọng "Elio" tạo bằng Google AI Studio qua `studio.html`, như các góc học khác của trường. |
 | Thư viện của `studio.html` | JSZip 3.10.1 (MIT), lamejs 1.2.1 (LGPL-3.0) – xem `vendor/THIRD-PARTY.txt`. |
+| Bảng âm (IPA): âm đầu, nguyên âm, nguyên âm đôi, âm đệm, âm cuối, khác biệt giọng Hà Nội – Sài Gòn (`bang-am.js`) | Kirby (2011); Thompson, L. C. (1965). *A Vietnamese Grammar*. University of Washington Press; Đoàn Thiện Thuật (1977). *Ngữ âm tiếng Việt*. NXB Đại học và Trung học chuyên nghiệp. Ghi theo âm vị, giọng Hà Nội làm chuẩn. |
+| Cách đọc âm (bờ, cờ, dờ…) và các bước đánh vần (bờ – a – ba – huyền – bà) | Cách dạy của lớp tiếng Việt (sách Tiếng Việt lớp 1). |
+| Giọng đọc mẫu của Bảng âm | Giọng Trâu Con (Elio) do trường tạo bằng `studio.html`; không dùng giọng máy của thiết bị. |

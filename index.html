@@ -45,7 +45,7 @@
     "khoaNd": "Mỗi bạn học có một tài khoản để Trâu Con lưu sao và tiến độ học. Bạn đăng nhập hoặc đăng ký để vào góc học này nhé.",
     "khoaChuaXong": "Bạn hoàn tất đăng ký (tạo hồ sơ học viên) để vào học nhé.",
     "khoaDangNhap": "Đăng nhập", "khoaDangKy": "Đăng ký", "khoaHoanTat": "Hoàn tất đăng ký", "khoaDangMo": "Đang mở góc học…",
-    "gtNhan": "Làng học tập Trâu Con", "gtCachHoc": "Học thế nào", "gtCoGi": "Trong góc học có gì", "gtBaiThu": "Bài học thử",
+    "gtNhan": "Làng học tập Trâu Con", "gtCachHoc": "Học thế nào", "gtMucTieu": "Mục tiêu", "gtHocXong": "Học xong, em sẽ…", "gtCoGi": "Trong góc học có gì", "gtBaiThu": "Bài học thử",
     "gtVaoHoc": "Vào học", "gtVaoXem": "Vào xem triển lãm", "gtHocThu": "Học thử một bài", "gtDangNhapVao": "Đăng nhập để vào học", "gtDangNhapTiep": "Đăng nhập để học tiếp",
     "gtHuongDan": "Hướng dẫn",
     "gtGhiChuThu": "Bạn được học thử một bài. Kết quả học thử không được lưu. Muốn học các bài tiếp theo, bạn đăng nhập để học và lưu sao nhé.",
@@ -77,7 +77,7 @@
     "khoaNd": "Every learner has an account so Trâu Con can save stars and progress. Please sign in or sign up to open this learning corner.",
     "khoaChuaXong": "Please finish signing up (create a learner profile) to start learning.",
     "khoaDangNhap": "Sign in", "khoaDangKy": "Sign up", "khoaHoanTat": "Finish signing up", "khoaDangMo": "Opening the learning corner…",
-    "gtNhan": "Trâu Con's Learning Village", "gtCachHoc": "How to learn", "gtCoGi": "What's inside", "gtBaiThu": "Trial lesson",
+    "gtNhan": "Trâu Con's Learning Village", "gtCachHoc": "How to learn", "gtMucTieu": "Goals", "gtHocXong": "After practising, you will…", "gtCoGi": "What's inside", "gtBaiThu": "Trial lesson",
     "gtVaoHoc": "Start learning", "gtVaoXem": "Open the exhibition", "gtHocThu": "Try one lesson", "gtDangNhapVao": "Sign in to start learning", "gtDangNhapTiep": "Sign in to keep learning",
     "gtHuongDan": "Guide",
     "gtGhiChuThu": "You can try one lesson. Trial results are not saved. To continue with the next lessons, please sign in to learn and save your stars.",
@@ -89,7 +89,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=17" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=18" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -513,6 +513,17 @@
       s1.appendChild(ol);
       hop.appendChild(s1);
     }
+    // Mục tiêu và "Học xong, em sẽ…" (không bắt buộc; góc nào khai mucTieu / hocXong thì hiện)
+    [["mucTieu", c.gtMucTieu, "🎯"], ["hocXong", c.gtHocXong, "🏅"]].forEach(function (k) {
+      var ds = g[k[0]];
+      if (!ds || !ds.length) return;
+      var s = tao("section", "gt-phan gt-" + k[0]);
+      s.appendChild(tao("h3", "", k[2] + " " + k[1]));
+      var ul = tao("ul", "gt-ds");
+      ds.forEach(function (p) { ul.appendChild(tao("li", "", chuNN(p))); });
+      s.appendChild(ul);
+      hop.appendChild(s);
+    });
     if ((g.tongQuan && g.tongQuan.length) || (g.phan && g.phan.length)) {
       var s2 = tao("section", "gt-phan");
       s2.appendChild(tao("h3", "", c.gtCoGi));
