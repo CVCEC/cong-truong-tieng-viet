@@ -28,3 +28,4 @@ Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâ
 | Bảng âm (IPA): âm đầu, nguyên âm, nguyên âm đôi, âm đệm, âm cuối, khác biệt giọng Hà Nội – Sài Gòn (`bang-am.js`) | Kirby (2011); Thompson, L. C. (1965). *A Vietnamese Grammar*. University of Washington Press; Đoàn Thiện Thuật (1977). *Ngữ âm tiếng Việt*. NXB Đại học và Trung học chuyên nghiệp. Ghi theo âm vị, giọng Hà Nội làm chuẩn. |
 | Cách đọc âm (bờ, cờ, dờ…) và các bước đánh vần (bờ – a – ba – huyền – bà) | Cách dạy của lớp tiếng Việt (sách Tiếng Việt lớp 1). |
 | Giọng đọc mẫu của Bảng âm | Giọng Trâu Con (Elio) do trường tạo bằng `studio.html`; không dùng giọng máy của thiết bị. |
+| "Đường đi học của Trâu Con" (con đường, nhân vật dấu thanh, dấu chân, sao) – `con-duong.js` | CVCEC tự nghĩ và tự vẽ (SVG). Con đường vẽ theo đường cao độ mẫu giọng phổ thông Hà Nội (Kirby 2011). Trâu Con dùng ảnh chính thức của trường, chỉ di chuyển, không vẽ lại. |

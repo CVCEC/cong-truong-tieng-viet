@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
 <link rel="stylesheet" href="/chung/cong.css?v=8">
-<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=5">
+<link rel="stylesheet" href="/luyen-noi/luyen-noi.css?v=6">
 <script>try { if (window.self !== window.top) document.documentElement.classList.add("ln-trong-khung"); } catch (e) { document.documentElement.classList.add("ln-trong-khung"); }</script>
 <script>window.CONG_CHU = {
  "vi": {
@@ -24,12 +24,12 @@
   "tabHoiThoai": "Hội thoại cùng Trâu Con",
   "tabNhan": "Chọn cách luyện nói",
   "ghiChuRieng": "Âm thanh chỉ xử lý trên máy của em",
-  "ghiChuRiengNd": "Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.",
+  "ghiChuRiengNd": "Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang.",
   "ghiChuThanh": "Công cụ chỉ so thanh điệu",
-  "ghiChuThanhNd": "Máy chưa chấm phụ âm và nguyên âm. Điểm chỉ để tham khảo; thầy cô vẫn là người nghe giỏi nhất.",
+  "ghiChuThanhNd": "Máy chưa nghe phụ âm và nguyên âm. Sao chỉ để khích lệ; thầy cô vẫn là người nghe giỏi nhất.",
   "b1": "Bước 1 – Đo giọng",
   "b2": "Bước 2 – Chọn tiếng",
-  "b3": "Bước 3 – Đọc 6 thanh",
+  "b3": "Bước 3 – Đường đi học của Trâu Con",
   "nguonTieuDe": "Nguồn tham khảo",
   "nguonGioiThieu": "Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.",
   "khongJs": "Trang này cần bật JavaScript để ghi âm, chấm điểm và vẽ đường giọng."
@@ -45,12 +45,12 @@
   "tabHoiThoai": "Talk with Trâu Con",
   "tabNhan": "Choose how to practise",
   "ghiChuRieng": "Audio is processed only on your device",
-  "ghiChuRiengNd": "No audio is sent over the internet. Recordings disappear when you close the page, unless you press “Save recording”.",
+  "ghiChuRiengNd": "No audio is sent over the internet. Recordings disappear when you close the page.",
   "ghiChuThanh": "This tool only compares tones",
-  "ghiChuThanhNd": "It does not check consonants or vowels yet. Scores are for reference only; your teacher is still the best listener.",
+  "ghiChuThanhNd": "It does not check consonants or vowels yet. Stars are just for encouragement; your teacher is still the best listener.",
   "b1": "Step 1 – Measure my voice",
   "b2": "Step 2 – Choose a syllable",
-  "b3": "Step 3 – Read the 6 tones",
+  "b3": "Step 3 – Trâu Con's road to school",
   "nguonTieuDe": "Sources",
   "nguonGioiThieu": "The model tone lines, the pitch-tracking method and the spelling rules on this page come from the scientific publications and official documents below. All code, images and text on this page were written by CVCEC; the Trâu Con pictures belong to the school.",
   "khongJs": "Please turn on JavaScript to record and draw your voice line."
@@ -62,12 +62,13 @@
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <script src="/luyen-noi/cao-do.js?v=1" defer></script>
 <script src="/luyen-noi/ghep-tieng.js?v=1" defer></script>
-<script src="/luyen-noi/luyen-noi.js?v=2" defer></script>
+<script src="/luyen-noi/con-duong.js?v=1" defer></script>
+<script src="/luyen-noi/luyen-noi.js?v=3" defer></script>
 <script src="/luyen-noi/cham-cau.js?v=2" defer></script>
 <script src="/luyen-noi/giong-elio.js?v=1" defer></script>
 <script src="/luyen-noi/luyen-cau.js?v=3" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=24" defer></script>
-<script src="/luyen-noi/bang-am.js?v=1" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=25" defer></script>
+<script src="/luyen-noi/bang-am.js?v=2" defer></script>
 <script src="/luyen-noi/huong-dan.js?v=1" defer></script>
 </head>
 <body class="cong" data-ttv-khong-thanh data-trang="hoc-tap" data-tieu-de="tieuDe">
@@ -100,8 +101,8 @@
         <div class="ln-panel" role="tabpanel" id="ln-panel-luyen-thanh" aria-labelledby="ln-tab-luyen-thanh">
 
         <div class="ln-ghi-chu">
-          <p><span class="ln-bieu-tuong" aria-hidden="true">🔒</span><span><strong data-chu="ghiChuRieng">Âm thanh chỉ xử lý trên máy của em</strong><br><span data-chu="ghiChuRiengNd">Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang, trừ khi em bấm “Lưu bản ghi”.</span></span></p>
-          <p><span class="ln-bieu-tuong" aria-hidden="true">🎵</span><span><strong data-chu="ghiChuThanh">Công cụ chỉ so thanh điệu</strong><br><span data-chu="ghiChuThanhNd">Máy chưa chấm phụ âm và nguyên âm. Điểm chỉ để tham khảo; thầy cô vẫn là người nghe giỏi nhất.</span></span></p>
+          <p><span class="ln-bieu-tuong" aria-hidden="true">🔒</span><span><strong data-chu="ghiChuRieng">Âm thanh chỉ xử lý trên máy của em</strong><br><span data-chu="ghiChuRiengNd">Không có âm thanh nào được gửi lên mạng. Bản ghi mất đi khi em đóng trang.</span></span></p>
+          <p><span class="ln-bieu-tuong" aria-hidden="true">🎵</span><span><strong data-chu="ghiChuThanh">Công cụ chỉ so thanh điệu</strong><br><span data-chu="ghiChuThanhNd">Máy chưa nghe phụ âm và nguyên âm. Sao chỉ để khích lệ; thầy cô vẫn là người nghe giỏi nhất.</span></span></p>
         </div>
 
         <section class="ln-the" id="ln-buoc-1" aria-labelledby="ln-tieu-de-1">
@@ -115,7 +116,7 @@
         </section>
 
         <section class="ln-the" id="ln-buoc-3" aria-labelledby="ln-tieu-de-3">
-          <h2 id="ln-tieu-de-3"><span class="ln-so" aria-hidden="true">3</span><span data-chu="b3">Bước 3 – Đọc 6 thanh</span></h2>
+          <h2 id="ln-tieu-de-3"><span class="ln-so" aria-hidden="true">3</span><span data-chu="b3">Bước 3 – Đường đi học của Trâu Con</span></h2>
           <div id="ln-buoc-3-noi-dung"></div>
         </section>
 
@@ -130,9 +131,7 @@
           <h2 id="ln-tieu-de-nguon" data-chu="nguonTieuDe">Nguồn tham khảo</h2>
           <p data-chu="nguonGioiThieu">Đường mẫu thanh điệu, cách dò cao độ và quy tắc chính tả trên trang này lấy từ các tài liệu khoa học và văn bản chính thức dưới đây. Mã, hình và chữ của trang do CVCEC tự viết; ảnh Trâu Con là ảnh của trường.</p>
           <ul class="ln-tai-lieu" lang="en">
-            <li>Kirby, J. P. (2011). Vietnamese (Hanoi Vietnamese). <i>Journal of the International Phonetic Association</i>, 41(3), 381–392. – số Chao giọng Hà Nội.</li>
-            <li>Vũ Thanh Phương (1982). Phonetic properties of Vietnamese tones across dialects. In D. Bradley (ed.), <i>Papers in South-East Asian Linguistics No. 8: Tonation</i>. Pacific Linguistics A-62. – số Chao giọng Sài Gòn.</li>
-            <li>Brunelle, M. (2009). Northern and Southern Vietnamese tone coarticulation: A comparative case study. <i>Journal of Southeast Asian Linguistics</i>, 1. – thanh điệu giọng Bắc và giọng Nam.</li>
+            <li>Kirby, J. P. (2011). Vietnamese (Hanoi Vietnamese). <i>Journal of the International Phonetic Association</i>, 41(3), 381–392. – đường cao độ mẫu của 6 thanh (giọng phổ thông Hà Nội).</li>
             <li>Chao, Y. R. (1930). A system of tone letters. <i>Le Maître Phonétique</i>, 30, 24–27. – thang 5 bậc và ký hiệu thanh điệu.</li>
             <li>International Phonetic Association (1999). <i>Handbook of the International Phonetic Association</i>. Cambridge University Press. – ký hiệu IPA.</li>
             <li>de Cheveigné, A. &amp; Kawahara, H. (2002). YIN, a fundamental frequency estimator for speech and music. <i>Journal of the Acoustical Society of America</i>, 111(4), 1917–1930. – thuật toán dò cao độ.</li>

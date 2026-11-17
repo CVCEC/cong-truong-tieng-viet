@@ -312,3 +312,68 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
   .ln-cach-hoc > summary { font-size: 1.05rem; padding: 12px 16px; }
   #ln-cach-hoc-noi-dung { padding: 0 14px 16px; }
 }
+
+/* ---------- Bước 3: Đường đi học của Trâu Con (con-duong.js) ----------
+   Màu chức năng riêng của trang: mỗi nhân vật dấu thanh một màu (giữ trong trang theo quy định của trường). */
+.ln {
+  --cd-ngang: #5B8DEF; --cd-sac: #E8613C; --cd-huyen: #8E6CD8; --cd-hoi: #2FA4A0; --cd-nga: #E3A21A; --cd-nang: #6B5B4E;
+}
+.cd-dau-buoc { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 12px; }
+.cd-huong-dan { margin: 0; font-weight: 700; font-size: 1.05rem; flex: 1 1 320px; }
+.cd-tong-sao { margin: 0; padding: 8px 16px; border-radius: var(--ttv-bo-nut); background: var(--ttv-kem-rom); font-weight: 800; font-size: 1.15rem; color: var(--ttv-chu); }
+.cd-luoi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.cd-luoi-hai { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+.cd-the {
+  --cd-mau: var(--cd-ngang);
+  min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 14px; box-sizing: border-box;
+  background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-top: 8px solid var(--cd-mau); border-radius: 22px;
+}
+.cd-the-sac { --cd-mau: var(--cd-sac); } .cd-the-huyen { --cd-mau: var(--cd-huyen); } .cd-the-hoi { --cd-mau: var(--cd-hoi); }
+.cd-the-nga { --cd-mau: var(--cd-nga); } .cd-the-nang { --cd-mau: var(--cd-nang); }
+.cd-the-dau { display: flex; align-items: center; gap: 10px; }
+.cd-hinh-nv { width: 64px; height: 64px; flex: 0 0 auto; }
+.cd-than { fill: var(--cd-mau); stroke: var(--ttv-chu); stroke-width: 2; stroke-linejoin: round; }
+.cd-mat { fill: var(--ttv-chu); }
+.cd-nga-vien { fill: none; stroke: var(--ttv-chu); stroke-width: 15; stroke-linecap: round; }
+.cd-nga-loi { fill: none; stroke: var(--cd-nga); stroke-width: 11; stroke-linecap: round; }
+.cd-mieng { fill: none; stroke: var(--ttv-chu); stroke-width: 2.4; stroke-linecap: round; }
+.cd-nv-nang .cd-mat, .cd-nv-huyen .cd-mat { fill: var(--ttv-the); }
+.cd-nv-nang .cd-mieng, .cd-nv-huyen .cd-mieng { stroke: var(--ttv-the); }
+.cd-the-giua { min-width: 0; flex: 1 1 auto; }
+.cd-tieng { margin: 0; font-family: var(--ttv-phong-tap-doc); font-weight: 700; font-size: 3rem; line-height: 1.05; color: var(--ttv-chu); }
+.cd-ten-nv { margin: 2px 0 0; font-weight: 800; color: var(--ttv-chu-phu); font-size: .98rem; }
+.cd-mui-ten { width: 72px; height: 34px; flex: 0 0 auto; }
+.cd-mui-than { fill: none; stroke: var(--cd-mau); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.cd-mui-dau { fill: var(--cd-mau); }
+.cd-gioi-thieu { margin: 0; font-weight: 700; font-size: 1.08rem; line-height: 1.4; }
+.cd-duong { border-radius: 16px; overflow: hidden; background: var(--ttv-troi); }
+.cd-svg { display: block; width: 100%; height: auto; }
+.cd-troi { fill: var(--ttv-troi); }
+.cd-doi-xa { fill: var(--ttv-lua-sang); opacity: .55; }
+.cd-dat { fill: var(--ttv-lua); }
+.cd-mat-duong { fill: none; stroke: var(--ttv-kem-rom); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+.cd-vach { fill: none; stroke: var(--ttv-the); stroke-width: 2; stroke-dasharray: 7 7; stroke-linecap: round; }
+.cd-o-ga { fill: var(--cd-nang); opacity: .55; }
+.cd-bac-them { fill: var(--ttv-kem-rom); stroke: var(--cd-nang); stroke-width: 2; }
+.cd-co { fill: var(--ttv-chinh); stroke: var(--ttv-chu); stroke-width: 2; stroke-linejoin: round; }
+.cd-chan ellipse { fill: var(--ttv-chinh); stroke: var(--ttv-the); stroke-width: .8; }
+.cd-chan-hien { animation: cd-hien .25s ease-out forwards; }
+@keyframes cd-hien { from { opacity: 0; } to { opacity: 1; } }
+.cd-nut { display: flex; flex-wrap: wrap; gap: 8px; }
+.cd-nut-to { flex: 1 1 140px; min-height: 56px; font-size: 1.15rem; justify-content: center; }
+.cd-dang-chay { background: var(--ttv-chu) !important; color: var(--ttv-the) !important; border-color: var(--ttv-chu) !important; }
+.cd-ket-qua:empty { display: none; }
+.cd-ket-qua { display: flex; flex-direction: column; gap: 8px; }
+.cd-ket-qua .ln-tin { margin: 0; }
+.cd-loi-khen { padding: 10px 14px; border-radius: 16px; background: var(--ttv-dung-nen); border: 2px solid var(--ttv-dung); }
+.cd-sao-1 { background: var(--ttv-kem-rom); border-color: var(--ttv-sao); }
+.cd-sao { margin: 0; font-size: 1.9rem; line-height: 1; color: var(--ttv-sao); letter-spacing: 2px; -webkit-text-stroke: 1px var(--ttv-chu); }
+.cd-cau-khen { margin: 6px 0 0; font-weight: 800; font-size: 1.08rem; color: var(--ttv-chu); }
+.cd-nut-nho { min-height: 48px; align-self: flex-start; }
+@media (max-width: 960px) { .cd-luoi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .cd-luoi, .cd-luoi-hai { grid-template-columns: 1fr; }
+  .cd-tieng { font-size: 2.6rem; }
+  .cd-nut-to { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .cd-chan-hien { animation: none; opacity: 1 !important; } }
