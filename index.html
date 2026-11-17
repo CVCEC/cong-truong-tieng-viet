@@ -14,13 +14,13 @@
 <script>
   // Địa chỉ cũ (một trang dài) chuyển sang trang riêng mới
   (function () {
-    var cu = { "goc-hoc": "/hoc-tap/", "tin-tuc": "/tin-tuc/", "su-menh": "/gioi-thieu/", "gioi-thieu": "/gioi-thieu/", "cam-on": "/gioi-thieu/", "ho-tro": "/chung-tay/" };
+    var cu = { "goc-hoc": "/hoc-tap/", "tin-tuc": "/tin-tuc/", "su-menh": "/gioi-thieu/", "gioi-thieu": "/gioi-thieu/", "cam-on": "/gioi-thieu/", "ho-tro": "/chung-tay/", "trienlam": "/trien-lam/" };
     var h = (location.hash || "").replace(/^#/, "");
     if (Object.prototype.hasOwnProperty.call(cu, h)) location.replace(cu[h]);
   })();
 </script>
 <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
-<link rel="stylesheet" href="/chung/cong.css?v=7">
+<link rel="stylesheet" href="/chung/cong.css?v=8">
 <script>window.CONG_CHU = {
   "vi": {
     "tqTieuDe": "Tiếng Việt – <span class=\"cong-nhan-manh\">nhịp cầu kết nối</span> những trái tim",
@@ -32,6 +32,8 @@
     "oTinTucMoTa": "Báo chí viết về chúng tôi.",
     "oGioiThieu": "Giới thiệu",
     "oGioiThieuMoTa": "Sứ mệnh, đội ngũ dự án, bản quyền và lời cảm ơn.",
+    "oTrienLam": "Triển lãm",
+    "oTrienLamMoTa": "Trang vở và giọng đọc của các bạn nhỏ đang học tiếng Việt.",
     "oChungTay": "Chung tay",
     "oChungTayMoTa": "Tài trợ, góp sức cho dự án phi lợi nhuận.",
     "oGiaoVien": "Giáo viên",
@@ -64,6 +66,8 @@
     "oTinTucMoTa": "What the press says about us.",
     "oGioiThieu": "About",
     "oGioiThieuMoTa": "Our mission, project team, copyright and thanks.",
+    "oTrienLam": "Exhibition",
+    "oTrienLamMoTa": "Notebook pages and voices of young learners of Vietnamese.",
     "oChungTay": "Donate",
     "oChungTayMoTa": "Donate or lend a hand to our non-profit project.",
     "oGiaoVien": "Teachers",
@@ -90,7 +94,7 @@
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
 <script src="/chung/gioi-thieu-goc.js?v=22" defer></script>
-<script src="/chung/cong.js?v=7" defer></script>
+<script src="/chung/cong.js?v=8" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
   /* Trang chủ cổng + chế độ đang học (khung iframe cho các góc học, địa chỉ #id). */
@@ -309,12 +313,13 @@
     <section class="cong-phan" id="cac-trang" aria-labelledby="tieu-de-cac-trang">
       <div class="cong-ruot">
         <div class="cong-phan-dau"><h2 id="tieu-de-cac-trang" data-chu="cacTrang">Khám phá trường</h2></div>
-        <ul class="o-luoi">
+        <ul class="o-luoi o-luoi-3">
           <li><a class="o-the" href="/hoc-tap/"><img src="/assets/trau/reading.png" width="283" height="334" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oHocTap">Học tập</span><span class="o-the-mo-ta" data-chu="oHocTapMoTa">Làng học tập Trâu Con với các góc học: chữ, truyện, thơ, văn hoá, món ăn, ca dao, luyện nói và cả bản đồ Việt Nam.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
           <li><a class="o-the" href="/tin-tuc/"><img src="/assets/trau/pointing.png" width="445" height="400" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oTinTuc">Tin tức</span><span class="o-the-mo-ta" data-chu="oTinTucMoTa">Báo chí viết về chúng tôi.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
           <li><a class="o-the" href="/gioi-thieu/"><img src="/assets/trau/flag.png" width="382" height="334" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oGioiThieu">Giới thiệu</span><span class="o-the-mo-ta" data-chu="oGioiThieuMoTa">Sứ mệnh, đội ngũ dự án, bản quyền và lời cảm ơn.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
+          <li><a class="o-the" href="/trien-lam/"><img src="/assets/trau/listening.png" width="407" height="400" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oTrienLam">Triển lãm</span><span class="o-the-mo-ta" data-chu="oTrienLamMoTa">Trang vở và giọng đọc của các bạn nhỏ đang học tiếng Việt.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
           <li><a class="o-the" href="/chung-tay/"><img src="/assets/trau/cheer.png" width="318" height="384" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oChungTay">Chung tay</span><span class="o-the-mo-ta" data-chu="oChungTayMoTa">Tài trợ, góp sức cho dự án phi lợi nhuận.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
-          <li class="o-rong"><a class="o-the" href="/giao-vien/"><img src="/assets/trau/hiking.png" width="300" height="360" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oGiaoVien">Giáo viên</span><span class="o-the-mo-ta" data-chu="oGiaoVienMoTa">Gặp gỡ đội ngũ thầy cô của trường.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
+          <li><a class="o-the" href="/giao-vien/"><img src="/assets/trau/hiking.png" width="300" height="360" alt="" loading="lazy"><span><span class="o-the-ten" data-chu="oGiaoVien">Giáo viên</span><span class="o-the-mo-ta" data-chu="oGiaoVienMoTa">Gặp gỡ đội ngũ thầy cô của trường.</span><span class="o-the-vao" data-chu="oVao" aria-hidden="true">Xem →</span></span></a></li>
         </ul>
       </div>
     </section>
@@ -399,7 +404,8 @@
     var cu = tabGoc.parentNode.querySelector(".tab-trang-chu");
     if (cu) cu.parentNode.removeChild(cu);
     tabGoc.parentNode.insertBefore(nha, tabGoc);
-    DS.forEach(function (muc) {
+    // Dải tab chỉ có các góc học; Triển lãm là trang riêng /trien-lam/
+    (window.CONG.gocHoc ? window.CONG.gocHoc() : DS).forEach(function (muc) {
       var li = tao("li");
       var a = tao("a");
       a.href = "#" + muc.id;
@@ -590,7 +596,7 @@
   }
 
   // Địa chỉ cũ (#goc-hoc, #tin-tuc, #ho-tro…) chuyển sang trang riêng mới
-  var DIA_CHI_CU = { "goc-hoc": "/hoc-tap/", "tin-tuc": "/tin-tuc/", "su-menh": "/gioi-thieu/", "gioi-thieu": "/gioi-thieu/", "cam-on": "/gioi-thieu/", "ho-tro": "/chung-tay/" };
+  var DIA_CHI_CU = { "goc-hoc": "/hoc-tap/", "tin-tuc": "/tin-tuc/", "su-menh": "/gioi-thieu/", "gioi-thieu": "/gioi-thieu/", "cam-on": "/gioi-thieu/", "ho-tro": "/chung-tay/", "trienlam": "/trien-lam/" };
 
   function hienThi() {
     var cu = (location.hash || "").replace(/^#/, "");

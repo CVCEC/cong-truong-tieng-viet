@@ -21,13 +21,19 @@
     { id: "hoc-tap", href: "/hoc-tap/", chu: "navHocTap" },
     { id: "tin-tuc", href: "/tin-tuc/", chu: "navTinTuc" },
     { id: "gioi-thieu", href: "/gioi-thieu/", chu: "navGioiThieu" },
+    { id: "trien-lam", href: "/trien-lam/", chu: "navTrienLam" },
     { id: "chung-tay", href: "/chung-tay/", chu: "navChungTay" },
     { id: "giao-vien", href: "/giao-vien/", chu: "navGiaoVien" }
   ];
 
+  // Góc trong TTV_DANH_SACH được tách thành trang riêng của cổng (không nằm trong "Học tập").
+  // Vẫn giữ trong TTV_DANH_SACH để có màu và ảnh Trâu Con; địa chỉ cũ /#id tự chuyển sang trang riêng.
+  var GOC_TACH_RIENG = { trienlam: "/trien-lam/" };
+  function laGocHoc(muc) { return !Object.prototype.hasOwnProperty.call(GOC_TACH_RIENG, muc.id); }
+
   var CHU = {
     vi: {
-      navTrangChu: "Trang chủ", navHocTap: "Học tập", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
+      navTrangChu: "Trang chủ", navHocTap: "Học tập", navTinTuc: "Tin tức", navGioiThieu: "Giới thiệu", navTrienLam: "Triển lãm", navChungTay: "Chung tay", navGiaoVien: "Giáo viên",
       navChao: "Điều hướng chính", ngonNgu: "Ngôn ngữ", veCong: "Về trang chủ Trường Tiếng Việt Của Em",
       chanCau: "Nền tảng học tiếng Việt dành cho trẻ em Việt Nam ở trong và ngoài nước.",
       chanDong: "Một chương trình của Canada Vietnam Cultural & Educational Council (CVCEC)",
@@ -40,7 +46,7 @@
       canhHaLong: "Vịnh Hạ Long", canhDinhLang: "Đình làng và cây đa", canhHue: "Cầu Trường Tiền – sông Hương, Huế", canhChoNoi: "Chợ nổi Cái Răng, Cần Thơ", canhLangQue: "Cánh đồng lúa và làng quê"
     },
     en: {
-      navTrangChu: "Home", navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navChungTay: "Donate", navGiaoVien: "Teachers",
+      navTrangChu: "Home", navHocTap: "Learning", navTinTuc: "News", navGioiThieu: "About", navTrienLam: "Exhibition", navChungTay: "Donate", navGiaoVien: "Teachers",
       navChao: "Main navigation", ngonNgu: "Language", veCong: "Back to the Trường Tiếng Việt Của Em home page",
       chanCau: "A Vietnamese learning platform for Vietnamese children in Vietnam and around the world.",
       chanDong: "A program of the Canada Vietnam Cultural & Educational Council (CVCEC)",
@@ -179,7 +185,7 @@
     cot1.setAttribute("aria-labelledby", "chan-hoc-tap");
     var h1 = tao("h2"); h1.id = "chan-hoc-tap"; h1.setAttribute("data-chu", "chanHocTap"); cot1.appendChild(h1);
     var ul1 = tao("ul"); ul1.id = "chan-goc";
-    DS.forEach(function (muc) {
+    DS.filter(laGocHoc).forEach(function (muc) {
       var li = tao("li"), a = tao("a");
       a.href = "/#" + muc.id;
       a.setAttribute("data-goc", muc.id);
@@ -495,6 +501,9 @@
     ngonNgu: function () { return ngonNgu; },
     chu: function () { return c(); },
     danhSach: function () { return DS; },
+    // Các góc học (bỏ những góc đã tách thành trang riêng, ví dụ Triển lãm)
+    gocHoc: function () { return DS.filter(laGocHoc); },
+    gocTachRieng: GOC_TACH_RIENG,
     them: them,
     capNhat: capNhat,
     datNgonNgu: datNgonNgu,

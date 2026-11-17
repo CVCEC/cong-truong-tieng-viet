@@ -405,6 +405,7 @@ img { max-width: 100%; }
 .o-luoi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 0; padding: 0; list-style: none; }
 .o-luoi > li { display: flex; }
 .o-luoi > li.o-rong { grid-column: 1 / -1; }
+.o-luoi.o-luoi-3 { grid-template-columns: repeat(3, 1fr); } /* 6 ô: 3 × 2 */
 .o-the {
   flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
   background: var(--ttv-the); color: var(--ttv-chu); text-decoration: none;
@@ -431,12 +432,12 @@ img { max-width: 100%; }
 .nut-tai-tro { margin-top: 18px; }
 
 @media (max-width: 960px) {
-  .o-luoi { grid-template-columns: repeat(2, 1fr); }
+  .o-luoi, .o-luoi.o-luoi-3 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .vn-hero, .vn-hero > .cong-ruot { min-height: 520px; }
   .vn-hero > .cong-ruot { padding-top: 28px; }
-  .o-luoi { grid-template-columns: 1fr; gap: 12px; }
+  .o-luoi, .o-luoi.o-luoi-3 { grid-template-columns: 1fr; gap: 12px; }
   .o-the, .o-rong .o-the { flex-direction: row; align-items: center; gap: 14px; padding: 12px 14px; }
   .o-the img, .o-rong .o-the img { height: 64px; margin: 0; flex: 0 0 auto; }
   .o-the > span { display: flex; flex-direction: column; gap: 2px; }

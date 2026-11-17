@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Triển lãm · Trường Tiếng Việt Của Em</title>
+<meta name="description" content="Triển lãm Em học tiếng Việt: trang vở và giọng đọc của các bạn nhỏ đang học tiếng Việt. Chỉ để xem, phi lợi nhuận.">
+<meta property="og:title" content="Triển lãm · Trường Tiếng Việt Của Em">
+<meta property="og:description" content="Triển lãm Em học tiếng Việt: trang vở và giọng đọc của các bạn nhỏ đang học tiếng Việt.">
+<meta property="og:image" content="https://vietclass.cvcec.org/assets/trang-tri/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/trang-tri/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/trang-tri/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/trang-tri/apple-touch-icon.png">
+<link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
+<link rel="stylesheet" href="/chung/cong.css?v=8">
+<script>window.CONG_CHU = {
+  "vi": {
+    "tlTieuDe": "Triển lãm",
+    "tlKhung": "Triển lãm Em học tiếng Việt"
+  },
+  "en": {
+    "tlTieuDe": "Exhibition",
+    "tlKhung": "Em học tiếng Việt – children's exhibition"
+  }
+};</script>
+<script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
+<script src="/chung/cong.js?v=8" defer></script>
+<script type="module" src="/js/tai-khoan.js?v=7"></script>
+<style>
+  /* Trang Triển lãm: thanh trên của cổng + khung xem trienlam.cvcec.org chiếm phần còn lại của màn hình.
+     Triển lãm công khai: ai cũng xem được, không cần đăng nhập. */
+  html, body { height: 100%; }
+  body.cong { background: var(--ttv-nen); overflow: hidden; }
+  .tl-trang { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+  .tl-trang > .cong-dau { flex: 0 0 auto; }
+  .tl-khung-boc { flex: 1 1 auto; min-height: 0; margin: 0; background: var(--ttv-nen); }
+  .tl-khung-boc iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--ttv-nen); }
+  .tl-an { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body class="cong" data-ttv-khong-thanh data-trang="trien-lam" data-tieu-de="tlTieuDe">
+<div class="tl-trang">
+  <header class="cong-dau" data-cong-dau></header>
+  <main class="tl-khung-boc">
+    <h1 class="tl-an" data-chu="tlKhung">Triển lãm Em học tiếng Việt</h1>
+    <iframe id="khung-trien-lam" title="Triển lãm Em học tiếng Việt" allow="autoplay; fullscreen"></iframe>
+  </main>
+</div>
+<!-- Dòng bản quyền đã có ở chân trang của triển lãm; chỗ ẩn này để bộ mẫu không chèn thêm chân trang thừa -->
+<div data-ttv-chan hidden></div>
+
+<script>
+(function () {
+  "use strict";
+  var NGUON = "https://trienlam.cvcec.org";
+  var khung = document.getElementById("khung-trien-lam");
+
+  // Trang triển lãm (bộ mẫu chung) hỏi "mình có đang nằm trong cổng không?".
+  // Triển lãm công khai nên luôn trả lời hợp lệ, không cần đăng nhập.
+  window.addEventListener("message", function (e) {
+    if (e.source !== khung.contentWindow || e.origin !== NGUON) return;
+    var d = e.data;
+    if (!d || typeof d !== "object" || d.loai !== "cvcec-hoi-cong") return;
+    try { e.source.postMessage({ loai: "cvcec-cong-tra-loi", hopLe: true, cheDo: "hoc" }, e.origin); } catch (err) {}
+  });
+
+  // /trien-lam/#om-1 mở thẳng một bức tranh trong triển lãm
+  var h = (location.hash || "").replace(/^#/, "");
+  khung.src = NGUON + "/" + (/^[a-z0-9-]{1,40}$/i.test(h) ? "#" + h : "");
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!window.CONG) return;
+    var datTieuDe = function () { khung.title = window.CONG.chu().tlKhung || khung.title; };
+    window.CONG.khiDoiChu(datTieuDe);
+    datTieuDe();
+  });
+})();
+</script>
+</body>
+</html>
