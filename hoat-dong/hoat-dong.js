@@ -4,12 +4,28 @@
  * Nạp SAU cvcec-chung.js và cong.js (đều defer). Không dùng giọng máy: video chỉ phát tệp
  * am-thanh/<slug>-<số bước>.mp3 nếu có; chưa có tệp thì chạy cảnh và phụ đề, không tiếng.
  * Không tạo khoá localStorage nào.
+ * Kho gốc: toàn bộ hoạt động của "Khơi nguồn sáng tạo hoạt động ESL" được đọc trực tiếp từ
+ * esl.trangphan.org/data/games.csv (một nguồn duy nhất). Địa chỉ một hoạt động gốc: /hoat-dong/#goc-<slug>.
  */
 (function () {
   "use strict";
 
-  var DS = Array.isArray(window.HOAT_DONG) ? window.HOAT_DONG : [];
+  var DS = Array.isArray(window.HOAT_DONG) ? window.HOAT_DONG.slice() : [];
+  var SO_CHUYEN_THE = DS.length;
   var GIAY_MOI_CANH = 12;
+
+  /* ---------- Kho gốc ESL ---------- */
+  var TRANG_GOC = "https://esl.trangphan.org/";
+  var KHO_GOC_CSV = "https://esl.trangphan.org/data/games.csv";
+  // Hoạt động gốc đã có bản chuyển thể trong du-lieu.js: không lặp lại
+  var GOC_DA_CHUYEN = {
+    "find-someone-who": 1, "running-dictation": 1, "hot-seat": 1, "letter-hunters": 1, "phonics-bowling": 1,
+    "go-shopping": 1, "sentence-scramble": 1, "simon-says": 1, "story-chain": 1, "fresh-spring-rolls": 1
+  };
+  var KN_ESL = { "listening-speaking": "nghe-noi", "vocab-grammar": "tu-vung", "reading": "doc", "writing": "viet", "integrated": "tich-hop" };
+  var CANH_ESL = { mingle: "di-lai", relay: "tiep-suc", hotseat: "ghe-nong", floor: "san-lop", bowling: "bowling", table: "ban", board: "doi-bang", pairs: "ban" };
+  var CAP_ESL = { beginner: [1, 2], intermediate: [3, 4], advanced: [5, 6] };
+  var khoGoc = "dang-tai"; // "dang-tai" | "xong" | "loi"
 
   /* ---------- Chữ VI/EN ---------- */
   var KN = {
@@ -26,10 +42,10 @@
   };
   var CHU = {
     vi: {
-      matDay: "Dành cho giáo viên · Bản thí điểm",
+      matDay: "Dành cho giáo viên",
       tvTieuDe: "Thư viện hoạt động",
-      tvMoTa: "Lọc theo nhu cầu tiết dạy. Mỗi thẻ dẫn đến trang chi tiết với video 2D, giáo án và đối chiếu Khung năng lực tiếng Việt 6 bậc.",
-      ghiChu: "Dành cho thầy cô dạy tiếng Việt tại lớp học trực tiếp, cho trẻ em gốc Việt và người học nước ngoài. Các hoạt động được chuyển thể từ thư viện ",
+      tvMoTa: "Lọc theo nhu cầu tiết dạy. Các hoạt động đã chuyển thể có video 2D, giáo án và đối chiếu Khung năng lực tiếng Việt 6 bậc; các hoạt động trong kho gốc có các bước, chuẩn bị, giá trị sư phạm và pro-tip.",
+      ghiChu: "Dành cho thầy cô dạy tiếng Việt tại lớp học trực tiếp, cho trẻ em gốc Việt và người học nước ngoài. Toàn bộ hoạt động lấy từ thư viện ",
       ghiChuTen: "Khơi nguồn sáng tạo hoạt động ESL",
       ghiChuSau: " của cô Phan Thị Quỳnh Trang.",
       tabMoi: "(mở tab mới)",
@@ -40,7 +56,7 @@
       ssNho: "Nhóm nhỏ (≤ 10)", ssDong: "Lớp đông (20+)",
       tbKhong: "Không cần thiết bị", tbCo: "Cần thiết bị",
       bacSo: "Bậc ",
-      dem: function (n, t) { return "Hiển thị " + n + " / " + t + " hoạt động · bản thí điểm, kế hoạch 90 hoạt động"; },
+      dem: function (n, t) { return "Hiển thị " + n + " / " + t + " hoạt động"; },
       xoaLoc: "Xoá bộ lọc",
       trong: "Chưa có hoạt động phù hợp. Thầy cô thử bỏ bớt một bộ lọc nhé.",
       phut: "phút", hocVien: "học viên",
@@ -69,13 +85,55 @@
       taiLieu: "Tài liệu cần chuẩn bị",
       meoNhan: "Pro-tip", meoAi: "— Phan Thị Quỳnh Trang",
       truoc: "← Hoạt động trước", sau: "Hoạt động sau →",
-      ghiEn: ""
+      ghiEn: "",
+      // Tác giả
+      tgMatDay: "Tác giả kho hoạt động",
+      tgTen: "Cô Phan Thị Quỳnh Trang",
+      tgVai: "Nguyên chuyên gia sản xuất tài nguyên tiếng Việt của Nhà xuất bản số Twinkl (Vương quốc Anh)",
+      tgMoTa: "Hơn 10 năm giảng dạy ngoại ngữ và đào tạo giáo viên ở Việt Nam và Canada. Cô bắt đầu khoá đào tạo TESOL tại Educap từ năm 2015, sau đó cùng Educap – Australian International TESOL đào tạo giáo viên, đưa kinh nghiệm lớp học vào công nghệ giáo dục và xuất bản (FLYER, Twinkl, ClassIn), và từ năm 2023 tập trung kết nối giáo dục giữa Canada và Việt Nam. Kho hoạt động này gom lại những gì cô đã soạn, đã thử và đã chỉnh trên lớp thật.",
+      tgSo: [
+        ["13.000+", "lượt tải tài nguyên giảng dạy của cô trên Twinkl"],
+        ["10+ năm", "giảng dạy ngoại ngữ và đào tạo giáo viên"],
+        ["90", "hoạt động lớp học cô đã soạn và thử trên lớp"],
+        ["Từ 2016", "đào tạo giáo viên cùng Educap – Australian International TESOL"]
+      ],
+      tgMocTieuDe: "Chặng đường nghề",
+      tgMoc: [
+        ["2016–2020", "Đào tạo giáo viên tại Educap – Australian International TESOL"],
+        ["2019–2022", "Đưa kinh nghiệm lớp học vào công nghệ giáo dục và xuất bản: FLYER, Twinkl, ClassIn"],
+        ["2021–2022", "Twinkl Vietnam: sản xuất tài nguyên tiếng Việt; Twinkl Ambassadors kết nối giáo viên, phụ huynh qua hội thảo, webinar"],
+        ["2021", "Sáng lập Mentoring Program for Professional Development of Educators"],
+        ["2023", "Thạc sĩ TESOL, Horizons University (Pháp)"],
+        ["2024", "Đồng tác giả chương sách về mentoring trực tuyến cho giáo viên ESL (IGI Global)"]
+      ],
+      tgHoSo: "Hồ sơ đầy đủ của cô",
+      // Lý do
+      ldTieuDe: "Vì sao có kho hoạt động này?",
+      ldMoTa: "Ở Trường Tiếng Việt Của Em, các bạn đã có bài học và trò chơi trên web để tự học ở nhà. Vì vậy, giờ học trực tiếp quý nhất cho những việc màn hình không làm thay được. Kho hoạt động giúp thầy cô biến mỗi buổi lên lớp thành một buổi tương tác.",
+      ldY: [
+        ["Lên lớp là để nói và làm cùng nhau", "Hỏi – đáp với bạn, vận động, làm việc nhóm, nghe cô và bạn nói thật: đây là phần người học khó có khi học một mình."],
+        ["Mỗi bạn được nói nhiều hơn", "Hoạt động chia lớp thành cặp, nhóm, đội chơi, nên trong vài phút mỗi bạn nói được nhiều lần thay vì ngồi chờ đến lượt."],
+        ["Một lớp, nhiều trình độ", "Lớp tiếng Việt thường có cả bạn gốc Việt nói khá lẫn bạn bắt đầu từ số 0. Mỗi hoạt động đều nâng, hạ được độ khó."],
+        ["Chuẩn bị đơn giản", "Thẻ giấy, bảng và đồ vật quanh lớp là đủ cho phần lớn hoạt động. Thầy cô lọc theo thời lượng, sĩ số và thiết bị của lớp mình."]
+      ],
+      ldCach: "Thư viện có hai phần: các hoạt động đã chuyển thể sẵn cho lớp tiếng Việt (video 2D, giáo án, đối chiếu Khung năng lực 6 bậc) và toàn bộ kho gốc của cô (các bước, chuẩn bị, giá trị sư phạm, pro-tip bằng tiếng Việt).",
+      // Kho gốc
+      nguon: "Nguồn", ngChuyen: "Đã chuyển thể cho lớp tiếng Việt", ngGoc: "Kho gốc",
+      nhanChuyen: "Đã chuyển thể · video 2D, giáo án", nhanGoc: "Kho gốc · cô Quỳnh Trang",
+      demTai: " · đang tải kho gốc…",
+      demLoi: " · chưa tải được kho gốc, thầy cô xem tại trang gốc",
+      demThem: function (k) { return " · " + k + " hoạt động đã chuyển thể có video 2D và giáo án"; },
+      ctGoc: "Kho gốc",
+      gocGhi: "Hoạt động này thuộc kho gốc, soạn cho lớp ngoại ngữ (ESL). Khi dùng cho lớp tiếng Việt, thầy cô giữ cách tổ chức và thay từ, mẫu câu tiếng Anh bằng tiếng Việt cùng chủ đề.",
+      gocXem: "Xem bản gốc: giáo án đầy đủ, góc nhìn Canada – Việt Nam",
+      gocBuoc: "Các bước tổ chức",
+      tsTrinhDo: "Trình độ"
     },
     en: {
-      matDay: "For teachers · Pilot edition",
+      matDay: "For teachers",
       tvTieuDe: "Activity library",
-      tvMoTa: "Filter by what your lesson needs. Each card opens a page with a 2D video, a lesson plan and links to the 6-level Vietnamese proficiency framework.",
-      ghiChu: "For teachers of Vietnamese in in-person classes, for heritage and non-Vietnamese learners. The activities are adapted from ",
+      tvMoTa: "Filter by what your lesson needs. Adapted activities include a 2D video, a lesson plan and links to the 6-level Vietnamese proficiency framework; original-library activities include steps, preparation, rationale and a pro-tip.",
+      ghiChu: "For teachers of Vietnamese in in-person classes, for heritage and non-Vietnamese learners. All activities come from ",
       ghiChuTen: "Khơi nguồn sáng tạo hoạt động ESL",
       ghiChuSau: ", Phan Thị Quỳnh Trang's ESL activity library.",
       tabMoi: "(opens in a new tab)",
@@ -86,7 +144,7 @@
       ssNho: "Small group (≤ 10)", ssDong: "Large class (20+)",
       tbKhong: "No equipment", tbCo: "Needs equipment",
       bacSo: "Level ",
-      dem: function (n, t) { return "Showing " + n + " / " + t + " activities · pilot, 90 planned"; },
+      dem: function (n, t) { return "Showing " + n + " / " + t + " activities"; },
       xoaLoc: "Clear filters",
       trong: "No matching activities. Try removing a filter.",
       phut: "min", hocVien: "learners",
@@ -115,7 +173,46 @@
       taiLieu: "Materials to prepare",
       meoNhan: "Pro-tip", meoAi: "— Phan Thị Quỳnh Trang",
       truoc: "← Previous activity", sau: "Next activity →",
-      ghiEn: "Activity details are written in Vietnamese, for teachers of Vietnamese."
+      ghiEn: "Activity details are written in Vietnamese, for teachers of Vietnamese.",
+      tgMatDay: "About the author",
+      tgTen: "Phan Thị Quỳnh Trang",
+      tgVai: "Former Vietnamese-language resource specialist, Twinkl digital educational publishing (United Kingdom)",
+      tgMoTa: "More than 10 years of language teaching and teacher training in Vietnam and Canada. She began her TESOL training at Educap in 2015, went on to train teachers with Educap – Australian International TESOL, brought classroom practice into EdTech and publishing (FLYER, Twinkl, ClassIn), and since 2023 has focused on connecting education between Canada and Vietnam. This library gathers the activities she wrote, tried and refined in real classrooms.",
+      tgSo: [
+        ["13,000+", "downloads of her teaching resources on Twinkl"],
+        ["10+ years", "of language teaching and teacher training"],
+        ["90", "classroom activities written and tested in class"],
+        ["Since 2016", "training teachers with Educap – Australian International TESOL"]
+      ],
+      tgMocTieuDe: "Career path",
+      tgMoc: [
+        ["2016–2020", "Teacher trainer, Educap – Australian International TESOL"],
+        ["2019–2022", "Brings classroom practice into EdTech and publishing: FLYER, Twinkl, ClassIn"],
+        ["2021–2022", "Twinkl Vietnam: Vietnamese-language resources; Twinkl Ambassadors workshops and webinars for teachers and parents"],
+        ["2021", "Founds the Mentoring Program for Professional Development of Educators"],
+        ["2023", "MA in TESOL, Horizons University (France)"],
+        ["2024", "Co-author of a book chapter on virtual mentoring for ESL teachers (IGI Global)"]
+      ],
+      tgHoSo: "Her full profile",
+      ldTieuDe: "Why this activity library?",
+      ldMoTa: "At Trường Tiếng Việt Của Em, learners already have web lessons and games for self-study at home. In-person class time is therefore best spent on what a screen cannot do. This library helps teachers make every class interactive.",
+      ldY: [
+        ["Class time is for talking and doing together", "Asking a partner, moving, group work and hearing real speech are hard to get when learning alone."],
+        ["More speaking time for every learner", "Pairs, groups and teams mean each learner speaks many times in a few minutes instead of waiting for a turn."],
+        ["One class, many levels", "Vietnamese classes often mix fluent heritage speakers with complete beginners. Every activity can be made easier or harder."],
+        ["Simple preparation", "Paper cards, a board and classroom objects are enough for most activities. Filter by duration, class size and equipment."]
+      ],
+      ldCach: "The library has two parts: activities already adapted for Vietnamese classes (2D video, lesson plan, 6-level framework links) and her complete original library (steps, preparation, rationale and pro-tips in Vietnamese).",
+      nguon: "Source", ngChuyen: "Adapted for Vietnamese classes", ngGoc: "Original library",
+      nhanChuyen: "Adapted · 2D video, lesson plan", nhanGoc: "Original library",
+      demTai: " · loading the original library…",
+      demLoi: " · the original library could not load; see the original site",
+      demThem: function (k) { return " · " + k + " adapted with 2D video and lesson plan"; },
+      ctGoc: "Original library",
+      gocGhi: "This activity comes from the original library, written for ESL classes. For a Vietnamese class, keep the format and replace the English words and sentence patterns with Vietnamese ones on the same topic.",
+      gocXem: "See the original: full lesson plan, Canada – Vietnam perspective",
+      gocBuoc: "Steps",
+      tsTrinhDo: "Level"
     }
   };
 
@@ -312,7 +409,7 @@
   }
 
   /* ---------- Thư viện ---------- */
-  var loc = { tim: "", kn: "", bac: "", dt: "", tl: "", ss: "", tb: "" };
+  var loc = { tim: "", ng: "", kn: "", bac: "", dt: "", tl: "", ss: "", tb: "" };
   var tv = document.getElementById("hd-tv");
   var ct = document.getElementById("hd-ct");
   var phanTV = document.getElementById("thu-vien");
@@ -334,7 +431,8 @@
     h += '<p class="hd-ghi-chu"><img src="' + esc(anh("trau-reading.png")) + '" width="283" height="334" alt=""><span>' + esc(cc.ghiChu) +
       '<a href="https://esl.trangphan.org/" target="_blank" rel="noopener">' + esc(cc.ghiChuTen) + '<span class="cong-an"> ' + esc(cc.tabMoi) + "</span></a>" + esc(cc.ghiChuSau) + "</span></p></div>";
     h += '<form class="hd-loc" role="search" onsubmit="return false">';
-    h += '<div class="hd-loc-tim"><label for="hd-loc-tim">' + esc(cc.tim) + '</label><input id="hd-loc-tim" type="search" autocomplete="off" placeholder="' + esc(cc.timGoiY) + '" value="' + esc(loc.tim) + '"></div>';
+    h += '<div class="hd-loc-tim"><div><label for="hd-loc-tim">' + esc(cc.tim) + '</label><input id="hd-loc-tim" type="search" autocomplete="off" placeholder="' + esc(cc.timGoiY) + '" value="' + esc(loc.tim) + '"></div>';
+    h += luaChon(cc.nguon, "ng", [["chuyen-the", cc.ngChuyen], ["goc", cc.ngGoc]]) + "</div>";
     h += '<div class="hd-loc-luoi">';
     h += luaChon(cc.kyNang, "kn", Object.keys(KN).map(function (k) { return [k, KN[k][nn()]]; }));
     h += luaChon(cc.bac, "bac", bacCo.map(function (b) { return [String(b), cc.bacSo + b]; }));
@@ -363,6 +461,8 @@
       var q = boDau(loc.tim.trim());
       if (q && boDau(hd.ten + " " + hd.ten_en + " " + hd.ma).indexOf(q) < 0) return false;
     }
+    if (loc.ng === "goc" && !hd.goc) return false;
+    if (loc.ng === "chuyen-the" && hd.goc) return false;
     if (loc.kn && hd.ky_nang.indexOf(loc.kn) < 0) return false;
     if (loc.bac && hd.bac.indexOf(Number(loc.bac)) < 0) return false;
     if (loc.dt && hd.doi_tuong.indexOf(loc.dt) < 0) return false;
@@ -378,14 +478,15 @@
 
   function nhanKyNang(hd) {
     return hd.ky_nang.map(function (k) { return '<li class="hd-nhan" data-kn="' + esc(k) + '">' + esc(KN[k] ? KN[k][nn()] : k) + "</li>"; }).join("") +
-      '<li class="hd-nhan hd-nhan-bac">' + esc(chuBac(hd.bac)) + "</li>";
+      '<li class="hd-nhan hd-nhan-bac">' + esc(hd.goc ? chuCap(hd.bac) : chuBac(hd.bac)) + "</li>";
   }
 
   function theHd(hd) {
     var cc = c();
     return '<li><a class="hd-the" href="#' + esc(hd.slug) + '" id="the-' + esc(hd.slug) + '">' +
       '<span class="hd-the-anh">' + veCanh(hd) + "</span>" +
-      '<span class="hd-the-duoi"><h3 class="hd-the-ten">' + esc(tenChinh(hd)) + '</h3><p class="hd-the-phu">' + esc(tenPhu(hd)) + "</p>" +
+      '<span class="hd-the-duoi"><span class="hd-the-nguon" data-goc="' + (hd.goc ? "1" : "0") + '">' + esc(hd.goc ? cc.nhanGoc : cc.nhanChuyen) + "</span>" +
+      '<h3 class="hd-the-ten">' + esc(tenChinh(hd)) + '</h3><p class="hd-the-phu">' + esc(tenPhu(hd)) + "</p>" +
       '<ul class="hd-nhan-hang">' + nhanKyNang(hd) + "</ul>" +
       '<p class="hd-the-thong-so"><span>' + esc(khoang(hd.thoi_luong, cc.phut)) + "</span><span>" + esc(khoang(hd.si_so, cc.hocVien)) + "</span><span>" +
       esc(chuCap(hd.bac)) + "</span><span>" + esc(hd.thiet_bi ? cc.tbCo : cc.tbKhong) + "</span></p></span></a></li>";
@@ -397,7 +498,9 @@
     if (!luoi) return;
     luoi.innerHTML = ds.length ? ds.map(theHd).join("") :
       '<li class="hd-trong"><div><img src="' + esc(anh("trau-thinking.png")) + '" width="333" height="340" alt="">' + esc(c().trong) + "</div></li>";
-    document.getElementById("hd-dem").textContent = c().dem(ds.length, DS.length);
+    var cc = c();
+    document.getElementById("hd-dem").textContent = cc.dem(ds.length, DS.length) +
+      (khoGoc === "dang-tai" ? cc.demTai : khoGoc === "loi" ? cc.demLoi : cc.demThem(SO_CHUYEN_THE));
   }
 
   /* ---------- Trang chi tiết ---------- */
@@ -406,6 +509,7 @@
   function li(ds) { return ds.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join(""); }
 
   function dungChiTiet(hd) {
+    if (hd.goc) { dungChiTietGoc(hd); return; }
     var cc = c(), i = DS.indexOf(hd), ga = hd.giao_an || {};
     var h = '<a class="hd-ve" href="#thu-vien"><span aria-hidden="true">←</span> ' + esc(cc.ve) + "</a>";
     h += '<div class="hd-ct-dau"><div>';
@@ -632,6 +736,144 @@
     return { dung: function () { tamDung(); dungAm(); } };
   }
 
+  /* ---------- Tác giả và lý do ---------- */
+  function dungGioiThieu() {
+    var gt = document.getElementById("hd-gt");
+    if (!gt) return;
+    var cc = c();
+    var h = '<div class="hd-tg">';
+    h += '<div class="hd-tg-chinh"><p class="hd-mat-day">' + esc(cc.tgMatDay) + '</p><h2 id="hd-tg-tieu-de">' + esc(cc.tgTen) + "</h2>";
+    h += '<p class="hd-tg-vai">' + esc(cc.tgVai) + "</p><p>" + esc(cc.tgMoTa) + "</p>";
+    h += '<ul class="hd-so-lieu">' + cc.tgSo.map(function (x) {
+      return '<li><strong>' + esc(x[0]) + "</strong><span>" + esc(x[1]) + "</span></li>";
+    }).join("") + "</ul>";
+    h += '<p class="hd-tg-link"><a href="https://www.trangphan.org/" target="_blank" rel="noopener">' + esc(cc.tgHoSo) + ": www.trangphan.org" +
+      '<span class="cong-an"> ' + esc(cc.tabMoi) + "</span></a></p></div>";
+    h += '<div class="hd-o hd-tg-moc"><h3>' + esc(cc.tgMocTieuDe) + "</h3><ol>" + cc.tgMoc.map(function (m) {
+      return "<li><b>" + esc(m[0]) + "</b><span>" + esc(m[1]) + "</span></li>";
+    }).join("") + "</ol></div>";
+    h += "</div>";
+    h += '<div class="hd-ly-do"><h2 id="hd-ld-tieu-de">' + esc(cc.ldTieuDe) + "</h2><p>" + esc(cc.ldMoTa) + "</p>";
+    h += '<ol class="hd-ly-do-ds">' + cc.ldY.map(function (y, k) {
+      return '<li><span class="hd-buoc-so" aria-hidden="true">' + (k + 1) + "</span><div><h3>" + esc(y[0]) + "</h3><p>" + esc(y[1]) + "</p></div></li>";
+    }).join("") + "</ol>";
+    h += '<p class="hd-ly-do-cach"><img src="' + esc(anh("trau-pointing.png")) + '" alt=""><span>' + esc(cc.ldCach) + "</span></p></div>";
+    gt.innerHTML = h;
+  }
+
+  /* ---------- Kho gốc: đọc CSV ---------- */
+  function docCsv(s) {
+    var hang = [], dong = [], o = "", ngoac = false;
+    for (var i = 0; i < s.length; i++) {
+      var k = s[i];
+      if (ngoac) {
+        if (k === '"') { if (s[i + 1] === '"') { o += '"'; i++; } else ngoac = false; }
+        else o += k;
+      } else if (k === '"') ngoac = true;
+      else if (k === ",") { dong.push(o); o = ""; }
+      else if (k === "\n") { dong.push(o); hang.push(dong); dong = []; o = ""; }
+      else if (k !== "\r") o += k;
+    }
+    if (o || dong.length) { dong.push(o); hang.push(dong); }
+    var dau = hang.shift() || [];
+    return hang.filter(function (d) { return d.length > 5; }).map(function (d) {
+      var r = {};
+      dau.forEach(function (ten, j) { r[ten] = d[j] || ""; });
+      return r;
+    });
+  }
+  function haiSo(x) {
+    var m = String(x || "").match(/\d+/g) || [];
+    var a = Number(m[0] || 0), b = Number(m[1] || m[0] || 0);
+    return [a, b];
+  }
+  function tachDs(x) { return String(x || "").split(/[;|]/).map(function (t) { return t.trim(); }).filter(Boolean); }
+  function tuHangGoc(r) {
+    var bac = [], dt = [], kn = [];
+    tachDs(r.trinh_do).forEach(function (t) { (CAP_ESL[t] || []).forEach(function (b) { if (bac.indexOf(b) < 0) bac.push(b); }); });
+    if (!bac.length) bac = [1, 2];
+    tachDs(r.khoi_lop).forEach(function (t) {
+      var m = t === "adult" ? "nguoi-lon" : t === "9-12" ? "9-14" : "5-8";
+      if (dt.indexOf(m) < 0) dt.push(m);
+    });
+    tachDs(r.ky_nang).forEach(function (t) { var m = KN_ESL[t]; if (m && kn.indexOf(m) < 0) kn.push(m); });
+    var buoc = String(r.cac_buoc_VI || "").split("\n").map(function (d) {
+      var p = d.split("::");
+      return [p[0].trim(), p.slice(1).join("::").trim()];
+    }).filter(function (b) { return b[0] || b[1]; });
+    var ten = (r.ten_VI || r.ten_EN || "").trim();
+    return {
+      goc: true, ma: r.id, slug: "goc-" + r.slug, slug_goc: r.slug,
+      ten: ten, ten_en: (r.ten_EN || ten).trim(), ky_nang: kn, bac: bac.sort(), doi_tuong: dt.length ? dt : ["5-8"],
+      thoi_luong: haiSo(r.thoi_luong), si_so: haiSo(r.si_so), thiet_bi: /^(yes|y|co|có|true|1)$/i.test(String(r.thiet_bi).trim()),
+      chuan_bi: r.chuan_bi_VI || "", canh: CANH_ESL[r.kieu_video] || "di-lai",
+      minh_hoa: { bang: ten, phu: buoc[0] ? "1 · " + buoc[0][0] : "" },
+      gia_tri: r.the_why_VI || "", cac_buoc: buoc, pro_tip: r.pro_tip_VI || ""
+    };
+  }
+  function taiKhoGoc() {
+    if (!window.fetch) { khoGoc = "loi"; locLai(); return; }
+    fetch(KHO_GOC_CSV, { mode: "cors" }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    }).then(function (t) {
+      docCsv(t).forEach(function (r) {
+        if (!r.slug || GOC_DA_CHUYEN[r.slug] || !r.ten_VI && !r.ten_EN) return;
+        DS.push(tuHangGoc(r));
+      });
+      khoGoc = "xong";
+      locLai();
+      if (/^#goc-/.test(location.hash) && document.body.getAttribute("data-hd-xem") !== "chi-tiet") diTheoDiaChi();
+    }).catch(function () { khoGoc = "loi"; locLai(); });
+  }
+
+  /* ---------- Trang chi tiết: hoạt động kho gốc ---------- */
+  function dungChiTietGoc(hd) {
+    var cc = c(), i = DS.indexOf(hd);
+    var h = '<a class="hd-ve" href="#thu-vien"><span aria-hidden="true">←</span> ' + esc(cc.ve) + "</a>";
+    h += '<div class="hd-ct-dau"><div>';
+    h += '<p class="hd-ct-ma">' + esc(hd.ma + " · " + cc.ctGoc + " · " + chuCap(hd.bac)) + "</p>";
+    h += '<h1 id="hd-ct-tieu-de" tabindex="-1">' + esc(tenChinh(hd)) + '</h1><p class="hd-ct-phu">' + esc(tenPhu(hd)) + "</p>";
+    h += '<ul class="hd-nhan-hang">' + nhanKyNang(hd) + "</ul>";
+    h += '<dl class="hd-thong-so">';
+    h += "<div><dt>" + esc(cc.tsTrinhDo) + "</dt><dd>" + esc(chuCap(hd.bac)) + "</dd></div>";
+    h += "<div><dt>" + esc(cc.tsThoiLuong) + "</dt><dd>" + esc(khoang(hd.thoi_luong, cc.phut)) + "</dd></div>";
+    h += "<div><dt>" + esc(cc.tsSiSo) + "</dt><dd>" + esc(khoang(hd.si_so, cc.hocVien)) + "</dd></div>";
+    h += "<div><dt>" + esc(cc.tsDoiTuong) + "</dt><dd>" + esc(chuDoiTuong(hd.doi_tuong)) + "</dd></div>";
+    h += '<div class="hd-rong"><dt>' + esc(cc.tsChuanBi) + "</dt><dd>" + esc(hd.chuan_bi) + " · " + esc(hd.thiet_bi ? cc.tbCo : cc.tbKhong) + "</dd></div>";
+    h += "</dl>";
+    h += '<p class="hd-goc-ghi">' + esc(cc.gocGhi) + ' <a href="' + esc(TRANG_GOC + "#game-" + encodeURIComponent(hd.slug_goc)) + '" target="_blank" rel="noopener">' +
+      esc(cc.gocXem) + '<span class="cong-an"> ' + esc(cc.tabMoi) + "</span></a></p>";
+    h += '</div><figure class="hd-ct-minh-hoa"><div class="hd-khung-anh">' + veCanh(hd) + "</div><figcaption>" + esc(cc.minhHoa + hd.ten) + "</figcaption></figure></div>";
+
+    var muc = [["gia-tri", cc.mGiaTri], ["buoc", cc.gocBuoc], ["pro-tip", cc.mMeo]];
+    h += '<div class="hd-ct-than"><nav class="hd-muc-luc" aria-labelledby="hd-ml-tieu-de"><h2 id="hd-ml-tieu-de">' + esc(cc.mucLuc) + "</h2><ul>" +
+      muc.map(function (m) { return '<li><button type="button" data-den="hd-m-' + m[0] + '">' + esc(m[1]) + "</button></li>"; }).join("") + "</ul></nav><div>";
+    h += '<section class="hd-muc" id="hd-m-gia-tri" aria-labelledby="hd-m-gia-tri-t"><h2 id="hd-m-gia-tri-t">' + esc(cc.mGiaTri) + " <small>" + esc(cc.giaTriPhu) + "</small></h2>";
+    h += '<p class="hd-gia-tri">' + esc(hd.gia_tri) + "</p></section>";
+    h += '<section class="hd-muc" id="hd-m-buoc" aria-labelledby="hd-m-buoc-t"><h2 id="hd-m-buoc-t">' + esc(cc.gocBuoc) + "</h2>";
+    h += '<ol class="hd-buoc hd-buoc-tinh">' + hd.cac_buoc.map(function (b, k) {
+      return '<li><span class="hd-buoc-so" aria-hidden="true">' + (k + 1) + "</span><div><h3>" + esc(b[0]) + "</h3><p>" + esc(b[1]) + "</p></div></li>";
+    }).join("") + "</ol></section>";
+    if (hd.pro_tip) {
+      h += '<section class="hd-muc" id="hd-m-pro-tip" aria-labelledby="hd-m-pro-tip-t"><h2 id="hd-m-pro-tip-t" class="cong-an">' + esc(cc.mMeo) + "</h2>";
+      h += '<div class="hd-o hd-meo"><img src="' + esc(anh("trau-thinking.png")) + '" width="333" height="340" alt=""><div><p class="hd-meo-nhan">' + esc(cc.meoNhan) + "</p><p>" + esc(hd.pro_tip) +
+        '</p><p class="hd-meo-ai">' + esc(cc.meoAi) + "</p></div></div></section>";
+    }
+    h += '<nav class="hd-chuyen" aria-label="' + esc(cc.truoc.replace("← ", "") + " / " + cc.sau.replace(" →", "")) + '">';
+    h += i > 0 ? '<a class="ttv-nut-phu" href="#' + esc(DS[i - 1].slug) + '">' + esc(cc.truoc) + "</a>" : "<span></span>";
+    h += i < DS.length - 1 ? '<a class="ttv-nut-phu" href="#' + esc(DS[i + 1].slug) + '">' + esc(cc.sau) + "</a>" : "";
+    h += "</nav></div></div>";
+    ct.innerHTML = h;
+    Array.prototype.forEach.call(ct.querySelectorAll(".hd-muc-luc button"), function (b) {
+      b.addEventListener("click", function () {
+        var el = document.getElementById(b.getAttribute("data-den"));
+        if (el) el.scrollIntoView({ behavior: chuyenDongIt() ? "auto" : "smooth", block: "start" });
+      });
+    });
+    theoDoiMuc();
+  }
+
   /* ---------- Điều hướng theo địa chỉ ---------- */
   var slugTruoc = "";
   function diTheoDiaChi() {
@@ -665,11 +907,14 @@
 
   function khoiDong() {
     if (!tv || !ct) return;
+    dungGioiThieu();
     dungThuVien();
     diTheoDiaChi();
+    taiKhoGoc();
     window.addEventListener("hashchange", diTheoDiaChi);
     if (window.CONG && typeof window.CONG.khiDoiChu === "function") {
       window.CONG.khiDoiChu(function () {
+        dungGioiThieu();
         dungThuVien();
         if (document.body.getAttribute("data-hd-xem") === "chi-tiet") {
           var hd = timHd(slugTruoc);
