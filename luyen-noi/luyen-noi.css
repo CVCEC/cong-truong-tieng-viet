@@ -241,3 +241,7 @@ button:disabled.ttv-nut, button:disabled.ttv-nut-phu, label.ln-nut-file:has(inpu
   .ln-h2-trau { width: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { .ln-nhac { animation: none; } }
+
+/* Mở trong khung của cổng (Làng học tập): cổng đã có thanh trên, nên ẩn thanh trên và phần chân của trang này, giữ dòng bản quyền */
+.ln-trong-khung .cong-dau { display: none; }
+.ln-trong-khung .cong-chan > :not([data-ttv-chan]) { display: none; }
