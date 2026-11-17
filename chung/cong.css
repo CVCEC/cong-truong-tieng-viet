@@ -36,12 +36,14 @@ img { max-width: 100%; }
   border-bottom: 2px solid var(--ttv-vien);
 }
 .cong-dau .cong-ruot { display: flex; align-items: center; gap: 16px; height: 72px; }
+/* Thanh trên rộng hơn phần nội dung để đủ chỗ cho các mục, nút tài khoản và VI/EN trên một hàng */
+.cong-dau .cong-ruot { max-width: 1320px; }
 .cong-dau .cong-logo img { height: 48px; }
 .cong-dau-nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .cong-dau-nav > ul { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
 .cong-dau-nav a {
   display: inline-flex; align-items: center;
-  min-height: var(--ttv-cham-toi-thieu); padding: 0 14px;
+  min-height: var(--ttv-cham-toi-thieu); padding: 0 12px;
   border-radius: var(--ttv-bo-nut);
   color: var(--ttv-chu); text-decoration: none;
   font-weight: 800; font-size: 16px; white-space: nowrap;
@@ -299,8 +301,8 @@ img { max-width: 100%; }
   .chan-luoi { grid-template-columns: 1fr; }
 }
 
-/* Thanh trên xuống hai hàng khi màn hẹp (6 mục + tài khoản + VI/EN) */
-@media (max-width: 1100px) {
+/* Thanh trên xuống hai hàng khi màn hẹp (8 mục + tài khoản + VI/EN) */
+@media (max-width: 1320px) {
   .cong-dau .cong-ruot { height: auto; flex-wrap: wrap; gap: 0 8px; padding-top: 8px; }
   .cong-dau .cong-logo img { height: 36px; }
   .cong-dau-nav { display: contents; }
@@ -356,7 +358,6 @@ img { max-width: 100%; }
   .cong-the:hover { transform: none; }
   .truot-ray { scroll-behavior: auto; }
 }
-</style>
 
 /* ================= Phần mới: nhiều trang ================= */
 /* Giữ chỗ cho thanh trên trước khi cong.js dựng xong, để trang không nhảy */
@@ -364,7 +365,7 @@ img { max-width: 100%; }
 .cong-dau-nav a[aria-current="page"] { background: var(--ttv-dung-nen); color: var(--ttv-dung); box-shadow: inset 0 -3px 0 var(--ttv-dung); }
 .cong-chan .chan-cot-nhom { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; }
 .cong-chan .chan-cot-trang ul { columns: 1; }
-@media (max-width: 1100px) { .cong-dau { min-height: 116px; } }
+@media (max-width: 1320px) { .cong-dau { min-height: 116px; } }
 @media (max-width: 480px) { .cong-chan .chan-cot-nhom { grid-template-columns: 1fr; } }
 
 /* ---------- Banner Việt Nam (trang chủ) ---------- */
