@@ -89,7 +89,7 @@
 };</script>
 <script src="https://mau.cvcec.org/v1/cvcec-chung.js" defer></script>
 <script src="/chung/canh.js?v=7" defer></script>
-<script src="/chung/gioi-thieu-goc.js?v=18" defer></script>
+<script src="/chung/gioi-thieu-goc.js?v=19" defer></script>
 <script src="/chung/cong.js?v=7" defer></script>
 <script type="module" src="/js/tai-khoan.js?v=7"></script>
 <style>
@@ -456,6 +456,7 @@
   var loaiDaVe = null;
   var dangThu = null;       // id góc khách đang học thử bài 1
   var xemGioiThieu = false; // bấm "Hướng dẫn" để xem lại giới thiệu
+  var quaGioiThieu = null;  // góc (luonGioiThieu) mà bé đã qua màn giới thiệu trong lần vào này
   var KHOA_DA_XEM = "cvcec-da-xem-gioi-thieu"; // localStorage: các góc đã xem giới thiệu (người đã đăng nhập)
   function daXem(id) { try { return JSON.parse(localStorage.getItem(KHOA_DA_XEM) || "[]").indexOf(id) >= 0; } catch (e) { return false; } }
   function ghiDaXem(id) {
@@ -480,12 +481,12 @@
     var nhom = tao("div", "cong-nut-nhom");
     if (loai === "hoc" || g.congKhai) {
       var vao = tao("button", "ttv-nut", g.congKhai ? c.gtVaoXem : c.gtVaoHoc); vao.type = "button";
-      vao.addEventListener("click", function () { ghiDaXem(muc.id); xemGioiThieu = false; moKhung(muc); });
+      vao.addEventListener("click", function () { ghiDaXem(muc.id); xemGioiThieu = false; quaGioiThieu = muc.id; moKhung(muc); });
       nhom.appendChild(vao);
     } else {
       if (g.thu) {
         var thu = tao("button", "ttv-nut", c.gtHocThu); thu.type = "button";
-        thu.addEventListener("click", function () { dangThu = muc.id; xemGioiThieu = false; moKhung(muc); });
+        thu.addEventListener("click", function () { dangThu = muc.id; xemGioiThieu = false; quaGioiThieu = muc.id; moKhung(muc); });
         nhom.appendChild(thu);
       }
       if (loai === "chua-xong") nhom.appendChild(nutLink(g.thu ? "ttv-nut-phu" : "ttv-nut", c.khoaHoanTat, "/dang-nhap/?ve=" + ve));
@@ -563,6 +564,8 @@
     nutDN.href = "/dang-nhap/?ve=" + encodeURIComponent("/#" + muc.id);
     document.getElementById("nut-huong-dan").hidden = loai === "cho";
     if (loai === "cho") { khungBoc.appendChild(tao("p", "cong-khoa-cho", chu().khoaDangMo)); return; }
+    // Góc luonGioiThieu (ví dụ Luyện nói): lần nào vào cũng hiện màn hướng dẫn, mục tiêu trước; bấm "Vào học" mới mở góc.
+    if (g.luonGioiThieu && quaGioiThieu !== muc.id) { veGioiThieu(muc, loai); return; }
     // Góc công khai (congKhai, ví dụ Triển lãm): ai cũng xem được, không cần đăng nhập, mở thẳng trang của góc
     if (g.congKhai && !xemGioiThieu) { moIframe(muc, muc.url); return; }
     var hienGT = xemGioiThieu || (!g.vaoThang && (loai === "hoc" ? !daXem(muc.id) : !hocThu));
@@ -608,6 +611,7 @@
 
     var muc = timGoc(id);
     xemGioiThieu = false;
+    quaGioiThieu = null; // mỗi lần vào góc (bấm ô, đổi tab góc) bắt đầu lại từ màn giới thiệu
     if (dangThu !== id) dangThu = null;
     manChao.hidden = true;
     manHoc.hidden = false;
@@ -685,6 +689,7 @@
     document.getElementById("nut-huong-dan").addEventListener("click", function () {
       if (!gocDangMo) return;
       xemGioiThieu = !!khung;
+      if (!xemGioiThieu) quaGioiThieu = gocDangMo; // đang xem giới thiệu, bấm "Hướng dẫn" lần nữa: vào học
       if (!xemGioiThieu && loaiTk() === "hoc") ghiDaXem(gocDangMo);
       moKhung(timGoc(gocDangMo));
     });

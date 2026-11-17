@@ -3,6 +3,7 @@
  * Số liệu lấy từ mã nguồn của từng góc (README, mục lục) ngày 15-11-2026. Sửa ở đây khi góc học thay đổi.
  * thu: bài học thử cho khách chưa đăng nhập.
  * congKhai: true thì ai cũng xem được trong cổng, không cần đăng nhập: cổng mở thẳng trang và trả lời góc học là hợp lệ.
+ * luonGioiThieu: true thì lần nào vào góc cũng hiện màn giới thiệu trước (không nhớ "đã xem").
  * vaoThang: true thì bấm vào góc mở thẳng trang của góc (khách: chế độ học thử), nút "Hướng dẫn" vẫn xem lại được giới thiệu.
  *   url   – trang mở trong khung khi bấm "Học thử";
  *   duong – các đường dẫn khách được mở trong chế độ học thử (cổng gửi cho góc học qua postMessage);
@@ -231,9 +232,10 @@ window.CONG_GT = {
       { vi: "Hội thoại cùng Trâu Con: 4–8 lượt mỗi đoạn", en: "Talk with Trâu Con: 4–8 turns per conversation" },
       { vi: "Chấm câu cần Chrome, Edge hoặc Safari; giọng đọc được gửi tới dịch vụ nhận dạng của Google hoặc Apple, CVCEC không lưu", en: "Scoring needs Chrome, Edge or Safari; your voice goes to Google's or Apple's recognition service, and CVCEC keeps nothing" }
     ],
-    // Không mở thẳng: lần đầu vào góc, bé xem màn giới thiệu (cách học, mục tiêu, học xong em sẽ…); nút "Hướng dẫn" xem lại.
+    // Lần nào vào góc cũng hiện màn giới thiệu trước (cách học, mục tiêu, học xong em sẽ…); bấm "Vào học" / "Học thử" mới mở trang.
+    luonGioiThieu: true,
     // Góc một trang: khách học thử được dùng cả trang Luyện nói
-    thu: { url: "https://vietclass.cvcec.org/luyen-noi/#luyen-tu", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói: Luyện từ", en: "Speaking: Words" } }
+    thu: { url: "https://vietclass.cvcec.org/luyen-noi/", duong: ["/luyen-noi/"], ten: { vi: "Luyện nói – Luyện thanh: Bảng âm, Luyện thanh, Luyện từ", en: "Speaking & Tones: sound chart, tones, words" } }
   },
   trienlam: {
     gioiThieu: { vi: "Triển lãm Em học tiếng Việt: trang vở và bài đọc của các bạn nhỏ trong lớp học của trường.", en: "The Em học tiếng Việt exhibition: notebook pages and readings by young learners in the school's classes." },
