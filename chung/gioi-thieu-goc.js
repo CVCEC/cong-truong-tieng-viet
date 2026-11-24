@@ -133,7 +133,9 @@ window.CONG_GT = {
       { so: "4", vi: "bài luyện mỗi câu", en: "exercises per saying" },
       { so: "7", vi: "trò chơi chung", en: "shared games" }
     ],
-    phan: []
+    phan: [],
+    // Góc một trang: mọi câu cùng /#cau-…, nên học thử kiểm tra bằng mã câu (TTV.choPhepBai)
+    thu: { url: "https://khobau.cvcec.org/#cau-tn01", duong: ["/"], baiThu: "tn01", ten: { vi: "Thành ngữ: Ếch ngồi đáy giếng", en: "Idiom: Ếch ngồi đáy giếng (a frog at the bottom of a well)" } }
   },
   hatca: {
     gioiThieu: { vi: "Dành cho mọi bạn, kể cả bạn mới bắt đầu: học tiếng Việt qua đồng dao, vè, dân ca và hát ru. Vỗ tay theo nhịp mõ, hiểu lời, học thuộc, chơi trò chơi để nhớ, rồi chơi trò dân gian thật cùng gia đình.", en: "For every learner, including beginners: learn Vietnamese through traditional chants, folk rhymes, folk songs and lullabies. Clap to the beat, understand the words, learn them by heart, play games to remember, then play the real folk game with your family." },
