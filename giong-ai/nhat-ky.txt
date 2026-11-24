@@ -32,3 +32,8 @@ Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Em có một quả bóng.  |  Em có một quả bóng
 1.00  Em có ba con gà.  |  Em có ba con gà
 1.00  Em có bốn cái bút.  |  Em có bốn cái bút
+1.00  Em có mười ngón tay.  |  Em có 10 ngón tay
+1.00  Các bạn đếm cùng mình nhé!  |  Các bạn đếm cùng mình nhé!
+1.00  Một, hai, ba, bốn, năm.  |  Một Hai Ba Bốn Năm
+1.00  Giỏi quá! Các bạn có mấy ngón tay?  |  Giỏi quá! Các bạn có mấy ngón tay
+1.00  Mình có mười ngón tay.  |  Mình có 10 ngón tay
