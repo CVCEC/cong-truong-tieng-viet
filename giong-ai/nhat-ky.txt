@@ -32,3 +32,23 @@
 1.00  Mình vui lắm!  |  Mình vui lắm!
 1.00  Mình cũng vui! Mình cười nào!  |  Mình cũng vui! Mình cười nào!
 1.00  Mình cười thật tươi!  |  Mình cười thật tươi!
+1.00  xin chào  |  Xin chào!
+0.50  tạm biệt  |  Tạ biệt
+1.00  cảm ơn  |  Cảm ơn
+1.00  xin lỗi  |  Xin lỗi
+1.00  không sao  |  Không sao!
+0.00  bạn bè  |  Bát bê
+0.00  cô giáo  |  cố dạo
+1.00  thầy giáo  |  Thầy giáo
+1.00  Em chào cô ạ.  |  Em chào cô ạ!
+1.00  Em cảm ơn cô ạ.  |  Em cảm ơn cô ạ!
+1.00  Hẹn gặp lại các bạn.  |  Hẹn gặp lại các bạn!
+1.00  Bạn có khỏe không?  |  Bạn có khỏe không?
+1.00  Mình khỏe, cảm ơn bạn.  |  Mình khỏe! Cảm ơn bạn!
+0.86  Chào các bạn! Mình là Trâu Con.  |  Chào các bạn! Mình là châu con!
+0.67  Chào Trâu Con!  |  Chào cháu con!
+1.00  Hôm nay các bạn có khỏe không?  |  Hôm nay các bạn có khỏe không?
+1.00  Mình rất vui được gặp các bạn.  |  Mình rất vui được gặp các bạn.
+1.00  Mình cũng rất vui.  |  Mình cũng rất vui
+1.00  Tạm biệt các bạn nhé!  |  Tạm biệt các bạn nhé!
+0.75  Tạm biệt Trâu Con!  |  Tạm biệt cháu con!
