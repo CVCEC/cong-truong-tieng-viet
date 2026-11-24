@@ -37,3 +37,20 @@ Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Một, hai, ba, bốn, năm.  |  Một Hai Ba Bốn Năm
 1.00  Giỏi quá! Các bạn có mấy ngón tay?  |  Giỏi quá! Các bạn có mấy ngón tay
 1.00  Mình có mười ngón tay.  |  Mình có 10 ngón tay
+0.00  quả bóng  |  Quà bỏng
+1.00  búp bê  |  Búp bê
+1.00  ô tô  |  Ô TÔ
+0.50  gấu bông  |  Gẩu Bông
+1.00  xếp hình  |  xếp hình
+0.50  cánh diều  |  Cảnh diều
+0.50  bút màu  |  Bút mâu
+1.00  đồ chơi  |  Đồ chơi
+1.00  Em chơi bóng.  |  Em chơi bóng
+1.00  Đây là búp bê.  |  Đây là búp bê
+0.67  Em thả diều.  |  Em thả diêu
+1.00  Ô tô chạy nhanh.  |  ô tô chạy nhanh
+1.00  Em cất đồ chơi.  |  Em cất đồ chơi
+1.00  Các bạn thích chơi gì?  |  Các bạn thích chơi gì?
+1.00  Mình thích chơi bóng.  |  Mình thích chơi bóng
+1.00  Mình cùng chơi nhé!  |  Mình cùng chơi nhé!
+1.00  Vâng, mình chơi nào!  |  Vâng! Mình chơi nào!
