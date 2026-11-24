@@ -25,3 +25,10 @@ Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 0.00  số sáu  |  sổ sẩu
 0.00  số bảy  |  SỔ BÂY!
 1.00  số mười  |  Số mười
+Lô 9 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 9 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+1.00  Một, hai, ba, bốn.  |  Một Hai Ba Bốn
+1.00  Em có một quả bóng.  |  Em có một quả bóng
+1.00  Em có ba con gà.  |  Em có ba con gà
+1.00  Em có bốn cái bút.  |  Em có bốn cái bút
