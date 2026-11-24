@@ -1,58 +1,17 @@
-1.00  màu đỏ  |  màu đỏ
-0.00  màu xanh  |  Mầu sánh
-1.00  màu vàng  |  màu vàng
-0.50  màu trắng  |  Màu chẳng
-1.00  màu đen  |  màu đen
-0.50  màu hồng  |  màu hông.
-0.50  màu tím  |  Màu điểm?
-0.00  cầu vồng  |  Cứu vông
-0.50  Quả táo màu đỏ.  |  Quà táo màu đo
-1.00  Bầu trời màu xanh.  |  Bầu trời màu xanh
-1.00  Em thích màu hồng.  |  Em thích màu hồng
-0.75  Con mèo màu đen.  |  Còn mèo màu đen
-0.75  Cầu vồng đẹp quá!  |  Cầu vùng đẹp quá!
-1.00  Lá cây màu gì hả các bạn?  |  Lá cây màu gì hả các bạn?
-0.75  Lá cây màu xanh.  |  là cây màu xanh
-1.00  Đúng rồi! Các bạn thích màu gì?  |  Đúng rồi! Các bạn thích màu gì?
-1.00  Mình thích màu vàng.  |  Mình thích màu vàng
-Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-1.00  số một  |  số 1
-0.50  số hai  |  sổ hai
-1.00  số ba  |  Số 3
-1.00  số bốn  |  Số 4
-1.00  số năm  |  Số 5
-0.00  số sáu  |  sổ sẩu
-0.00  số bảy  |  SỔ BÂY!
-1.00  số mười  |  Số mười
-Lô 9 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 9 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-1.00  Một, hai, ba, bốn.  |  Một Hai Ba Bốn
-1.00  Em có một quả bóng.  |  Em có một quả bóng
-1.00  Em có ba con gà.  |  Em có ba con gà
-1.00  Em có bốn cái bút.  |  Em có bốn cái bút
-1.00  Em có mười ngón tay.  |  Em có 10 ngón tay
-1.00  Các bạn đếm cùng mình nhé!  |  Các bạn đếm cùng mình nhé!
-1.00  Một, hai, ba, bốn, năm.  |  Một Hai Ba Bốn Năm
-1.00  Giỏi quá! Các bạn có mấy ngón tay?  |  Giỏi quá! Các bạn có mấy ngón tay
-1.00  Mình có mười ngón tay.  |  Mình có 10 ngón tay
-0.00  quả bóng  |  Quà bỏng
-1.00  búp bê  |  Búp bê
-1.00  ô tô  |  Ô TÔ
-0.50  gấu bông  |  Gẩu Bông
-1.00  xếp hình  |  xếp hình
-0.50  cánh diều  |  Cảnh diều
-0.50  bút màu  |  Bút mâu
-1.00  đồ chơi  |  Đồ chơi
-1.00  Em chơi bóng.  |  Em chơi bóng
-1.00  Đây là búp bê.  |  Đây là búp bê
-0.67  Em thả diều.  |  Em thả diêu
-1.00  Ô tô chạy nhanh.  |  ô tô chạy nhanh
-1.00  Em cất đồ chơi.  |  Em cất đồ chơi
-1.00  Các bạn thích chơi gì?  |  Các bạn thích chơi gì?
-1.00  Mình thích chơi bóng.  |  Mình thích chơi bóng
-1.00  Mình cùng chơi nhé!  |  Mình cùng chơi nhé!
-1.00  Vâng, mình chơi nào!  |  Vâng! Mình chơi nào!
-Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 17 câu có 6 câu lệch nhiều – có thể cắt sai, chia đôi để đọc lại
+0.00  quả táo  |  Quà đáo
+0.50  quả cam  |  quà cam
+0.00  quả nho  |  quà nhá
+0.50  dưa hấu  |  dưa hẩu
+0.00  quả xoài  |  Qua xoay
+0.00  quả dâu  |  Quà dấu
+0.50  quả lê  |  quả lế
+0.50  quả dừa  |  quả dưa
+0.75  Em ăn quả táo.  |  Em ăn quả tàu
+0.25  Quả cam tròn tròn.  |  quả cám chòn chòn
+0.75  Dưa hấu ngọt quá!  |  Dưa hẩu ngọt quá!
+0.75  Em thích quả xoài.  |  Em thích quà xoài
+1.00  Em rửa quả nho.  |  Em rửa quả nho.
+1.00  Các bạn muốn ăn quả gì?  |  Các bạn muốn ăn quả gì?
+1.00  Mình muốn ăn quả cam.  |  Mình muốn ăn quả cam
+1.00  Quả cam có ngon không?  |  Quả cam có ngon không?
+1.00  Quả cam ngon lắm!  |  Quả cam ngon lắm!
