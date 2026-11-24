@@ -15,3 +15,20 @@
 1.00  Mình muốn ăn quả cam.  |  Mình muốn ăn quả cam
 1.00  Quả cam có ngon không?  |  Quả cam có ngon không?
 1.00  Quả cam ngon lắm!  |  Quả cam ngon lắm!
+1.00  vui vẻ  |  Vui vẻ!
+1.00  buồn bã  |  Buồn bã
+1.00  sợ hãi  |  Sợ hãi?
+0.50  tức giận  |  Tức Dân
+1.00  mệt mỏi  |  mệt mỏi
+0.50  buồn ngủ  |  Buôn ngủ
+1.00  khóc nhè  |  Khóc nhè
+1.00  cười tươi  |  Cười tươi!
+1.00  Em vui quá!  |  Em vui quá!
+1.00  Em buồn ngủ rồi.  |  Em buồn ngủ rồi.
+1.00  Em cười thật tươi.  |  Em cười thật tươi!
+1.00  Bạn đừng khóc nhé.  |  Bạn đừng khóc nhé!
+1.00  Em ôm mẹ thật chặt.  |  Em ôm mẹ thật chặt
+1.00  Hôm nay các bạn vui hay buồn?  |  Hôm nay các bạn vui hay buồn?
+1.00  Mình vui lắm!  |  Mình vui lắm!
+1.00  Mình cũng vui! Mình cười nào!  |  Mình cũng vui! Mình cười nào!
+1.00  Mình cười thật tươi!  |  Mình cười thật tươi!
