@@ -1,20 +1,17 @@
-Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 17 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-0.50  cái đầu  |  Cãi đầu
-1.00  đôi mắt  |  Đôi mắt
-1.00  cái mũi  |  cái mũi
-1.00  cái miệng  |  Cái miệng
-1.00  đôi tai  |  đôi tai
-1.00  bàn tay  |  bàn tay
-1.00  bàn chân  |  Bàn chân
-0.50  cái bụng  |  Cái bùng
-1.00  Đây là mắt.  |  Đây là mắt
-1.00  Em có hai tay.  |  Em có hai tay
-1.00  Em vỗ tay.  |  Em vỗ tay
-1.00  Mũi em nhỏ xinh.  |  Mũi em nhỏ xinh
-1.00  Em rửa tay sạch.  |  Em rửa tay sạch
-1.00  Các bạn chỉ vào mũi nào!  |  các bạn chỉ vào mũi nào.
-1.00  Đây là mũi.  |  Đây là mũi.
-1.00  Giỏi quá! Còn tai ở đâu?  |  Giỏi quá! Còn tai ở đâu?
-1.00  Đây là tai.  |  Đây là tai
-Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  màu đỏ  |  màu đỏ
+0.00  màu xanh  |  Mầu sánh
+1.00  màu vàng  |  màu vàng
+0.50  màu trắng  |  Màu chẳng
+1.00  màu đen  |  màu đen
+0.50  màu hồng  |  màu hông.
+0.50  màu tím  |  Màu điểm?
+0.00  cầu vồng  |  Cứu vông
+0.50  Quả táo màu đỏ.  |  Quà táo màu đo
+1.00  Bầu trời màu xanh.  |  Bầu trời màu xanh
+1.00  Em thích màu hồng.  |  Em thích màu hồng
+0.75  Con mèo màu đen.  |  Còn mèo màu đen
+0.75  Cầu vồng đẹp quá!  |  Cầu vùng đẹp quá!
+1.00  Lá cây màu gì hả các bạn?  |  Lá cây màu gì hả các bạn?
+0.75  Lá cây màu xanh.  |  là cây màu xanh
+1.00  Đúng rồi! Các bạn thích màu gì?  |  Đúng rồi! Các bạn thích màu gì?
+1.00  Mình thích màu vàng.  |  Mình thích màu vàng
