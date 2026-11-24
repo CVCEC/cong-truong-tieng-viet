@@ -17,3 +17,4 @@ Lô 17 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Đây là mũi.  |  Đây là mũi.
 1.00  Giỏi quá! Còn tai ở đâu?  |  Giỏi quá! Còn tai ở đâu?
 1.00  Đây là tai.  |  Đây là tai
+Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
