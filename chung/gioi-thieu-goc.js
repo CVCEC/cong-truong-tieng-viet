@@ -133,7 +133,9 @@ window.CONG_GT = {
       { so: "4", vi: "bài luyện mỗi câu", en: "exercises per saying" },
       { so: "7", vi: "trò chơi chung", en: "shared games" }
     ],
-    phan: []
+    phan: [],
+    // Góc một trang: mọi bài cùng một đường dẫn, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
+    thu: { url: "https://khobau.cvcec.org/#cau-tn01", duong: ["/"], baiThu: "tn01", ten: { vi: "Câu 1: Ếch ngồi đáy giếng", en: "Saying 1: Ếch ngồi đáy giếng (A frog at the bottom of a well)" } }
   },
   hatca: {
     gioiThieu: { vi: "Dành cho mọi bạn, kể cả bạn mới bắt đầu: học tiếng Việt qua đồng dao, vè, dân ca và hát ru. Vỗ tay theo nhịp mõ, hiểu lời, học thuộc, chơi trò chơi để nhớ, rồi chơi trò dân gian thật cùng gia đình.", en: "For every learner, including beginners: learn Vietnamese through traditional chants, folk rhymes, folk songs and lullabies. Clap to the beat, understand the words, learn them by heart, play games to remember, then play the real folk game with your family." },
@@ -175,7 +177,9 @@ window.CONG_GT = {
     ],
     phan: [
       { vi: "Nút EN giải thích ngắn bằng tiếng Anh ở mọi phần", en: "EN button with short English explanations in every part" }
-    ]
+    ],
+    // Góc một trang: mọi bài cùng một đường dẫn, nên học thử kiểm tra bằng mã bài (TTV.choPhepBai)
+    thu: { url: "https://truyencotich.cvcec.org/#t01", duong: ["/"], baiThu: "t01", ten: { vi: "Ngày 1: Sự tích con trâu", en: "Day 1: The legend of the water buffalo" } }
   },
   cuocsong: {
     gioiThieu: { vi: "Nâng cao, dành cho các bạn đã đọc thông, viết được câu: thơ “Lên Sáu”, “Lên Tám” của Tản Đà. Nghe cô Hà đọc thơ và giảng, hiểu “Thơ nói gì?”, làm “Em làm được” rồi viết theo mức Dễ – Vừa – Khó. Mới bắt đầu thì học “Thơ lễ nghĩa” trong Bài 1–145 trước nhé.", en: "Advanced, for children who can read well and write sentences: Tản Đà's poems “Lên Sáu” and “Lên Tám”. Listen to cô Hà read and explain the verses, then write at an Easy, Medium or Hard level. Beginners start with the short poem game in Lessons 1–145." },
