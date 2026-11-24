@@ -15,3 +15,13 @@
 0.75  Lá cây màu xanh.  |  là cây màu xanh
 1.00  Đúng rồi! Các bạn thích màu gì?  |  Đúng rồi! Các bạn thích màu gì?
 1.00  Mình thích màu vàng.  |  Mình thích màu vàng
+Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  số một  |  số 1
+0.50  số hai  |  sổ hai
+1.00  số ba  |  Số 3
+1.00  số bốn  |  Số 4
+1.00  số năm  |  Số 5
+0.00  số sáu  |  sổ sẩu
+0.00  số bảy  |  SỔ BÂY!
+1.00  số mười  |  Số mười
