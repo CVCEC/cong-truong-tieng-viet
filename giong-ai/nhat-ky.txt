@@ -54,3 +54,5 @@ Lô 4 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Mình thích chơi bóng.  |  Mình thích chơi bóng
 1.00  Mình cùng chơi nhé!  |  Mình cùng chơi nhé!
 1.00  Vâng, mình chơi nào!  |  Vâng! Mình chơi nào!
+Lô 17 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 17 câu có 6 câu lệch nhiều – có thể cắt sai, chia đôi để đọc lại
