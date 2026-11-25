@@ -18,3 +18,4 @@
 1.00  Bữa sáng hôm nay các bạn ăn gì?  |  Bữa sáng hôm nay các bạn ăn gì?
 1.00  Hôm nay mình ăn bánh mì và uống sữa.  |  Hôm nay mình ăn bánh mì và uống sữa
 1.00  Ngon quá! Các bạn đi học bằng gì?  |  Ngon quá! Các bạn đi học bằng gì?
+1.00  Mình đi học bằng xe buýt của trường.  |  Mình đi học bằng xe buýt của trường.
