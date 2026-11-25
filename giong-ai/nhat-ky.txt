@@ -19,3 +19,22 @@ Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Mình có một em bé.  |  Mình có một em bé
 1.00  Các bạn thường làm gì cùng gia đình?  |  Các bạn thường làm gì cùng gia đình?
 1.00  Mình ăn cơm cùng gia đình.  |  Mình ăn cơm cùng gia đình
+1.00  trường học  |  trường học
+1.00  lớp học  |  Lớp học
+0.00  quyển sách  |  Quyền sạch
+1.00  cái bút  |  Cái bút
+1.00  bài học  |  Bài học
+0.50  học sinh  |  hợp sinh
+1.00  giờ ra chơi  |  Giờ ra chơi!
+1.00  tiếng Việt  |  Tiếng Việt
+1.00  Em đi học tiếng Việt.  |  Em đi học tiếng Việt
+0.83  Đây là quyển sách của em.  |  Đây là quyền sách của em
+0.40  Em thích giờ ra chơi.  |  Em thích dầu da chôi
+1.00  Cô giáo dạy em đọc.  |  Cô giáo dạy em đọc
+1.00  Lớp em có nhiều bạn.  |  lớp em có nhiều bạn
+1.00  Các bạn học tiếng Việt ở đâu?  |  Các bạn học tiếng Việt ở đâu?
+1.00  Mình học ở Trường Tiếng Việt Của Em.  |  Mình học ở trường tiếng Việt của em
+1.00  Các bạn thích học môn gì nhất?  |  Các bạn thích học môn gì nhất?
+1.00  Mình thích học tiếng Việt.  |  Mình thích học tiếng Việt
+1.00  Giỏi quá! Các bạn đọc cho mình nghe nhé.  |  Giỏi quá! Các bạn đọc cho mình nghe nhé!
+1.00  Mình đọc được rồi.  |  Mình đọc được rồi
