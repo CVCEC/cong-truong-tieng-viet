@@ -407,7 +407,7 @@
 
   /* =====================================================================
      BƯỚC 3 – ĐƯỜNG ĐI HỌC CỦA TRÂU CON (6 thanh = 6 nhân vật, con-duong.js)
-     Giọng mẫu: chỉ dùng tệp giọng Elio (window.LUYEN_NOI_GIONG); không dùng giọng máy.
+     Giọng mẫu: chỉ dùng tệp giọng Trâu Con – giọng AI Kore (window.LUYEN_NOI_GIONG); không dùng giọng máy.
      Không hiện điểm số: bé thu 1–3 sao cho mỗi tiếng, lưu trên máy (khoá "luyen-noi-sao").
      ===================================================================== */
   var KHOA_SAO = "luyen-noi-sao";

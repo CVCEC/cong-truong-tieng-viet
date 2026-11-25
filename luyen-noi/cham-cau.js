@@ -117,7 +117,7 @@
 
   function mucDiem(d) { return d >= 85 ? "tot" : (d >= 60 ? "gan-dung" : "can-luyen"); }
 
-  /* ---------- Mã của từng câu (để gắn tệp giọng Elio) ---------- */
+  /* ---------- Mã của từng câu (để gắn tệp giọng mẫu) ---------- */
   // FNV-1a 32 bit trên chữ đã chuẩn hoá NFC. Sửa chữ của câu → mã đổi → câu cần tạo lại giọng.
   function maCau(chu) {
     var s = nfc(chu).trim().replace(/\s+/g, " "), h = 0x811c9dc5;
@@ -190,7 +190,7 @@
     return { chuDe: ds, loi: loi };
   }
 
-  /** Mọi câu cần giọng mẫu (để studio tạo giọng Elio), không trùng. */
+  /** Mọi câu cần giọng mẫu (robot giọng đọc AI đọc các câu này – tools/tao-can-doc.js), không trùng. */
   function tatCaCau(nd) {
     var ra = [], co = {};
     nd.chuDe.forEach(function (cd) {

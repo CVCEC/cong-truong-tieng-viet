@@ -3,7 +3,7 @@
  * Tự viết cho Trường Tiếng Việt Của Em (CVCEC).
  *
  * - Nội dung lấy từ luyen-noi/noi-dung.txt (đọc bằng ChamCau.docNoiDung).
- * - Giọng mẫu: chỉ dùng tệp giọng Elio do luyen-noi/studio.html tạo (window.LUYEN_NOI_GIONG). KHÔNG dùng giọng máy.
+ * - Giọng mẫu: chỉ dùng tệp giọng Trâu Con (giọng AI Kore do robot giong-ai tạo, window.LUYEN_NOI_GIONG). KHÔNG dùng giọng máy.
  * - Chấm câu: nhận dạng giọng nói của trình duyệt (Web Speech API, vi-VN). Trình duyệt gửi giọng đọc tới dịch vụ
  *   nhận dạng của Google (Chrome, Edge) hoặc Apple (Safari). CVCEC không ghi lại, không lưu âm thanh hay điểm.
  *
@@ -154,7 +154,7 @@
   }
 
   /* =====================================================================
-     GIỌNG MẪU (tệp giọng Elio, không dùng giọng máy)
+     GIỌNG MẪU (tệp giọng Kore, không dùng giọng máy)
      ===================================================================== */
   var dangPhat = null;
   function coGiong(ma) {

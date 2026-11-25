@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Ghi luyen-noi/giong-elio.js từ các tệp giọng robot đã tạo (luyen-noi/audio/kore/<mã>.mp3).
 Robot giọng đọc AI (tools/giong_ai.py) chạy tệp này sau mỗi lô. Mỗi câu là một tệp riêng: sprites[mã] = tệp, files[mã] = [mã, 0, độ dài].
-Nếu sau này dùng gói của studio.html, đừng chạy tệp này nữa (nó sẽ ghi đè giong-elio.js)."""
+(Tên tệp giong-elio.js giữ nguyên để không đổi đường dẫn trang; studio.html đã ngừng dùng từ 25-11-2026.)"""
 import json, pathlib, subprocess
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 THU = ROOT / 'luyen-noi/audio/kore'

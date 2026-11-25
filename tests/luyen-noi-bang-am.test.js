@@ -43,7 +43,7 @@ test("tách tiếng ví dụ ra âm đầu, vần, âm cuối, thanh", () => {
   for (const w of tat) assert.ok(B.tachTieng(w), "tách được " + w);
 });
 
-test("danh sách câu cần giọng Elio: có âm đọc theo âm, mã khớp cách tính của trang", () => {
+test("danh sách câu cần giọng mẫu: có âm đọc theo âm, mã khớp cách tính của trang", () => {
   const ds = B.tatCaAm();
   const chu = ds.map(x => x.chu);
   for (const w of ["bờ", "cờ", "dờ", "di", "a", "á", "ớ", "huyền", "thanh ngang", "bà", "an", "oc"]) assert.ok(chu.includes(w), w);

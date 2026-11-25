@@ -23,9 +23,9 @@ Ghi chép này cho biết từng phần của trang `luyen-noi/` lấy từ đâ
 | Từ, câu và hội thoại trong `noi-dung.txt` | CVCEC tự viết (tháng 11/2026), người quản lý duyệt và sửa thêm. |
 | Nhận dạng giọng nói ở thẻ Luyện từ, Luyện câu, Hội thoại | Web Speech API có sẵn trong trình duyệt (W3C Community Group, *Web Speech API*). Trình duyệt gửi giọng đọc tới dịch vụ nhận dạng của Google hoặc Apple; trang không ghi lại âm thanh. |
 | Cách so câu (khoảng cách sửa theo từng tiếng, tách dấu thanh) | Levenshtein, V. I. (1966). Binary codes capable of correcting deletions, insertions, and reversals. *Soviet Physics Doklady*, 10(8), 707–710. Viết lại từ mô tả. Cách tính điểm và ngưỡng ba mức do CVCEC tự đặt, chỉ để tham khảo. |
-| Giọng mẫu Trâu Con | Giọng "Elio" tạo bằng Google AI Studio qua `studio.html`, như các góc học khác của trường. |
-| Thư viện của `studio.html` | JSZip 3.10.1 (MIT), lamejs 1.2.1 (LGPL-3.0) – xem `vendor/THIRD-PARTY.txt`. |
+| Giọng mẫu Trâu Con | Giọng AI "Kore" (Google Gemini, miền Bắc) do robot giọng đọc AI của trường tạo (`tools/giong_ai.py`, xem `giong-ai/README.md`), cùng giọng với các góc học khác. Trước 25-11-2026 trang dùng giọng "Elio" tạo qua `studio.html` (nay đã ngừng). |
+| Thư viện của `studio.html` (đã ngừng dùng) | JSZip 3.10.1 (MIT), lamejs 1.2.1 (LGPL-3.0) – xem `vendor/THIRD-PARTY.txt`. |
 | Bảng âm (IPA): âm đầu, nguyên âm, nguyên âm đôi, âm đệm, âm cuối, khác biệt giọng Hà Nội – Sài Gòn (`bang-am.js`) | Kirby (2011); Thompson, L. C. (1965). *A Vietnamese Grammar*. University of Washington Press; Đoàn Thiện Thuật (1977). *Ngữ âm tiếng Việt*. NXB Đại học và Trung học chuyên nghiệp. Ghi theo âm vị, giọng Hà Nội làm chuẩn. |
 | Cách đọc âm (bờ, cờ, dờ…) và các bước đánh vần (bờ – a – ba – huyền – bà) | Cách dạy của lớp tiếng Việt (sách Tiếng Việt lớp 1). |
-| Giọng đọc mẫu của Bảng âm | Giọng Trâu Con (Elio) do trường tạo bằng `studio.html`; không dùng giọng máy của thiết bị. |
+| Giọng đọc mẫu của Bảng âm | Giọng Trâu Con (giọng AI Kore) do robot giọng đọc AI của trường tạo; không dùng giọng máy của thiết bị. |
 | "Đường đi học của Trâu Con" (con đường, nhân vật dấu thanh, dấu chân, sao) – `con-duong.js` | CVCEC tự nghĩ và tự vẽ (SVG). Con đường vẽ theo đường cao độ mẫu giọng phổ thông Hà Nội (Kirby 2011). Trâu Con dùng ảnh chính thức của trường, chỉ di chuyển, không vẽ lại. |

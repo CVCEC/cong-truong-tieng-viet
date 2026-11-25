@@ -9,323 +9,37 @@
   <link rel="stylesheet" href="https://mau.cvcec.org/v1/cvcec-chung.css">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--ttv-nen); color: var(--ttv-chu); font: 16px/1.5 var(--ttv-phong); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 18px 16px 60px; }
-    h1 { margin: 6px 0 2px; font: 800 1.9rem var(--ttv-phong-tieu-de); }
-    .sub { color: var(--ttv-chu-phu); font-weight: 700; margin: 0 0 16px; }
-    .card { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); padding: 16px; margin-bottom: 14px; }
-    .card h2 { margin: 0 0 10px; font: 800 1.25rem var(--ttv-phong-tieu-de); }
-    .grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
-    label { display: grid; gap: 4px; font-weight: 800; font-size: 14px; }
-    label small { font-weight: 600; color: var(--ttv-chu-phu); }
-    input, select, textarea { font: inherit; padding: 9px 12px; border-radius: 12px; border: 2px solid var(--ttv-vien); background: var(--ttv-the); width: 100%; min-width: 0; }
-    textarea { min-height: 64px; resize: vertical; }
-    input:focus, textarea:focus, select:focus { outline: 3px solid var(--ttv-sao); }
-    .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .row .ttv-nut, .row .ttv-nut-phu { min-height: 44px; }
-    .bar { height: 18px; background: var(--ttv-vien); border-radius: 999px; overflow: hidden; }
-    .bar i { display: block; height: 100%; width: 0; background: var(--ttv-lua-dam); transition: width .4s; }
-    .stats { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 800; margin: 10px 0; }
-    .stats b { font-size: 22px; }
-    .status { font-weight: 800; padding: 10px 12px; border-radius: 12px; background: var(--ttv-dung-nen); margin-top: 10px; }
-    .status.warn { background: var(--ttv-kem-rom); }
-    .status.err { background: var(--ttv-sai-nen); color: var(--ttv-sai); }
-    .log { max-height: 180px; overflow: auto; font-size: 13px; color: var(--ttv-chu-phu); background: var(--ttv-the); border: 1px solid var(--ttv-vien); border-radius: 12px; padding: 8px 10px; margin-top: 10px; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--ttv-vien); vertical-align: top; }
-    td.ok { color: var(--ttv-dung); font-weight: 800; white-space: nowrap; }
-    td.no { color: var(--ttv-chu-mo); white-space: nowrap; }
-    .tbl { max-height: 420px; overflow: auto; border: 1px solid var(--ttv-vien); border-radius: 12px; }
-    .mini { border: 1px solid var(--ttv-vien); background: var(--ttv-the); border-radius: 8px; padding: 2px 8px; cursor: pointer; font-size: 13px; min-height: 32px; }
-    ol.steps { margin: 6px 0 0; padding-left: 22px; }
-    ol.steps li { margin: 4px 0; }
+    body { margin: 0; background: var(--ttv-nen); color: var(--ttv-chu); font: 16px/1.6 var(--ttv-phong); }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 18px 16px 60px; }
+    h1 { margin: 6px 0 12px; font: 800 1.7rem var(--ttv-phong-tieu-de); }
+    .card { background: var(--ttv-the); border: 2px solid var(--ttv-vien); border-radius: var(--ttv-bo-goc); padding: 16px 18px; margin-bottom: 14px; }
+    .card h2 { margin: 0 0 8px; font: 800 1.2rem var(--ttv-phong-tieu-de); }
+    ul { margin: 6px 0 0; padding-left: 22px; }
+    li { margin: 4px 0; }
+    a { color: var(--ttv-muc); font-weight: 800; }
     .copy { text-align: center; font-size: 12px; color: var(--ttv-chu-mo); margin-top: 20px; }
   </style>
 </head>
 <body>
 <div class="wrap">
   <h1>🎙️ Xưởng giọng Trâu Con – Luyện nói</h1>
-  <p class="sub">Tạo giọng đọc "Elio" (Google AI Studio) cho mọi từ, câu và hội thoại trong <b>luyen-noi/noi-dung.txt</b>. Trang này chỉ dành cho người quản lý, không có đường dẫn trên trang học. Hãy dùng cùng một máy tính (Chrome hoặc Edge) cho tới khi tạo xong.</p>
 
   <div class="card">
-    <h2>1. Cài đặt</h2>
-    <div class="grid">
-      <label>Mã API của Google AI Studio <small>Lấy ở aistudio.google.com → Get API key. Mã chỉ lưu trong trình duyệt của máy này, không gửi đi đâu khác ngoài Google.</small>
-        <input id="apiKey" type="password" autocomplete="off" placeholder="Dán mã API vào đây"></label>
-      <label>Tên giọng <small>Đúng tên giọng đã chọn trong AI Studio.</small>
-        <input id="voice" value="Elio"></label>
-      <label>Model tạo giọng <small>Xem đúng tên ở AI Studio → Generate speech → Get code.</small>
-        <input id="model" value="gemini-2.5-flash-preview-tts" list="models">
-        <datalist id="models"><option value="gemini-2.5-flash-preview-tts"><option value="gemini-2.5-pro-preview-tts"></datalist></label>
-      <label>Nghỉ giữa hai câu (giây) <small>Gói miễn phí giới hạn số lần mỗi phút. 21 giây là an toàn.</small>
-        <input id="pace" type="number" min="1" max="120" value="21"></label>
-      <label style="grid-column: 1 / -1">Cách đọc <small>Câu nhắc gửi kèm mỗi câu. Nếu giọng đọc cả câu nhắc thành tiếng, hãy xoá trống ô này.</small>
-        <textarea id="styleVi">Đọc bằng giọng một bé trai Việt Nam, giọng miền Bắc chuẩn, nhẹ nhàng, ấm áp, rõ từng tiếng và chậm rãi:</textarea></label>
-    </div>
-    <div class="row" style="margin-top:12px">
-      <button class="ttv-nut-phu" id="saveSet" type="button">💾 Lưu cài đặt</button>
-      <button class="ttv-nut-phu" id="testBtn" type="button">▶ Nghe thử một câu</button>
-      <button class="ttv-nut-phu" id="forgetKey" type="button">Xoá mã API khỏi máy này</button>
-    </div>
-    <div id="setMsg"></div>
+    <h2>Trang này đã ngừng dùng (25-11-2026)</h2>
+    <p style="margin:0">Giọng mẫu của trang Luyện nói nay do <b>robot giọng đọc AI</b> trên GitHub tạo tự động mỗi ngày, bằng giọng chuẩn của Trâu Con ở mọi góc học: <b>giọng AI Kore</b> (Google Gemini, miền Bắc). Trang cũ tạo giọng "Elio" và tải gói giọng về để thay tệp <code>giong-elio.js</code>; dùng lại sẽ <b>xoá mất các câu robot đã làm</b>, nên đã gỡ bỏ.</p>
   </div>
 
   <div class="card">
-    <h2>2. Tạo giọng</h2>
-    <div class="stats"><span>Tổng: <b id="sTotal">0</b> câu</span><span>Đã có: <b id="sDone">0</b></span><span>Còn lại: <b id="sLeft">0</b></span></div>
-    <div class="bar"><i id="pbar"></i></div>
-    <div class="row" style="margin-top:12px">
-      <button class="ttv-nut" id="runBtn" type="button">▶ Bắt đầu / Tiếp tục</button>
-      <button class="ttv-nut-phu" id="stopBtn" type="button" disabled>⏸ Tạm dừng</button>
-    </div>
-    <div class="status" id="status">Đang tải danh sách câu…</div>
-    <div class="log" id="log"></div>
-  </div>
-
-  <div class="card">
-    <h2>3. Tải gói giọng và đưa lên GitHub</h2>
-    <p style="margin:0 0 10px">Bấm nút dưới đây bất cứ lúc nào (không cần đợi xong hết). Gói tải về có thư mục <b>audio</b> (mỗi chủ đề một tệp mp3) và tệp <b>giong-elio.js</b>.</p>
-    <div class="row"><button class="ttv-nut" id="zipBtn" type="button">⬇️ Tải gói giọng (.zip)</button><span id="zipMsg" style="font-weight:700"></span></div>
-    <ol class="steps">
-      <li>Giải nén tệp zip vừa tải.</li>
-      <li>Trên GitHub, mở kho <b>CVCEC/cong-truong-tieng-viet</b> → vào thư mục <b>luyen-noi</b> → <b>Add file → Upload files</b>.</li>
-      <li>Kéo cả thư mục <b>audio</b> và tệp <b>giong-elio.js</b> vào, rồi bấm <b>Commit changes</b>. Tệp cũ cùng tên sẽ được thay.</li>
-      <li>Khoảng 1–2 phút sau, mở lại trang Luyện nói: nút “Nghe mẫu” hiện ra ở những câu đã có giọng.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h2>4. Danh sách câu</h2>
-    <p style="margin:0 0 8px;font-weight:700">Chọn một chủ đề ở ô dưới đây thì nút “Bắt đầu / Tiếp tục” chỉ tạo giọng cho chủ đề đó (ví dụ chọn “Bảng âm (IPA)” để có loa cho Bảng âm trước).</p>
-    <div class="row" style="margin-bottom:10px"><select id="filter" style="max-width:320px"></select><label style="display:flex;gap:6px;align-items:center;font-weight:700"><input type="checkbox" id="onlyMissing" style="width:auto"> Chỉ hiện câu chưa có</label></div>
-    <div class="tbl"><table><thead><tr><th>Câu</th><th>Chủ đề</th><th></th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
-    <p style="font-size:13px;color:var(--ttv-chu-phu)">Khi sửa chữ trong noi-dung.txt, câu đã sửa sẽ hiện là "chưa có" để tạo lại; các câu khác giữ nguyên.</p>
+    <h2>Xem và chỉnh giọng mẫu</h2>
+    <ul>
+      <li>Tiến độ: <a href="https://github.com/CVCEC/cong-truong-tieng-viet/blob/main/giong-ai/trang-thai.md" target="_blank" rel="noopener">giong-ai/trang-thai.md</a></li>
+      <li>Câu cần nghe lại (Whisper nghe khác chữ): <a href="https://github.com/CVCEC/cong-truong-tieng-viet/blob/main/giong-ai/kiem-tra.tsv" target="_blank" rel="noopener">giong-ai/kiem-tra.tsv</a></li>
+      <li>Câu cần thu tay: <a href="https://github.com/CVCEC/cong-truong-tieng-viet/blob/main/giong-ai/thu-tay.md" target="_blank" rel="noopener">giong-ai/thu-tay.md</a></li>
+      <li>Cách dùng robot (đọc lại một câu, bỏ qua một câu, thay bằng bản thu người thật): <a href="https://github.com/CVCEC/cong-truong-tieng-viet/blob/main/giong-ai/README.md" target="_blank" rel="noopener">giong-ai/README.md</a></li>
+    </ul>
+    <p style="margin:10px 0 0">Sửa chữ hoặc thêm câu trong <code>luyen-noi/noi-dung.txt</code> xong thì chạy <code>node tools/tao-can-doc.js</code> để cập nhật danh sách; robot đọc câu mới ở lần chạy sau.</p>
   </div>
   <div class="copy">Copyrighted by CVCEC Trường Tiếng Việt Của Em 2026</div>
 </div>
-
-<script src="/luyen-noi/cham-cau.js?v=2"></script>
-<script src="/luyen-noi/ghep-tieng.js?v=1"></script>
-<script src="/luyen-noi/cao-do.js?v=1"></script>
-<script src="/luyen-noi/bang-am.js?v=1"></script>
-<script src="/luyen-noi/vendor/jszip.min.js"></script>
-<script src="/luyen-noi/vendor/lame.min.js"></script>
-<script>
-(function () {
-  const $ = id => document.getElementById(id);
-  const LS = 'luyen-noi-studio';
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-  let ND = null, LIST = [], HAVE = new Map();
-  const tenChuDe = id => id === 'bang-am' ? 'Bảng âm (IPA)' : (((ND && ND.chuDe.find(c => c.id === id)) || {}).ten || id);
-
-  /* ---------- Cài đặt (lưu trên máy này) ---------- */
-  const fields = ['apiKey', 'voice', 'model', 'pace', 'styleVi'];
-  function loadSet() { try { const v = JSON.parse(localStorage.getItem(LS) || '{}'); fields.forEach(f => { if (v[f] != null) $(f).value = v[f]; }); } catch (e) { } }
-  function saveSet() {
-    const v = {}; fields.forEach(f => v[f] = $(f).value.trim());
-    try { localStorage.setItem(LS, JSON.stringify(v)); } catch (e) { }
-    $('setMsg').innerHTML = '<p class="status">Đã lưu cài đặt trên máy này.</p>';
-  }
-  $('saveSet').onclick = saveSet;
-  $('forgetKey').onclick = () => { $('apiKey').value = ''; saveSet(); $('setMsg').innerHTML = '<p class="status">Đã xoá mã API khỏi máy này.</p>'; };
-
-  /* ---------- Lưu giọng đã tạo (IndexedDB) ---------- */
-  let db;
-  const openDB = () => new Promise((ok, err) => {
-    const r = indexedDB.open('luyen-noi-studio', 1);
-    r.onupgradeneeded = () => r.result.createObjectStore('clips', { keyPath: 'key' });
-    r.onsuccess = () => { db = r.result; ok(); }; r.onerror = () => err(r.error);
-  });
-  const store = mode => db.transaction('clips', mode).objectStore('clips');
-  const putClip = c => new Promise((ok, err) => { const r = store('readwrite').put(c); r.onsuccess = ok; r.onerror = () => err(r.error); });
-  const getAll = () => new Promise((ok, err) => { const r = store('readonly').getAll(); r.onsuccess = () => ok(r.result); r.onerror = () => err(r.error); });
-
-  async function refresh() {
-    const clips = await getAll(); HAVE = new Map(clips.map(c => [c.key, c]));
-    const done = LIST.filter(x => HAVE.has(x.key)).length;
-    $('sTotal').textContent = LIST.length; $('sDone').textContent = done; $('sLeft').textContent = LIST.length - done;
-    $('pbar').style.width = (LIST.length ? done / LIST.length * 100 : 0) + '%';
-    renderTable();
-  }
-
-  /* ---------- Gọi Google AI Studio ---------- */
-  function b64ToInt16(b64) {
-    const bin = atob(b64), n = bin.length, u8 = new Uint8Array(n);
-    for (let i = 0; i < n; i++) u8[i] = bin.charCodeAt(i);
-    return new Int16Array(u8.buffer, 0, Math.floor(n / 2));
-  }
-  function trim(pcm, rate) {
-    const th = 400, pad = Math.round(rate * .08);
-    let a = 0, b = pcm.length - 1;
-    while (a < b && Math.abs(pcm[a]) < th) a++;
-    while (b > a && Math.abs(pcm[b]) < th) b--;
-    return pcm.slice(Math.max(0, a - pad), Math.min(pcm.length, b + pad));
-  }
-  async function tts(text) {
-    const key = $('apiKey').value.trim();
-    if (!key) throw { stop: true, msg: 'Chưa có mã API. Hãy dán mã API ở phần 1.' };
-    const style = $('styleVi').value.trim();
-    const body = {
-      contents: [{ parts: [{ text: style ? style + ' ' + text : text }] }],
-      generationConfig: { responseModalities: ['AUDIO'], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: $('voice').value.trim() || 'Elio' } } } }
-    };
-    const model = $('model').value.trim();
-    let res;
-    try {
-      res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key }, body: JSON.stringify(body)
-      });
-    } catch (e) { throw { wait: 30, msg: 'Mất kết nối mạng, thử lại sau 30 giây.' }; }
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      const m = (data.error && data.error.message) || ('Lỗi ' + res.status);
-      if (res.status === 429) {
-        if (/per ?day|PerDay|daily/i.test(m)) throw { stop: true, quota: true, msg: 'Đã hết lượt miễn phí hôm nay. Ngày mai mở lại trang này và bấm "Bắt đầu / Tiếp tục" – trang sẽ làm tiếp từ câu đang dở.' };
-        let w = 60; const d = ((data.error && data.error.details) || []).find(x => x.retryDelay); if (d) w = parseInt(d.retryDelay, 10) + 2 || 60;
-        throw { wait: w, msg: `Gói miễn phí đang giới hạn, đợi ${w} giây rồi tự làm tiếp…` };
-      }
-      if (res.status === 400 && /voice/i.test(m)) throw { stop: true, msg: 'Tên giọng chưa đúng. Hãy kiểm tra lại ô "Tên giọng". Chi tiết: ' + m };
-      if (res.status === 404) throw { stop: true, msg: 'Không tìm thấy model. Hãy kiểm tra ô "Model tạo giọng". Chi tiết: ' + m };
-      if (res.status === 400 || res.status === 401 || res.status === 403) throw { stop: true, msg: 'Mã API hoặc cài đặt chưa đúng. Chi tiết: ' + m };
-      throw { wait: 30, msg: 'Lỗi tạm thời (' + res.status + '), thử lại sau 30 giây.' };
-    }
-    const part = (((data.candidates || [])[0] || {}).content || {}).parts;
-    const inl = part && part.find(p => p.inlineData);
-    if (!inl) throw { skip: true, msg: 'Không nhận được âm thanh cho câu này, sẽ thử lại sau.' };
-    const rate = parseInt(((inl.inlineData.mimeType || '').match(/rate=(\d+)/) || [])[1] || '24000', 10);
-    return { pcm: trim(b64ToInt16(inl.inlineData.data), rate), rate };
-  }
-  const luuClip = (it, pcm, rate) => { const clip = { key: it.key, t: it.t, g: it.g, rate, pcm: pcm.buffer, at: Date.now() }; HAVE.set(it.key, clip); return putClip(clip); };
-
-  /* ---------- Chạy lần lượt ---------- */
-  let running = false;
-  const log = t => { const d = document.createElement('div'); d.textContent = new Date().toLocaleTimeString() + ' · ' + t; $('log').prepend(d); };
-  const status = (t, cls) => { $('status').textContent = t; $('status').className = 'status ' + (cls || ''); };
-  async function run() {
-    saveSet();
-    running = true; $('runBtn').disabled = true; $('stopBtn').disabled = false;
-    const skipped = new Set();
-    while (running) {
-      // Chọn một chủ đề (ví dụ "Bảng âm (IPA)") ở ô lọc thì chỉ tạo giọng cho chủ đề đó
-      const nhom = $('filter').value || 'all';
-      const want = LIST.filter(x => (nhom === 'all' || x.g === nhom) && !HAVE.has(x.key) && !skipped.has(x.key));
-      if (!want.length) { status(nhom === 'all' ? 'Xong! Đã có giọng cho tất cả các câu. Hãy tải gói giọng ở phần 3.' : 'Xong chủ đề "' + tenChuDe(nhom) + '"! Hãy tải gói giọng ở phần 3.'); break; }
-      const it = want[0];
-      status(`Đang đọc: "${it.t}" (${tenChuDe(it.g)})`);
-      try {
-        const { pcm, rate } = await tts(it.t);
-        await luuClip(it, pcm, rate);
-        log('✓ ' + it.t);
-        await refresh();
-      } catch (e) {
-        if (e && e.stop) { status(e.msg, e.quota ? 'warn' : 'err'); log('⚠ ' + e.msg); break; }
-        if (e && e.wait) { status(e.msg, 'warn'); log('… ' + e.msg); await sleep(e.wait * 1000); continue; }
-        if (e && e.skip) { skipped.add(it.key); log('⚠ ' + e.msg); }
-        else { status('Lỗi: ' + (e && e.message || e), 'err'); log('⚠ ' + (e && e.message || e)); break; }
-      }
-      const pace = Math.max(1, parseFloat($('pace').value) || 21);
-      for (let s = 0; s < pace * 10 && running; s++) await sleep(100);
-    }
-    running = false; $('runBtn').disabled = false; $('stopBtn').disabled = true;
-  }
-  $('runBtn').onclick = () => { if (!running && LIST.length) run(); };
-  $('stopBtn').onclick = () => { running = false; status('Đã tạm dừng. Bấm "Bắt đầu / Tiếp tục" để làm tiếp.', 'warn'); };
-
-  /* ---------- Nghe thử ---------- */
-  function wavBlob(pcm, rate) {
-    const n = pcm.length, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
-    const w = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
-    w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
-    v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
-    new Int16Array(buf, 44).set(pcm);
-    return new Blob([buf], { type: 'audio/wav' });
-  }
-  let player = null;
-  const play = (pcm, rate) => { if (player) player.pause(); player = new Audio(URL.createObjectURL(wavBlob(pcm, rate))); player.play(); };
-  $('testBtn').onclick = async () => {
-    saveSet(); status('Đang tạo câu nghe thử…');
-    try { const { pcm, rate } = await tts('Chào các bạn! Mình là Trâu Con. Mình cùng luyện nói tiếng Việt nhé!'); play(pcm, rate); status('Đang phát câu nghe thử. Nếu nghe ổn, bấm "Bắt đầu / Tiếp tục".'); }
-    catch (e) { status((e && e.msg) || String(e), 'err'); }
-  };
-
-  /* ---------- Danh sách ---------- */
-  function renderTable() {
-    const f = $('filter').value || 'all', only = $('onlyMissing').checked;
-    const rows = LIST.filter(x => (f === 'all' || x.g === f) && (!only || !HAVE.has(x.key)));
-    $('tbody').innerHTML = rows.map(x => `<tr><td lang="vi">${esc(x.t)}</td><td>${esc(tenChuDe(x.g))}</td>
-      <td class="${HAVE.has(x.key) ? 'ok' : 'no'}">${HAVE.has(x.key) ? '✓ có' : 'chưa'}</td>
-      <td style="white-space:nowrap">${HAVE.has(x.key) ? `<button class="mini" data-play="${x.key}">▶</button> ` : ''}<button class="mini" data-redo="${x.key}">↻ ${HAVE.has(x.key) ? 'Tạo lại' : 'Tạo'}</button></td></tr>`).join('');
-  }
-  $('tbody').onclick = async e => {
-    const p = e.target.closest('[data-play]'), r = e.target.closest('[data-redo]');
-    if (p) { const c = HAVE.get(p.dataset.play); play(new Int16Array(c.pcm), c.rate); }
-    if (r) {
-      const it = LIST.find(x => x.key === r.dataset.redo); r.disabled = true; r.textContent = '…';
-      try { const { pcm, rate } = await tts(it.t); await luuClip(it, pcm, rate); play(pcm, rate); await refresh(); }
-      catch (err) { status((err && err.msg) || String(err), 'err'); r.disabled = false; r.textContent = '↻ Tạo lại'; }
-    }
-  };
-  $('filter').onchange = renderTable; $('onlyMissing').onchange = renderTable;
-
-  /* ---------- Đóng gói: mỗi chủ đề một tệp mp3 ---------- */
-  function encodeMp3(pcm, rate) {
-    if (!window.lamejs) return null;
-    const enc = new lamejs.Mp3Encoder(1, rate, 64), out = [];
-    for (let i = 0; i < pcm.length; i += 1152) { const b = enc.encodeBuffer(pcm.subarray(i, i + 1152)); if (b.length) out.push(new Uint8Array(b)); }
-    const e = enc.flush(); if (e.length) out.push(new Uint8Array(e));
-    return new Blob(out, { type: 'audio/mpeg' });
-  }
-  $('zipBtn').onclick = async () => {
-    if (!window.JSZip) { $('zipMsg').textContent = 'Chưa tải được thư viện nén. Tải lại trang rồi thử lại.'; return; }
-    $('zipMsg').textContent = 'Đang đóng gói…';
-    const clips = await getAll();
-    const theoMa = new Map(clips.map(c => [c.key, c]));
-    const groups = {};
-    LIST.forEach(x => { const c = theoMa.get(x.key); if (c) (groups[x.g] = groups[x.g] || []).push(c); });
-    const zip = new JSZip(), sprites = {}, files = {};
-    for (const g of Object.keys(groups)) {
-      const rate = groups[g][0].rate, gap = Math.round(rate * .3);
-      const ds = groups[g].filter(c => c.rate === rate);
-      let total = gap; ds.forEach(c => { total += new Int16Array(c.pcm).length + gap; });
-      const all = new Int16Array(total); let pos = gap;
-      ds.forEach(c => {
-        const p = new Int16Array(c.pcm);
-        all.set(p, pos);
-        files[c.key] = [g, +(pos / rate).toFixed(3), +(p.length / rate + .12).toFixed(3)];
-        pos += p.length + gap;
-      });
-      const mp3 = encodeMp3(all, rate);
-      const name = mp3 ? `audio/${g}.mp3` : `audio/${g}.wav`;
-      zip.file(name, mp3 || wavBlob(all, rate));
-      sprites[g] = name;
-    }
-    const js = '/* Gói giọng Trâu Con (Elio) cho trang Luyện nói – do luyen-noi/studio.html tạo ra ngày ' + new Date().toLocaleDateString('vi-VN') + ' */\n' +
-      'window.LUYEN_NOI_GIONG = ' + JSON.stringify({ sprites: sprites, files: files }) + ';\n';
-    zip.file('giong-elio.js', js);
-    const blob = await zip.generateAsync({ type: 'blob' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'goi-giong-luyen-noi.zip'; document.body.appendChild(a); a.click(); setTimeout(() => a.remove(), 200);
-    $('zipMsg').textContent = `Đã tạo gói: ${Object.keys(files).length} câu, ${Object.keys(sprites).length} tệp âm thanh.`;
-  };
-
-  /* ---------- Khởi động ---------- */
-  (async function init() {
-    loadSet();
-    try { await openDB(); } catch (e) { status('Trình duyệt này không cho lưu dữ liệu. Hãy dùng Chrome hoặc Edge, không dùng cửa sổ ẩn danh.', 'err'); return; }
-    try {
-      const r = await fetch('/luyen-noi/noi-dung.txt', { cache: 'no-cache' });
-      ND = ChamCau.docNoiDung(new TextDecoder('utf-8').decode(await r.arrayBuffer()));
-    } catch (e) { status('Không tải được noi-dung.txt. Kiểm tra mạng rồi tải lại trang.', 'err'); return; }
-    LIST = ChamCau.tatCaCau(ND).map(x => ({ key: x.ma, t: x.chu, g: x.chuDe }));
-    // Thẻ Bảng âm (IPA): âm, vần, tên thanh, tiếng ví dụ và các bước đánh vần (luyen-noi/bang-am.js)
-    if (window.BangAm) { const co = new Set(LIST.map(x => x.key)); BangAm.tatCaAm().forEach(x => { if (!co.has(x.ma)) { co.add(x.ma); LIST.push({ key: x.ma, t: x.chu, g: 'bang-am' }); } }); }
-    $('filter').innerHTML = '<option value="all">Tất cả chủ đề</option>' + ND.chuDe.map(c => `<option value="${esc(c.id)}">${esc(c.ten)}</option>`).join('') + '<option value="bang-am">Bảng âm (IPA)</option>';
-    if (ND.loi.length) log('⚠ noi-dung.txt có ' + ND.loi.length + ' dòng máy chưa hiểu: dòng ' + ND.loi.map(l => l.dong).join(', '));
-    status('Sẵn sàng. Dán mã API rồi bấm "Bắt đầu / Tiếp tục".');
-    await refresh();
-  })();
-})();
-</script>
 </body>
 </html>

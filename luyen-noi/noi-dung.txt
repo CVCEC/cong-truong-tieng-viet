@@ -19,7 +19,7 @@
 # Lưu ý:
 #   - Phần tiếng Anh sau dấu | có thể bỏ trống.
 #   - Trâu Con xưng "mình", gọi học sinh "các bạn". Không dùng tên thật của trẻ.
-#   - Sửa chữ của một câu thì câu đó cần tạo lại giọng Elio (luyen-noi/studio.html).
+#   - Sửa xong thì chạy: node tools/tao-can-doc.js – robot giọng đọc AI (giọng Kore) sẽ đọc câu mới/câu đã sửa ở lần chạy sau.
 
 # ===================== MỨC 1 – MẦM (dưới 6 tuổi) =====================
 

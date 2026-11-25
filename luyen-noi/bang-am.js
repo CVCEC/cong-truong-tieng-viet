@@ -5,7 +5,7 @@
  * Gồm: bảng âm đầu, nguyên âm, nguyên âm đôi, âm đệm, âm cuối, thanh điệu, bảng vần,
  * và phần "Ghép âm vần" (chọn âm đầu + vần + âm cuối + thanh → tiếng, phiên âm IPA, các bước đánh vần).
  *
- * Giọng mẫu: CHỈ dùng tệp giọng Trâu Con (Elio) do luyen-noi/studio.html tạo (window.LUYEN_NOI_GIONG).
+ * Giọng mẫu: CHỈ dùng tệp giọng Trâu Con (giọng AI Kore do robot giong-ai tạo, window.LUYEN_NOI_GIONG).
  * KHÔNG dùng giọng máy của thiết bị. Câu nào chưa có tệp giọng thì nút loa mờ đi.
  * Danh sách mọi câu cần giọng: BangAm.tatCaAm() (studio.html đọc danh sách này).
  *
@@ -204,7 +204,7 @@
 
   function maCau(chu) { return ChamCau.maCau(chu); }
 
-  /** Mọi câu cần giọng mẫu cho thẻ Bảng âm (studio.html tạo giọng Elio cho các câu này). */
+  /** Mọi câu cần giọng mẫu cho thẻ Bảng âm (robot giọng đọc AI đọc các câu này – tools/tao-can-doc.js). */
   function tatCaAm() {
     var ra = [], co = {};
     function them(chu, loai) {
@@ -284,7 +284,7 @@
     function chuNN(o) { return o ? (nn() === "en" ? o.en : o.vi) : ""; }
     function tao(the, lop, chu) { var e = doc.createElement(the); if (lop) e.className = lop; if (chu != null) e.textContent = chu; return e; }
 
-    /* ---------- Giọng mẫu (Elio) ---------- */
+    /* ---------- Giọng mẫu (Kore) ---------- */
     var dangPhat = null;
     function coGiong(chu) {
       var g = window.LUYEN_NOI_GIONG, ma = maCau(chu);
