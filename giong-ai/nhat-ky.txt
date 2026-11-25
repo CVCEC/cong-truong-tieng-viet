@@ -135,3 +135,4 @@ Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Ngoài đá bóng, các bạn còn thích gì nữa?  |  Ngoài đá bóng, các bạn còn thích gì nữa?
 0.88  Mình còn thích vẽ tranh và đọc truyện.  |  Mình còn thích vẽ tranh và đọc chuyện.
 0.88  Mình cũng thích đọc truyện cổ tích lắm!  |  Mình cũng thích đọc chuyện cổ tích lắm
+0.86  Lần sau mình cùng đọc truyện nhé.  |  Lần sau, mình cùng đọc chuyện nhé!
