@@ -115,3 +115,23 @@ Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Có, mùa đông có nhiều tuyết.  |  Có. Mùa đông có nhiều tuyết.
 1.00  Các bạn thích làm gì khi có tuyết?  |  Các bạn thích làm gì khi có tuyết?
 0.80  Mình thích nặn người tuyết.  |  Mình thích nặng người tuyết
+0.00  sở thích  |  Xin chào tất cả các bạn!
+0.00  đá bóng  |  Đã bỏng
+1.00  vẽ tranh  |  Vẽ tranh
+1.00  đọc sách  |  Đọc sách
+1.00  bơi lội  |  Bơi lội
+1.00  chơi đàn  |  Chơi đàn
+0.00  nấu ăn  |  nũ anh
+0.67  thời gian rảnh  |  thời gian dành
+1.00  Sở thích của em là vẽ tranh phong cảnh.  |  Sở thích của em là vẽ tranh phong cảnh.
+1.00  Cuối tuần, em thường đi bơi với bố.  |  Cuối tuần, em thường đi bơi với bố.
+1.00  Em thích đọc sách vì sách giúp em hiểu biết hơn.  |  Em thích đọc sách, vì sách giúp em hiểu biết hơn
+0.86  Khi rảnh, em hay chơi đàn piano.  |  Khi dành, em hay chơi đàn piano.
+1.00  Em muốn học nấu ăn cùng bà ngoại.  |  Em muốn học nấu ăn cùng bà ngoại
+0.90  Các bạn ơi, khi rảnh các bạn thích làm gì?  |  Các bạn ơi! Khi dành, các bạn thích làm gì?
+0.89  Khi rảnh, mình thích đá bóng với các bạn.  |  Khi dành, mình thích đá bóng với các bạn
+1.00  Hay quá! Các bạn đá bóng ở đâu?  |  Hay quá! Các bạn đá bóng ở đâu?
+0.89  Mình đá bóng ở sân trường vào cuối tuần.  |  Mình đã bóng ở sân trường vào cuối tuần.
+1.00  Ngoài đá bóng, các bạn còn thích gì nữa?  |  Ngoài đá bóng, các bạn còn thích gì nữa?
+0.88  Mình còn thích vẽ tranh và đọc truyện.  |  Mình còn thích vẽ tranh và đọc chuyện.
+0.88  Mình cũng thích đọc truyện cổ tích lắm!  |  Mình cũng thích đọc chuyện cổ tích lắm
