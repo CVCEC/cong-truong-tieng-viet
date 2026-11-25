@@ -76,3 +76,22 @@ Lô 15 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 1.00  Mình muốn ăn phở.  |  Mình muốn ăn phở
 0.82  Mình cũng thích phở lắm! Phở có ngon không?  |  mình cũng thích phở lắm Phở có ngon không? Phở có ngon không?
 0.67  Phở ngon quá!  |  Phổ ngon quá!
+0.50  con trâu  |  Con châu
+1.00  con mèo  |  con mèo
+0.00  con chó  |  Còn cháu?
+1.00  con gà  |  con gà
+0.50  con cá  |  con gá
+1.00  con chim  |  Con chim
+1.00  con voi  |  Con voi
+0.50  con thỏ  |  con thơ
+1.00  Con mèo đang ngủ.  |  Con mèo đang ngủ
+1.00  Con chó chạy rất nhanh.  |  Con chó chạy rất nhanh
+1.00  Con chim hót trên cây.  |  con chim hót trên cây.
+0.83  Con trâu ăn cỏ ngoài đồng.  |  Con châu ăn cỏ ngoài đồng
+1.00  Em thích con thỏ trắng.  |  Em thích con thỏ trắng
+0.90  Mình là con trâu. Các bạn thích con vật nào?  |  Mình là con châu Các bạn thích con vật nào?
+1.00  Mình thích con mèo.  |  Mình thích con mèo
+1.00  Con mèo kêu thế nào nhỉ?  |  Con mèo kêu thế nào nhỉ?
+0.60  Con mèo kêu meo meo.  |  Con mèo kêu mèo mèo
+1.00  Đúng rồi! Nhà các bạn có nuôi con gì không?  |  Đúng rồi! Nhà các bạn có nuôi con gì không?
+1.00  Nhà mình có một con chó.  |  Nhà mình có một con chó
