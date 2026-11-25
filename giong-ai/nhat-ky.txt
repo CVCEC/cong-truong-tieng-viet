@@ -44,3 +44,35 @@ Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"can
 Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
 Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
 1.00  cơm  |  Cơm
+Lô 1 câu – Gemini không trả tiếng: 400: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+
+Lô 1 câu – Gemini không trả tiếng: 400: {
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+
+Lô 15 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.50  hoa quả  |  hóa quả
+1.00  quả chuối  |  Quả chuối
+1.00  bữa sáng  |  Bữa sáng
+1.00  ngon quá  |  Ngon quá!
+1.00  Em thích ăn phở.  |  Em thích ăn phở
+1.00  Mẹ nấu cơm rất ngon.  |  Mẹ nấu cơm rất ngon
+1.00  Em uống một cốc nước.  |  Em uống một cốc nước
+1.00  Bữa sáng em ăn bánh mì.  |  Bữa sáng em ăn bánh mì
+1.00  Em mời cả nhà ăn cơm.  |  Em mời cả nhà ăn cơm
+1.00  Các bạn ơi, các bạn đói chưa?  |  Các bạn ơi, các bạn đói chưa?
+1.00  Mình đói rồi.  |  Mình đói rồi!
+1.00  Các bạn muốn ăn gì?  |  Các bạn muốn ăn gì?
+1.00  Mình muốn ăn phở.  |  Mình muốn ăn phở
+0.82  Mình cũng thích phở lắm! Phở có ngon không?  |  mình cũng thích phở lắm Phở có ngon không? Phở có ngon không?
+0.67  Phở ngon quá!  |  Phổ ngon quá!
