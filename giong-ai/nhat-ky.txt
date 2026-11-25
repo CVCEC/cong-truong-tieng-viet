@@ -95,3 +95,23 @@ Lô 15 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
 0.60  Con mèo kêu meo meo.  |  Con mèo kêu mèo mèo
 1.00  Đúng rồi! Nhà các bạn có nuôi con gì không?  |  Đúng rồi! Nhà các bạn có nuôi con gì không?
 1.00  Nhà mình có một con chó.  |  Nhà mình có một con chó
+Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
+0.50  trời nắng  |  Chơi nắng
+0.50  trời mưa  |  Chơi mưa
+0.50  tuyết rơi  |  Tuyết rồi!
+0.50  gió thổi  |  Gió thôi.
+0.50  trời lạnh  |  Chơi lạnh
+0.50  trời nóng  |  Chơi nóng!
+0.50  cái ô  |  Cái ố
+1.00  mùa đông  |  Mùa đông
+1.00  Hôm nay trời nắng đẹp.  |  Hôm nay trời nắng đẹp
+1.00  Trời mưa, em mang ô.  |  Trời mưa, em mang ô
+1.00  Mùa đông ở Canada có tuyết.  |  Mùa đông ở Canada có tuyết.
+0.67  Em mặc áo ấm đi học.  |  Em mặc ảo ẩm đi học
+1.00  Gió thổi mát quá.  |  Gió thổi mát quá!
+1.00  Hôm nay trời thế nào hả các bạn?  |  Hôm nay trời thế nào hả các bạn?
+1.00  Hôm nay trời lạnh lắm.  |  Hôm nay trời lạnh lắm
+1.00  Ở Canada có tuyết không?  |  Ở Canada có tuyết không?
+1.00  Có, mùa đông có nhiều tuyết.  |  Có. Mùa đông có nhiều tuyết.
+1.00  Các bạn thích làm gì khi có tuyết?  |  Các bạn thích làm gì khi có tuyết?
+0.80  Mình thích nặn người tuyết.  |  Mình thích nặng người tuyết
