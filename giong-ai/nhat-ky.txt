@@ -1,138 +1,20 @@
-Lô 19 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-1.00  gia đình  |  gia đình
-1.00  bố mẹ  |  bố mẹ
-1.00  ông bà  |  Ông bà
-1.00  anh trai  |  anh trai
-1.00  chị gái  |  Chị gái?
-0.50  em bé  |  EM BẠ
-0.00  ngôi nhà  |  Ngồi nha!
-1.00  yêu thương  |  yêu thương
-1.00  Đây là gia đình của em.  |  Đây là gia đình của em
-1.00  Nhà em có bốn người.  |  Nhà em có 4 người
-1.00  Em yêu bố mẹ.  |  Em yêu bố mẹ
-1.00  Ông bà sống ở Việt Nam.  |  Ông bà sống ở Việt Nam
-1.00  Em giúp mẹ nấu cơm.  |  Em giúp mẹ nấu cơm
-0.83  Nhà các bạn có mấy người?  |  Nhà các bạn có mấy mười.
-1.00  Nhà mình có bốn người.  |  Nhà mình có 4 người
-0.90  Ồ, vui quá! Các bạn có anh chị em không?  |  Ô, vui quá! Các bạn có anh chị em không?
-1.00  Mình có một em bé.  |  Mình có một em bé
-1.00  Các bạn thường làm gì cùng gia đình?  |  Các bạn thường làm gì cùng gia đình?
-1.00  Mình ăn cơm cùng gia đình.  |  Mình ăn cơm cùng gia đình
-1.00  trường học  |  trường học
-1.00  lớp học  |  Lớp học
-0.00  quyển sách  |  Quyền sạch
-1.00  cái bút  |  Cái bút
-1.00  bài học  |  Bài học
-0.50  học sinh  |  hợp sinh
-1.00  giờ ra chơi  |  Giờ ra chơi!
-1.00  tiếng Việt  |  Tiếng Việt
-1.00  Em đi học tiếng Việt.  |  Em đi học tiếng Việt
-0.83  Đây là quyển sách của em.  |  Đây là quyền sách của em
-0.40  Em thích giờ ra chơi.  |  Em thích dầu da chôi
-1.00  Cô giáo dạy em đọc.  |  Cô giáo dạy em đọc
-1.00  Lớp em có nhiều bạn.  |  lớp em có nhiều bạn
-1.00  Các bạn học tiếng Việt ở đâu?  |  Các bạn học tiếng Việt ở đâu?
-1.00  Mình học ở Trường Tiếng Việt Của Em.  |  Mình học ở trường tiếng Việt của em
-1.00  Các bạn thích học môn gì nhất?  |  Các bạn thích học môn gì nhất?
-1.00  Mình thích học tiếng Việt.  |  Mình thích học tiếng Việt
-1.00  Giỏi quá! Các bạn đọc cho mình nghe nhé.  |  Giỏi quá! Các bạn đọc cho mình nghe nhé!
-1.00  Mình đọc được rồi.  |  Mình đọc được rồi
-Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-0.50  phở bò  |  Phở bó
-1.00  bánh mì  |  Bánh mì
-Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-1.00  cơm  |  Cơm
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 15 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-0.50  hoa quả  |  hóa quả
-1.00  quả chuối  |  Quả chuối
-1.00  bữa sáng  |  Bữa sáng
-1.00  ngon quá  |  Ngon quá!
-1.00  Em thích ăn phở.  |  Em thích ăn phở
-1.00  Mẹ nấu cơm rất ngon.  |  Mẹ nấu cơm rất ngon
-1.00  Em uống một cốc nước.  |  Em uống một cốc nước
-1.00  Bữa sáng em ăn bánh mì.  |  Bữa sáng em ăn bánh mì
-1.00  Em mời cả nhà ăn cơm.  |  Em mời cả nhà ăn cơm
-1.00  Các bạn ơi, các bạn đói chưa?  |  Các bạn ơi, các bạn đói chưa?
-1.00  Mình đói rồi.  |  Mình đói rồi!
-1.00  Các bạn muốn ăn gì?  |  Các bạn muốn ăn gì?
-1.00  Mình muốn ăn phở.  |  Mình muốn ăn phở
-0.82  Mình cũng thích phở lắm! Phở có ngon không?  |  mình cũng thích phở lắm Phở có ngon không? Phở có ngon không?
-0.67  Phở ngon quá!  |  Phổ ngon quá!
-0.50  con trâu  |  Con châu
-1.00  con mèo  |  con mèo
-0.00  con chó  |  Còn cháu?
-1.00  con gà  |  con gà
-0.50  con cá  |  con gá
-1.00  con chim  |  Con chim
-1.00  con voi  |  Con voi
-0.50  con thỏ  |  con thơ
-1.00  Con mèo đang ngủ.  |  Con mèo đang ngủ
-1.00  Con chó chạy rất nhanh.  |  Con chó chạy rất nhanh
-1.00  Con chim hót trên cây.  |  con chim hót trên cây.
-0.83  Con trâu ăn cỏ ngoài đồng.  |  Con châu ăn cỏ ngoài đồng
-1.00  Em thích con thỏ trắng.  |  Em thích con thỏ trắng
-0.90  Mình là con trâu. Các bạn thích con vật nào?  |  Mình là con châu Các bạn thích con vật nào?
-1.00  Mình thích con mèo.  |  Mình thích con mèo
-1.00  Con mèo kêu thế nào nhỉ?  |  Con mèo kêu thế nào nhỉ?
-0.60  Con mèo kêu meo meo.  |  Con mèo kêu mèo mèo
-1.00  Đúng rồi! Nhà các bạn có nuôi con gì không?  |  Đúng rồi! Nhà các bạn có nuôi con gì không?
-1.00  Nhà mình có một con chó.  |  Nhà mình có một con chó
-Lô 19 câu: khoảng lặng chưa rõ, cắt theo mốc chữ của Whisper
-0.50  trời nắng  |  Chơi nắng
-0.50  trời mưa  |  Chơi mưa
-0.50  tuyết rơi  |  Tuyết rồi!
-0.50  gió thổi  |  Gió thôi.
-0.50  trời lạnh  |  Chơi lạnh
-0.50  trời nóng  |  Chơi nóng!
-0.50  cái ô  |  Cái ố
-1.00  mùa đông  |  Mùa đông
-1.00  Hôm nay trời nắng đẹp.  |  Hôm nay trời nắng đẹp
-1.00  Trời mưa, em mang ô.  |  Trời mưa, em mang ô
-1.00  Mùa đông ở Canada có tuyết.  |  Mùa đông ở Canada có tuyết.
-0.67  Em mặc áo ấm đi học.  |  Em mặc ảo ẩm đi học
-1.00  Gió thổi mát quá.  |  Gió thổi mát quá!
-1.00  Hôm nay trời thế nào hả các bạn?  |  Hôm nay trời thế nào hả các bạn?
-1.00  Hôm nay trời lạnh lắm.  |  Hôm nay trời lạnh lắm
-1.00  Ở Canada có tuyết không?  |  Ở Canada có tuyết không?
-1.00  Có, mùa đông có nhiều tuyết.  |  Có. Mùa đông có nhiều tuyết.
-1.00  Các bạn thích làm gì khi có tuyết?  |  Các bạn thích làm gì khi có tuyết?
-0.80  Mình thích nặn người tuyết.  |  Mình thích nặng người tuyết
-0.00  sở thích  |  Xin chào tất cả các bạn!
-0.00  đá bóng  |  Đã bỏng
-1.00  vẽ tranh  |  Vẽ tranh
-1.00  đọc sách  |  Đọc sách
-1.00  bơi lội  |  Bơi lội
-1.00  chơi đàn  |  Chơi đàn
-0.00  nấu ăn  |  nũ anh
-0.67  thời gian rảnh  |  thời gian dành
-1.00  Sở thích của em là vẽ tranh phong cảnh.  |  Sở thích của em là vẽ tranh phong cảnh.
-1.00  Cuối tuần, em thường đi bơi với bố.  |  Cuối tuần, em thường đi bơi với bố.
-1.00  Em thích đọc sách vì sách giúp em hiểu biết hơn.  |  Em thích đọc sách, vì sách giúp em hiểu biết hơn
-0.86  Khi rảnh, em hay chơi đàn piano.  |  Khi dành, em hay chơi đàn piano.
-1.00  Em muốn học nấu ăn cùng bà ngoại.  |  Em muốn học nấu ăn cùng bà ngoại
-0.90  Các bạn ơi, khi rảnh các bạn thích làm gì?  |  Các bạn ơi! Khi dành, các bạn thích làm gì?
-0.89  Khi rảnh, mình thích đá bóng với các bạn.  |  Khi dành, mình thích đá bóng với các bạn
-1.00  Hay quá! Các bạn đá bóng ở đâu?  |  Hay quá! Các bạn đá bóng ở đâu?
-0.89  Mình đá bóng ở sân trường vào cuối tuần.  |  Mình đã bóng ở sân trường vào cuối tuần.
-1.00  Ngoài đá bóng, các bạn còn thích gì nữa?  |  Ngoài đá bóng, các bạn còn thích gì nữa?
-0.88  Mình còn thích vẽ tranh và đọc truyện.  |  Mình còn thích vẽ tranh và đọc chuyện.
-0.88  Mình cũng thích đọc truyện cổ tích lắm!  |  Mình cũng thích đọc chuyện cổ tích lắm
-0.86  Lần sau mình cùng đọc truyện nhé.  |  Lần sau, mình cùng đọc chuyện nhé!
+1.00  thức dậy  |  Thức dậy
+0.50  đánh răng  |  Đảnh răng
+1.00  ăn sáng  |  ăn sáng
+1.00  đi học  |  Đi học
+1.00  làm bài tập  |  Làm bài tập
+0.00  tắm rửa  |  Tấm dừa
+1.00  đi ngủ  |  đi ngủ
+0.00  buổi tối  |  Hãy đăng ký kênh để nghe những video hấp dẫn.
+1.00  Mỗi sáng, em thức dậy lúc bảy giờ.  |  Mỗi sáng, em thức dậy lúc 7 giờ.
+1.00  Sau khi đánh răng, em ăn sáng cùng gia đình.  |  Sau khi đánh răng, em ăn sáng cùng gia đình.
+1.00  Buổi chiều, em làm bài tập rồi mới đi chơi.  |  Buổi chiều, em làm bài tập rồi mới đi chơi
+1.00  Trước khi đi ngủ, em đọc sách mười lăm phút.  |  Trước khi đi ngủ, em đọc sách 15 phút
+1.00  Em đi ngủ sớm để sáng mai không bị mệt.  |  Em đi ngủ sớm để sáng mai không bị mệt
+1.00  Các bạn thường thức dậy lúc mấy giờ?  |  Các bạn thường thức dậy lúc mấy giờ?
+1.00  Mình thường thức dậy lúc bảy giờ sáng.  |  Mình thường thức dậy lúc 7 giờ sáng.
+1.00  Sau đó các bạn làm gì?  |  Sau đó các bạn làm gì?
+1.00  Mình đánh răng, rửa mặt rồi ăn sáng.  |  Mình đánh răng, rửa mặt, rồi ăn sáng
+1.00  Bữa sáng hôm nay các bạn ăn gì?  |  Bữa sáng hôm nay các bạn ăn gì?
+1.00  Hôm nay mình ăn bánh mì và uống sữa.  |  Hôm nay mình ăn bánh mì và uống sữa
+1.00  Ngon quá! Các bạn đi học bằng gì?  |  Ngon quá! Các bạn đi học bằng gì?

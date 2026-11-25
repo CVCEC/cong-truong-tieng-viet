@@ -1,8 +1,7 @@
 # Giọng đọc AI – trạng thái (Luyện nói)
 
-- Lần chạy gần nhất: 2026-11-25 08:55 UTC
+- Lần chạy gần nhất: 2026-11-25 15:24 UTC
 - Mô hình: gemini-3.1-flash-tts-preview · giọng Kore · miền Bắc
-- Đã có tiếng: **237 / 784** câu (lần này thêm 115, dùng 16 lượt gọi)
-- Câu Whisper nghe hơi khác chữ (cần nghe kỹ, xem kiem-tra.tsv): 56
-- Câu bỏ qua theo yêu cầu (bo.txt): 0 · câu lỗi: 0
-- Ghi chú: Đã hết lượt trong ngày của gói hiện tại – lần chạy tự động ngày mai sẽ làm tiếp.
+- Đã có tiếng: **257 / 784** câu (lần này thêm 20, dùng 1 lượt gọi)
+- Câu Whisper nghe hơi khác chữ (cần nghe kỹ, xem kiem-tra.tsv): 59
+- Câu bỏ qua theo yêu cầu (bo.txt): 1 · câu lỗi: 0
