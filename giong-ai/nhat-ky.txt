@@ -82,3 +82,23 @@
 1.00  Mình thích nhất là được ăn món bà nấu.  |  Mình thích nhất là được ăn món bà nấu
 0.86  Hè sau các bạn muốn đi đâu?  |  Hẻ sau, các bạn muốn đi đâu?
 0.89  Hè sau mình muốn đi cắm trại trên núi.  |  Hề sau, mình muốn đi cắm trại trên núi
+1.00  giới thiệu  |  giới thiệu.
+1.00  bản thân  |  Bản thân
+0.50  tính cách  |  Tỉnh cách
+0.50  điểm mạnh  |  Điềm mạnh!
+0.50  song ngữ  |  sông ngữ
+1.00  trung học  |  Trung học
+1.00  tình nguyện  |  tình nguyện
+1.00  tự tin  |  tự tin.
+1.00  Xin phép cho em giới thiệu đôi nét về bản thân.  |  Xin phép cho em giới thiệu đôi nét về bản thân.
+1.00  Em đang học lớp chín tại một trường trung học ở Toronto.  |  Em đang học lớp 9 tại một trường trung học ở Toronto.
+1.00  Em nói được cả tiếng Anh lẫn tiếng Việt.  |  Em nói được cả tiếng Anh, lẫn tiếng Việt.
+1.00  Ước mơ của em là trở thành bác sĩ để giúp đỡ mọi người.  |  ước mơ của em là trở thành bác sĩ để giúp đỡ mọi người.
+1.00  Ngoài giờ học, em tham gia hoạt động tình nguyện ở thư viện.  |  Ngoài giờ học, em tham gia hoạt động tình nguyện ở thư viện.
+1.00  Chào các bạn! Các bạn giới thiệu một chút về mình nhé?  |  Chào các bạn! Các bạn giới thiệu một chút về mình nhé!
+0.93  Chào Trâu Con! Mình là học sinh trung học và đang học tiếng Việt.  |  Chào châu con! Mình là học sinh trung học và đang học tiếng Việt.
+1.00  Vì sao các bạn muốn học tiếng Việt?  |  Vì sao các bạn muốn học tiếng Việt?
+1.00  Mình muốn nói chuyện được với ông bà và hiểu thêm về cội nguồn.  |  Mình muốn nói chuyện được với ông bà và hiểu thêm về cội nguồn."
+1.00  Thật ý nghĩa! Các bạn có ước mơ gì cho tương lai?  |  Thật ý nghĩa! Các bạn có ước mơ gì cho tương lai?
+1.00  Mình mơ ước trở thành kỹ sư để xây những cây cầu.  |  Mình mơ ước trở thành kỹ sư để xây những cây cầu.
+0.90  Các bạn thấy học hai ngôn ngữ có khó không?  |  Các bạn thấy học hai nguồn ngữ có khó không?
