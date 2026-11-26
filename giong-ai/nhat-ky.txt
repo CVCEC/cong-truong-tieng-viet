@@ -103,3 +103,23 @@
 1.00  Mình mơ ước trở thành kỹ sư để xây những cây cầu.  |  Mình mơ ước trở thành kỹ sư để xây những cây cầu.
 0.90  Các bạn thấy học hai ngôn ngữ có khó không?  |  Các bạn thấy học hai nguồn ngữ có khó không?
 1.00  Có lúc khó, nhưng biết hai ngôn ngữ giúp mình tự tin hơn.  |  Có lúc khó, nhưng biết hai ngôn ngữ giúp mình tự tin hơn.
+1.00  quê hương  |  Quê Hương
+1.00  đất nước  |  Đất nước
+1.00  thủ đô  |  Thủ đô
+1.00  ruộng bậc thang  |  ruộng bậc thang
+1.00  vịnh Hạ Long  |  Vịnh Hạ Long
+1.00  miền Bắc  |  miền Bắc
+1.00  miền Trung  |  miền Trung
+1.00  miền Nam  |  miền Nam
+1.00  Việt Nam có hình chữ S, trải dài từ Bắc vào Nam.  |  Việt Nam có hình chữ S, trải dài từ Bắc vào Nam.
+1.00  Hà Nội là thủ đô của Việt Nam.  |  Hà Nội là thủ đô của Việt Nam.
+1.00  Vịnh Hạ Long nổi tiếng với hàng nghìn hòn đảo đá vôi.  |  Vịnh Hạ Long nổi tiếng với hàng nghìn hòn đảo đá vôi.
+1.00  Mỗi miền có giọng nói và món ăn riêng rất thú vị.  |  Mỗi miền có giọng nói và món ăn riêng rất thú vị.
+1.00  Dù sống xa quê, em vẫn luôn tự hào là người Việt Nam.  |  Dù sống xa quê, em vẫn luôn tự hào là người Việt Nam."
+1.00  Các bạn đã bao giờ về Việt Nam chưa?  |  Các bạn đã bao giờ về Việt Nam chưa?
+1.00  Mình về rồi, quê mình ở miền Trung.  |  Mình về rồi. Quê mình ở miền Trung.
+1.00  Miền Trung có những nơi nào đẹp?  |  Miền Trung có những nơi nào đẹp
+1.00  Mình rất thích phố cổ Hội An và biển Đà Nẵng.  |  Mình rất thích phố cổ Hội An và biển Đà Nẵng.
+1.00  Nếu giới thiệu Việt Nam cho bạn bè, các bạn sẽ nói gì?  |  Nếu giới thiệu Việt Nam cho bạn bè, các bạn sẽ nói gì?
+1.00  Mình sẽ nói Việt Nam có thiên nhiên đẹp và con người thân thiện.  |  Mình sẽ nói, Việt Nam có thiên nhiên đẹp và con người thân thiện.
+1.00  Các bạn có muốn mời bạn bè cùng về thăm không?  |  Các bạn có muốn mời bạn bè cùng về thăm không?
