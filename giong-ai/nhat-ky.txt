@@ -81,3 +81,4 @@
 1.00  Ở Việt Nam các bạn thích nhất điều gì?  |  Ở Việt Nam, các bạn thích nhất điều gì?
 1.00  Mình thích nhất là được ăn món bà nấu.  |  Mình thích nhất là được ăn món bà nấu
 0.86  Hè sau các bạn muốn đi đâu?  |  Hẻ sau, các bạn muốn đi đâu?
+0.89  Hè sau mình muốn đi cắm trại trên núi.  |  Hề sau, mình muốn đi cắm trại trên núi
