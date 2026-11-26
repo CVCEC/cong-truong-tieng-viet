@@ -217,6 +217,8 @@ function veThongBao(chu, nut, href) {
 // nhóm 13–17 tự chọn (lưu trên máy, khoá riêng mới "cvcec-goc-hoc-tap-huong").
 const KHOA_HUONG = "cvcec-goc-hoc-tap-huong";
 const la15 = (ma) => { const g = window.TTV && window.TTV.goc(ma); return !!(g && g.nhom === "lo-trinh"); };
+// Sổ "Lộ trình 15+" (từ 26-11-2026): mọi góc có bài gắn nhãn bậc trong TTV_LO_TRINH (trừ Triển lãm), không chỉ Vui học, Về Nhà Em
+const coNhan = (ma) => !!(window.TTV_LO_TRINH && window.TTV_LO_TRINH.nhanBai[ma] && ma !== "trienlam");
 function huongCua(hoSo) {
   const nt = hoSo && hoSo.nhomTuoi;
   if (DUOI_13.includes(nt)) return { huong: "lang", chon: false };
@@ -242,7 +244,7 @@ function ve() {
   $("chao").textContent = dien(C.chao, { ten: hoSo.bietDanh }); $("chao").hidden = false;
   const o = $("noi-dung"); o.textContent = "";
   const { huong, chon } = huongCua(hoSo);
-  const hop = (ma) => (huong === "lo-trinh") === la15(ma);   // bài / góc thuộc sổ đang xem
+  const hop = (ma) => (huong === "lo-trinh" ? coNhan(ma) : !la15(ma));   // bài / góc thuộc sổ đang xem
   if (chon) {
     o.append(tao("p", "ght-mo-ta", C.huongChon));
     const nhom = tao("div", "ght-huong"); nhom.setAttribute("role", "group"); nhom.setAttribute("aria-label", C.huongChon);
@@ -264,7 +266,7 @@ function ve() {
   // Chặng đang đi = bậc gặp nhiều nhất trong 10 bài xong gần đây nhất (bằng nhau thì lấy bậc cao hơn).
   const xongTheoBac = {}, ganDayXong = [];
   bai.forEach((b) => {
-    if (!b.xong || !L || !la15(b.chuongTrinh)) return;
+    if (!b.xong || !L || !coNhan(b.chuongTrinh)) return;
     const nh = L.nhanCuaBai(b.chuongTrinh, b.bai);
     if (!nh) return;
     xongTheoBac[nh.bac] = (xongTheoBac[nh.bac] || 0) + 1;
@@ -278,7 +280,7 @@ function ve() {
   if (L && huong === "lo-trinh") {
     o.append(tao("h2", "ght-h2", C.duongLang), tao("p", "ght-mo-ta", C.duongLangMoTa));
     const tong = {};
-    (window.CONG.danhSach() || []).filter((m) => m.nhom === "lo-trinh").forEach((m) => {
+    (window.CONG.danhSach() || []).filter((m) => coNhan(m.id) && m.id !== "luyennoi").forEach((m) => {
       const t = L.soBaiTheoBac(m.id); Object.keys(t).forEach((k) => { tong[k] = (tong[k] || 0) + t[k]; });
     });
     if (!tong[bacHienTai]) bacHienTai = Number(Object.keys(tong).sort()[0] || 0);
