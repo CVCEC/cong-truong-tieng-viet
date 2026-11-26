@@ -39,3 +39,4 @@
 1.00  Các bạn chúc ông bà thế nào?  |  Các bạn chúc ông bà thế nào!
 1.00  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ.  |  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ!
 0.91  Hay quá! Năm nay các bạn có điều ước gì không?  |  Hay quá! Năm nay các bạn có đều ước gì không?
+1.00  Mình ước học giỏi tiếng Việt hơn.  |  Mình ước học giỏi tiếng Việt hơn!
