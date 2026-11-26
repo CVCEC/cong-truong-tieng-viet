@@ -147,3 +147,23 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  Họ rất thích, nhất là bánh mì và gỏi cuốn.  |  Họ rất thích, nhất là bánh mì và gỏi cuốn
 1.00  Nếu mở một quán ăn, các bạn sẽ bán món gì?  |  Nếu mở một quán ăn, các bạn sẽ bán món gì?
 1.00  Mình sẽ bán bún chả, vì ở đây ít người biết món này.  |  Mình sẽ bán bún chả vì ở đây ít người biết món này
+1.00  văn hóa  |  văn hóa
+1.00  truyền thống  |  truyền thống
+0.50  bản sắc  |  Bàn sắc
+1.00  phong tục  |  Phong tục
+1.00  cộng đồng  |  Cộng đồng
+1.00  tôn trọng  |  Tôn trọng
+1.00  cội nguồn  |  Cội nguồn
+0.00  giữ gìn  |  Dũ xin
+1.00  Em lớn lên ở Canada nhưng vẫn giữ gìn tiếng Việt.  |  Em lớn lên ở Canada nhưng vẫn giữ gìn tiếng Việt.
+1.00  Ở nhà em nói tiếng Việt, còn ở trường em nói tiếng Anh.  |  Ở nhà em nói tiếng Việt, còn ở trường em nói tiếng Anh
+1.00  Gia đình em vừa đón Tết Nguyên Đán, vừa đón lễ Tạ ơn.  |  Gia đình em vừa đón Tết nguyên đán, vừa đón lễ tạ ơn.
+1.00  Biết hai nền văn hóa giúp em hiểu và tôn trọng người khác hơn.  |  Biết hai nền văn hóa, giúp em hiểu và tôn trọng người khác hơn.
+1.00  Cộng đồng người Việt ở Toronto thường tổ chức hội chợ Tết.  |  Cộng đồng người Việt ở Toronto thường tổ chức hội chợ Tết.
+1.00  Các bạn thấy sống giữa hai nền văn hóa thế nào?  |  Các bạn thấy sống giữa hai nền văn hóa thế nào?
+1.00  Mình thấy thú vị, vì mình được học hỏi từ cả hai.  |  Mình thấy thú vị vì mình được học hỏi từ cả hai.
+1.00  Có lúc nào các bạn thấy khó khăn không?  |  Có lúc nào các bạn thấy khó khăn không?
+1.00  Đôi khi mình quên từ tiếng Việt khi nói chuyện với bà.  |  Đôi khi mình quên từ tiếng Việt khi nói chuyện với bà.
+1.00  Lúc đó các bạn làm thế nào?  |  Lúc đó các bạn làm thế nào?
+1.00  Mình hỏi lại bà và ghi từ mới vào sổ tay.  |  Mình hỏi lại bà và ghi từ mới vào sổ tay.
+1.00  Các bạn muốn giữ truyền thống nào của người Việt?  |  Các bạn muốn giữ truyền thống nào của người Việt?
