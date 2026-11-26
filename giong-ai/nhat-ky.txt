@@ -136,3 +136,13 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  nguyên liệu  |  Nguyên Liệu
 1.00  Ẩm thực Việt Nam nổi tiếng vì tươi ngon và cân bằng.  |  ẩm thực Việt Nam nổi tiếng vì tươi ngon và cân bằng.
 1.00  Gỏi cuốn gồm bánh tráng, bún, rau sống và tôm.  |  Gỏi cuốn gồm bánh tráng, bún, rau sống và tôm
+1.00  Theo em, nước mắm là linh hồn của món ăn Việt.  |  Theo em, nước mắm là linh hồn của món ăn Việt.
+1.00  Mỗi vùng miền đều có đặc sản riêng.  |  Mỗi vùng miền đều có đặc sản riêng.
+0.93  Cuối tuần này, em sẽ thử nấu bún chả theo công thức của mẹ.  |  Cuối tuần này, em sẽ thử nấu bún trà theo công thức của mẹ.
+1.00  Theo các bạn, món ăn Việt nào ngon nhất?  |  Theo các bạn, món ăn Việt nào ngon nhất?
+1.00  Theo mình, phở ngon nhất vì nước dùng rất thơm.  |  Theo mình, phở ngon nhất vì nước dùng rất thơm
+1.00  Các bạn đã bao giờ tự nấu món Việt chưa?  |  Các bạn đã bao giờ tự nấu món Việt chưa?
+1.00  Mình đã cùng mẹ làm gỏi cuốn vào dịp Tết.  |  Mình đã cùng mẹ làm gỏi cuốn vào dịp Tết.
+1.00  Bạn bè người Canada của các bạn có thích món Việt không?  |  Bạn bè người Canada của các bạn có thích món Việt không?
+1.00  Họ rất thích, nhất là bánh mì và gỏi cuốn.  |  Họ rất thích, nhất là bánh mì và gỏi cuốn
+1.00  Nếu mở một quán ăn, các bạn sẽ bán món gì?  |  Nếu mở một quán ăn, các bạn sẽ bán món gì?
