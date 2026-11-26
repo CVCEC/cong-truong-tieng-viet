@@ -123,3 +123,4 @@
 1.00  Nếu giới thiệu Việt Nam cho bạn bè, các bạn sẽ nói gì?  |  Nếu giới thiệu Việt Nam cho bạn bè, các bạn sẽ nói gì?
 1.00  Mình sẽ nói Việt Nam có thiên nhiên đẹp và con người thân thiện.  |  Mình sẽ nói, Việt Nam có thiên nhiên đẹp và con người thân thiện.
 1.00  Các bạn có muốn mời bạn bè cùng về thăm không?  |  Các bạn có muốn mời bạn bè cùng về thăm không?
+1.00  Có chứ, mình muốn đưa các bạn đi ăn phở ở Hà Nội.  |  Có chứ! Mình muốn đưa các bạn đi ăn phở ở Hà Nội
