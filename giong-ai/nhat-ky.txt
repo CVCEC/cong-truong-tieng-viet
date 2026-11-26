@@ -40,3 +40,23 @@
 1.00  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ.  |  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ!
 0.91  Hay quá! Năm nay các bạn có điều ước gì không?  |  Hay quá! Năm nay các bạn có đều ước gì không?
 1.00  Mình ước học giỏi tiếng Việt hơn.  |  Mình ước học giỏi tiếng Việt hơn!
+1.00  môi trường  |  Môi trường
+0.00  rác thải  |  giác thái
+0.50  tái chế  |  Đại chế
+1.00  trồng cây  |  trồng cây
+0.67  tiết kiệm nước  |  Tiếp kiệm nước
+1.00  ô nhiễm  |  Ô nhiễm
+0.67  túi ni lông  |  Tuổi ni lông
+0.50  thùng rác  |  thùng giác
+0.71  Em bỏ rác vào đúng thùng rác.  |  Em bỏ giác vào đúng thùng giác
+1.00  Chúng ta nên tắt đèn khi ra khỏi phòng.  |  chúng ta nên tắt đèn khi ra khỏi phòng.
+1.00  Lớp em trồng cây xanh ở sân trường.  |  lớp em trồng cây xanh ở sân trường.
+1.00  Em mang túi vải đi chợ thay cho túi ni lông.  |  Em mang túi vải đi chợ thay cho túi ni lông.
+1.00  Nếu mọi người cùng tiết kiệm nước, Trái Đất sẽ xanh hơn.  |  Nếu mọi người cùng tiết kiệm nước, trái đất sẽ xanh hơn.
+1.00  Các bạn ơi, làm sao để giữ cho Trái Đất xanh?  |  Các bạn ơi, làm sao để giữ cho trái đất xanh?
+1.00  Mình nghĩ chúng ta nên trồng thêm nhiều cây.  |  Mình nghĩ chúng ta nên trồng thêm nhiều cây.
+0.92  Đúng rồi! Ở nhà các bạn làm gì để bảo vệ môi trường?  |  Đúng rồi. Ở nhà các bạn làm gì để bảo vệ môi trương?
+1.00  Ở nhà, mình phân loại rác để tái chế.  |  Ở nhà, mình phân loại rác để tái chế.
+0.88  Giỏi quá! Còn khi đánh răng thì sao?  |  Rồi quá! Còn khi đánh răng thì sao?
+0.88  Mình khóa vòi nước để tiết kiệm nước.  |  Mình khóa vòi nước để tiết kiệu nước.
+1.00  Các bạn đúng là bạn của thiên nhiên!  |  Các bạn đúng là bạn của thiên nhiên.
