@@ -61,3 +61,23 @@
 0.88  Mình khóa vòi nước để tiết kiệm nước.  |  Mình khóa vòi nước để tiết kiệu nước.
 1.00  Các bạn đúng là bạn của thiên nhiên!  |  Các bạn đúng là bạn của thiên nhiên.
 0.90  Cảm ơn Trâu Con, mình sẽ cố gắng hơn nữa.  |  Cảm ơn châu con! Mình sẽ cố gắng hơn nữa!
+0.33  kỳ nghỉ hè  |  Kỳ nghì hế
+1.00  bãi biển  |  bãi biển
+0.00  cắm trại  |  Cẩn thận
+0.50  du lịch  |  Su lịch
+0.50  máy bay  |  Mảy bay
+1.00  về quê  |  Về quê
+1.00  chụp ảnh  |  Chụp ảnh
+1.00  kỷ niệm  |  Kỷ niệm
+1.00  Kỳ nghỉ hè này, em được về quê thăm ông bà.  |  Kỳ nghỉ hè này, em được về quê thăm ông bà.
+0.88  Gia đình em đi cắm trại bên hồ.  |  Gia đình em đi cắm chạy bên hồ
+1.00  Em đi máy bay lần đầu nên hơi sợ.  |  Em đi máy bay lần đầu nên hơi sợ
+1.00  Ở bãi biển, em xây lâu đài cát.  |  Ở bãi biển, em xây lâu đài cát.
+1.00  Em chụp nhiều ảnh để làm kỷ niệm.  |  Em chụp nhiều ảnh để làm kỷ niệm.
+1.00  Kỳ nghỉ hè vừa rồi các bạn đi đâu?  |  Kỳ nghỉ hè vừa rồi, các bạn đi đâu?
+1.00  Mình về Việt Nam thăm ông bà.  |  Mình về Việt Nam thăm ông bà.
+1.00  Ôi, thích quá! Các bạn đi bằng gì?  |  Ôi, thích quá! Các bạn đi bằng gì?
+1.00  Mình đi máy bay hơn hai mươi tiếng.  |  Mình đi máy bay hơn 20 tiếng
+1.00  Ở Việt Nam các bạn thích nhất điều gì?  |  Ở Việt Nam, các bạn thích nhất điều gì?
+1.00  Mình thích nhất là được ăn món bà nấu.  |  Mình thích nhất là được ăn món bà nấu
+0.86  Hè sau các bạn muốn đi đâu?  |  Hẻ sau, các bạn muốn đi đâu?
