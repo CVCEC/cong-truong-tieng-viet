@@ -146,3 +146,4 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  Bạn bè người Canada của các bạn có thích món Việt không?  |  Bạn bè người Canada của các bạn có thích món Việt không?
 1.00  Họ rất thích, nhất là bánh mì và gỏi cuốn.  |  Họ rất thích, nhất là bánh mì và gỏi cuốn
 1.00  Nếu mở một quán ăn, các bạn sẽ bán món gì?  |  Nếu mở một quán ăn, các bạn sẽ bán món gì?
+1.00  Mình sẽ bán bún chả, vì ở đây ít người biết món này.  |  Mình sẽ bán bún chả vì ở đây ít người biết món này
