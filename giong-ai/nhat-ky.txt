@@ -124,3 +124,15 @@
 1.00  Mình sẽ nói Việt Nam có thiên nhiên đẹp và con người thân thiện.  |  Mình sẽ nói, Việt Nam có thiên nhiên đẹp và con người thân thiện.
 1.00  Các bạn có muốn mời bạn bè cùng về thăm không?  |  Các bạn có muốn mời bạn bè cùng về thăm không?
 1.00  Có chứ, mình muốn đưa các bạn đi ăn phở ở Hà Nội.  |  Có chứ! Mình muốn đưa các bạn đi ăn phở ở Hà Nội
+Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.50  ẩm thực  |  ƠM Thực
+0.50  nước mắm  |  Nước mầm
+0.50  gỏi cuốn  |  gọi cuốn
+0.50  bún chả  |  Bún, chà
+0.50  đặc sản  |  đặc xa
+1.00  hương vị  |  Hương vị
+1.00  công thức  |  Công thức
+1.00  nguyên liệu  |  Nguyên Liệu
+1.00  Ẩm thực Việt Nam nổi tiếng vì tươi ngon và cân bằng.  |  ẩm thực Việt Nam nổi tiếng vì tươi ngon và cân bằng.
+1.00  Gỏi cuốn gồm bánh tráng, bún, rau sống và tôm.  |  Gỏi cuốn gồm bánh tráng, bún, rau sống và tôm
