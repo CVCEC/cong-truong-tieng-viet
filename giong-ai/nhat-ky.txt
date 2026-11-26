@@ -102,3 +102,4 @@
 1.00  Thật ý nghĩa! Các bạn có ước mơ gì cho tương lai?  |  Thật ý nghĩa! Các bạn có ước mơ gì cho tương lai?
 1.00  Mình mơ ước trở thành kỹ sư để xây những cây cầu.  |  Mình mơ ước trở thành kỹ sư để xây những cây cầu.
 0.90  Các bạn thấy học hai ngôn ngữ có khó không?  |  Các bạn thấy học hai nguồn ngữ có khó không?
+1.00  Có lúc khó, nhưng biết hai ngôn ngữ giúp mình tự tin hơn.  |  Có lúc khó, nhưng biết hai ngôn ngữ giúp mình tự tin hơn.
