@@ -19,3 +19,23 @@
 0.89  Cô ơi, ba quả xoài bao nhiêu tiền ạ?  |  Cô ơi, bao quả xoài bao nhiêu tiền ạ?
 1.00  Cô nói năm đô. Các bạn trả tiền nào!  |  Cô nói 5 đô, các bạn trả tiền nào?
 0.89  Cháu gửi cô tiền ạ. Cháu cảm ơn cô!  |  Cháu gửi cô tiền nạ Cháu cảm ơn cô
+1.00  Tết Nguyên Đán  |  Tết nguyên đán
+1.00  lì xì  |  Lì xì
+1.00  bánh chưng  |  Bánh chưng
+1.00  hoa đào  |  Hoa đào
+0.00  chúc Tết  |  
+0.50  pháo hoa  |  phảo hoa
+0.00  áo dài  |  Ấu xài
+1.00  năm mới  |  năm mới.
+0.75  Tết là dịp cả gia đình sum họp.  |  Tết là dịp cả gia đình xung hợp
+1.00  Em mặc áo dài đi chúc Tết ông bà.  |  Em mặc áo dài đi chúc Tết ông bà
+0.86  Bà gói bánh chưng bằng lá dong.  |  Bà gói bánh chưng bằng lá rong
+0.94  Em chúc ông bà mạnh khỏe, sống lâu.  |  Em chúc ông bà mạnh khỏe, sống lâu ạ!
+1.00  Đêm giao thừa, em được xem pháo hoa.  |  Đêm giao thừa, em được xem pháo hoa
+1.00  Sắp đến Tết rồi! Các bạn có vui không?  |  Sắp đến Tết rồi, các bạn có vui không?
+1.00  Mình vui lắm, vì Tết được gặp cả nhà.  |  Mình vui lắm, vì Tết được gặp cả nhà.
+1.00  Tết này các bạn đi chúc Tết ai?  |  Tết này, các bạn đi chúc Tết ai?
+1.00  Mình đi chúc Tết ông bà và cô chú.  |  Mình đi chúc Tết ông bà và cô chú.
+1.00  Các bạn chúc ông bà thế nào?  |  Các bạn chúc ông bà thế nào!
+1.00  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ.  |  Cháu chúc ông bà năm mới mạnh khỏe, sống lâu ạ!
+0.91  Hay quá! Năm nay các bạn có điều ước gì không?  |  Hay quá! Năm nay các bạn có đều ước gì không?
