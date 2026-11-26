@@ -18,3 +18,4 @@
 1.00  Các bạn hỏi cô bán hàng giá bao nhiêu nhé.  |  Các bạn hỏi cô bán hàng giá bao nhiêu nhé?
 0.89  Cô ơi, ba quả xoài bao nhiêu tiền ạ?  |  Cô ơi, bao quả xoài bao nhiêu tiền ạ?
 1.00  Cô nói năm đô. Các bạn trả tiền nào!  |  Cô nói 5 đô, các bạn trả tiền nào?
+0.89  Cháu gửi cô tiền ạ. Cháu cảm ơn cô!  |  Cháu gửi cô tiền nạ Cháu cảm ơn cô
