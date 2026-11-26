@@ -1,21 +1,20 @@
-1.00  thức dậy  |  Thức dậy
-0.50  đánh răng  |  Đảnh răng
-1.00  ăn sáng  |  ăn sáng
-1.00  đi học  |  Đi học
-1.00  làm bài tập  |  Làm bài tập
-0.00  tắm rửa  |  Tấm dừa
-1.00  đi ngủ  |  đi ngủ
-0.00  buổi tối  |  Hãy đăng ký kênh để nghe những video hấp dẫn.
-1.00  Mỗi sáng, em thức dậy lúc bảy giờ.  |  Mỗi sáng, em thức dậy lúc 7 giờ.
-1.00  Sau khi đánh răng, em ăn sáng cùng gia đình.  |  Sau khi đánh răng, em ăn sáng cùng gia đình.
-1.00  Buổi chiều, em làm bài tập rồi mới đi chơi.  |  Buổi chiều, em làm bài tập rồi mới đi chơi
-1.00  Trước khi đi ngủ, em đọc sách mười lăm phút.  |  Trước khi đi ngủ, em đọc sách 15 phút
-1.00  Em đi ngủ sớm để sáng mai không bị mệt.  |  Em đi ngủ sớm để sáng mai không bị mệt
-1.00  Các bạn thường thức dậy lúc mấy giờ?  |  Các bạn thường thức dậy lúc mấy giờ?
-1.00  Mình thường thức dậy lúc bảy giờ sáng.  |  Mình thường thức dậy lúc 7 giờ sáng.
-1.00  Sau đó các bạn làm gì?  |  Sau đó các bạn làm gì?
-1.00  Mình đánh răng, rửa mặt rồi ăn sáng.  |  Mình đánh răng, rửa mặt, rồi ăn sáng
-1.00  Bữa sáng hôm nay các bạn ăn gì?  |  Bữa sáng hôm nay các bạn ăn gì?
-1.00  Hôm nay mình ăn bánh mì và uống sữa.  |  Hôm nay mình ăn bánh mì và uống sữa
-1.00  Ngon quá! Các bạn đi học bằng gì?  |  Ngon quá! Các bạn đi học bằng gì?
-1.00  Mình đi học bằng xe buýt của trường.  |  Mình đi học bằng xe buýt của trường.
+1.00  đi chợ  |  Đi chợ
+1.00  bao nhiêu tiền  |  Bao nhiêu tiền?
+0.50  đắt quá  |  Đất quá!
+0.00  giá rẻ  |  Dạ, dạ.
+1.00  mua bán  |  mua bán
+1.00  rau xanh  |  Rau xanh
+0.00  trả tiền  |  Chà Tiên
+1.00  người bán hàng  |  Người bán hàng
+1.00  Cuối tuần, em cùng mẹ đi chợ mua rau.  |  Cuối tuần, em cùng mẹ đi chợ mua rau.
+1.00  Cô ơi, quả xoài này bao nhiêu tiền ạ?  |  Cô ơi, quả xoài này bao nhiêu tiền ạ?
+1.00  Vì rau rất tươi nên mẹ mua hai bó.  |  Vì rau rất tươi nên mẹ mua 2 bó.
+1.00  Em giúp mẹ xách túi đồ về nhà.  |  Em giúp mẹ xách túi đồ về nhà.
+1.00  Chợ Việt ở Toronto lúc nào cũng đông vui.  |  Chợ Việt ở Toronto lúc nào cũng đông vui.
+1.00  Các bạn ơi, hôm nay mình cùng đi chợ nhé!  |  Các bạn ơi, hôm nay mình cùng đi chợ nhé!
+0.86  Hay quá! Mình muốn mua hoa quả.  |  Hay quá! Mình muốn mua hoa quà!
+1.00  Các bạn muốn mua quả gì?  |  Các bạn muốn mua quả gì?
+1.00  Mình muốn mua ba quả xoài.  |  Mình muốn mua 3 quả xoài
+1.00  Các bạn hỏi cô bán hàng giá bao nhiêu nhé.  |  Các bạn hỏi cô bán hàng giá bao nhiêu nhé?
+0.89  Cô ơi, ba quả xoài bao nhiêu tiền ạ?  |  Cô ơi, bao quả xoài bao nhiêu tiền ạ?
+1.00  Cô nói năm đô. Các bạn trả tiền nào!  |  Cô nói 5 đô, các bạn trả tiền nào?
