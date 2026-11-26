@@ -60,3 +60,4 @@
 0.88  Giỏi quá! Còn khi đánh răng thì sao?  |  Rồi quá! Còn khi đánh răng thì sao?
 0.88  Mình khóa vòi nước để tiết kiệm nước.  |  Mình khóa vòi nước để tiết kiệu nước.
 1.00  Các bạn đúng là bạn của thiên nhiên!  |  Các bạn đúng là bạn của thiên nhiên.
+0.90  Cảm ơn Trâu Con, mình sẽ cố gắng hơn nữa.  |  Cảm ơn châu con! Mình sẽ cố gắng hơn nữa!
