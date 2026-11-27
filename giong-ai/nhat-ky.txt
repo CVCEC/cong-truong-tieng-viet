@@ -21,3 +21,23 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  Mình sẽ không trả lời và báo ngay cho bố mẹ.  |  Mình sẽ không trả lời và báo ngay cho bố mẹ.
 1.00  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?  |  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?
 1.00  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.  |  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.
+0.50  nghề nghiệp  |  Nghe nghiệp
+1.00  ước mơ  |  Ước mơ
+0.00  kỹ sư  |  Kỳ sụ
+0.00  giáo viên  |  Dạo phiên
+0.00  y tá  |  Ý ta
+1.00  lập trình viên  |  Lập trình viên
+1.00  doanh nhân  |  Doanh nhân
+0.50  kinh nghiệm  |  Kinh nghiệp
+0.92  Nghề nào cũng đáng quý nếu mình làm bằng cả trái tim.  |  Nghệ nào cũng đáng quý nếu mình làm bằng cả trái tim.
+1.00  Em muốn trở thành giáo viên dạy tiếng Việt cho trẻ em.  |  Em muốn trở thành giáo viên dạy tiếng Việt cho trẻ em.
+0.91  Để làm lập trình viên, em cần học giỏi môn toán.  |  Để làm lập trình viên, em cần học giỏi muôn toán.
+1.00  Mùa hè này, em đi làm thêm để có kinh nghiệm.  |  Mùa hè này, em đi làm thêm để có kinh nghiệm.
+1.00  Bố mẹ luôn ủng hộ em theo đuổi ước mơ của mình.  |  Bố mẹ luôn ủng hộ em theo đuổi ước mơ của mình.
+0.88  Lớn lên các bạn muốn làm nghề gì?  |  Lốn lên, các bạn muốn làm nghề gì?
+1.00  Mình muốn trở thành y tá để chăm sóc người bệnh.  |  mình muốn trở thành y tá để chăm sóc người bệnh.
+0.86  Vì sao các bạn chọn nghề đó?  |  Vì sao các bạn chọn nghì đó?
+1.00  Vì mình thích giúp đỡ người khác và tìm hiểu về cơ thể con người.  |  vì mình thích giúp đỡ người khác và tìm hiểu về cơ thể con người.
+1.00  Các bạn cần chuẩn bị những gì cho nghề này?  |  Các bạn cần chuẩn bị những gì cho nghề này.
+1.00  Mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.  |  mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.
+1.00  Biết tiếng Việt thì nghề này có lợi gì?  |  Biết tiếng Việt thì nghề này có lợi gì?
