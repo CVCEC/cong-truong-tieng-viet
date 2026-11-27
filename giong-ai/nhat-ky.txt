@@ -1,1 +1,12 @@
 1.00  Mình muốn giữ phong tục chúc Tết và lì xì cho các em nhỏ.  |  Mình muốn giữ phong tục chúc Tết và lì xì cho các em nhỏ.
+Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+1.00  công nghệ  |  Công nghệ
+1.00  điện thoại  |  Điện thoại
+1.00  mạng xã hội  |  Mạng xã hội
+0.25  trí tuệ nhân tạo  |  Kỳ đội nhân đạo
+1.00  thông tin  |  Thông tin
+0.00  an toàn  |  ANTUÀN
+0.50  mật khẩu  |  Mật khâu
+1.00  người lạ  |  Người lạ
+1.00  Công nghệ giúp em học tiếng Việt dễ dàng hơn.  |  công nghệ giúp em học tiếng Việt dễ dàng hơn.
+1.00  Em không chia sẻ mật khẩu với bất kỳ ai.  |  Em không chia sẻ mật khẩu với bất kỳ ai.
