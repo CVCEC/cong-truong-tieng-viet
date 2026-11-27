@@ -119,3 +119,8 @@ Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 0.00  xờ  |  Sô
 0.00  a  |  À
 0.00  á  |  À
+0.00  ớ  |  Ơ?
+0.00  e  |  Ê
+1.00  ê  |  Ê!
+0.00  i  |  Y
+0.00  o  |  Ơ
