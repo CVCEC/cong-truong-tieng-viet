@@ -20,3 +20,4 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?  |  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?
 1.00  Mình sẽ không trả lời và báo ngay cho bố mẹ.  |  Mình sẽ không trả lời và báo ngay cho bố mẹ.
 1.00  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?  |  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?
+1.00  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.  |  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.
