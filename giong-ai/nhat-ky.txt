@@ -10,3 +10,13 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  người lạ  |  Người lạ
 1.00  Công nghệ giúp em học tiếng Việt dễ dàng hơn.  |  công nghệ giúp em học tiếng Việt dễ dàng hơn.
 1.00  Em không chia sẻ mật khẩu với bất kỳ ai.  |  Em không chia sẻ mật khẩu với bất kỳ ai.
+1.00  Trước khi tin một thông tin, em kiểm tra lại nguồn.  |  Trước khi tin một thông tin, em kiểm tra lại nguồn.
+1.00  Theo em, dùng điện thoại quá nhiều không tốt cho mắt.  |  Theo em, dùng điện thoại quá nhiều, không tốt cho mắt.
+1.00  Mỗi tối, em giới hạn thời gian dùng mạng xã hội.  |  Mỗi tối, em giới hạn thời gian dùng mạng xã hội.
+1.00  Các bạn thường dùng điện thoại để làm gì?  |  Các bạn thường dùng điện thoại để làm gì?
+1.00  Mình dùng điện thoại để học bài và nhắn tin cho bạn bè.  |  Mình dùng điện thoại để học bài và nhắn tin cho bạn bè.
+1.00  Theo các bạn, mạng xã hội có lợi hay có hại?  |  Theo các bạn, mạng xã hội có lợi hay có hại?
+1.00  Mình nghĩ có cả lợi lẫn hại, tùy cách mình sử dụng.  |  Mình nghĩ có cả lợi lẫn hại tùy cách mình sử dụng.
+1.00  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?  |  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?
+1.00  Mình sẽ không trả lời và báo ngay cho bố mẹ.  |  Mình sẽ không trả lời và báo ngay cho bố mẹ.
+1.00  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?  |  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?
