@@ -41,3 +41,4 @@ Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"ca
 1.00  Các bạn cần chuẩn bị những gì cho nghề này?  |  Các bạn cần chuẩn bị những gì cho nghề này.
 1.00  Mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.  |  mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.
 1.00  Biết tiếng Việt thì nghề này có lợi gì?  |  Biết tiếng Việt thì nghề này có lợi gì?
+1.00  Mình có thể giúp các cụ người Việt chưa nói được tiếng Anh.  |  Mình có thể giúp các cụ người Việt chưa nói được tiếng Anh.
