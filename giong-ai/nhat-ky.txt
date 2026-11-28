@@ -157,3 +157,6 @@ Lô 1 câu – Gemini không trả tiếng: 400: {
 }
 
 0.00  ăc  |  A G Ấc Ấc
+0.00  ăm  |  Ấm
+0.00  ăng  |  Ấn
+0.00  ăp  |  Ấp
