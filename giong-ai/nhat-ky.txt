@@ -44,3 +44,13 @@ Lô 20 câu – Gemini không trả tiếng: 400: {
 0.00  quà  |  Qua
 0.00  rổ  |  Zô
 0.00  sẻ  |  Sẵn sàng.
+0.00  tô  |  Đô
+0.00  thỏ  |  TÀ
+0.00  tre  |  Tạm biệt!
+0.00  voi  |  VÀ Y
+1.00  xe  |  xe
+0.00  ba  |  Bà!
+0.00  ăn  |  Ấn
+0.00  cân  |  Cần
+0.00  bi  |  BÌ
+0.00  ý  |  Ê?
