@@ -110,3 +110,14 @@ Lô 20 câu – Gemini không trả tiếng: 400: {
 0.00  nặng  |  Nâng
 0.00  mạ  |  Mà...
 0.00  ai  |  Ây
+Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
+0.00  ay  |  Ấy
+0.00  ao  |  Ấu
+0.00  au  |  Ấu
+0.00  ac  |  Ơ?
+0.00  ach  |  Ấy
+0.00  am  |  Ơm
+0.00  an  |  Ấn
+0.00  ang  |  Ấn
+1.00  anh  |  Anh
+0.00  ap  |  Ấp
