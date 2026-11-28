@@ -1,126 +1,20 @@
-1.00  Mình muốn giữ phong tục chúc Tết và lì xì cho các em nhỏ.  |  Mình muốn giữ phong tục chúc Tết và lì xì cho các em nhỏ.
-Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-1.00  công nghệ  |  Công nghệ
-1.00  điện thoại  |  Điện thoại
-1.00  mạng xã hội  |  Mạng xã hội
-0.25  trí tuệ nhân tạo  |  Kỳ đội nhân đạo
-1.00  thông tin  |  Thông tin
-0.00  an toàn  |  ANTUÀN
-0.50  mật khẩu  |  Mật khâu
-1.00  người lạ  |  Người lạ
-1.00  Công nghệ giúp em học tiếng Việt dễ dàng hơn.  |  công nghệ giúp em học tiếng Việt dễ dàng hơn.
-1.00  Em không chia sẻ mật khẩu với bất kỳ ai.  |  Em không chia sẻ mật khẩu với bất kỳ ai.
-1.00  Trước khi tin một thông tin, em kiểm tra lại nguồn.  |  Trước khi tin một thông tin, em kiểm tra lại nguồn.
-1.00  Theo em, dùng điện thoại quá nhiều không tốt cho mắt.  |  Theo em, dùng điện thoại quá nhiều, không tốt cho mắt.
-1.00  Mỗi tối, em giới hạn thời gian dùng mạng xã hội.  |  Mỗi tối, em giới hạn thời gian dùng mạng xã hội.
-1.00  Các bạn thường dùng điện thoại để làm gì?  |  Các bạn thường dùng điện thoại để làm gì?
-1.00  Mình dùng điện thoại để học bài và nhắn tin cho bạn bè.  |  Mình dùng điện thoại để học bài và nhắn tin cho bạn bè.
-1.00  Theo các bạn, mạng xã hội có lợi hay có hại?  |  Theo các bạn, mạng xã hội có lợi hay có hại?
-1.00  Mình nghĩ có cả lợi lẫn hại, tùy cách mình sử dụng.  |  Mình nghĩ có cả lợi lẫn hại tùy cách mình sử dụng.
-1.00  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?  |  Nếu một người lạ trên mạng hỏi địa chỉ nhà thì sao?
-1.00  Mình sẽ không trả lời và báo ngay cho bố mẹ.  |  Mình sẽ không trả lời và báo ngay cho bố mẹ.
-1.00  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?  |  Giỏi lắm! Các bạn có lời khuyên nào cho các em nhỏ không?
-1.00  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.  |  Các em nên dùng mạng vừa phải và luôn hỏi ý kiến người lớn.
-0.50  nghề nghiệp  |  Nghe nghiệp
-1.00  ước mơ  |  Ước mơ
-0.00  kỹ sư  |  Kỳ sụ
-0.00  giáo viên  |  Dạo phiên
-0.00  y tá  |  Ý ta
-1.00  lập trình viên  |  Lập trình viên
-1.00  doanh nhân  |  Doanh nhân
-0.50  kinh nghiệm  |  Kinh nghiệp
-0.92  Nghề nào cũng đáng quý nếu mình làm bằng cả trái tim.  |  Nghệ nào cũng đáng quý nếu mình làm bằng cả trái tim.
-1.00  Em muốn trở thành giáo viên dạy tiếng Việt cho trẻ em.  |  Em muốn trở thành giáo viên dạy tiếng Việt cho trẻ em.
-0.91  Để làm lập trình viên, em cần học giỏi môn toán.  |  Để làm lập trình viên, em cần học giỏi muôn toán.
-1.00  Mùa hè này, em đi làm thêm để có kinh nghiệm.  |  Mùa hè này, em đi làm thêm để có kinh nghiệm.
-1.00  Bố mẹ luôn ủng hộ em theo đuổi ước mơ của mình.  |  Bố mẹ luôn ủng hộ em theo đuổi ước mơ của mình.
-0.88  Lớn lên các bạn muốn làm nghề gì?  |  Lốn lên, các bạn muốn làm nghề gì?
-1.00  Mình muốn trở thành y tá để chăm sóc người bệnh.  |  mình muốn trở thành y tá để chăm sóc người bệnh.
-0.86  Vì sao các bạn chọn nghề đó?  |  Vì sao các bạn chọn nghì đó?
-1.00  Vì mình thích giúp đỡ người khác và tìm hiểu về cơ thể con người.  |  vì mình thích giúp đỡ người khác và tìm hiểu về cơ thể con người.
-1.00  Các bạn cần chuẩn bị những gì cho nghề này?  |  Các bạn cần chuẩn bị những gì cho nghề này.
-1.00  Mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.  |  mình cần học tốt môn sinh học và rèn luyện tính kiên nhẫn.
-1.00  Biết tiếng Việt thì nghề này có lợi gì?  |  Biết tiếng Việt thì nghề này có lợi gì?
-1.00  Mình có thể giúp các cụ người Việt chưa nói được tiếng Anh.  |  Mình có thể giúp các cụ người Việt chưa nói được tiếng Anh.
-Lô 20 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-0.00  bờ  |  BÔ!
-0.00  cờ  |  Cứu
-0.00  chờ  |  Chào!
-0.00  dờ  |  Dô
-0.00  đờ  |  Đơ
-1.00  gờ  |  Gờ
-0.00  di  |  Z
-0.00  hờ  |  Hỡ
-0.00  khờ  |  Hỡ
-0.00  lờ  |  Lô
-Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 5 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 2 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 1 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-0.00  ngờ  |  NÔ!
-0.00  nhờ  |  Nhớ!
-0.00  phờ  |  phơ
-Lô 5 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-0.00  quờ  |  Quơ
-0.00  rờ  |  RỒ!
-0.00  sờ  |  SỐ
-0.00  tờ  |  Đơ!
-0.00  thờ  |  Thơ
-Lô 20 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 20 câu – Gemini không trả tiếng: 400: {
-  "error": {
-    "code": 400,
-    "message": "Request contains an invalid argument.",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-
-Lô 10 câu – Gemini không trả tiếng: không có tiếng trả về: {"candidates": [{"finishReason": "SAFETY", "index": 0, "finishMessage": "The audio stream could not be completed. Please retry your reque
-0.00  trờ  |  Chào!
-0.00  vờ  |  Vỡ
-0.00  xờ  |  Sô
-0.00  a  |  À
-0.00  á  |  À
-0.00  ớ  |  Ơ?
-0.00  e  |  Ê
-1.00  ê  |  Ê!
-0.00  i  |  Y
-0.00  o  |  Ơ
+0.00  mờ  |  MÔ
+0.00  nờ  |  No
+0.00  ô  |  Ồ
+1.00  ơ  |  Ơ
+0.00  u  |  Ư
+1.00  ư  |  Ư
+0.00  ia  |  Ừa
+1.00  ua  |  Ua
+0.00  ưa  |  Ua
+1.00  bà  |  Bà!
+0.00  cá  |  Gá
+0.00  kẹo  |  kéo.
+0.00  chó  |  Chào!
+0.00  dê  |  ZÊ
+0.00  đỏ  |  Đò
+1.00  gà  |  Gà
+0.00  ghế  |  Vây!
+0.00  giỏ  |  DÔ
+0.00  hoa  |  Hóa
+0.00  khế  |  Hi
