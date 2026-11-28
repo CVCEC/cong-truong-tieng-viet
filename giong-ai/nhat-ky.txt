@@ -100,3 +100,13 @@ Lô 20 câu – Gemini không trả tiếng: 400: {
 0.50  thanh ngã  |  Thành ngã.
 0.00  ngã  |  Nga á
 0.00  mã  |  Má à
+0.00  thanh hỏi  |  TÀNG HỘI
+0.00  hỏi  |  HÀI
+0.00  mả  |  Má
+1.00  thanh sắc  |  thanh sắc
+1.00  sắc  |  sắc
+1.00  má  |  Má?
+1.00  thanh nặng  |  thanh nặng
+0.00  nặng  |  Nâng
+0.00  mạ  |  Mà...
+0.00  ai  |  Ây
