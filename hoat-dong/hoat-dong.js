@@ -20,7 +20,11 @@
   // Hoạt động gốc đã có bản chuyển thể trong du-lieu.js: không lặp lại
   var GOC_DA_CHUYEN = {
     "find-someone-who": 1, "running-dictation": 1, "hot-seat": 1, "letter-hunters": 1, "phonics-bowling": 1,
-    "go-shopping": 1, "sentence-scramble": 1, "simon-says": 1, "story-chain": 1, "fresh-spring-rolls": 1
+    "go-shopping": 1, "sentence-scramble": 1, "simon-says": 1, "story-chain": 1, "fresh-spring-rolls": 1,
+    // Đợt 2 (HD13–HD24)
+    "cup-phone": 1, "mid-autumn-festival": 1, "flashcard-chants": 1, "action-verbs-charades": 1, "what-does-it-say": 1,
+    "question-cube": 1, "pass-the-ball-names": 1, "lucky-bottle-questions": 1, "prediction-game": 1, "two-truths-one-lie": 1,
+    "draw-and-guess": 1, "party-planning": 1
   };
   var KN_ESL = { "listening-speaking": "nghe-noi", "vocab-grammar": "tu-vung", "reading": "doc", "writing": "viet", "integrated": "tich-hop" };
   var CANH_ESL = { mingle: "di-lai", relay: "tiep-suc", hotseat: "ghe-nong", floor: "san-lop", bowling: "bowling", table: "ban", board: "doi-bang", pairs: "ban" };
